@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Netflix Movies and TV Shows Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "05104117-5703-42d8-a3da-08210c8fac6c"
+  }
+}

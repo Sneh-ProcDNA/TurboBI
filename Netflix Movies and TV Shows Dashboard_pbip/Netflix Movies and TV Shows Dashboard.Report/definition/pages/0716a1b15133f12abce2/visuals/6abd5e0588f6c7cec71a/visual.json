@@ -1,0 +1,224 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "6abd5e0588f6c7cec71a",
+  "position": {
+    "x": 5,
+    "y": 107,
+    "z": 3000,
+    "height": 340,
+    "width": 440,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "filledMap",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "ColorSaturation": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "netflix_titles.csv"
+                        }
+                      },
+                      "Property": "Show Id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Count distinct(netflix_titles.csv.Show Id)",
+              "nativeQueryRef": "Show Id",
+              "active": true,
+              "displayName": "Count distinct of Show Id"
+            }
+          ]
+        },
+        "Details": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "netflix_titles.csv"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "netflix_titles.csv.Country",
+              "nativeQueryRef": "Country",
+              "active": true,
+              "displayName": "Country"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "netflix_titles.csv"
+                        }
+                      },
+                      "Property": "Show Id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Count distinct(netflix_titles.csv.Show Id)",
+              "nativeQueryRef": "Show Id",
+              "displayName": "Count distinct of Show Id"
+            }
+          ]
+        },
+        "Location": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "netflix_titles.csv"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "netflix_titles.csv.Country",
+              "nativeQueryRef": "Country",
+              "active": true,
+              "displayName": "Country"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Movies & TV  Shows by country'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#e50914'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1b1b1b'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "118e368053027d566aca",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "netflix_titles.csv"
+                  }
+                },
+                "Property": "Show Id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c49f545152b61125d7cd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "netflix_titles.csv"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

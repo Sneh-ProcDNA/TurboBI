@@ -1,0 +1,1247 @@
+{
+  "source_file": "..\\_Netflix Movies and TV Shows Dashboard_extracted\\Netflix Movies and TV Shows Dashboard.twb",
+  "datasources": [
+    {
+      "name": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "caption": "netflix_titles",
+      "connection": {
+        "class": "federated",
+        "dbname": "",
+        "server": ""
+      },
+      "extracts": [
+        "Data/tableau-temp/TEMP_0g36dim0jhbt5e123omgu0ksxfc0.hyper"
+      ],
+      "colsMap": {},
+      "objects": {
+        "netflix_titles.csv_F8E9E0782A7949ABB130F88CC3F97C3D": "netflix_titles.csv"
+      },
+      "columns": [
+        {
+          "name": "cast",
+          "rawName": "[cast]",
+          "caption": "Cast",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": true,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "country",
+          "rawName": "[country]",
+          "caption": "Country",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": "[Country].[ISO3166_2]"
+        },
+        {
+          "name": "date_added",
+          "rawName": "[date_added]",
+          "caption": "Date Added",
+          "datatype": "date",
+          "tmdlType": "dateTime",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "description",
+          "rawName": "[description]",
+          "caption": "Description",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "director",
+          "rawName": "[director]",
+          "caption": "Director",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": true,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "duration",
+          "rawName": "[duration]",
+          "caption": "Duration",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "listed_in",
+          "rawName": "[listed_in]",
+          "caption": "Listed In",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "rating",
+          "rawName": "[rating]",
+          "caption": "Rating",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "release_year",
+          "rawName": "[release_year]",
+          "caption": "Release Year",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "show_id",
+          "rawName": "[show_id]",
+          "caption": "Show Id",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "title",
+          "rawName": "[title]",
+          "caption": "Title",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        },
+        {
+          "name": "type",
+          "rawName": "[type]",
+          "caption": "Type",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+          "dsCaption": "netflix_titles",
+          "parentTable": "netflix_titles.csv",
+          "semanticRole": ""
+        }
+      ],
+      "relationships": []
+    }
+  ],
+  "parameters": [],
+  "worksheets": [
+    {
+      "name": "Date Added",
+      "markClass": "Automatic",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "date_added",
+        "agg": "yr"
+      },
+      "labelFields": [
+        {
+          "field": "date_added",
+          "agg": "yr"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "title",
+          "type": "categorical",
+          "members": [
+            "4L"
+          ],
+          "exclude": false
+        },
+        {
+          "field": "type",
+          "type": "categorical",
+          "members": [
+            "Movie"
+          ],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "date_added": "date_added",
+        "title": "title",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Date Added",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Description",
+      "markClass": "Automatic",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "description",
+        "agg": "none"
+      },
+      "labelFields": [
+        {
+          "field": "description",
+          "agg": "none"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "title",
+          "type": "categorical",
+          "members": [
+            "4L"
+          ],
+          "exclude": false
+        },
+        {
+          "field": "type",
+          "type": "categorical",
+          "members": [
+            "Movie"
+          ],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "description": "description",
+        "title": "title",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Description",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 11
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Duration",
+      "markClass": "Automatic",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "duration",
+        "agg": "none"
+      },
+      "labelFields": [
+        {
+          "field": "duration",
+          "agg": "none"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "title",
+          "type": "categorical",
+          "members": [
+            "4L"
+          ],
+          "exclude": false
+        },
+        {
+          "field": "type",
+          "type": "categorical",
+          "members": [
+            "Movie"
+          ],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "duration": "duration",
+        "title": "title",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Duration",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Genre",
+      "markClass": "Automatic",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "listed_in",
+        "agg": "none"
+      },
+      "labelFields": [
+        {
+          "field": "listed_in",
+          "agg": "none"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "title",
+          "type": "categorical",
+          "members": [
+            "4L"
+          ],
+          "exclude": false
+        },
+        {
+          "field": "type",
+          "type": "categorical",
+          "members": [
+            "Movie"
+          ],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "listed_in": "listed_in",
+        "title": "title",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Genre",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Movies and TV Shows Distribution",
+      "markClass": "Circle",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "type",
+        "agg": "none"
+      },
+      "sizeField": {
+        "field": "show_id",
+        "agg": "ctd"
+      },
+      "labelField": {
+        "field": "pcto:ctd:show_id",
+        "agg": ""
+      },
+      "labelFields": [
+        {
+          "field": "type",
+          "agg": "none"
+        },
+        {
+          "field": "show_id",
+          "agg": "ctd"
+        },
+        {
+          "field": "pcto:ctd:show_id",
+          "agg": ""
+        }
+      ],
+      "detailFields": [
+        {
+          "field": "pcto:ctd:show_id",
+          "agg": ""
+        }
+      ],
+      "tooltipFields": [],
+      "filters": [],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "show_id": "show_id",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Movies and TV Shows Distribution",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Rating",
+      "markClass": "Automatic",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "rating",
+        "agg": "none"
+      },
+      "labelFields": [
+        {
+          "field": "rating",
+          "agg": "none"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "title",
+          "type": "categorical",
+          "members": [
+            "4L"
+          ],
+          "exclude": false
+        },
+        {
+          "field": "type",
+          "type": "categorical",
+          "members": [
+            "Movie"
+          ],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "rating": "rating",
+        "title": "title",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Rating",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Ratings",
+      "markClass": "Automatic",
+      "rowFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[ctd:show_id:qk]",
+          "field": "show_id",
+          "agg": "ctd",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[none:rating:nk]",
+          "field": "rating",
+          "agg": "none",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "show_id",
+        "agg": "ctd"
+      },
+      "labelFields": [
+        {
+          "field": "show_id",
+          "agg": "ctd"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "rating",
+          "type": "categorical",
+          "members": [
+            "%null%"
+          ],
+          "exclude": true
+        }
+      ],
+      "sortSpecs": [
+        {
+          "dimension": "rating",
+          "dimensionAgg": "none",
+          "measure": "show_id",
+          "measureAgg": "ctd",
+          "direction": "DESC",
+          "shelf": "columns"
+        }
+      ],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "rating": "rating",
+        "show_id": "show_id"
+      },
+      "isGeo": false,
+      "titleText": "Ratings",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium"
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": "#e50914"
+    },
+    {
+      "name": "Release Year",
+      "markClass": "Automatic",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "release_year",
+        "agg": "none"
+      },
+      "labelFields": [
+        {
+          "field": "release_year",
+          "agg": "none"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "title",
+          "type": "categorical",
+          "members": [
+            "4L"
+          ],
+          "exclude": false
+        },
+        {
+          "field": "type",
+          "type": "categorical",
+          "members": [
+            "Movie"
+          ],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "release_year": "release_year",
+        "title": "title",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Release Year",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Top 10 Genre",
+      "markClass": "Automatic",
+      "rowFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[none:listed_in:nk]",
+          "field": "listed_in",
+          "agg": "none",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[ctd:show_id:qk]",
+          "field": "show_id",
+          "agg": "ctd",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colorField": {
+        "field": "",
+        "agg": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "show_id",
+        "agg": "ctd"
+      },
+      "labelFields": [
+        {
+          "field": "show_id",
+          "agg": "ctd"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "listed_in",
+          "type": "categorical",
+          "members": [],
+          "exclude": false,
+          "topN": {
+            "direction": "TOP",
+            "count": 10,
+            "measure": "show_id",
+            "measureAgg": "ctd"
+          }
+        }
+      ],
+      "sortSpecs": [
+        {
+          "dimension": "listed_in",
+          "dimensionAgg": "none",
+          "measure": "show_id",
+          "measureAgg": "ctd",
+          "direction": "DESC",
+          "shelf": "rows"
+        }
+      ],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "listed_in": "listed_in",
+        "show_id": "show_id"
+      },
+      "isGeo": false,
+      "titleText": "Top 10 Genre",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff"
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": "#e50914"
+    },
+    {
+      "name": "Total Movie & TV Shows by Year ",
+      "markClass": "Area",
+      "rowFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[ctd:show_id:qk]",
+          "field": "show_id",
+          "agg": "ctd",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[yr:date_added:ok]",
+          "field": "date_added",
+          "agg": "yr",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colorField": {
+        "field": "type",
+        "agg": "none"
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "type",
+        "agg": "none"
+      },
+      "labelFields": [
+        {
+          "field": "type",
+          "agg": "none"
+        }
+      ],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "date_added",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "date_added": "date_added",
+        "show_id": "show_id",
+        "type": "type"
+      },
+      "isGeo": false,
+      "titleText": "Total Movies and TV Shows by Years",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": true,
+      "labelStyle": {
+        "fontColor": "#ffffff",
+        "fontFamily": "Tableau Medium",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "backgroundColor": "#1b1b1b",
+      "markColor": null
+    },
+    {
+      "name": "Total Movies & TV Shows by country",
+      "markClass": "Multipolygon",
+      "rowFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[Latitude (generated)]",
+          "field": "Latitude (generated)",
+          "agg": "",
+          "isGeo": true,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[Longitude (generated)]",
+          "field": "Longitude (generated)",
+          "agg": "",
+          "isGeo": true,
+          "geoRole": ""
+        }
+      ],
+      "colorField": {
+        "field": "show_id",
+        "agg": "ctd"
+      },
+      "sizeField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelField": {
+        "field": "",
+        "agg": ""
+      },
+      "labelFields": [],
+      "detailFields": [
+        {
+          "field": "country",
+          "agg": "none"
+        }
+      ],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "Latitude (generated)",
+          "type": "quantitative",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Longitude (generated)",
+          "type": "quantitative",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1hi58320xulgdr1clpuut0mqw1p2",
+      "wsColumns": {
+        "country": "country",
+        "show_id": "show_id"
+      },
+      "isGeo": true,
+      "titleText": "Total Movies & TV  Shows by country",
+      "titleStyle": {
+        "fontWeight": "bold",
+        "fontFamily": "Tableau Medium",
+        "fontColor": "#e50914",
+        "textAlign": "center"
+      },
+      "titleEnabled": true,
+      "labelEnabled": null,
+      "labelStyle": {},
+      "backgroundColor": "#1b1b1b",
+      "markColor": "#e50914"
+    }
+  ],
+  "dashboards": [
+    {
+      "name": "Netflix",
+      "width": 1720,
+      "height": 1060,
+      "zones": [
+        {
+          "id": "3",
+          "name": "Total Movie & TV Shows by Year ",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 640,
+          "y": 447,
+          "w": 634,
+          "h": 266,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "5",
+          "name": "Top 10 Genre",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 5,
+          "y": 447,
+          "w": 634,
+          "h": 266,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "6",
+          "name": "Total Movies & TV Shows by country",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 5,
+          "y": 107,
+          "w": 440,
+          "h": 340,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "11",
+          "name": "Movies and TV Shows Distribution",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 913,
+          "y": 107,
+          "w": 360,
+          "h": 340,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "12",
+          "name": "Ratings",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 446,
+          "y": 107,
+          "w": 467,
+          "h": 340,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "13",
+          "name": "Description",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 890,
+          "y": 5,
+          "w": 383,
+          "h": 101,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "16",
+          "name": "Date Added",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 336,
+          "y": 57,
+          "w": 164,
+          "h": 49,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "17",
+          "name": "Duration",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 171,
+          "y": 57,
+          "w": 164,
+          "h": 49,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "18",
+          "name": "Rating",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 171,
+          "y": 5,
+          "w": 164,
+          "h": 52,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "19",
+          "name": "Release Year",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 336,
+          "y": 5,
+          "w": 164,
+          "h": 52,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "20",
+          "name": "Genre",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 670,
+          "y": 5,
+          "w": 220,
+          "h": 101,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "14",
+          "name": "Description",
+          "type": "filter",
+          "param": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[none:type:nk]",
+          "mode": "dropdown",
+          "x": 5,
+          "y": 5,
+          "w": 165,
+          "h": 52,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "titleStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "15",
+          "name": "Description",
+          "type": "filter",
+          "param": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[none:title:nk]",
+          "mode": "dropdown",
+          "x": 5,
+          "y": 57,
+          "w": 165,
+          "h": 49,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "titleStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "21",
+          "name": "",
+          "type": "bitmap",
+          "param": "Image/Netflix logo.png",
+          "mode": "",
+          "x": 500,
+          "y": 5,
+          "w": 169,
+          "h": 101,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "10",
+          "name": "Total Movies & TV Shows by country",
+          "type": "color",
+          "param": "[federated.1hi58320xulgdr1clpuut0mqw1p2].[ctd:show_id:qk]",
+          "mode": "",
+          "x": 337,
+          "y": 420,
+          "w": 104,
+          "h": 30
+        }
+      ],
+      "backgroundColor": "#1b1b1b"
+    }
+  ]
+}
