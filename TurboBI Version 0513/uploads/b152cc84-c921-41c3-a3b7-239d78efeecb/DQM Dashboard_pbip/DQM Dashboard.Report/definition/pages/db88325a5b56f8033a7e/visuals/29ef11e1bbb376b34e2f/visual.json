@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "29ef11e1bbb376b34e2f",
+  "position": {
+    "x": 756,
+    "y": 10,
+    "z": 5000,
+    "height": 60,
+    "width": 135,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sheet3"
+                    }
+                  },
+                  "Property": "Time Period"
+                }
+              },
+              "queryRef": "Sheet3.Time Period",
+              "nativeQueryRef": "Time Period",
+              "active": true,
+              "displayName": "Time Period"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

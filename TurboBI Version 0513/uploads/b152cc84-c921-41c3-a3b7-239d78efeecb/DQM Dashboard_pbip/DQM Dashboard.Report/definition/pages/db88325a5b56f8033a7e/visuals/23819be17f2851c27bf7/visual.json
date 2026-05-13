@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "23819be17f2851c27bf7",
+  "position": {
+    "x": 350,
+    "y": 10,
+    "z": 2000,
+    "height": 60,
+    "width": 135,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sheet3"
+                    }
+                  },
+                  "Property": "Module"
+                }
+              },
+              "queryRef": "Sheet3.Module",
+              "nativeQueryRef": "Module",
+              "active": true,
+              "displayName": "Module"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "DQM Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d93ec0e4-b946-4b58-a0d1-30e9cfdea6b9"
+  }
+}

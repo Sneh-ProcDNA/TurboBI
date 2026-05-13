@@ -1,0 +1,278 @@
+table Sheet3
+	lineageTag: 20c06bae-0506-556e-5bf1-e180250eda5f
+
+	column 'Data Vendor'
+		dataType: string
+		lineageTag: 96c5a9fa-42bc-c2ed-aaa5-7f99e283f739
+		summarizeBy: none
+		sourceColumn: DataVendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dataset
+		dataType: string
+		lineageTag: 7dec16a4-7a39-ddc3-3f45-d6b64d138872
+		summarizeBy: none
+		sourceColumn: Dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Module
+		dataType: string
+		lineageTag: dfad792d-76a0-4e6a-b9a8-e415854d5387
+		summarizeBy: none
+		sourceColumn: Module
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Period'
+		dataType: string
+		lineageTag: f03b1ed4-d0a1-4b33-f160-fdc3c66467be
+		summarizeBy: none
+		sourceColumn: TimePeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week format'
+		dataType: string
+		lineageTag: 7725644c-f74f-32aa-8111-1ad290a29617
+		summarizeBy: none
+		sourceColumn: Week_format
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		lineageTag: 204a327a-b8d5-3097-7bdf-ff4e4c28acd7
+		summarizeBy: none
+		sourceColumn: Date
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		dataType: string
+		lineageTag: 3308f751-8602-d6d7-cf5f-11d2fa2c9f90
+		summarizeBy: none
+		sourceColumn: Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: ce9630ec-e800-d253-7f8d-3d9cf35482c5
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: d9d82ab5-f646-7d0a-1dbd-28799c2fad38
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Rows'
+		dataType: int64
+		lineageTag: bde0fbcf-e887-174f-aee5-51cb76cbff99
+		summarizeBy: none
+		sourceColumn: Total Rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Failed Rows'
+		dataType: int64
+		lineageTag: 8b40578b-e636-22f6-80d1-e65a93853290
+		summarizeBy: none
+		sourceColumn: Failed Rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unused Tables'
+		dataType: int64
+		lineageTag: 7d051047-0487-7de6-be86-57dcb9f9ffc8
+		summarizeBy: none
+		sourceColumn: Unused Tables
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI/Chart'
+		dataType: string
+		lineageTag: 053c31d5-9064-4ca2-20b3-828661054d51
+		summarizeBy: none
+		sourceColumn: KPI/Chart
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attribute-KPI?Chart'
+		dataType: string
+		lineageTag: f55e2bda-cf1b-4130-bfee-15a4031fc061
+		summarizeBy: none
+		sourceColumn: Attribute-KPI?Chart
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value-KPI/Chart'
+		dataType: int64
+		lineageTag: cb9e3f2e-f767-6396-7f37-95c5d09dbe2e
+		summarizeBy: none
+		sourceColumn: Value-KPI/Chart
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Quality Dimension'
+		dataType: string
+		lineageTag: 214ab812-037d-193d-aa3d-add0663f7b45
+		summarizeBy: none
+		sourceColumn: Data Quality Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attribute-DQ'
+		dataType: string
+		lineageTag: 65d3e711-4a31-1ddd-94fe-5344528817af
+		summarizeBy: none
+		sourceColumn: Attribute-DQ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value-DQ'
+		dataType: double
+		lineageTag: 75a80f19-d721-4460-eb98-e6df30589625
+		summarizeBy: none
+		sourceColumn: Value-DQ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Load Status'
+		dataType: string
+		lineageTag: 4f41c737-78ea-c515-cbbb-26ebd32e2851
+		summarizeBy: none
+		sourceColumn: Data Load Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attribute-DL'
+		dataType: string
+		lineageTag: ba239a7a-6e87-bafd-d54c-a3b1efe8cb2c
+		summarizeBy: none
+		sourceColumn: Attribute-DL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value-DL'
+		dataType: string
+		lineageTag: 74a1b36f-8693-fd9b-3db1-a7923ff4ac4c
+		summarizeBy: none
+		sourceColumn: Value-DL
+
+		annotation SummarizationSetBy = Automatic
+
+	measure '%of GT Max Value DQ' = BLANK() /* TODO: translate Tableau formula -- MAX([Value-DQ]) / WINDOW_SUM(MAX([Value-DQ])) */
+		lineageTag: 7a3cb2ea-3e07-0ee5-1d9c-a6f0e659999f
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Reset Filters (Sheet3)' = "Reset"
+		lineageTag: 92d2275f-8943-c941-8756-f9541ca3a5b1
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'User Info' = USERNAME ()
+		lineageTag: 9d431533-495b-92ae-0aca-0348394a49b6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Trunc of Date' = DATE(YEAR([Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: b9920a0d-5a58-7ef6-c6a0-af750d006901
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Date' = DATE(YEAR([Date]), (QUARTER([Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: ceccd311-d621-b0d7-9ec8-79aad633137d
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Date' = DATE(YEAR([Date]), MONTH([Date]), 1)
+		dataType: dateTime
+		lineageTag: 56e0a1b9-c976-6d1a-4bd3-38aab9fbc8d6
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Date' = MONTH([Date])
+		dataType: int64
+		lineageTag: 0d0d8cc1-9360-40c7-69e9-f1ec360fe6e9
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Date' = YEAR([Date])
+		dataType: int64
+		lineageTag: 525def7f-65a0-a92b-e3c2-855e90738c19
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Date' = "Qtr " & ROUNDUP(MONTH([Date]) / 3, 0)
+		dataType: string
+		lineageTag: d1fdf017-b7b8-67a0-cf81-f7c6726a80ea
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Date' = FORMAT([Date], "MMMM")
+		dataType: string
+		lineageTag: 06affd2a-ba8a-894b-cec2-9f7a7bdcaedc
+		summarizeBy: none
+		sortByColumn: 'Month Number of Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Date' = DAY([Date])
+		dataType: int64
+		lineageTag: 3221d5e9-ecd2-1577-264d-1aa1327c0725
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 2edefb73-de27-39b6-1697-896763d36474
+
+		level Year
+			lineageTag: 9614d13e-1785-6e10-6b5f-1f53cf6443c2
+			column: 'Year of Date'
+
+		level Quarter
+			lineageTag: 21b3e987-abc0-f7d3-21ec-fcdee901f40a
+			column: 'Quarter of Date'
+
+		level Month
+			lineageTag: 2333bc43-dc6a-6db5-5b21-53b97018dcd1
+			column: 'Month of Date'
+
+		level Day
+			lineageTag: 401dc90f-c61e-ea38-d853-03d42aa2e7df
+			column: 'Day of Date'
+
+	partition Sheet3 = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\SnehVirenShah\Downloads\TWBX_to_PBIP_FIXED\TWBX_to_PBIP_FIXED\TurboBI Version 0512\uploads\555ce713-5519-45ba-a880-d1ebb15bdda7\DQM Dashboard_pbip\DQM Dashboard.SemanticModel\data\federated.0sf81r70eq1bwn1cyn0vt17s8f38\Extract.Extract.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"Module", type text}, {"DataVendor", type text}, {"TimePeriod", type text}, {"Date", type datetime}, {"Dimension", type text}, {"Value", type number}, {"Status", type text}, {"Total Rows", Int64.Type}, {"Failed Rows", Int64.Type}, {"Unused Tables", Int64.Type}, {"KPI/Chart", type text}, {"Attribute-KPI?Chart", type text}, {"Value-KPI/Chart", Int64.Type}, {"Data Quality Dimension", type text}, {"Attribute-DQ", type text}, {"Value-DQ", type number}, {"Data Load Status", type text}, {"Attribute-DL", type text}, {"Value-DL", type text}, {"Week_format", type text}, {"Dataset", type text}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table
