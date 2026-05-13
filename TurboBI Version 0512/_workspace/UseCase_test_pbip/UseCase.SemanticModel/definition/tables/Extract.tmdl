@@ -1,0 +1,562 @@
+table Extract
+	lineageTag: ffe6e80a-9fee-41ed-37ab-6bc395a01806
+
+	column City1
+		dataType: string
+		lineageTag: 2f0c20f8-c9cb-da9b-b078-1e7b7ef1ba16
+		summarizeBy: none
+		sourceColumn: City1
+
+		annotation SummarizationSetBy = Automatic
+
+	column State1
+		dataType: string
+		lineageTag: 214b835c-60dc-13e7-5cc8-a367a075815b
+		summarizeBy: none
+		sourceColumn: State1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIP1
+		dataType: int64
+		lineageTag: da92bb31-c8ee-1ea9-f3c0-8fae90e41c9f
+		summarizeBy: none
+		sourceColumn: ZIP1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Treated1
+		dataType: int64
+		lineageTag: 4cbca68e-0bbd-0ae8-a3e6-6376f836b5f4
+		summarizeBy: none
+		sourceColumn: Patients_Treated1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Prescribed1
+		dataType: int64
+		lineageTag: 83249208-dc39-c3a3-e5e9-f9bc4796aa2a
+		summarizeBy: none
+		sourceColumn: Patients_Prescribed1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Diagnosed1
+		dataType: int64
+		lineageTag: 7d6f4f6d-486d-f8d8-e40c-c264626134c9
+		summarizeBy: none
+		sourceColumn: Patients_Diagnosed1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Count1
+		dataType: int64
+		lineageTag: 913d21b1-fb17-a57b-7b4d-ade0c2e385ca
+		summarizeBy: none
+		sourceColumn: Patients_Count1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mistreated_Patients1
+		dataType: int64
+		lineageTag: 23e0c9d6-4f66-da99-28c7-6f87f45b7282
+		summarizeBy: none
+		sourceColumn: Mistreated_Patients1
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCO_ID1
+		dataType: int64
+		lineageTag: 6f417210-98f5-24e5-1094-c786b6fcc7a1
+		summarizeBy: none
+		sourceColumn: HCO_ID1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email1
+		dataType: string
+		lineageTag: d1c9cb3a-850f-86d1-82ce-772fe23fc62b
+		summarizeBy: none
+		sourceColumn: Email1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region1
+		dataType: string
+		lineageTag: 04b29628-c560-e563-50cf-af11e7dd6e28
+		summarizeBy: none
+		sourceColumn: Region1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory1
+		dataType: int64
+		lineageTag: c92ef547-7cc2-d416-c4a6-4879393c1fce
+		summarizeBy: none
+		sourceColumn: Territory1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory_Name1
+		dataType: string
+		lineageTag: a1647890-1594-d41f-43c1-0d121ce74ce3
+		summarizeBy: none
+		sourceColumn: Territory_Name1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude1
+		dataType: double
+		lineageTag: 0eb15ab5-9000-0390-2df5-8db7a44365d7
+		summarizeBy: none
+		sourceColumn: Latitude1
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude1
+		dataType: double
+		lineageTag: f46d451b-5a11-da4d-e50d-93f11c1c44e9
+		summarizeBy: none
+		sourceColumn: Longitude1
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incoming_Referrals1
+		dataType: int64
+		lineageTag: 73a30561-741a-a93f-a22e-67623266130c
+		summarizeBy: none
+		sourceColumn: Incoming_Referrals1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Outgoing_Referrals1
+		dataType: int64
+		lineageTag: 8256ffa0-162b-8746-c3a8-6d9032c84b74
+		summarizeBy: none
+		sourceColumn: Outgoing_Referrals1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Link_ID
+		dataType: int64
+		lineageTag: f593709d-96be-5d74-91b0-2b488250bfd2
+		summarizeBy: none
+		sourceColumn: Link_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_HCP_ID
+		dataType: int64
+		lineageTag: 13fb165b-dc7c-b74c-28ef-3e26ebbab770
+		summarizeBy: none
+		sourceColumn: From_HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_HCP_ID
+		dataType: int64
+		lineageTag: 6b0df989-189b-9f90-1ec1-975390767189
+		summarizeBy: none
+		sourceColumn: To_HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_HCO_ID
+		dataType: int64
+		lineageTag: 203e79fc-4841-2fef-646f-4c8975bd3502
+		summarizeBy: none
+		sourceColumn: From_HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_HCO_ID
+		dataType: int64
+		lineageTag: 51dcd3b9-3715-f481-42e9-4bbe85e941f6
+		summarizeBy: none
+		sourceColumn: To_HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_HCP_Name
+		dataType: string
+		lineageTag: d5a38c83-688b-8186-b1a5-58a8795e3cfc
+		summarizeBy: none
+		sourceColumn: From_HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_HCP_Name
+		dataType: string
+		lineageTag: 6ee4485d-c750-03b6-6336-4d2d6c1ce44c
+		summarizeBy: none
+		sourceColumn: To_HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column from_HCO_name
+		dataType: string
+		lineageTag: fce3e51d-4f51-d2b7-1cbf-f7124c1a68e5
+		summarizeBy: none
+		sourceColumn: from_HCO_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column to_HCO_name
+		dataType: string
+		lineageTag: a82ebef3-b26d-b862-8223-45bf7d52b136
+		summarizeBy: none
+		sourceColumn: to_HCO_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_Latitude
+		dataType: double
+		lineageTag: 885cce5b-5c01-86f6-e5b1-8899971e7a30
+		summarizeBy: none
+		sourceColumn: From_Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_Longitude
+		dataType: double
+		lineageTag: 2db73713-c963-ea72-929c-4dbabd656af4
+		summarizeBy: none
+		sourceColumn: From_Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_Latitude
+		dataType: double
+		lineageTag: 54b421a6-2ac6-634e-5eda-a8eb8bfa32a6
+		summarizeBy: none
+		sourceColumn: To_Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_Longitude
+		dataType: double
+		lineageTag: faf19c0a-f25e-fd0c-0d1e-c9641abe9125
+		summarizeBy: none
+		sourceColumn: To_Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_Region
+		dataType: string
+		lineageTag: 62cf5399-883f-b372-9d99-4128b0c06bd2
+		summarizeBy: none
+		sourceColumn: From_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_Territory
+		dataType: int64
+		lineageTag: 56a8a106-8110-9ec0-2133-3151be66d1b6
+		summarizeBy: none
+		sourceColumn: From_Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_Territory_Name
+		dataType: string
+		lineageTag: ad15b788-84e7-4cae-910a-f316b4d85874
+		summarizeBy: none
+		sourceColumn: From_Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_Cluster_ID
+		dataType: int64
+		lineageTag: bd5809c6-34c4-f725-eea4-d3bfd86f58df
+		summarizeBy: none
+		sourceColumn: From_Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_Region
+		dataType: string
+		lineageTag: 42717400-03a4-2257-611c-370b15db2f36
+		summarizeBy: none
+		sourceColumn: To_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_Territory
+		dataType: int64
+		lineageTag: c8a88acc-e1e6-7062-40e4-1471988b40bd
+		summarizeBy: none
+		sourceColumn: To_Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_Territory_Name
+		dataType: string
+		lineageTag: 484172f0-a532-011f-e777-6669240dfaea
+		summarizeBy: none
+		sourceColumn: To_Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_Cluster_ID
+		dataType: int64
+		lineageTag: f380fe13-8ae1-e544-cdc5-61cd2668bef4
+		summarizeBy: none
+		sourceColumn: To_Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCP_ID
+		dataType: int64
+		lineageTag: 84516f58-bbc1-23c8-f1ae-7e0e746b3488
+		summarizeBy: none
+		sourceColumn: HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCP_Name
+		dataType: string
+		lineageTag: ce9d6019-eee3-30cb-6d6c-48d1ba7b3b83
+		summarizeBy: none
+		sourceColumn: HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address_Line1
+		dataType: string
+		lineageTag: 9b7b7cd3-dd78-8635-dced-61e8fb2c8856
+		summarizeBy: none
+		sourceColumn: Address_Line1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialty
+		dataType: string
+		lineageTag: 169e709d-d94e-0cd5-fa28-f71ce32e6b5f
+		summarizeBy: none
+		sourceColumn: Specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Influence_Score
+		dataType: double
+		lineageTag: 8dac0055-ae1a-313f-e61b-b1971e337252
+		summarizeBy: none
+		sourceColumn: Influence_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bridge_Score
+		dataType: double
+		lineageTag: d48ade42-4fe6-9bf0-d0f6-6dcd5082d9ef
+		summarizeBy: none
+		sourceColumn: Bridge_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Eigenvector_Score
+		dataType: double
+		lineageTag: 8e7e07e7-5609-62e3-d870-b1db533c5b1e
+		summarizeBy: none
+		sourceColumn: Eigenvector_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Final_Segment
+		dataType: string
+		lineageTag: 98a3decd-a307-68d6-10ee-002a68f8db5f
+		summarizeBy: none
+		sourceColumn: Final_Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Affiliation
+		dataType: string
+		lineageTag: 08fb4721-6ed7-9af5-02ae-97c38e07fd45
+		summarizeBy: none
+		sourceColumn: Affiliation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster_ID
+		dataType: int64
+		lineageTag: 33a01d22-b00a-2de3-f274-26bcf84455f2
+		summarizeBy: none
+		sourceColumn: Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCO_ID
+		dataType: int64
+		lineageTag: 8532e16a-78c0-6582-5da3-e30551e353e7
+		summarizeBy: none
+		sourceColumn: HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCO_Name
+		dataType: string
+		lineageTag: 0951c18b-77a3-052d-2d1a-599130154f67
+		summarizeBy: none
+		sourceColumn: HCO_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCO_Type
+		dataType: string
+		lineageTag: 4802da5c-ad9c-f710-496f-8b8c6f689de6
+		summarizeBy: none
+		sourceColumn: HCO_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 86a6c489-45b5-8bf5-6a74-4d66249347a1
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: a9f556f0-cc18-4fe5-cb6a-759a2537299a
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIP
+		dataType: int64
+		lineageTag: 724bc984-40ad-1a83-3f38-0a0a7a9c3171
+		summarizeBy: none
+		sourceColumn: ZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: c82f7820-3f6a-d0f1-3098-e5748a7b336c
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: 6a449858-fc9b-233e-0682-59b61d937665
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory_Name
+		dataType: string
+		lineageTag: 6c360f24-a6a9-9b80-4441-a265b9d8bd61
+		summarizeBy: none
+		sourceColumn: Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 73de68fd-1675-0474-13d3-52129ef850fc
+		summarizeBy: none
+		sourceColumn: Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: 9dcdac30-908e-ad82-be0e-322b250e4561
+		summarizeBy: none
+		sourceColumn: Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: ccd4c9b3-3b39-2670-8214-3b01c5bd95f5
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incoming_Referrals
+		dataType: int64
+		lineageTag: 32e8bdae-366a-b2bb-77ca-607d7d75a51a
+		summarizeBy: none
+		sourceColumn: Incoming_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column Outgoing_Referrals
+		dataType: int64
+		lineageTag: 0a7d363d-89e1-fb1f-87ba-3dd5e85d3704
+		summarizeBy: none
+		sourceColumn: Outgoing_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Treated
+		dataType: int64
+		lineageTag: 745ec6f3-e410-fedd-3b6b-7a5f6760cf71
+		summarizeBy: none
+		sourceColumn: Patients_Treated
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Diagnosed
+		dataType: int64
+		lineageTag: 951f4b61-5462-fd72-c976-0ef4c787da28
+		summarizeBy: none
+		sourceColumn: Patients_Diagnosed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Count
+		dataType: int64
+		lineageTag: f3551535-5cdb-dd67-7d09-8cdd4f354142
+		summarizeBy: none
+		sourceColumn: Patients_Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mistreated_Patients
+		dataType: int64
+		lineageTag: ee951f9f-cba6-2a61-5429-ee7c8f23a18d
+		summarizeBy: none
+		sourceColumn: Mistreated_Patients
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_HCPs
+		dataType: int64
+		lineageTag: 7fc21cfe-850e-fdb0-422b-e483a49645d7
+		summarizeBy: none
+		sourceColumn: Total_HCPs
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patients_Prescribed
+		dataType: int64
+		lineageTag: 231f0882-afdd-2541-b2b9-4f63531a86cb
+		summarizeBy: none
+		sourceColumn: Patients_Prescribed
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Extract = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\ShrikantPansare\Downloads\Agent Version 0511_ABCD\Agent Version 0511_ABCD\_workspace\UseCase_test_pbip\UseCase.SemanticModel\data\federated.1dm3k830tub0ty1exi8v41gqoffc\Extract.Extract.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"Link_ID", Int64.Type}, {"From_HCP_ID", Int64.Type}, {"To_HCP_ID", Int64.Type}, {"From_HCO_ID", Int64.Type}, {"To_HCO_ID", Int64.Type}, {"From_HCP_Name", type text}, {"To_HCP_Name", type text}, {"from_HCO_name", type text}, {"to_HCO_name", type text}, {"From_Latitude", type number}, {"From_Longitude", type number}, {"To_Latitude", type number}, {"To_Longitude", type number}, {"From_Region", type text}, {"From_Territory", Int64.Type}, {"From_Territory_Name", type text}, {"From_Cluster_ID", Int64.Type}, {"To_Region", type text}, {"To_Territory", Int64.Type}, {"To_Territory_Name", type text}, {"To_Cluster_ID", Int64.Type}, {"HCP_ID", Int64.Type}, {"HCP_Name", type text}, {"Address_Line1", type text}, {"City1", type text}, {"State1", type text}, {"ZIP1", Int64.Type}, {"Specialty", type text}, {"Influence_Score", type number}, {"Bridge_Score", type number}, {"Eigenvector_Score", type number}, {"Final_Segment", type text}, {"Patients_Treated1", Int64.Type}, {"Patients_Prescribed1", Int64.Type}, {"Patients_Diagnosed1", Int64.Type}, {"Patients_Count1", Int64.Type}, {"Mistreated_Patients1", Int64.Type}, {"Affiliation", type text}, {"HCO_ID1", Int64.Type}, {"Email1", type text}, {"Region1", type text}, {"Territory1", Int64.Type}, {"Territory_Name1", type text}, {"Latitude1", type number}, {"Longitude1", type number}, {"Cluster_ID", Int64.Type}, {"Incoming_Referrals1", Int64.Type}, {"Outgoing_Referrals1", Int64.Type}, {"HCO_ID", Int64.Type}, {"HCO_Name", type text}, {"HCO_Type", type text}, {"City", type text}, {"State", type text}, {"ZIP", Int64.Type}, {"Region", type text}, {"Territory", type text}, {"Territory_Name", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Email", type text}, {"Incoming_Referrals", Int64.Type}, {"Outgoing_Referrals", Int64.Type}, {"Patients_Treated", Int64.Type}, {"Patients_Diagnosed", Int64.Type}, {"Patients_Count", Int64.Type}, {"Mistreated_Patients", Int64.Type}, {"Total_HCPs", Int64.Type}, {"Patients_Prescribed", Int64.Type}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

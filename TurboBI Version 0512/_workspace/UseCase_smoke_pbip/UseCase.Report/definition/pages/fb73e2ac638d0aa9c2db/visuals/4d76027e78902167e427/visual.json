@@ -1,0 +1,217 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "4d76027e78902167e427",
+  "position": {
+    "x": 640,
+    "y": 131,
+    "z": 4000,
+    "height": 351,
+    "width": 633,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCO"
+                    }
+                  },
+                  "Property": "HCO Name"
+                }
+              },
+              "queryRef": "Dim_HCO.HCO Name",
+              "nativeQueryRef": "HCO Name",
+              "active": true,
+              "displayName": "HCO Name"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_HCP"
+                        }
+                      },
+                      "Property": "Hcp Id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Count distinct(Dim_HCP.Hcp Id)",
+              "nativeQueryRef": "Hcp Id",
+              "active": true,
+              "displayName": "Count distinct of Hcp Id"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Specialty"
+                }
+              },
+              "queryRef": "Dim_HCP.Specialty",
+              "nativeQueryRef": "Specialty",
+              "active": true,
+              "displayName": "Specialty"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCO"
+                    }
+                  },
+                  "Property": "HCO Name"
+                }
+              },
+              "queryRef": "Dim_HCO.HCO Name",
+              "nativeQueryRef": "HCO Name",
+              "active": true,
+              "displayName": "HCO Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "HCP Name"
+                }
+              },
+              "queryRef": "Dim_HCP.HCP Name",
+              "nativeQueryRef": "HCP Name",
+              "active": true,
+              "displayName": "HCP Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Specialty"
+                }
+              },
+              "queryRef": "Dim_HCP.Specialty",
+              "nativeQueryRef": "Specialty",
+              "active": true,
+              "displayName": "Specialty"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Logical HCP distribution for HCO Speciality wise'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCP"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Region"
+      },
+      {
+        "name": "Filter2",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCO"
+              }
+            },
+            "Property": "Territory Name"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Territory Name"
+      }
+    ]
+  }
+}

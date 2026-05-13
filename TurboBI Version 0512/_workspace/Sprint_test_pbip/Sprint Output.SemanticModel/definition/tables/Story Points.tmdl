@@ -1,0 +1,28 @@
+table 'Story Points'
+	lineageTag: 181200e3-39cf-86db-839a-afe07269d42a
+
+	column Value
+		dataType: string
+		lineageTag: d0040ce0-a14f-7839-a2e0-ea0b0d050bf6
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 3fa834e6-861e-2889-e660-0387698a3104
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Story Points' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{"Story Points = 0", "Story Points = 0"}, {"Story Points <> 0", "Story Points <> 0"}, {"All", "All"}}, type table [#"Value" = text, #"Label" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

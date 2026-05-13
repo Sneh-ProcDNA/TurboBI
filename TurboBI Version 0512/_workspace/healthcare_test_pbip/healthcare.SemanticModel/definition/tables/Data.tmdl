@@ -1,0 +1,386 @@
+table Data
+	lineageTag: 4a824f3f-8544-f19f-d6e0-cb5984998871
+
+	column Placeholder
+		dataType: string
+		lineageTag: ccecb499-ed28-6319-2299-e37f6b1c5176
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Range' = 'Data'[Date of Visit] >= MIN('Start date'[Value]) && 'Data'[Date of Visit] <= MIN('End Date'[Value])
+		dataType: boolean
+		lineageTag: eef0c3f1-e8c4-b410-256e-8e188be68dd7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Range (Column)' = 'Data'[Date of Visit] >= MIN('Start date'[Value]) && 'Data'[Date of Visit] <= MIN('End Date'[Value])
+		dataType: boolean
+		lineageTag: 592afc73-2bac-cf15-566b-4371666f5802
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Range (Column) 2' = 'Data'[Date of Visit] >= MIN('Start date'[Value]) && 'Data'[Date of Visit] <= MIN('End Date'[Value])
+		dataType: boolean
+		lineageTag: 84d87176-bd8a-ca70-d387-53d3e8fc6f32
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Range (Column) 3' = 'Data'[Date of Visit] >= MIN('Start date'[Value]) && 'Data'[Date of Visit] <= MIN('End Date'[Value])
+		dataType: boolean
+		lineageTag: f7d87125-6e0e-2b20-4bf3-722d0101c547
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Range (Column) 4' = 'Data'[Date of Visit] >= MIN('Start date'[Value]) && 'Data'[Date of Visit] <= MIN('End Date'[Value])
+		dataType: boolean
+		lineageTag: 0fd3f503-b0eb-e4a3-bba4-46b271af3595
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits' = COUNT('Data'[Encounter ID])
+		lineageTag: 35b774ff-889e-960a-0bd1-d72877d40084
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Avg Patient per Doctor for each state' = CALCULATE(AVERAGE('Data'[Patients per Doctor]), ALLEXCEPT('Data', 'Data'[State]))
+		lineageTag: fa541e95-0566-0f46-542d-60be66823b34
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Distinct Patients' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 64802968-0743-6833-f7fd-e944ef663bf9
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients given ICD 10 and Month (1)' = CALCULATE(COUNT('Data'[PatientID]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Year of Date of Visit], 'Data'[Month Number of Date of Visit]))
+		lineageTag: 90ea3342-ee8b-f9ee-d9db-e86b64c55d78
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients given ICD 10 and Month' = CALCULATE(COUNT('Data'[Encounter ID]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Year of Date of Visit], 'Data'[Month Number of Date of Visit]))
+		lineageTag: 8d6c8bf8-2915-3369-6062-0d10884bb5db
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Sum Patients State' = CALCULATE(SUM('Data'[Patients per Doctor]), ALLEXCEPT('Data', 'Data'[State]))
+		lineageTag: 3d841463-e08a-acb6-95bb-522245bbfbc2
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Binary Statewise Patients Total' = SWITCH(TRUE(), 'Data'[Sum Patients State] > MIN('Data'[Median Patients Overall (copy)_3378192340252585989]), 1, 0)
+		lineageTag: c58d3c6f-3676-0f18-94d9-f8dfe9db67ae
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Median Patients Overall' = 'Data'[Sum Patients State]
+		lineageTag: 749f8e5e-6342-a70c-f4b0-b457b6a8c9e0
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Is Empty' = SWITCH(TRUE(), ISBLANK (MIN('Data'[State])) = TRUE(), 1, 0)
+		lineageTag: f0ea3327-4c8f-664c-5db7-c608c7a43829
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'MPO Edited' = CALCULATE('Data'[Sum Patients State], ALLEXCEPT('Data', 'Data'[Is Empty]))
+		lineageTag: 75682da2-a95d-12f6-458f-7a9b120fdbaf
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Distinct Patients (Measure)' = DISTINCTCOUNT('Data'[PatientID])
+		lineageTag: 2e7b7419-9482-e0ca-097d-6faec88b62dd
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients given ICD 10 and Month (Measure)' = CALCULATE(COUNT('Data'[PatientID]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Year of Date of Visit], 'Data'[Month Number of Date of Visit]))
+		lineageTag: 05b8e213-7e53-6811-69a1-18d591737e69
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Drugs' = CALCULATE(COUNT('Data'[Drugid]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Drug Prescribed]))
+		lineageTag: 92b6a54f-4021-4c18-ebc0-61562b8974da
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure)' = COUNT('Data'[Encounter ID])
+		lineageTag: a1719e8d-1ea7-0484-2240-89cc07d8f984
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Avg Patient per Doctor for each state (Measure)' = CALCULATE(AVERAGE('Data'[Patients per Doctor]), ALLEXCEPT('Data', 'Data'[State]))
+		lineageTag: 32c59e21-4962-bdfb-8f23-5652f5f5f20c
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Distinct Patients (Measure) 2' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 633f1a4a-9ec0-5b8b-5e7c-d60771c3bb67
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients given ICD 10 and Month (Measure) 2' = CALCULATE(COUNT('Data'[Encounter ID]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Year of Date of Visit], 'Data'[Month Number of Date of Visit]))
+		lineageTag: 25a4b783-3434-9d84-1936-11fcba11b9ab
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Race Percentage' = MIN('Data'[Calculation_4313392949811654658]) / CALCULATE('Data'[Calculation_4313392949811654658], ALLSELECTED())
+		lineageTag: 6e05696d-1808-60a3-c10f-5f2e84199dcc
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Gender Percentage' = DISTINCTCOUNT('Data'[Encounter ID]) / CALCULATE(DISTINCTCOUNT('Data'[Encounter ID]), ALLSELECTED())
+		lineageTag: cbf87a54-4e8f-fb98-ba2b-a116efc92033
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Patients' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 78a4f9b7-0ccb-92d9-7c97-d6a824bbee8a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure Index = BLANK() /* TODO: translate Tableau formula -- INDEX() */
+		lineageTag: a10c5195-175d-8ee2-08e2-64435def61e2
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure) 2' = COUNT('Data'[Encounter ID])
+		lineageTag: ac907c06-5430-183c-c971-efb29424f830
+
+		annotation SummarizationSetBy = Automatic
+
+	measure Visit = DISTINCTCOUNT('Data'[Date of Visit]) + DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 28371289-233f-0972-4b00-1198023d97bb
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 00628197-f5ef-f695-7a3f-8c11b6cac10b
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Index (Measure)' = BLANK() /* TODO: translate Tableau formula -- INDEX() */
+		lineageTag: 4e3175c9-3f9b-2dd3-fd19-bb1f17751000
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Race Percentage (Measure)' = MIN('Data'[Calculation_4313392949811654658]) / CALCULATE('Data'[Calculation_4313392949811654658], ALLSELECTED())
+		lineageTag: 0f8e349b-c9b6-9f4b-2b71-74645960df60
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Gender Percentage (Measure)' = DISTINCTCOUNT('Data'[Encounter ID]) / CALCULATE(DISTINCTCOUNT('Data'[Encounter ID]), ALLSELECTED())
+		lineageTag: 552b9b97-f78e-079e-4437-190e5245eed3
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients (Measure)' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 7fa850d7-10ae-1749-17f5-ccde35a4767f
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Index (Measure) 2' = BLANK() /* TODO: translate Tableau formula -- INDEX() */
+		lineageTag: 08a1350d-dbee-d822-543d-51619739c140
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure) 3' = COUNT('Data'[Encounter ID])
+		lineageTag: 372cf236-933f-2b14-4642-e3f97b2d7189
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Visit (Measure)' = DISTINCTCOUNT('Data'[Date of Visit]) + DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 17c53202-2c06-123a-f48b-92c1f964b77e
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Race Percentage (Measure) 2' = MIN('Data'[Calculation_4313392949811654658]) / CALCULATE('Data'[Calculation_4313392949811654658], ALLSELECTED())
+		lineageTag: 64bfaeb6-eb6d-08a2-a583-be3a9f4c291d
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Gender Percentage (Measure) 2' = DISTINCTCOUNT('Data'[Encounter ID]) / CALCULATE(DISTINCTCOUNT('Data'[Encounter ID]), ALLSELECTED())
+		lineageTag: 96f030ae-fc34-09c8-1ccb-5cca68c34224
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure Calculation3 = COUNT('Data'[Encounter ID]) / CALCULATE(COUNT('Data'[Encounter ID]), ALLSELECTED())
+		lineageTag: 7153e151-e6dc-c0c1-906e-d826667f1091
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure Calculation4 = COUNT('Data'[Age]) / CALCULATE(COUNT('Data'[Age]), ALLSELECTED())
+		lineageTag: 1119857f-2637-ee9a-e701-7c255684a2f8
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure Calculation5 = COUNTROWS('Data') / CALCULATE(COUNTROWS('Data'), ALLSELECTED())
+		lineageTag: 59577643-5dbe-fb6f-71d6-edcfe74645c1
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients (Measure) 2' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 779d9827-092e-19fe-f097-998bef42b269
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Index (Measure) 3' = BLANK() /* TODO: translate Tableau formula -- INDEX() */
+		lineageTag: ff5d779c-fbd9-d56b-4ef6-08f12c673ec4
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure) 4' = COUNT('Data'[Encounter ID])
+		lineageTag: 8628accd-efd4-df24-6861-80ae4d99d17b
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Visit (Measure) 2' = DISTINCTCOUNT('Data'[Date of Visit]) + DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: e54a372f-57e7-a549-2f75-facbb006a017
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure) 5' = COUNT('Data'[Encounter ID])
+		lineageTag: 7435b9d5-8557-6628-0fdc-e0ed37d53f1d
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Avg Patient per Doctor for each state (Measure) 2' = CALCULATE(AVERAGE('Data'[Patients per Doctor]), ALLEXCEPT('Data', 'Data'[State]))
+		lineageTag: 9db937c8-eb73-2c67-2e17-68c58d87203b
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Metric - reason' = SWITCH(TRUE(), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Cough", MIN('Data'[Calculation_2454532204183240708]), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Throat soreness", MIN('Data'[Calculation_2454532204183240708]), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Skin rash", MIN('Data'[Calculation_2454532204183240708]), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Depression", MIN('Data'[Calculation_2454532204183240708]), BLANK())
+		lineageTag: b635be72-257f-847b-ed9a-fa8b580ecc5e
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Patients by Reason' = CALCULATE((MIN('Data'[Total Visits (Measure) 5])), ALLEXCEPT('Data', 'Data'[Reason for visit]))
+		lineageTag: 856dff71-317d-7752-e82f-d6e3c5bdc531
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Distinct Patients (Measure) 3' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 279d3550-e5cb-0d53-9ceb-cf210d7dcf83
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients given ICD 10 and Month (Measure) 3' = CALCULATE(COUNT('Data'[Encounter ID]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Year of Date of Visit], 'Data'[Month Number of Date of Visit]))
+		lineageTag: feb23fee-88ca-4f6b-a335-fde668a644cd
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Reason for visit - Split 1' = TRIM(PATHITEM(SUBSTITUTE(MIN('Data'[Reason for visit]), " ", "|"), 1))
+		lineageTag: b09f9f49-f3fc-0fd0-0cef-fd8088e6265b
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Reason for visit - Split 2' = TRIM(PATHITEM(SUBSTITUTE(MIN('Data'[Reason for visit]), " ", "|"), 2))
+		lineageTag: 3b326b05-6776-f5a1-1627-5b4c4b54b33a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients (Measure) 3' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: d7465a57-eea0-688a-f9b7-2f903ed7814f
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Index (Measure) 4' = BLANK() /* TODO: translate Tableau formula -- INDEX() */
+		lineageTag: d9526c64-4b87-a610-6e86-a09e02a80253
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure) 6' = COUNT('Data'[Encounter ID])
+		lineageTag: e7e5451e-9ffa-9cc4-6131-046d83a1a0dd
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Avg Patient per Doctor for each state (Measure) 3' = CALCULATE(AVERAGE('Data'[Patients per Doctor]), ALLEXCEPT('Data', 'Data'[State]))
+		lineageTag: e8d10d31-13dd-2de9-deac-a79ce58a6f27
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Metric - reason (Measure)' = SWITCH(TRUE(), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Cough", MIN('Data'[Calculation_2454532204183240708]), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Throat soreness", MIN('Data'[Calculation_2454532204183240708]), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Skin rash", MIN('Data'[Calculation_2454532204183240708]), SELECTEDVALUE('Select a Metric - reason'[Value]) = "Depression", MIN('Data'[Calculation_2454532204183240708]), BLANK())
+		lineageTag: 373ffa5c-772b-2209-c9a5-b492f3c908c4
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Patients by Reason (Measure)' = CALCULATE((MIN('Data'[Total Visits (Measure) 6])), ALLEXCEPT('Data', 'Data'[Reason for visit]))
+		lineageTag: 2235577e-5bd8-ab00-786c-4127ca628502
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Distinct Patients (Measure) 4' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 206473ec-a776-b8f6-ce32-36957addb2f4
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Number of Patients given ICD 10 and Month (Measure) 4' = CALCULATE(COUNT('Data'[Encounter ID]), ALLEXCEPT('Data', 'Data'[ICD-10 Code], 'Data'[Year of Date of Visit], 'Data'[Month Number of Date of Visit]))
+		lineageTag: d0e2617a-5564-97a3-8658-0d91c1c8efc3
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Reason for visit - Split 1 (Measure)' = TRIM(PATHITEM(SUBSTITUTE(MIN('Data'[Reason for visit]), " ", "|"), 1))
+		lineageTag: 6fad2bc9-a664-f798-485b-d75cdb2e5e0e
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Reason for visit - Split 2 (Measure)' = TRIM(PATHITEM(SUBSTITUTE(MIN('Data'[Reason for visit]), " ", "|"), 2))
+		lineageTag: 06afc788-06f1-23fc-4626-85ef170cba37
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Race Percentage (Measure) 3' = MIN('Data'[Calculation_4313392949811654658]) / CALCULATE('Data'[Calculation_4313392949811654658], ALLSELECTED())
+		lineageTag: 0324dd52-e100-c462-6d7a-fad271ec8225
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Gender Percentage (Measure) 3' = DISTINCTCOUNT('Data'[Encounter ID]) / CALCULATE(DISTINCTCOUNT('Data'[Encounter ID]), ALLSELECTED())
+		lineageTag: a7e77150-182c-7911-bd31-b1b479343f05
+		formatString: p0.00%
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Patients (Measure)' = DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 3e16818a-bf69-07b2-752f-26d3d445518b
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Index (Measure) 5' = BLANK() /* TODO: translate Tableau formula -- INDEX() */
+		lineageTag: 0370b31d-2965-6706-ad57-953848eaeec5
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Visits (Measure) 7' = COUNT('Data'[Encounter ID])
+		lineageTag: 3d6a7f11-cf17-fbd5-ffc4-c97b267c8aec
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Visit (Measure) 3' = DISTINCTCOUNT('Data'[Date of Visit]) + DISTINCTCOUNT('Data'[Encounter ID])
+		lineageTag: 79841081-84f0-fbb3-52d7-de4588069342
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({}, type table [#"Placeholder" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

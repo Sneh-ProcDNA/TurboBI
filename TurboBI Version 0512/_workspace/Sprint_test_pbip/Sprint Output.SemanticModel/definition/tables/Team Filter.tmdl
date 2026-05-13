@@ -1,0 +1,20 @@
+table 'Team Filter'
+	lineageTag: d7a45b34-5fe1-a4fd-ef96-f43de2ef11c6
+
+	column Value
+		dataType: string
+		lineageTag: 9aa21aed-6f8f-0830-7e52-301e21c9af40
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Team Filter' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{"Backend"}}, type table [#"Value" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

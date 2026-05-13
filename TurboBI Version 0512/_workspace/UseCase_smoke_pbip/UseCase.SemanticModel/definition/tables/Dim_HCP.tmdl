@@ -1,0 +1,232 @@
+table Dim_HCP
+	lineageTag: d8653d0f-68c2-bb15-43cb-123a3a7c3afc
+
+	column 'Address Line1'
+		dataType: string
+		lineageTag: 3367751e-3eff-2552-287c-593a6a5a98ae
+		summarizeBy: none
+		sourceColumn: Address_Line1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bridge Score'
+		dataType: double
+		lineageTag: d10c95a4-4dfe-6b9f-15ed-bb668b99470f
+		summarizeBy: sum
+		sourceColumn: Bridge_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: e3775fc5-7329-a4d5-be18-1c064b676682
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cluster ID'
+		dataType: int64
+		lineageTag: 1ebb8f2c-1b06-7ca8-6180-f5f71b3f6b00
+		summarizeBy: none
+		sourceColumn: Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eigenvector Score'
+		dataType: double
+		lineageTag: 316bf392-dbea-de06-4a58-9e377b6e84fa
+		summarizeBy: sum
+		sourceColumn: Eigenvector_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Segment'
+		dataType: string
+		lineageTag: be8ee548-f114-2536-3d48-09d9fc776a87
+		summarizeBy: none
+		sourceColumn: Final_Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hco Id'
+		dataType: int64
+		lineageTag: c0ab1ff7-ff19-96d0-25ab-f0ed3570b7ad
+		summarizeBy: none
+		sourceColumn: HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hcp Id'
+		dataType: int64
+		lineageTag: f36997b1-e312-e450-920b-3d70835d029a
+		summarizeBy: none
+		sourceColumn: HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCP Name'
+		dataType: string
+		lineageTag: 10918b6a-5a8d-06e2-6b1a-71c827d5d1a2
+		summarizeBy: none
+		sourceColumn: HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incoming Referrals'
+		dataType: int64
+		lineageTag: ca78cf0b-234b-53e2-e077-68da5877c71a
+		summarizeBy: sum
+		sourceColumn: Incoming_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Influence Score'
+		dataType: double
+		lineageTag: 0548882a-567b-d583-f840-dae1fb713fb2
+		summarizeBy: sum
+		sourceColumn: Influence_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: c733ff31-020f-1742-527a-807566e1ac83
+		summarizeBy: none
+		sourceColumn: Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: dd7b796f-1e7e-1297-19f5-0c15cebc6f1c
+		summarizeBy: none
+		sourceColumn: Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mistreated Patients'
+		dataType: int64
+		lineageTag: 27ce478f-7b28-98ed-a29e-ef5eb6808ff7
+		summarizeBy: sum
+		sourceColumn: Mistreated_Patients
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outgoing Referrals'
+		dataType: int64
+		lineageTag: 5ea3b7d3-8cb7-46c8-02d5-7ccd74d7cc7a
+		summarizeBy: sum
+		sourceColumn: Outgoing_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Count'
+		dataType: int64
+		lineageTag: d0b57cce-b442-5bdc-cc06-794656598e30
+		summarizeBy: sum
+		sourceColumn: Patients_Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Diagnosed'
+		dataType: int64
+		lineageTag: 83b1d075-04b9-5f75-bb66-3c33ff412ece
+		summarizeBy: sum
+		sourceColumn: Patients_Diagnosed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Prescribed'
+		dataType: int64
+		lineageTag: 5a29d15f-2c2d-ed81-7727-7e78cca52196
+		summarizeBy: sum
+		sourceColumn: Patients_Prescribed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Treated'
+		dataType: int64
+		lineageTag: 6c895621-54c3-7fe7-9605-8e26412bb5d5
+		summarizeBy: sum
+		sourceColumn: Patients_Treated
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 951402e8-5aba-62d0-3fba-08a57c7341f1
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name'
+		dataType: string
+		lineageTag: 8bd28172-4fe7-9b37-7255-1af96df0a3ab
+		summarizeBy: none
+		sourceColumn: Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIP
+		dataType: int64
+		lineageTag: defe08b2-2552-f284-e444-b516de131408
+		summarizeBy: none
+		sourceColumn: ZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 6b0bc97d-91b5-6b4b-35d1-a66e9f4e3125
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: int64
+		lineageTag: 6fdba068-796f-8fff-0a69-2fbd8ed5e27c
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: ac04b2a7-6deb-b03b-7bf9-8bba90beaac9
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialty
+		dataType: string
+		lineageTag: d9c139d0-eff7-9193-913d-d5072dcd5741
+		summarizeBy: none
+		sourceColumn: Specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Affiliation
+		dataType: string
+		lineageTag: aff0e55b-db19-d59e-7a25-5e439d61424e
+		summarizeBy: none
+		sourceColumn: Affiliation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_HCP = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\ShrikantPansare\Downloads\Agent Version 0511_ABCD\Agent Version 0511_ABCD\_workspace\UseCase_smoke_pbip\UseCase.SemanticModel\data\federated.0y4y5w00iqd66e183eik10a55045\Extract.Dim!HCP_B1E41FA8B85D4894B82952DD0BE0690B.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"HCP_ID", Int64.Type}, {"HCP_Name", type text}, {"Address_Line1", type text}, {"City", type text}, {"State", type text}, {"ZIP", Int64.Type}, {"Specialty", type text}, {"Influence_Score", type number}, {"Bridge_Score", type number}, {"Eigenvector_Score", type number}, {"Final_Segment", type text}, {"Patients_Treated", Int64.Type}, {"Patients_Prescribed", Int64.Type}, {"Patients_Diagnosed", Int64.Type}, {"Patients_Count", Int64.Type}, {"Mistreated_Patients", Int64.Type}, {"Affiliation", type text}, {"HCO_ID", Int64.Type}, {"Email", type text}, {"Region", type text}, {"Territory", Int64.Type}, {"Territory_Name", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Cluster_ID", Int64.Type}, {"Incoming_Referrals", Int64.Type}, {"Outgoing_Referrals", Int64.Type}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

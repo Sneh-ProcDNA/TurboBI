@@ -1,0 +1,199 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "fec02cde5bb216a44302",
+  "position": {
+    "x": 6,
+    "y": 54,
+    "z": 2000,
+    "height": 659,
+    "width": 1267,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP (2)"
+                    }
+                  },
+                  "Property": "Hcp Id"
+                }
+              },
+              "queryRef": "Dim_HCP (2).Hcp Id",
+              "nativeQueryRef": "Hcp Id",
+              "active": true,
+              "displayName": "Hcp Id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP (2)"
+                    }
+                  },
+                  "Property": "Hco Id"
+                }
+              },
+              "queryRef": "Dim_HCP (2).Hco Id",
+              "nativeQueryRef": "Hco Id",
+              "active": true,
+              "displayName": "Hco Id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP (2)"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "Dim_HCP (2).Region",
+              "nativeQueryRef": "Region",
+              "active": true,
+              "displayName": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP (2)"
+                    }
+                  },
+                  "Property": "Territory Name"
+                }
+              },
+              "queryRef": "Dim_HCP (2).Territory Name",
+              "nativeQueryRef": "Territory Name",
+              "active": true,
+              "displayName": "Territory Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP (2)"
+                    }
+                  },
+                  "Property": "Specialty"
+                }
+              },
+              "queryRef": "Dim_HCP (2).Specialty",
+              "nativeQueryRef": "Specialty",
+              "active": true,
+              "displayName": "Specialty"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_HCP (2)"
+                        }
+                      },
+                      "Property": "Patients Treated"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Dim_HCP (2).Patients Treated)",
+              "nativeQueryRef": "Patients Treated",
+              "active": true,
+              "displayName": "Sum of Patients Treated"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_HCP (2)"
+                        }
+                      },
+                      "Property": "Patients Prescribed"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Dim_HCP (2).Patients Prescribed)",
+              "nativeQueryRef": "Patients Prescribed",
+              "active": true,
+              "displayName": "Sum of Patients Prescribed"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_HCP (2)"
+                        }
+                      },
+                      "Property": "Patients Diagnosed"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Dim_HCP (2).Patients Diagnosed)",
+              "nativeQueryRef": "Patients Diagnosed",
+              "active": true,
+              "displayName": "Sum of Patients Diagnosed"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Logical Tabular View'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

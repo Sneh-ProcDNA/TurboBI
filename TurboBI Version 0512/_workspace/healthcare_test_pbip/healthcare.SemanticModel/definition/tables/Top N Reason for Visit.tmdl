@@ -1,0 +1,20 @@
+table 'Top N Reason for Visit'
+	lineageTag: 1090613e-0721-904f-d79d-696635373bf2
+
+	column Value
+		dataType: int64
+		lineageTag: 9f63f89b-99f9-bb9c-9d0b-30c0f93f0c65
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top N Reason for Visit' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{10}}, type table [#"Value" = number])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

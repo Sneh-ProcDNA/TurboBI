@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Data
+ref table 'Select a Metric - reason'
+ref table 'Top N Popular Disease'
+ref table 'Top N Specialty'
+ref table 'Top N Reason for Visit'
+ref table 'Top N Popular Drugs'
+ref table 'Start date'
+ref table 'End Date'
+
+ref cultureInfo en-US

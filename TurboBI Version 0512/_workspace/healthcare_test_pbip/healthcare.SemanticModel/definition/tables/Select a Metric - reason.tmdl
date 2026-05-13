@@ -1,0 +1,28 @@
+table 'Select a Metric - reason'
+	lineageTag: bd839e0c-69eb-b3a7-65c8-354c1fcf39c9
+
+	column Value
+		dataType: string
+		lineageTag: 12fd002a-dc7b-4366-71a3-7b355a36cee9
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: b8af8e2a-edd3-ab3d-fdca-54eef13739c6
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select a Metric - reason' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{"Click to Select", "Click to Select"}, {"Cough", "Cough"}, {"Throat soreness", "Throat soreness"}, {"Skin rash", "Skin rash"}, {"Depression", "Depression"}}, type table [#"Value" = text, #"Label" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

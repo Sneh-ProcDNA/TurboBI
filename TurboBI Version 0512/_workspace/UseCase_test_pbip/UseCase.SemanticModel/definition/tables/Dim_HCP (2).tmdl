@@ -1,0 +1,230 @@
+table 'Dim_HCP (2)'
+	lineageTag: 2bef3f5d-1bae-49fe-b53a-3f901d5c7f79
+
+	column 'Address Line1'
+		dataType: string
+		lineageTag: 9b7b7cd3-dd78-8635-dced-61e8fb2c8856
+		summarizeBy: none
+		sourceColumn: Address_Line1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bridge Score'
+		dataType: double
+		lineageTag: d48ade42-4fe6-9bf0-d0f6-6dcd5082d9ef
+		summarizeBy: sum
+		sourceColumn: Bridge_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 86a6c489-45b5-8bf5-6a74-4d66249347a1
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cluster ID'
+		dataType: int64
+		lineageTag: 33a01d22-b00a-2de3-f274-26bcf84455f2
+		summarizeBy: none
+		sourceColumn: Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eigenvector Score'
+		dataType: double
+		lineageTag: 8e7e07e7-5609-62e3-d870-b1db533c5b1e
+		summarizeBy: sum
+		sourceColumn: Eigenvector_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Segment'
+		dataType: string
+		lineageTag: 98a3decd-a307-68d6-10ee-002a68f8db5f
+		summarizeBy: none
+		sourceColumn: Final_Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hco Id'
+		dataType: int64
+		lineageTag: 8532e16a-78c0-6582-5da3-e30551e353e7
+		summarizeBy: none
+		sourceColumn: HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hcp Id'
+		dataType: int64
+		lineageTag: 84516f58-bbc1-23c8-f1ae-7e0e746b3488
+		summarizeBy: none
+		sourceColumn: HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCP Name'
+		dataType: string
+		lineageTag: ce9d6019-eee3-30cb-6d6c-48d1ba7b3b83
+		summarizeBy: none
+		sourceColumn: HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incoming Referrals'
+		dataType: int64
+		lineageTag: 32e8bdae-366a-b2bb-77ca-607d7d75a51a
+		summarizeBy: sum
+		sourceColumn: Incoming_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Influence Score'
+		dataType: double
+		lineageTag: 8dac0055-ae1a-313f-e61b-b1971e337252
+		summarizeBy: sum
+		sourceColumn: Influence_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 73de68fd-1675-0474-13d3-52129ef850fc
+		summarizeBy: none
+		sourceColumn: Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: 9dcdac30-908e-ad82-be0e-322b250e4561
+		summarizeBy: none
+		sourceColumn: Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mistreated Patients'
+		dataType: int64
+		lineageTag: ee951f9f-cba6-2a61-5429-ee7c8f23a18d
+		summarizeBy: sum
+		sourceColumn: Mistreated_Patients
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outgoing Referrals'
+		dataType: int64
+		lineageTag: 0a7d363d-89e1-fb1f-87ba-3dd5e85d3704
+		summarizeBy: sum
+		sourceColumn: Outgoing_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Count'
+		dataType: int64
+		lineageTag: f3551535-5cdb-dd67-7d09-8cdd4f354142
+		summarizeBy: sum
+		sourceColumn: Patients_Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Diagnosed'
+		dataType: int64
+		lineageTag: 951f4b61-5462-fd72-c976-0ef4c787da28
+		summarizeBy: sum
+		sourceColumn: Patients_Diagnosed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Prescribed'
+		dataType: int64
+		lineageTag: 231f0882-afdd-2541-b2b9-4f63531a86cb
+		summarizeBy: sum
+		sourceColumn: Patients_Prescribed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Treated'
+		dataType: int64
+		lineageTag: 745ec6f3-e410-fedd-3b6b-7a5f6760cf71
+		summarizeBy: sum
+		sourceColumn: Patients_Treated
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: c82f7820-3f6a-d0f1-3098-e5748a7b336c
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: a9f556f0-cc18-4fe5-cb6a-759a2537299a
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name'
+		dataType: string
+		lineageTag: 6c360f24-a6a9-9b80-4441-a265b9d8bd61
+		summarizeBy: none
+		sourceColumn: Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIP
+		dataType: int64
+		lineageTag: 724bc984-40ad-1a83-3f38-0a0a7a9c3171
+		summarizeBy: none
+		sourceColumn: ZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialty
+		dataType: string
+		lineageTag: 169e709d-d94e-0cd5-fa28-f71ce32e6b5f
+		summarizeBy: none
+		sourceColumn: Specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Affiliation
+		dataType: string
+		lineageTag: 08fb4721-6ed7-9af5-02ae-97c38e07fd45
+		summarizeBy: none
+		sourceColumn: Affiliation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: ccd4c9b3-3b39-2670-8214-3b01c5bd95f5
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: int64
+		lineageTag: 6a449858-fc9b-233e-0682-59b61d937665
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim_HCP (2)' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({}, type table [#"Address_Line1" = text, #"Bridge_Score" = number, #"City" = text, #"Cluster_ID" = number, #"Eigenvector_Score" = number, #"Final_Segment" = text, #"HCO_ID" = number, #"HCP_ID" = number, #"HCP_Name" = text, #"Incoming_Referrals" = number, #"Influence_Score" = number, #"Latitude" = number, #"Longitude" = number, #"Mistreated_Patients" = number, #"Outgoing_Referrals" = number, #"Patients_Count" = number, #"Patients_Diagnosed" = number, #"Patients_Prescribed" = number, #"Patients_Treated" = number, #"Region" = text, #"State" = text, #"Territory_Name" = text, #"ZIP" = number, #"Specialty" = text, #"Affiliation" = text, #"Email" = text, #"Territory" = number])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

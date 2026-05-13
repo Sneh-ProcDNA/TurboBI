@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sprint Output"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b2385385-6aad-4581-8913-191f04410307"
+  }
+}

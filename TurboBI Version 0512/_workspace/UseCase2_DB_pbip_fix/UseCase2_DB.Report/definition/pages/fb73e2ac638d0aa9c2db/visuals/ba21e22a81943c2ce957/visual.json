@@ -1,0 +1,547 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ba21e22a81943c2ce957",
+  "position": {
+    "x": 7,
+    "y": 497,
+    "z": 7000,
+    "height": 179,
+    "width": 1265,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "map",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Latitude": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hcp"
+                    }
+                  },
+                  "Property": "Latitude"
+                }
+              },
+              "queryRef": "dim_hcp.Latitude",
+              "nativeQueryRef": "Latitude",
+              "active": true,
+              "displayName": "Latitude"
+            }
+          ]
+        },
+        "Longitude": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hcp"
+                    }
+                  },
+                  "Property": "Longitude"
+                }
+              },
+              "queryRef": "dim_hcp.Longitude",
+              "nativeQueryRef": "Longitude",
+              "active": true,
+              "displayName": "Longitude"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_hcp"
+                        }
+                      },
+                      "Property": "Patients Count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dim_hcp.Patients Count)",
+              "nativeQueryRef": "Patients Count",
+              "active": true,
+              "displayName": "Sum of Patients Count"
+            }
+          ]
+        },
+        "Color": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hcp"
+                    }
+                  },
+                  "Property": "Final Segment"
+                }
+              },
+              "queryRef": "dim_hcp.Final Segment",
+              "nativeQueryRef": "Final Segment",
+              "active": true,
+              "displayName": "Final Segment"
+            }
+          ]
+        },
+        "Details": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_referral_edge"
+                    }
+                  },
+                  "Property": "To HCP ID"
+                }
+              },
+              "queryRef": "fact_referral_edge.To HCP ID",
+              "nativeQueryRef": "To HCP ID",
+              "active": true,
+              "displayName": "To HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_referral_edge"
+                    }
+                  },
+                  "Property": "From HCP ID"
+                }
+              },
+              "queryRef": "fact_referral_edge.From HCP ID",
+              "nativeQueryRef": "From HCP ID",
+              "active": true,
+              "displayName": "From HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hco"
+                    }
+                  },
+                  "Property": "HCO Type"
+                }
+              },
+              "queryRef": "dim_hco.HCO Type",
+              "nativeQueryRef": "HCO Type",
+              "active": true,
+              "displayName": "HCO Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_referral_edge"
+                    }
+                  },
+                  "Property": "To HCP ID"
+                }
+              },
+              "queryRef": "fact_referral_edge.To HCP ID",
+              "nativeQueryRef": "To HCP ID",
+              "active": true,
+              "displayName": "To HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_referral_edge"
+                    }
+                  },
+                  "Property": "From HCP ID"
+                }
+              },
+              "queryRef": "fact_referral_edge.From HCP ID",
+              "nativeQueryRef": "From HCP ID",
+              "active": true,
+              "displayName": "From HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hco"
+                    }
+                  },
+                  "Property": "HCO Type"
+                }
+              },
+              "queryRef": "dim_hco.HCO Type",
+              "nativeQueryRef": "HCO Type",
+              "active": true,
+              "displayName": "HCO Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_referral_edge"
+                    }
+                  },
+                  "Property": "To HCP ID"
+                }
+              },
+              "queryRef": "fact_referral_edge.To HCP ID",
+              "nativeQueryRef": "To HCP ID",
+              "active": true,
+              "displayName": "To HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_referral_edge"
+                    }
+                  },
+                  "Property": "From HCP ID"
+                }
+              },
+              "queryRef": "fact_referral_edge.From HCP ID",
+              "nativeQueryRef": "From HCP ID",
+              "active": true,
+              "displayName": "From HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hco"
+                    }
+                  },
+                  "Property": "HCO Type"
+                }
+              },
+              "queryRef": "dim_hco.HCO Type",
+              "nativeQueryRef": "HCO Type",
+              "active": true,
+              "displayName": "HCO Type"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hcp"
+                    }
+                  },
+                  "Property": "Longitude"
+                }
+              },
+              "queryRef": "dim_hcp.Longitude",
+              "nativeQueryRef": "Longitude",
+              "displayName": "Longitude"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hcp"
+                    }
+                  },
+                  "Property": "Latitude"
+                }
+              },
+              "queryRef": "dim_hcp.Latitude",
+              "nativeQueryRef": "Latitude",
+              "displayName": "Latitude"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_hcp"
+                    }
+                  },
+                  "Property": "Final Segment"
+                }
+              },
+              "queryRef": "dim_hcp.Final Segment",
+              "nativeQueryRef": "Final Segment",
+              "displayName": "Final Segment"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Logical HCP Map'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_hco"
+              }
+            },
+            "Property": "HCO Type"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "HCO Type",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "dim_hco",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "t"
+                          }
+                        },
+                        "Property": "HCO Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Clinic'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Health System'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Medical Group'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Provider Organization'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Specialty Center'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter2",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_hco"
+              }
+            },
+            "Property": "Region (dim hco)"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Region (dim hco)"
+      },
+      {
+        "name": "Filter3",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_hco"
+              }
+            },
+            "Property": "Territory Name (dim hco)"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Territory Name (dim hco)"
+      },
+      {
+        "name": "56b6792a10d4cfece315",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_hcp"
+              }
+            },
+            "Property": "Final Segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e751fbb16ff3cf541b5e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_referral_edge"
+              }
+            },
+            "Property": "To HCP ID"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "904c1eae4d7f8bbe9135",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_referral_edge"
+              }
+            },
+            "Property": "From HCP ID"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c72fa48d46126bdab8b2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_hcp"
+              }
+            },
+            "Property": "Latitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6f5897097c4cb47d3c73",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_hcp"
+              }
+            },
+            "Property": "Longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c64d71c3e3a014e99112",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_hcp"
+                  }
+                },
+                "Property": "Patients Count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

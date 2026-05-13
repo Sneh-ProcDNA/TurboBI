@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "46b1e4b17d5da4bf85b7",
+  "position": {
+    "x": 1018,
+    "y": 45,
+    "z": 11000,
+    "height": 60,
+    "width": 91,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Assignee"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Assignee",
+              "nativeQueryRef": "Assignee",
+              "active": true,
+              "displayName": "Assignee"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

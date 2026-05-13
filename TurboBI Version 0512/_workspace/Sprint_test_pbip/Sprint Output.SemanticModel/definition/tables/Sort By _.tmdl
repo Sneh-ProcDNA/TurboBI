@@ -1,0 +1,28 @@
+table 'Sort By :'
+	lineageTag: e36ae4d1-1e85-4443-ee61-c46db9876dec
+
+	column Value
+		dataType: string
+		lineageTag: c2ee8274-0857-0107-ad53-863c982b5800
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 6a7ef4f7-6235-9df0-2d65-032f52ec0069
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sort By :' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{"Summary", "Summary"}, {"Status", "Status"}}, type table [#"Value" = text, #"Label" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

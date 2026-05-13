@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table FINAL_PLC_JIRA_DATA
+ref table 'Story Points'
+ref table 'View By'
+ref table 'Status Parameter'
+ref table Time
+ref table 'Sort By :'
+ref table 'Order By :'
+ref table 'Ticket Type'
+ref table 'Sort by Field :'
+ref table 'Order By Asc/Desc ;'
+ref table 'Team Filter'
+
+ref cultureInfo en-US

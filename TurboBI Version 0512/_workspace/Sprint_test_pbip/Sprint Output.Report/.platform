@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sprint Output"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "041dae5e-0253-4c0c-8e17-844b8ca4a200"
+  }
+}

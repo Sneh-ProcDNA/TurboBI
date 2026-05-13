@@ -1,0 +1,186 @@
+table Fact_Referral_Edge
+	lineageTag: c2ba254f-1029-3989-317a-7bf45be04cbb
+
+	column 'From Cluster ID'
+		dataType: int64
+		lineageTag: 331562b5-97fc-0eac-6d35-ee87cab12d8a
+		summarizeBy: none
+		sourceColumn: From_Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From HCO ID'
+		dataType: int64
+		lineageTag: bad3fff5-663d-c908-2f85-a549e2ff7f9a
+		summarizeBy: none
+		sourceColumn: From_HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From HCP ID'
+		dataType: int64
+		lineageTag: 4edb9683-d001-3e73-fe40-45955234d202
+		summarizeBy: none
+		sourceColumn: From_HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From HCP Name'
+		dataType: string
+		lineageTag: e4f6fa6b-a76f-3c5b-4ba7-f44a1dedb6e9
+		summarizeBy: none
+		sourceColumn: From_HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Latitude'
+		dataType: double
+		lineageTag: 4d6f5878-81b9-ab1c-e0bd-1bc97a4c50aa
+		summarizeBy: none
+		sourceColumn: From_Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Longitude'
+		dataType: double
+		lineageTag: 422afe91-0cb4-df94-e3e8-3f6249b9668a
+		summarizeBy: none
+		sourceColumn: From_Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Region'
+		dataType: string
+		lineageTag: 36395f8e-0aa0-49dc-2f86-f5da977f72be
+		summarizeBy: none
+		sourceColumn: From_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Territory'
+		dataType: int64
+		lineageTag: a301a7f6-e88c-7d6f-6a38-83e4fe019176
+		summarizeBy: sum
+		sourceColumn: From_Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Territory Name'
+		dataType: string
+		lineageTag: 5ca17bfb-3cfd-da01-f1a3-b1b5a394a70a
+		summarizeBy: none
+		sourceColumn: From_Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link ID'
+		dataType: int64
+		lineageTag: 4fbae3c0-3b7c-f572-b827-dc1e3171a567
+		summarizeBy: none
+		sourceColumn: Link_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Cluster ID'
+		dataType: int64
+		lineageTag: 8ce63117-d77c-d00c-ccb9-e2fd7984dd93
+		summarizeBy: none
+		sourceColumn: To_Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To HCO ID'
+		dataType: int64
+		lineageTag: 80732408-774f-4ce0-448d-f74343445462
+		summarizeBy: none
+		sourceColumn: To_HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To HCP ID'
+		dataType: int64
+		lineageTag: 9f9913a3-c108-8c9b-76c2-fe01a6741f0d
+		summarizeBy: none
+		sourceColumn: To_HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To HCP Name'
+		dataType: string
+		lineageTag: b90a94e4-c10f-8ed4-b04c-701efbd8d065
+		summarizeBy: none
+		sourceColumn: To_HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Latitude'
+		dataType: double
+		lineageTag: 5473c118-dfe4-4efd-a4aa-e640214762d2
+		summarizeBy: none
+		sourceColumn: To_Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Longitude'
+		dataType: double
+		lineageTag: a1490d86-2d35-d520-7e05-f3a9a77fe052
+		summarizeBy: none
+		sourceColumn: To_Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Region'
+		dataType: string
+		lineageTag: 94534e5d-f6ee-340c-d75c-dfe2c8beb562
+		summarizeBy: none
+		sourceColumn: To_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Territory'
+		dataType: int64
+		lineageTag: 82aff766-b5a7-8c20-2f69-9f020c03430e
+		summarizeBy: sum
+		sourceColumn: To_Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Territory Name'
+		dataType: string
+		lineageTag: fbfa6045-c0a1-c72e-34b5-1fb305d17adf
+		summarizeBy: none
+		sourceColumn: To_Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'from HCO name'
+		dataType: string
+		lineageTag: 55220331-b0d6-1b3d-11a8-99552b0528ba
+		summarizeBy: none
+		sourceColumn: from_HCO_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'to HCO name'
+		dataType: string
+		lineageTag: 3a7c3165-d540-23b8-ccc7-f255c6fe3c97
+		summarizeBy: none
+		sourceColumn: to_HCO_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Referral_Edge = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\ShrikantPansare\Downloads\Agent Version 0511_ABCD\Agent Version 0511_ABCD\_workspace\UseCase_test_pbip\UseCase.SemanticModel\data\federated.0y4y5w00iqd66e183eik10a55045\Extract.Fact!Referral!Edge_D0F2398C79A847B69670713C28F99670.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"Link_ID", Int64.Type}, {"From_HCP_ID", Int64.Type}, {"To_HCP_ID", Int64.Type}, {"From_HCO_ID", Int64.Type}, {"To_HCO_ID", Int64.Type}, {"From_HCP_Name", type text}, {"To_HCP_Name", type text}, {"from_HCO_name", type text}, {"to_HCO_name", type text}, {"From_Latitude", type number}, {"From_Longitude", type number}, {"To_Latitude", type number}, {"To_Longitude", type number}, {"From_Region", type text}, {"From_Territory", Int64.Type}, {"From_Territory_Name", type text}, {"From_Cluster_ID", Int64.Type}, {"To_Region", type text}, {"To_Territory", Int64.Type}, {"To_Territory_Name", type text}, {"To_Cluster_ID", Int64.Type}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

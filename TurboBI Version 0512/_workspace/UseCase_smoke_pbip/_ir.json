@@ -1,0 +1,4723 @@
+{
+  "source_file": "C:\\Users\\ShrikantPansare\\_UseCase_extracted\\UseCase.twb",
+  "datasources": [
+    {
+      "name": "federated.0y4y5w00iqd66e183eik10a55045",
+      "caption": "Logical",
+      "connection": {
+        "class": "excel-direct",
+        "dbname": "C:/Users/ShrikantPansare/Downloads/Copy of Copy of Takeda Cleaned Data.xlsx",
+        "server": ""
+      },
+      "extracts": [
+        "Data/TableauTemp/TEMP_1ngkpih0knpbyg18s6b9p0kczvxo.hyper"
+      ],
+      "colsMap": {
+        "Address_Line1": [
+          "Dim_HCP",
+          "Address_Line1"
+        ],
+        "Affiliation": [
+          "Dim_HCP",
+          "Affiliation"
+        ],
+        "Bridge_Score": [
+          "Dim_HCP",
+          "Bridge_Score"
+        ],
+        "City (Dim!HCO)": [
+          "Dim_HCO",
+          "City"
+        ],
+        "City": [
+          "Dim_HCP",
+          "City"
+        ],
+        "Cluster_ID": [
+          "Dim_HCP",
+          "Cluster_ID"
+        ],
+        "Eigenvector_Score": [
+          "Dim_HCP",
+          "Eigenvector_Score"
+        ],
+        "Email (Dim!HCO)": [
+          "Dim_HCO",
+          "Email"
+        ],
+        "Email": [
+          "Dim_HCP",
+          "Email"
+        ],
+        "Final_Segment": [
+          "Dim_HCP",
+          "Final_Segment"
+        ],
+        "From_Cluster_ID": [
+          "Fact_Referral_Edge",
+          "From_Cluster_ID"
+        ],
+        "From_HCO_ID": [
+          "Fact_Referral_Edge",
+          "From_HCO_ID"
+        ],
+        "From_HCP_ID": [
+          "Fact_Referral_Edge",
+          "From_HCP_ID"
+        ],
+        "From_HCP_Name": [
+          "Fact_Referral_Edge",
+          "From_HCP_Name"
+        ],
+        "From_Latitude": [
+          "Fact_Referral_Edge",
+          "From_Latitude"
+        ],
+        "From_Longitude": [
+          "Fact_Referral_Edge",
+          "From_Longitude"
+        ],
+        "From_Region": [
+          "Fact_Referral_Edge",
+          "From_Region"
+        ],
+        "From_Territory": [
+          "Fact_Referral_Edge",
+          "From_Territory"
+        ],
+        "From_Territory_Name": [
+          "Fact_Referral_Edge",
+          "From_Territory_Name"
+        ],
+        "HCO_ID (Dim!HCO)": [
+          "Dim_HCO",
+          "HCO_ID"
+        ],
+        "HCO_ID": [
+          "Dim_HCP",
+          "HCO_ID"
+        ],
+        "HCO_Name": [
+          "Dim_HCO",
+          "HCO_Name"
+        ],
+        "HCO_Type": [
+          "Dim_HCO",
+          "HCO_Type"
+        ],
+        "HCP_ID": [
+          "Dim_HCP",
+          "HCP_ID"
+        ],
+        "HCP_Name": [
+          "Dim_HCP",
+          "HCP_Name"
+        ],
+        "Incoming_Referrals (Dim!HCO)": [
+          "Dim_HCO",
+          "Incoming_Referrals"
+        ],
+        "Incoming_Referrals": [
+          "Dim_HCP",
+          "Incoming_Referrals"
+        ],
+        "Influence_Score": [
+          "Dim_HCP",
+          "Influence_Score"
+        ],
+        "Latitude (Dim!HCO)": [
+          "Dim_HCO",
+          "Latitude"
+        ],
+        "Latitude": [
+          "Dim_HCP",
+          "Latitude"
+        ],
+        "Link_ID": [
+          "Fact_Referral_Edge",
+          "Link_ID"
+        ],
+        "Longitude (Dim!HCO)": [
+          "Dim_HCO",
+          "Longitude"
+        ],
+        "Longitude": [
+          "Dim_HCP",
+          "Longitude"
+        ],
+        "Mistreated_Patients (Dim!HCO)": [
+          "Dim_HCO",
+          "Mistreated_Patients"
+        ],
+        "Mistreated_Patients": [
+          "Dim_HCP",
+          "Mistreated_Patients"
+        ],
+        "Outgoing_Referrals (Dim!HCO)": [
+          "Dim_HCO",
+          "Outgoing_Referrals"
+        ],
+        "Outgoing_Referrals": [
+          "Dim_HCP",
+          "Outgoing_Referrals"
+        ],
+        "Patients_Count (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Count"
+        ],
+        "Patients_Count": [
+          "Dim_HCP",
+          "Patients_Count"
+        ],
+        "Patients_Diagnosed (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Diagnosed"
+        ],
+        "Patients_Diagnosed": [
+          "Dim_HCP",
+          "Patients_Diagnosed"
+        ],
+        "Patients_Prescribed (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Prescribed"
+        ],
+        "Patients_Prescribed": [
+          "Dim_HCP",
+          "Patients_Prescribed"
+        ],
+        "Patients_Treated (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Treated"
+        ],
+        "Patients_Treated": [
+          "Dim_HCP",
+          "Patients_Treated"
+        ],
+        "Region (Dim!HCO)": [
+          "Dim_HCO",
+          "Region"
+        ],
+        "Region": [
+          "Dim_HCP",
+          "Region"
+        ],
+        "Specialty": [
+          "Dim_HCP",
+          "Specialty"
+        ],
+        "State (Dim!HCO)": [
+          "Dim_HCO",
+          "State"
+        ],
+        "State": [
+          "Dim_HCP",
+          "State"
+        ],
+        "Territory (Dim!HCO)": [
+          "Dim_HCO",
+          "Territory"
+        ],
+        "Territory": [
+          "Dim_HCP",
+          "Territory"
+        ],
+        "Territory_Name (Dim!HCO)": [
+          "Dim_HCO",
+          "Territory_Name"
+        ],
+        "Territory_Name": [
+          "Dim_HCP",
+          "Territory_Name"
+        ],
+        "To_Cluster_ID": [
+          "Fact_Referral_Edge",
+          "To_Cluster_ID"
+        ],
+        "To_HCO_ID": [
+          "Fact_Referral_Edge",
+          "To_HCO_ID"
+        ],
+        "To_HCP_ID": [
+          "Fact_Referral_Edge",
+          "To_HCP_ID"
+        ],
+        "To_HCP_Name": [
+          "Fact_Referral_Edge",
+          "To_HCP_Name"
+        ],
+        "To_Latitude": [
+          "Fact_Referral_Edge",
+          "To_Latitude"
+        ],
+        "To_Longitude": [
+          "Fact_Referral_Edge",
+          "To_Longitude"
+        ],
+        "To_Region": [
+          "Fact_Referral_Edge",
+          "To_Region"
+        ],
+        "To_Territory": [
+          "Fact_Referral_Edge",
+          "To_Territory"
+        ],
+        "To_Territory_Name": [
+          "Fact_Referral_Edge",
+          "To_Territory_Name"
+        ],
+        "Total_HCPs": [
+          "Dim_HCO",
+          "Total_HCPs"
+        ],
+        "ZIP (Dim!HCO)": [
+          "Dim_HCO",
+          "ZIP"
+        ],
+        "ZIP": [
+          "Dim_HCP",
+          "ZIP"
+        ],
+        "from_HCO_name": [
+          "Fact_Referral_Edge",
+          "from_HCO_name"
+        ],
+        "to_HCO_name": [
+          "Fact_Referral_Edge",
+          "to_HCO_name"
+        ]
+      },
+      "objects": {
+        "Dim!HCO_33E141CEBC4648AB952C00FDC179E092": "Dim_HCO",
+        "Dim!HCP_B1E41FA8B85D4894B82952DD0BE0690B": "Dim_HCP",
+        "Fact!Referral!Edge_D0F2398C79A847B69670713C28F99670": "Fact_Referral_Edge"
+      },
+      "columns": [
+        {
+          "name": "Address_Line1",
+          "rawName": "[Address_Line1]",
+          "caption": "Address Line1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Address_Line1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Bridge_Score",
+          "rawName": "[Bridge_Score]",
+          "caption": "Bridge Score",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Bridge_Score",
+          "semanticRole": ""
+        },
+        {
+          "name": "City",
+          "rawName": "[City (Dim!HCO)]",
+          "caption": "City",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "City",
+          "semanticRole": "[City].[Name]"
+        },
+        {
+          "name": "City",
+          "rawName": "[City]",
+          "caption": "City",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "City",
+          "semanticRole": "[City].[Name]"
+        },
+        {
+          "name": "Cluster_ID",
+          "rawName": "[Cluster_ID]",
+          "caption": "Cluster ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Cluster_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "Eigenvector_Score",
+          "rawName": "[Eigenvector_Score]",
+          "caption": "Eigenvector Score",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Eigenvector_Score",
+          "semanticRole": ""
+        },
+        {
+          "name": "Final_Segment",
+          "rawName": "[Final_Segment]",
+          "caption": "Final Segment",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Final_Segment",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Cluster_ID",
+          "rawName": "[From_Cluster_ID]",
+          "caption": "From Cluster ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Cluster_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_HCO_ID",
+          "rawName": "[From_HCO_ID]",
+          "caption": "From HCO ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_HCP_ID",
+          "rawName": "[From_HCP_ID]",
+          "caption": "From HCP ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_HCP_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_HCP_Name",
+          "rawName": "[From_HCP_Name]",
+          "caption": "From HCP Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_HCP_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Latitude",
+          "rawName": "[From_Latitude]",
+          "caption": "From Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "From_Longitude",
+          "rawName": "[From_Longitude]",
+          "caption": "From Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "From_Region",
+          "rawName": "[From_Region]",
+          "caption": "From Region",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Region",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Territory",
+          "rawName": "[From_Territory]",
+          "caption": "From Territory",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Territory",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Territory_Name",
+          "rawName": "[From_Territory_Name]",
+          "caption": "From Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_ID",
+          "rawName": "[HCO_ID (Dim!HCO)]",
+          "caption": "HCO ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_ID",
+          "rawName": "[HCO_ID]",
+          "caption": "Hco Id",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_Name",
+          "rawName": "[HCO_Name]",
+          "caption": "HCO Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "HCO_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_Type",
+          "rawName": "[HCO_Type]",
+          "caption": "HCO Type",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "HCO_Type",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCP_ID",
+          "rawName": "[HCP_ID]",
+          "caption": "Hcp Id",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "HCP_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCP_Name",
+          "rawName": "[HCP_Name]",
+          "caption": "HCP Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "HCP_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Incoming_Referrals",
+          "rawName": "[Incoming_Referrals (Dim!HCO)]",
+          "caption": "Incoming Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Incoming_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Incoming_Referrals",
+          "rawName": "[Incoming_Referrals]",
+          "caption": "Incoming Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Incoming_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Influence_Score",
+          "rawName": "[Influence_Score]",
+          "caption": "Influence Score",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Influence_Score",
+          "semanticRole": ""
+        },
+        {
+          "name": "Latitude",
+          "rawName": "[Latitude (Dim!HCO)]",
+          "caption": "Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "Latitude",
+          "rawName": "[Latitude]",
+          "caption": "Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "Link_ID",
+          "rawName": "[Link_ID]",
+          "caption": "Link ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "Link_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "Longitude",
+          "rawName": "[Longitude (Dim!HCO)]",
+          "caption": "Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "Longitude",
+          "rawName": "[Longitude]",
+          "caption": "Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "Mistreated_Patients",
+          "rawName": "[Mistreated_Patients (Dim!HCO)]",
+          "caption": "Mistreated Patients",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Mistreated_Patients",
+          "semanticRole": ""
+        },
+        {
+          "name": "Mistreated_Patients",
+          "rawName": "[Mistreated_Patients]",
+          "caption": "Mistreated Patients",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Mistreated_Patients",
+          "semanticRole": ""
+        },
+        {
+          "name": "Outgoing_Referrals",
+          "rawName": "[Outgoing_Referrals (Dim!HCO)]",
+          "caption": "Outgoing Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Outgoing_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Outgoing_Referrals",
+          "rawName": "[Outgoing_Referrals]",
+          "caption": "Outgoing Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Outgoing_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Count",
+          "rawName": "[Patients_Count (Dim!HCO)]",
+          "caption": "Patients Count",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Count",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Count",
+          "rawName": "[Patients_Count]",
+          "caption": "Patients Count",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Count",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Diagnosed",
+          "rawName": "[Patients_Diagnosed (Dim!HCO)]",
+          "caption": "Patients Diagnosed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Diagnosed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Diagnosed",
+          "rawName": "[Patients_Diagnosed]",
+          "caption": "Patients Diagnosed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Diagnosed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Prescribed",
+          "rawName": "[Patients_Prescribed (Dim!HCO)]",
+          "caption": "Patients Prescribed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Prescribed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Prescribed",
+          "rawName": "[Patients_Prescribed]",
+          "caption": "Patients Prescribed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Prescribed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Treated",
+          "rawName": "[Patients_Treated (Dim!HCO)]",
+          "caption": "Patients Treated",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Treated",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Treated",
+          "rawName": "[Patients_Treated]",
+          "caption": "Patients Treated",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Treated",
+          "semanticRole": ""
+        },
+        {
+          "name": "State",
+          "rawName": "[State (Dim!HCO)]",
+          "caption": "State",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "State",
+          "semanticRole": "[State].[Name]"
+        },
+        {
+          "name": "State",
+          "rawName": "[State]",
+          "caption": "State",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "State",
+          "semanticRole": "[State].[Name]"
+        },
+        {
+          "name": "Territory_Name",
+          "rawName": "[Territory_Name (Dim!HCO)]",
+          "caption": "Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Territory_Name",
+          "rawName": "[Territory_Name]",
+          "caption": "Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Cluster_ID",
+          "rawName": "[To_Cluster_ID]",
+          "caption": "To Cluster ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Cluster_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_HCO_ID",
+          "rawName": "[To_HCO_ID]",
+          "caption": "To HCO ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_HCP_ID",
+          "rawName": "[To_HCP_ID]",
+          "caption": "To HCP ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_HCP_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_HCP_Name",
+          "rawName": "[To_HCP_Name]",
+          "caption": "To HCP Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_HCP_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Latitude",
+          "rawName": "[To_Latitude]",
+          "caption": "To Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "To_Longitude",
+          "rawName": "[To_Longitude]",
+          "caption": "To Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "To_Region",
+          "rawName": "[To_Region]",
+          "caption": "To Region",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Region",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Territory",
+          "rawName": "[To_Territory]",
+          "caption": "To Territory",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Territory",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Territory_Name",
+          "rawName": "[To_Territory_Name]",
+          "caption": "To Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Total_HCPs",
+          "rawName": "[Total_HCPs]",
+          "caption": "Total HCPs",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Total_HCPs",
+          "semanticRole": ""
+        },
+        {
+          "name": "ZIP",
+          "rawName": "[ZIP (Dim!HCO)]",
+          "caption": "ZIP",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "*00000",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "ZIP",
+          "semanticRole": "[ZipCode].[Name]"
+        },
+        {
+          "name": "ZIP",
+          "rawName": "[ZIP]",
+          "caption": "ZIP",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "*00000",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "ZIP",
+          "semanticRole": "[ZipCode].[Name]"
+        },
+        {
+          "name": "from_HCO_name",
+          "rawName": "[from_HCO_name]",
+          "caption": "from HCO name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "from_HCO_name",
+          "semanticRole": ""
+        },
+        {
+          "name": "to_HCO_name",
+          "rawName": "[to_HCO_name]",
+          "caption": "to HCO name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "to_HCO_name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Region",
+          "rawName": "[Region]",
+          "caption": "Region",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Region",
+          "semanticRole": ""
+        },
+        {
+          "name": "Territory",
+          "rawName": "[Territory]",
+          "caption": "Territory",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Territory",
+          "semanticRole": ""
+        },
+        {
+          "name": "Email",
+          "rawName": "[Email]",
+          "caption": "Email",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Email",
+          "semanticRole": ""
+        },
+        {
+          "name": "Specialty",
+          "rawName": "[Specialty]",
+          "caption": "Specialty",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Specialty",
+          "semanticRole": ""
+        },
+        {
+          "name": "Affiliation",
+          "rawName": "[Affiliation]",
+          "caption": "Affiliation",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "dsCaption": "Logical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Affiliation",
+          "semanticRole": ""
+        }
+      ],
+      "relationships": [
+        {
+          "fromTable": "Fact_Referral_Edge",
+          "fromColumn": "From_HCO_ID",
+          "toTable": "Dim_HCO",
+          "toColumn": "HCO_ID"
+        },
+        {
+          "fromTable": "Fact_Referral_Edge",
+          "fromColumn": "From_HCP_ID",
+          "toTable": "Dim_HCP",
+          "toColumn": "HCP_ID"
+        }
+      ]
+    },
+    {
+      "name": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+      "caption": "Physical",
+      "connection": {
+        "class": "excel-direct",
+        "dbname": "C:/Users/ShrikantPansare/Downloads/Copy of Copy of Takeda Cleaned Data.xlsx",
+        "server": ""
+      },
+      "extracts": [
+        "Data/TableauTemp/TEMP_06g9r9p0nih76a19eue1l0d6xxs2.hyper"
+      ],
+      "colsMap": {
+        "Address_Line1": [
+          "Dim_HCP",
+          "Address_Line1"
+        ],
+        "Affiliation": [
+          "Dim_HCP",
+          "Affiliation"
+        ],
+        "Bridge_Score": [
+          "Dim_HCP",
+          "Bridge_Score"
+        ],
+        "City (Dim!HCO)": [
+          "Dim_HCO",
+          "City"
+        ],
+        "City": [
+          "Dim_HCP",
+          "City"
+        ],
+        "Cluster_ID": [
+          "Dim_HCP",
+          "Cluster_ID"
+        ],
+        "Eigenvector_Score": [
+          "Dim_HCP",
+          "Eigenvector_Score"
+        ],
+        "Email (Dim!HCO)": [
+          "Dim_HCO",
+          "Email"
+        ],
+        "Email": [
+          "Dim_HCP",
+          "Email"
+        ],
+        "Final_Segment": [
+          "Dim_HCP",
+          "Final_Segment"
+        ],
+        "From_Cluster_ID": [
+          "Fact_Referral_Edge",
+          "From_Cluster_ID"
+        ],
+        "From_HCO_ID": [
+          "Fact_Referral_Edge",
+          "From_HCO_ID"
+        ],
+        "From_HCP_ID": [
+          "Fact_Referral_Edge",
+          "From_HCP_ID"
+        ],
+        "From_HCP_Name": [
+          "Fact_Referral_Edge",
+          "From_HCP_Name"
+        ],
+        "From_Latitude": [
+          "Fact_Referral_Edge",
+          "From_Latitude"
+        ],
+        "From_Longitude": [
+          "Fact_Referral_Edge",
+          "From_Longitude"
+        ],
+        "From_Region": [
+          "Fact_Referral_Edge",
+          "From_Region"
+        ],
+        "From_Territory": [
+          "Fact_Referral_Edge",
+          "From_Territory"
+        ],
+        "From_Territory_Name": [
+          "Fact_Referral_Edge",
+          "From_Territory_Name"
+        ],
+        "HCO_ID (Dim!HCO)": [
+          "Dim_HCO",
+          "HCO_ID"
+        ],
+        "HCO_ID": [
+          "Dim_HCP",
+          "HCO_ID"
+        ],
+        "HCO_Name": [
+          "Dim_HCO",
+          "HCO_Name"
+        ],
+        "HCO_Type": [
+          "Dim_HCO",
+          "HCO_Type"
+        ],
+        "HCP_ID": [
+          "Dim_HCP",
+          "HCP_ID"
+        ],
+        "HCP_Name": [
+          "Dim_HCP",
+          "HCP_Name"
+        ],
+        "Incoming_Referrals (Dim!HCO)": [
+          "Dim_HCO",
+          "Incoming_Referrals"
+        ],
+        "Incoming_Referrals": [
+          "Dim_HCP",
+          "Incoming_Referrals"
+        ],
+        "Influence_Score": [
+          "Dim_HCP",
+          "Influence_Score"
+        ],
+        "Latitude (Dim!HCO)": [
+          "Dim_HCO",
+          "Latitude"
+        ],
+        "Latitude": [
+          "Dim_HCP",
+          "Latitude"
+        ],
+        "Link_ID": [
+          "Fact_Referral_Edge",
+          "Link_ID"
+        ],
+        "Longitude (Dim!HCO)": [
+          "Dim_HCO",
+          "Longitude"
+        ],
+        "Longitude": [
+          "Dim_HCP",
+          "Longitude"
+        ],
+        "Mistreated_Patients (Dim!HCO)": [
+          "Dim_HCO",
+          "Mistreated_Patients"
+        ],
+        "Mistreated_Patients": [
+          "Dim_HCP",
+          "Mistreated_Patients"
+        ],
+        "Outgoing_Referrals (Dim!HCO)": [
+          "Dim_HCO",
+          "Outgoing_Referrals"
+        ],
+        "Outgoing_Referrals": [
+          "Dim_HCP",
+          "Outgoing_Referrals"
+        ],
+        "Patients_Count (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Count"
+        ],
+        "Patients_Count": [
+          "Dim_HCP",
+          "Patients_Count"
+        ],
+        "Patients_Diagnosed (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Diagnosed"
+        ],
+        "Patients_Diagnosed": [
+          "Dim_HCP",
+          "Patients_Diagnosed"
+        ],
+        "Patients_Prescribed (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Prescribed"
+        ],
+        "Patients_Prescribed": [
+          "Dim_HCP",
+          "Patients_Prescribed"
+        ],
+        "Patients_Treated (Dim!HCO)": [
+          "Dim_HCO",
+          "Patients_Treated"
+        ],
+        "Patients_Treated": [
+          "Dim_HCP",
+          "Patients_Treated"
+        ],
+        "Region (Dim!HCO)": [
+          "Dim_HCO",
+          "Region"
+        ],
+        "Region": [
+          "Dim_HCP",
+          "Region"
+        ],
+        "Specialty": [
+          "Dim_HCP",
+          "Specialty"
+        ],
+        "State (Dim!HCO)": [
+          "Dim_HCO",
+          "State"
+        ],
+        "State": [
+          "Dim_HCP",
+          "State"
+        ],
+        "Territory (Dim!HCO)": [
+          "Dim_HCO",
+          "Territory"
+        ],
+        "Territory": [
+          "Dim_HCP",
+          "Territory"
+        ],
+        "Territory_Name (Dim!HCO)": [
+          "Dim_HCO",
+          "Territory_Name"
+        ],
+        "Territory_Name": [
+          "Dim_HCP",
+          "Territory_Name"
+        ],
+        "To_Cluster_ID": [
+          "Fact_Referral_Edge",
+          "To_Cluster_ID"
+        ],
+        "To_HCO_ID": [
+          "Fact_Referral_Edge",
+          "To_HCO_ID"
+        ],
+        "To_HCP_ID": [
+          "Fact_Referral_Edge",
+          "To_HCP_ID"
+        ],
+        "To_HCP_Name": [
+          "Fact_Referral_Edge",
+          "To_HCP_Name"
+        ],
+        "To_Latitude": [
+          "Fact_Referral_Edge",
+          "To_Latitude"
+        ],
+        "To_Longitude": [
+          "Fact_Referral_Edge",
+          "To_Longitude"
+        ],
+        "To_Region": [
+          "Fact_Referral_Edge",
+          "To_Region"
+        ],
+        "To_Territory": [
+          "Fact_Referral_Edge",
+          "To_Territory"
+        ],
+        "To_Territory_Name": [
+          "Fact_Referral_Edge",
+          "To_Territory_Name"
+        ],
+        "Total_HCPs": [
+          "Dim_HCO",
+          "Total_HCPs"
+        ],
+        "ZIP (Dim!HCO)": [
+          "Dim_HCO",
+          "ZIP"
+        ],
+        "ZIP": [
+          "Dim_HCP",
+          "ZIP"
+        ],
+        "from_HCO_name": [
+          "Fact_Referral_Edge",
+          "from_HCO_name"
+        ],
+        "to_HCO_name": [
+          "Fact_Referral_Edge",
+          "to_HCO_name"
+        ]
+      },
+      "objects": {
+        "Fact!Referral!Edge_70A1ABFE79564652AE786F834D28C1E0": "Fact_Referral_Edge"
+      },
+      "columns": [
+        {
+          "name": "Address_Line1",
+          "rawName": "[Address_Line1]",
+          "caption": "Address Line1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Address_Line1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Bridge_Score",
+          "rawName": "[Bridge_Score]",
+          "caption": "Bridge Score",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Bridge_Score",
+          "semanticRole": ""
+        },
+        {
+          "name": "City",
+          "rawName": "[City (Dim!HCO)]",
+          "caption": "City",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "City",
+          "semanticRole": "[City].[Name]"
+        },
+        {
+          "name": "City",
+          "rawName": "[City]",
+          "caption": "City",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "City",
+          "semanticRole": "[City].[Name]"
+        },
+        {
+          "name": "Cluster_ID",
+          "rawName": "[Cluster_ID]",
+          "caption": "Cluster ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Cluster_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "Eigenvector_Score",
+          "rawName": "[Eigenvector_Score]",
+          "caption": "Eigenvector Score",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Eigenvector_Score",
+          "semanticRole": ""
+        },
+        {
+          "name": "Final_Segment",
+          "rawName": "[Final_Segment]",
+          "caption": "Final Segment",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Final_Segment",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Cluster_ID",
+          "rawName": "[From_Cluster_ID]",
+          "caption": "From Cluster ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Cluster_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_HCO_ID",
+          "rawName": "[From_HCO_ID]",
+          "caption": "From HCO ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_HCP_ID",
+          "rawName": "[From_HCP_ID]",
+          "caption": "From HCP ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_HCP_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_HCP_Name",
+          "rawName": "[From_HCP_Name]",
+          "caption": "From HCP Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_HCP_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Latitude",
+          "rawName": "[From_Latitude]",
+          "caption": "From Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "From_Longitude",
+          "rawName": "[From_Longitude]",
+          "caption": "From Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "From_Region",
+          "rawName": "[From_Region]",
+          "caption": "From Region",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Region",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Territory",
+          "rawName": "[From_Territory]",
+          "caption": "From Territory",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Territory",
+          "semanticRole": ""
+        },
+        {
+          "name": "From_Territory_Name",
+          "rawName": "[From_Territory_Name]",
+          "caption": "From Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "From_Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_ID",
+          "rawName": "[HCO_ID (Dim!HCO)]",
+          "caption": "HCO ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_ID",
+          "rawName": "[HCO_ID]",
+          "caption": "Hco Id",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_Name",
+          "rawName": "[HCO_Name]",
+          "caption": "HCO Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "HCO_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_Type",
+          "rawName": "[HCO_Type]",
+          "caption": "HCO Type",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "HCO_Type",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCP_ID",
+          "rawName": "[HCP_ID]",
+          "caption": "Hcp Id",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "HCP_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCP_Name",
+          "rawName": "[HCP_Name]",
+          "caption": "HCP Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "HCP_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Incoming_Referrals",
+          "rawName": "[Incoming_Referrals (Dim!HCO)]",
+          "caption": "Incoming Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Incoming_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Incoming_Referrals",
+          "rawName": "[Incoming_Referrals]",
+          "caption": "Incoming Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Incoming_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Influence_Score",
+          "rawName": "[Influence_Score]",
+          "caption": "Influence Score",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Influence_Score",
+          "semanticRole": ""
+        },
+        {
+          "name": "Latitude",
+          "rawName": "[Latitude (Dim!HCO)]",
+          "caption": "Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "Latitude",
+          "rawName": "[Latitude]",
+          "caption": "Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "Link_ID",
+          "rawName": "[Link_ID]",
+          "caption": "Link ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "Link_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "Longitude",
+          "rawName": "[Longitude (Dim!HCO)]",
+          "caption": "Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "Longitude",
+          "rawName": "[Longitude]",
+          "caption": "Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "Mistreated_Patients",
+          "rawName": "[Mistreated_Patients (Dim!HCO)]",
+          "caption": "Mistreated Patients",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Mistreated_Patients",
+          "semanticRole": ""
+        },
+        {
+          "name": "Mistreated_Patients",
+          "rawName": "[Mistreated_Patients]",
+          "caption": "Mistreated Patients",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Mistreated_Patients",
+          "semanticRole": ""
+        },
+        {
+          "name": "Outgoing_Referrals",
+          "rawName": "[Outgoing_Referrals (Dim!HCO)]",
+          "caption": "Outgoing Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Outgoing_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Outgoing_Referrals",
+          "rawName": "[Outgoing_Referrals]",
+          "caption": "Outgoing Referrals",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Outgoing_Referrals",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Count",
+          "rawName": "[Patients_Count (Dim!HCO)]",
+          "caption": "Patients Count",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Count",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Count",
+          "rawName": "[Patients_Count]",
+          "caption": "Patients Count",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Count",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Diagnosed",
+          "rawName": "[Patients_Diagnosed (Dim!HCO)]",
+          "caption": "Patients Diagnosed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Diagnosed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Diagnosed",
+          "rawName": "[Patients_Diagnosed]",
+          "caption": "Patients Diagnosed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Diagnosed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Prescribed",
+          "rawName": "[Patients_Prescribed (Dim!HCO)]",
+          "caption": "Patients Prescribed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Prescribed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Prescribed",
+          "rawName": "[Patients_Prescribed]",
+          "caption": "Patients Prescribed",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Prescribed",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Treated",
+          "rawName": "[Patients_Treated (Dim!HCO)]",
+          "caption": "Patients Treated",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Patients_Treated",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Treated",
+          "rawName": "[Patients_Treated]",
+          "caption": "Patients Treated",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Patients_Treated",
+          "semanticRole": ""
+        },
+        {
+          "name": "Region",
+          "rawName": "[Region]",
+          "caption": "Region",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Region",
+          "semanticRole": ""
+        },
+        {
+          "name": "State",
+          "rawName": "[State (Dim!HCO)]",
+          "caption": "State",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "State",
+          "semanticRole": "[State].[Name]"
+        },
+        {
+          "name": "State",
+          "rawName": "[State]",
+          "caption": "State",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "State",
+          "semanticRole": "[State].[Name]"
+        },
+        {
+          "name": "Territory_Name",
+          "rawName": "[Territory_Name (Dim!HCO)]",
+          "caption": "Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Territory_Name",
+          "rawName": "[Territory_Name]",
+          "caption": "Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Cluster_ID",
+          "rawName": "[To_Cluster_ID]",
+          "caption": "To Cluster ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Cluster_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_HCO_ID",
+          "rawName": "[To_HCO_ID]",
+          "caption": "To HCO ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_HCO_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_HCP_ID",
+          "rawName": "[To_HCP_ID]",
+          "caption": "To HCP ID",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_HCP_ID",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_HCP_Name",
+          "rawName": "[To_HCP_Name]",
+          "caption": "To HCP Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_HCP_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Latitude",
+          "rawName": "[To_Latitude]",
+          "caption": "To Latitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Latitude",
+          "semanticRole": "[Geographical].[Latitude]"
+        },
+        {
+          "name": "To_Longitude",
+          "rawName": "[To_Longitude]",
+          "caption": "To Longitude",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Longitude",
+          "semanticRole": "[Geographical].[Longitude]"
+        },
+        {
+          "name": "To_Region",
+          "rawName": "[To_Region]",
+          "caption": "To Region",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Region",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Territory",
+          "rawName": "[To_Territory]",
+          "caption": "To Territory",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Territory",
+          "semanticRole": ""
+        },
+        {
+          "name": "To_Territory_Name",
+          "rawName": "[To_Territory_Name]",
+          "caption": "To Territory Name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "To_Territory_Name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Total_HCPs",
+          "rawName": "[Total_HCPs]",
+          "caption": "Total HCPs",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "measure",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "Total_HCPs",
+          "semanticRole": ""
+        },
+        {
+          "name": "ZIP",
+          "rawName": "[ZIP (Dim!HCO)]",
+          "caption": "ZIP",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "*00000",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCO",
+          "sourceName": "ZIP",
+          "semanticRole": "[ZipCode].[Name]"
+        },
+        {
+          "name": "ZIP",
+          "rawName": "[ZIP]",
+          "caption": "ZIP",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "*00000",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "ZIP",
+          "semanticRole": "[ZipCode].[Name]"
+        },
+        {
+          "name": "from_HCO_name",
+          "rawName": "[from_HCO_name]",
+          "caption": "from HCO name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "from_HCO_name",
+          "semanticRole": ""
+        },
+        {
+          "name": "to_HCO_name",
+          "rawName": "[to_HCO_name]",
+          "caption": "to HCO name",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "daxColumnExpr": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Fact_Referral_Edge",
+          "sourceName": "to_HCO_name",
+          "semanticRole": ""
+        },
+        {
+          "name": "Specialty",
+          "rawName": "[Specialty]",
+          "caption": "Specialty",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Specialty",
+          "semanticRole": ""
+        },
+        {
+          "name": "Affiliation",
+          "rawName": "[Affiliation]",
+          "caption": "Affiliation",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Affiliation",
+          "semanticRole": ""
+        },
+        {
+          "name": "Email",
+          "rawName": "[Email]",
+          "caption": "Email",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Email",
+          "semanticRole": ""
+        },
+        {
+          "name": "Territory",
+          "rawName": "[Territory]",
+          "caption": "Territory",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Dim_HCP",
+          "sourceName": "Territory",
+          "semanticRole": ""
+        },
+        {
+          "name": "City1",
+          "rawName": "[City1]",
+          "caption": "City1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "City1",
+          "semanticRole": ""
+        },
+        {
+          "name": "State1",
+          "rawName": "[State1]",
+          "caption": "State1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "State1",
+          "semanticRole": ""
+        },
+        {
+          "name": "ZIP1",
+          "rawName": "[ZIP1]",
+          "caption": "ZIP1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "ZIP1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Treated1",
+          "rawName": "[Patients_Treated1]",
+          "caption": "Patients_Treated1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Patients_Treated1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Prescribed1",
+          "rawName": "[Patients_Prescribed1]",
+          "caption": "Patients_Prescribed1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Patients_Prescribed1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Diagnosed1",
+          "rawName": "[Patients_Diagnosed1]",
+          "caption": "Patients_Diagnosed1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Patients_Diagnosed1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Patients_Count1",
+          "rawName": "[Patients_Count1]",
+          "caption": "Patients_Count1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Patients_Count1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Mistreated_Patients1",
+          "rawName": "[Mistreated_Patients1]",
+          "caption": "Mistreated_Patients1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Mistreated_Patients1",
+          "semanticRole": ""
+        },
+        {
+          "name": "HCO_ID1",
+          "rawName": "[HCO_ID1]",
+          "caption": "HCO_ID1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "HCO_ID1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Email1",
+          "rawName": "[Email1]",
+          "caption": "Email1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Email1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Region1",
+          "rawName": "[Region1]",
+          "caption": "Region1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Region1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Territory1",
+          "rawName": "[Territory1]",
+          "caption": "Territory1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Territory1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Territory_Name1",
+          "rawName": "[Territory_Name1]",
+          "caption": "Territory_Name1",
+          "datatype": "string",
+          "tmdlType": "string",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Territory_Name1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Latitude1",
+          "rawName": "[Latitude1]",
+          "caption": "Latitude1",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Latitude1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Longitude1",
+          "rawName": "[Longitude1]",
+          "caption": "Longitude1",
+          "datatype": "real",
+          "tmdlType": "double",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Longitude1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Incoming_Referrals1",
+          "rawName": "[Incoming_Referrals1]",
+          "caption": "Incoming_Referrals1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Incoming_Referrals1",
+          "semanticRole": ""
+        },
+        {
+          "name": "Outgoing_Referrals1",
+          "rawName": "[Outgoing_Referrals1]",
+          "caption": "Outgoing_Referrals1",
+          "datatype": "integer",
+          "tmdlType": "int64",
+          "role": "dimension",
+          "isCalc": false,
+          "formula": "",
+          "hidden": false,
+          "format": "",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "dsCaption": "Physical",
+          "parentTable": "Extract",
+          "sourceName": "Outgoing_Referrals1",
+          "semanticRole": ""
+        }
+      ],
+      "relationships": []
+    }
+  ],
+  "parameters": [],
+  "worksheets": [
+    {
+      "name": "Logical HCP Map",
+      "markClass": "Circle",
+      "rowFields": [
+        {
+          "raw": "[federated.0y4y5w00iqd66e183eik10a55045].[avg:Latitude:qk]",
+          "field": "Latitude",
+          "agg": "avg",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "isGeo": true,
+          "geoRole": "Latitude"
+        },
+        {
+          "raw": "[federated.0y4y5w00iqd66e183eik10a55045].[avg:Latitude:qk]",
+          "field": "Latitude",
+          "agg": "avg",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "isGeo": true,
+          "geoRole": "Latitude"
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.0y4y5w00iqd66e183eik10a55045].[avg:Longitude:qk]",
+          "field": "Longitude",
+          "agg": "avg",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "isGeo": true,
+          "geoRole": "Longitude"
+        }
+      ],
+      "colorField": {
+        "field": "Final_Segment",
+        "agg": "none",
+        "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+      },
+      "sizeField": {
+        "field": "Patients_Count",
+        "agg": "sum",
+        "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [
+        {
+          "field": "To_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "From_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "To_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "From_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "From_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "To_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        }
+      ],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "Region (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Territory_Name (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.0y4y5w00iqd66e183eik10a55045",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "columns": [
+            "Final_Segment",
+            "From_HCP_ID",
+            "Latitude",
+            "Longitude",
+            "Patients_Count",
+            "Region (Dim!HCO)",
+            "Territory_Name (Dim!HCO)",
+            "To_HCP_ID"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "Final_Segment": "Final_Segment",
+        "From_HCP_ID": "From_HCP_ID",
+        "Latitude": "Latitude",
+        "Longitude": "Longitude",
+        "Patients_Count": "Patients_Count",
+        "Region": "Region (Dim!HCO)",
+        "Territory_Name": "Territory_Name (Dim!HCO)",
+        "To_HCP_ID": "To_HCP_ID"
+      },
+      "isGeo": true,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": null,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": "#999999"
+    },
+    {
+      "name": "Logical HCP distribution for HCO Speciality wise",
+      "markClass": "Bar",
+      "rowFields": [
+        {
+          "raw": "[federated.0y4y5w00iqd66e183eik10a55045].[ctd:HCP_ID:qk]",
+          "field": "HCP_ID",
+          "agg": "ctd",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.0y4y5w00iqd66e183eik10a55045].[none:HCO_Name:nk]",
+          "field": "HCO_Name",
+          "agg": "none",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colorField": {
+        "field": "Specialty",
+        "agg": "none",
+        "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+      },
+      "sizeField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [],
+      "tooltipFields": [
+        {
+          "field": "HCO_Name",
+          "agg": "attr",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "HCP_Name",
+          "agg": "attr",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        },
+        {
+          "field": "Specialty",
+          "agg": "attr",
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+        }
+      ],
+      "filters": [
+        {
+          "field": "Region (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Territory_Name (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.0y4y5w00iqd66e183eik10a55045",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "columns": [
+            "HCO_Name",
+            "HCP_ID",
+            "HCP_Name",
+            "Region (Dim!HCO)",
+            "Specialty",
+            "Territory_Name (Dim!HCO)"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "HCO_Name": "HCO_Name",
+        "HCP_ID": "HCP_ID",
+        "HCP_Name": "HCP_Name",
+        "Region": "Region (Dim!HCO)",
+        "Specialty": "Specialty",
+        "Territory_Name": "Territory_Name (Dim!HCO)"
+      },
+      "isGeo": false,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": true,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": null
+    },
+    {
+      "name": "Logical Region wise Patient Diagnosed",
+      "markClass": "Pie",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "Region",
+        "agg": "none",
+        "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+      },
+      "sizeField": {
+        "field": "Patients_Diagnosed",
+        "agg": "sum",
+        "datasource": "federated.0y4y5w00iqd66e183eik10a55045"
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "Region (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Territory_Name (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.0y4y5w00iqd66e183eik10a55045",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.0y4y5w00iqd66e183eik10a55045",
+          "columns": [
+            "Patients_Diagnosed",
+            "Region (Dim!HCO)",
+            "Region",
+            "Territory_Name (Dim!HCO)"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "Patients_Diagnosed": "Patients_Diagnosed",
+        "Region": "Region (Dim!HCO)",
+        "Territory_Name": "Territory_Name (Dim!HCO)"
+      },
+      "isGeo": false,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": true,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": null
+    },
+    {
+      "name": "Logical Tabular View",
+      "markClass": "Automatic",
+      "rowFields": [
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:HCP_ID:ok]",
+          "field": "HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:HCO_ID:ok]",
+          "field": "HCO_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Region:nk]",
+          "field": "Region",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Territory_Name:nk]",
+          "field": "Territory_Name",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Specialty:nk]",
+          "field": "Specialty",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[sum:Patients_Treated:ok]",
+          "field": "Patients_Treated",
+          "agg": "sum",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[sum:Patients_Prescribed:ok]",
+          "field": "Patients_Prescribed",
+          "agg": "sum",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[sum:Patients_Diagnosed:ok]",
+          "field": "Patients_Diagnosed",
+          "agg": "sum",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "columns": [
+            "HCO_ID",
+            "HCP_ID",
+            "Patients_Diagnosed",
+            "Patients_Prescribed",
+            "Patients_Treated",
+            "Region",
+            "Specialty",
+            "Territory_Name"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "HCO_ID": "HCO_ID",
+        "HCP_ID": "HCP_ID",
+        "Patients_Diagnosed": "Patients_Diagnosed",
+        "Patients_Prescribed": "Patients_Prescribed",
+        "Patients_Treated": "Patients_Treated",
+        "Region": "Region",
+        "Specialty": "Specialty",
+        "Territory_Name": "Territory_Name"
+      },
+      "isGeo": false,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": null,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": null
+    },
+    {
+      "name": "Physical HCP Map",
+      "markClass": "Circle",
+      "rowFields": [
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[avg:Latitude:qk]",
+          "field": "Latitude",
+          "agg": "avg",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": true,
+          "geoRole": "Latitude"
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[avg:Latitude:qk]",
+          "field": "Latitude",
+          "agg": "avg",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": true,
+          "geoRole": "Latitude"
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[avg:Longitude:qk]",
+          "field": "Longitude",
+          "agg": "avg",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": true,
+          "geoRole": "Longitude"
+        }
+      ],
+      "colorField": {
+        "field": "Final_Segment",
+        "agg": "none",
+        "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+      },
+      "sizeField": {
+        "field": "Patients_Count",
+        "agg": "sum",
+        "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [
+        {
+          "field": "To_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "From_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "To_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "From_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "From_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "To_HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        }
+      ],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "Region (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Territory_Name (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "columns": [
+            "Final_Segment",
+            "From_HCP_ID",
+            "Latitude",
+            "Longitude",
+            "Patients_Count",
+            "Region (Dim!HCO)",
+            "Territory_Name (Dim!HCO)",
+            "To_HCP_ID"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "Final_Segment": "Final_Segment",
+        "From_HCP_ID": "From_HCP_ID",
+        "Latitude": "Latitude",
+        "Longitude": "Longitude",
+        "Patients_Count": "Patients_Count",
+        "Region": "Region (Dim!HCO)",
+        "Territory_Name": "Territory_Name (Dim!HCO)",
+        "To_HCP_ID": "To_HCP_ID"
+      },
+      "isGeo": true,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": null,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": "#999999"
+    },
+    {
+      "name": "Physical HCP distribution for HCO Speciality wise",
+      "markClass": "Bar",
+      "rowFields": [
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[ctd:HCP_ID:qk]",
+          "field": "HCP_ID",
+          "agg": "ctd",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:HCO_Name:nk]",
+          "field": "HCO_Name",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colorField": {
+        "field": "Specialty",
+        "agg": "none",
+        "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+      },
+      "sizeField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [],
+      "tooltipFields": [
+        {
+          "field": "HCO_Name",
+          "agg": "attr",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "HCP_Name",
+          "agg": "attr",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        },
+        {
+          "field": "Specialty",
+          "agg": "attr",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+        }
+      ],
+      "filters": [
+        {
+          "field": "Region (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Territory_Name (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "columns": [
+            "HCO_Name",
+            "HCP_ID",
+            "HCP_Name",
+            "Region (Dim!HCO)",
+            "Specialty",
+            "Territory_Name (Dim!HCO)"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "HCO_Name": "HCO_Name",
+        "HCP_ID": "HCP_ID",
+        "HCP_Name": "HCP_Name",
+        "Region": "Region (Dim!HCO)",
+        "Specialty": "Specialty",
+        "Territory_Name": "Territory_Name (Dim!HCO)"
+      },
+      "isGeo": false,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": true,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": null
+    },
+    {
+      "name": "Physical Region wise Patient Diagnosed",
+      "markClass": "Pie",
+      "rowFields": [],
+      "colFields": [],
+      "colorField": {
+        "field": "Region",
+        "agg": "none",
+        "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+      },
+      "sizeField": {
+        "field": "Patients_Diagnosed",
+        "agg": "sum",
+        "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc"
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [
+        {
+          "field": "Region (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        },
+        {
+          "field": "Territory_Name (Dim!HCO)",
+          "type": "categorical",
+          "members": [],
+          "exclude": false
+        }
+      ],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "columns": [
+            "Patients_Diagnosed",
+            "Region (Dim!HCO)",
+            "Region",
+            "Territory_Name (Dim!HCO)"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "Patients_Diagnosed": "Patients_Diagnosed",
+        "Region": "Region (Dim!HCO)",
+        "Territory_Name": "Territory_Name (Dim!HCO)"
+      },
+      "isGeo": false,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": true,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": null
+    },
+    {
+      "name": "Physical Tabular View",
+      "markClass": "Automatic",
+      "rowFields": [
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:HCP_ID:ok]",
+          "field": "HCP_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:HCO_ID:ok]",
+          "field": "HCO_ID",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Region:nk]",
+          "field": "Region",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Territory_Name:nk]",
+          "field": "Territory_Name",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Specialty:nk]",
+          "field": "Specialty",
+          "agg": "none",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[sum:Patients_Treated:ok]",
+          "field": "Patients_Treated",
+          "agg": "sum",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[sum:Patients_Prescribed:ok]",
+          "field": "Patients_Prescribed",
+          "agg": "sum",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        },
+        {
+          "raw": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[sum:Patients_Diagnosed:ok]",
+          "field": "Patients_Diagnosed",
+          "agg": "sum",
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "isGeo": false,
+          "geoRole": ""
+        }
+      ],
+      "colFields": [],
+      "colorField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "sizeField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelField": {
+        "field": "",
+        "agg": "",
+        "datasource": ""
+      },
+      "labelFields": [],
+      "detailFields": [],
+      "tooltipFields": [],
+      "filters": [],
+      "sortSpecs": [],
+      "datasourceRef": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+      "datasourceDeps": [
+        {
+          "datasource": "federated.1dm3k830tub0ty1exi8v41gqoffc",
+          "columns": [
+            "Final_Segment",
+            "From_HCP_ID",
+            "HCO_ID",
+            "HCP_ID",
+            "Patients_Diagnosed",
+            "Patients_Prescribed",
+            "Patients_Treated",
+            "Region",
+            "Specialty",
+            "Territory_Name",
+            "To_HCP_ID"
+          ]
+        }
+      ],
+      "wsColumns": {
+        "Final_Segment": "Final_Segment",
+        "From_HCP_ID": "From_HCP_ID",
+        "HCO_ID": "HCO_ID",
+        "HCP_ID": "HCP_ID",
+        "Patients_Diagnosed": "Patients_Diagnosed",
+        "Patients_Prescribed": "Patients_Prescribed",
+        "Patients_Treated": "Patients_Treated",
+        "Region": "Region",
+        "Specialty": "Specialty",
+        "Territory_Name": "Territory_Name",
+        "To_HCP_ID": "To_HCP_ID"
+      },
+      "isGeo": false,
+      "titleText": "",
+      "titleStyle": {},
+      "titleEnabled": null,
+      "labelEnabled": null,
+      "labelStyle": {},
+      "backgroundColor": null,
+      "markColor": null
+    }
+  ],
+  "dashboards": [
+    {
+      "name": "Logical DB 1",
+      "width": 1280,
+      "height": 720,
+      "zones": [
+        {
+          "id": "28",
+          "name": "Logical Region wise Patient Diagnosed",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 131,
+          "w": 634,
+          "h": 351,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "30",
+          "name": "Logical Region wise Patient Diagnosed",
+          "type": "color",
+          "param": "[federated.0y4y5w00iqd66e183eik10a55045].[none:Region:nk]",
+          "mode": "",
+          "x": 6,
+          "y": 482,
+          "w": 634,
+          "h": 37,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "32",
+          "name": "Logical HCP distribution for HCO Speciality wise",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 640,
+          "y": 131,
+          "w": 633,
+          "h": 351,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "33",
+          "name": "Logical HCP distribution for HCO Speciality wise",
+          "type": "color",
+          "param": "[federated.0y4y5w00iqd66e183eik10a55045].[none:Specialty:nk]",
+          "mode": "",
+          "x": 640,
+          "y": 482,
+          "w": 633,
+          "h": 37,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "37",
+          "name": "Logical HCP Map",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 519,
+          "w": 1267,
+          "h": 157,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "39",
+          "name": "Logical HCP Map",
+          "type": "color",
+          "param": "[federated.0y4y5w00iqd66e183eik10a55045].[none:Final_Segment:nk]",
+          "mode": "",
+          "x": 6,
+          "y": 676,
+          "w": 1267,
+          "h": 37,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "42",
+          "name": "Logical Region wise Patient Diagnosed",
+          "type": "filter",
+          "param": "[federated.0y4y5w00iqd66e183eik10a55045].[none:Region (Dim!HCO):nk]",
+          "mode": "checkdropdown",
+          "x": 6,
+          "y": 86,
+          "w": 634,
+          "h": 44,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "titleStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "43",
+          "name": "Logical Region wise Patient Diagnosed",
+          "type": "filter",
+          "param": "[federated.0y4y5w00iqd66e183eik10a55045].[none:Territory_Name (Dim!HCO):nk]",
+          "mode": "checkdropdown",
+          "x": 640,
+          "y": 86,
+          "w": 633,
+          "h": 44,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "titleStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "22",
+          "name": "",
+          "type": "text",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 5,
+          "w": 1267,
+          "h": 41,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "text": "Logical Layer Dashboard",
+          "textStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontWeight": "bold",
+            "fontFamily": "Tableau Bold",
+            "fontSize": 20,
+            "fontColor": "#333333",
+            "textAlign": "center"
+          }
+        },
+        {
+          "id": "60",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 9,
+          "y": 50,
+          "w": 126,
+          "h": 33,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Overview",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#203661",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "61",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 135,
+          "y": 50,
+          "w": 126,
+          "h": 33,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Details",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#333333",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#c0c0c0",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "62",
+          "name": "",
+          "type": "empty",
+          "param": "",
+          "mode": "",
+          "x": 262,
+          "y": 50,
+          "w": 1008,
+          "h": 33,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        }
+      ],
+      "backgroundColor": null
+    },
+    {
+      "name": "Logical Table",
+      "width": 1280,
+      "height": 720,
+      "zones": [
+        {
+          "id": "5",
+          "name": "Logical Tabular View",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 54,
+          "w": 1267,
+          "h": 659,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "18",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 9,
+          "y": 8,
+          "w": 126,
+          "h": 42,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Overview",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#333333",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#c0c0c0",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "19",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 135,
+          "y": 8,
+          "w": 126,
+          "h": 42,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Details",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#203661",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "20",
+          "name": "",
+          "type": "empty",
+          "param": "",
+          "mode": "",
+          "x": 262,
+          "y": 8,
+          "w": 1008,
+          "h": 42,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        }
+      ],
+      "backgroundColor": null
+    },
+    {
+      "name": "Physical DB 1",
+      "width": 1280,
+      "height": 720,
+      "zones": [
+        {
+          "id": "12",
+          "name": "Physical Region wise Patient Diagnosed",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 131,
+          "w": 634,
+          "h": 351,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "13",
+          "name": "Physical Region wise Patient Diagnosed",
+          "type": "color",
+          "param": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Region:nk]",
+          "mode": "",
+          "x": 6,
+          "y": 482,
+          "w": 634,
+          "h": 37,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "10",
+          "name": "Physical HCP distribution for HCO Speciality wise",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 640,
+          "y": 131,
+          "w": 633,
+          "h": 351,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "11",
+          "name": "Physical HCP distribution for HCO Speciality wise",
+          "type": "color",
+          "param": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Specialty:nk]",
+          "mode": "",
+          "x": 640,
+          "y": 482,
+          "w": 633,
+          "h": 37,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "3",
+          "name": "Physical HCP Map",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 519,
+          "w": 1267,
+          "h": 157,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "8",
+          "name": "Physical HCP Map",
+          "type": "color",
+          "param": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Final_Segment:nk]",
+          "mode": "",
+          "x": 6,
+          "y": 676,
+          "w": 1267,
+          "h": 37,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "19",
+          "name": "Physical Region wise Patient Diagnosed",
+          "type": "filter",
+          "param": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Region (Dim!HCO):nk]",
+          "mode": "checkdropdown",
+          "x": 6,
+          "y": 81,
+          "w": 634,
+          "h": 49,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "titleStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "20",
+          "name": "Physical Region wise Patient Diagnosed",
+          "type": "filter",
+          "param": "[federated.1dm3k830tub0ty1exi8v41gqoffc].[none:Territory_Name (Dim!HCO):nk]",
+          "mode": "checkdropdown",
+          "x": 640,
+          "y": 81,
+          "w": 633,
+          "h": 49,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "titleStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "22",
+          "name": "",
+          "type": "text",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 5,
+          "w": 1267,
+          "h": 41,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "text": "Physical Layer Dashboard",
+          "textStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontWeight": "bold",
+            "fontFamily": "Tableau Bold",
+            "fontSize": 20,
+            "fontColor": "#555555",
+            "textAlign": "center"
+          }
+        },
+        {
+          "id": "60",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 47,
+          "w": 126,
+          "h": 33,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Overview",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#203661",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "61",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 132,
+          "y": 47,
+          "w": 126,
+          "h": 33,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Details",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#333333",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#c0c0c0",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "62",
+          "name": "",
+          "type": "empty",
+          "param": "",
+          "mode": "",
+          "x": 259,
+          "y": 47,
+          "w": 1014,
+          "h": 33,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        }
+      ],
+      "backgroundColor": null
+    },
+    {
+      "name": "Physical Table",
+      "width": 1280,
+      "height": 720,
+      "zones": [
+        {
+          "id": "3",
+          "name": "Physical Tabular View",
+          "type": "",
+          "param": "",
+          "mode": "",
+          "x": 6,
+          "y": 54,
+          "w": 1267,
+          "h": 659,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        },
+        {
+          "id": "17",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 9,
+          "y": 8,
+          "w": 126,
+          "h": 42,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Overview",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#333333",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#c0c0c0",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "18",
+          "name": "",
+          "type": "dashboard-object",
+          "param": "",
+          "mode": "",
+          "x": 135,
+          "y": 8,
+          "w": 126,
+          "h": 42,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          },
+          "caption": "Details",
+          "buttonStyle": {
+            "borderColor": "#000000",
+            "padding": 4,
+            "fontColor": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "backgroundColor": "#203661",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "buttonAction": "goto-sheet"
+        },
+        {
+          "id": "19",
+          "name": "",
+          "type": "empty",
+          "param": "",
+          "mode": "",
+          "x": 262,
+          "y": 8,
+          "w": 1008,
+          "h": 42,
+          "containerStyle": {
+            "borderColor": "#000000",
+            "padding": 4
+          }
+        }
+      ],
+      "backgroundColor": null
+    }
+  ]
+}

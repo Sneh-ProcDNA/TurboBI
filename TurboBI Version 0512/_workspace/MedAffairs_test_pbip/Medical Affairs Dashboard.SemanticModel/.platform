@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Medical Affairs Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "05c36c48-4703-4a18-a79c-f1eb43c7bedc"
+  }
+}

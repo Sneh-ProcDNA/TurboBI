@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "4ff8ef639897e89e7d31",
+  "position": {
+    "x": 1018,
+    "y": 8,
+    "z": 10000,
+    "height": 60,
+    "width": 91,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Sprint"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Sprint",
+              "nativeQueryRef": "Sprint",
+              "active": true,
+              "displayName": "Sprint"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

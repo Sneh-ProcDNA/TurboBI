@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "c11329a3f197f0307631",
+  "position": {
+    "x": 1111,
+    "y": 8,
+    "z": 12000,
+    "height": 60,
+    "width": 91,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Environment"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Environment",
+              "nativeQueryRef": "Environment",
+              "active": true,
+              "displayName": "Environment"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

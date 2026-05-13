@@ -1,0 +1,28 @@
+table 'Order By Asc/Desc ;'
+	lineageTag: d7bd80d5-8626-76d2-33e1-72cd983cc341
+
+	column Value
+		dataType: string
+		lineageTag: d25f0542-a773-2814-2589-70016554416a
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 652182a5-4834-fc5d-46e4-1f25287247a6
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order By Asc/Desc ;' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{"Ascending", "Ascending"}, {"Descending", "Descending"}}, type table [#"Value" = text, #"Label" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

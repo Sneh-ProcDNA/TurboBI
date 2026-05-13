@@ -1,0 +1,247 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "3f031fe9a1867b51940f",
+  "position": {
+    "x": 18,
+    "y": 8,
+    "z": 2000,
+    "height": 73,
+    "width": 710,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Max Date"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Max Date",
+              "nativeQueryRef": "Max Date",
+              "active": true,
+              "displayName": "Max Date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Max Sprint Number"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Max Sprint Number",
+              "nativeQueryRef": "Max Sprint Number",
+              "active": true,
+              "displayName": "Max Sprint Number"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Current Sprint Start Date"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Current Sprint Start Date",
+              "nativeQueryRef": "Current Sprint Start Date",
+              "active": true,
+              "displayName": "Current Sprint Start Date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Current Sprint End Date"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Current Sprint End Date",
+              "nativeQueryRef": "Current Sprint End Date",
+              "active": true,
+              "displayName": "Current Sprint End Date"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Title Overview'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#f0f0f0'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "dataLabels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#666666'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a615665a76459c106093",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Max Date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0c45639e8585cd857f5c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Max Sprint Number"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bf21010c699dc5a456ca",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Current Sprint Start Date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "12b19e0048bc1279cff0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Current Sprint End Date"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

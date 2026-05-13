@@ -1,0 +1,691 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "11e325e0466cc6e6944d",
+  "position": {
+    "x": 36,
+    "y": 554,
+    "z": 46000,
+    "height": 119,
+    "width": 224,
+    "tabOrder": 46000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Team"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Team",
+              "nativeQueryRef": "Team",
+              "active": true,
+              "displayName": "Team"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Story Points"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Story Points",
+              "nativeQueryRef": "Story Points",
+              "active": true,
+              "displayName": "Story Points"
+            }
+          ]
+        },
+        "Legend": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Team"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Team",
+              "nativeQueryRef": "Team",
+              "active": true,
+              "displayName": "Team"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Team"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Team",
+              "nativeQueryRef": "Team",
+              "active": true,
+              "displayName": "Team"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FINAL_PLC_JIRA_DATA"
+                        }
+                      },
+                      "Property": "Assignee"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Count distinct(FINAL_PLC_JIRA_DATA.Assignee)",
+              "nativeQueryRef": "Assignee",
+              "active": true,
+              "displayName": "Count distinct of Assignee"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FINAL_PLC_JIRA_DATA"
+                        }
+                      },
+                      "Property": "Story Points"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FINAL_PLC_JIRA_DATA.Story Points)",
+              "nativeQueryRef": "Story Points",
+              "active": true,
+              "displayName": "Sum of Story Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FINAL_PLC_JIRA_DATA"
+                    }
+                  },
+                  "Property": "Total Fixed Story Points"
+                }
+              },
+              "queryRef": "FINAL_PLC_JIRA_DATA.Total Fixed Story Points",
+              "nativeQueryRef": "Total Fixed Story Points",
+              "active": true,
+              "displayName": "Total Fixed Story Points"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Story Points Distribution by Team'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#666666'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#002b49'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FINAL_PLC_JIRA_DATA"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'%null%'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#5b6e7e'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FINAL_PLC_JIRA_DATA"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'No Team'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#5b6e7e'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FINAL_PLC_JIRA_DATA"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Without Team'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#91c353'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FINAL_PLC_JIRA_DATA"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Frontend'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#b1e4e3'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FINAL_PLC_JIRA_DATA"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Data Ops'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#d2abde'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FINAL_PLC_JIRA_DATA"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Backend'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Region"
+      },
+      {
+        "name": "Filter2",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Category"
+      },
+      {
+        "name": "Filter3",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Sprint Filter Calc"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Sprint Filter Calc",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "FINAL_PLC_JIRA_DATA",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "t"
+                          }
+                        },
+                        "Property": "Sprint Filter Calc"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "true"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter4",
+        "type": "Categorical",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Zero/NonZero"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Zero/NonZero"
+      },
+      {
+        "name": "Filter5",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Environment"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Environment"
+      },
+      {
+        "name": "Filter6",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Epic"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Epic"
+      },
+      {
+        "name": "Filter7",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Sprint"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Sprint"
+      },
+      {
+        "name": "Filter8",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Status"
+      },
+      {
+        "name": "Filter9",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Team"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Team"
+      },
+      {
+        "name": "Filter10",
+        "type": "Categorical",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FINAL_PLC_JIRA_DATA"
+              }
+            },
+            "Property": "Story Point Calc"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Story Point Calc"
+      }
+    ]
+  }
+}

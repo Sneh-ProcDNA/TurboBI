@@ -1,0 +1,416 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ba21e22a81943c2ce957",
+  "position": {
+    "x": 6,
+    "y": 519,
+    "z": 6000,
+    "height": 157,
+    "width": 1267,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "map",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Latitude": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Latitude"
+                }
+              },
+              "queryRef": "Dim_HCP.Latitude",
+              "nativeQueryRef": "Latitude",
+              "active": true,
+              "displayName": "Latitude"
+            }
+          ]
+        },
+        "Longitude": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Longitude"
+                }
+              },
+              "queryRef": "Dim_HCP.Longitude",
+              "nativeQueryRef": "Longitude",
+              "active": true,
+              "displayName": "Longitude"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_HCP"
+                        }
+                      },
+                      "Property": "Patients Count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Dim_HCP.Patients Count)",
+              "nativeQueryRef": "Patients Count",
+              "active": true,
+              "displayName": "Sum of Patients Count"
+            }
+          ]
+        },
+        "Color": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Final Segment"
+                }
+              },
+              "queryRef": "Dim_HCP.Final Segment",
+              "nativeQueryRef": "Final Segment",
+              "active": true,
+              "displayName": "Final Segment"
+            }
+          ]
+        },
+        "Details": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Referral_Edge"
+                    }
+                  },
+                  "Property": "To HCP ID"
+                }
+              },
+              "queryRef": "Fact_Referral_Edge.To HCP ID",
+              "nativeQueryRef": "To HCP ID",
+              "active": true,
+              "displayName": "To HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Referral_Edge"
+                    }
+                  },
+                  "Property": "From HCP ID"
+                }
+              },
+              "queryRef": "Fact_Referral_Edge.From HCP ID",
+              "nativeQueryRef": "From HCP ID",
+              "active": true,
+              "displayName": "From HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Referral_Edge"
+                    }
+                  },
+                  "Property": "To HCP ID"
+                }
+              },
+              "queryRef": "Fact_Referral_Edge.To HCP ID",
+              "nativeQueryRef": "To HCP ID",
+              "active": true,
+              "displayName": "To HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Referral_Edge"
+                    }
+                  },
+                  "Property": "From HCP ID"
+                }
+              },
+              "queryRef": "Fact_Referral_Edge.From HCP ID",
+              "nativeQueryRef": "From HCP ID",
+              "active": true,
+              "displayName": "From HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Referral_Edge"
+                    }
+                  },
+                  "Property": "From HCP ID"
+                }
+              },
+              "queryRef": "Fact_Referral_Edge.From HCP ID",
+              "nativeQueryRef": "From HCP ID",
+              "active": true,
+              "displayName": "From HCP ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Referral_Edge"
+                    }
+                  },
+                  "Property": "To HCP ID"
+                }
+              },
+              "queryRef": "Fact_Referral_Edge.To HCP ID",
+              "nativeQueryRef": "To HCP ID",
+              "active": true,
+              "displayName": "To HCP ID"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Longitude"
+                }
+              },
+              "queryRef": "Dim_HCP.Longitude",
+              "nativeQueryRef": "Longitude",
+              "displayName": "Longitude"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Latitude"
+                }
+              },
+              "queryRef": "Dim_HCP.Latitude",
+              "nativeQueryRef": "Latitude",
+              "displayName": "Latitude"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Final Segment"
+                }
+              },
+              "queryRef": "Dim_HCP.Final Segment",
+              "nativeQueryRef": "Final Segment",
+              "displayName": "Final Segment"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Logical HCP Map'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCP"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Region"
+      },
+      {
+        "name": "Filter2",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCO"
+              }
+            },
+            "Property": "Territory Name"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Territory Name"
+      },
+      {
+        "name": "744c2165d5edd7b94cdb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCP"
+              }
+            },
+            "Property": "Final Segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "498f9b9c0b02f7d63751",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Referral_Edge"
+              }
+            },
+            "Property": "To HCP ID"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "328a33ccf7cb7994c9cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Referral_Edge"
+              }
+            },
+            "Property": "From HCP ID"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "16a50196003c1ec0df07",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCP"
+              }
+            },
+            "Property": "Latitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5166f772e6f3ef37c5a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_HCP"
+              }
+            },
+            "Property": "Longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f3282d8be37aab4d6f5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "Patients Count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
