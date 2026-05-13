@@ -1,3 +1,5 @@
-databricks_connection.local.json
-Agent Version 0507_ABCD/databricks_connection.local.json
 credentials.json
+*.env
+__pycache__/
+*.pyc
+*.log
