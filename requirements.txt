@@ -1,0 +1,15 @@
+# TurboBI dependencies
+# Core web UI + conversion pipeline
+flask>=3.0.0
+anthropic>=0.20.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Optional: Hyper extract enrichment (used by tableau_to_pbi/hyper.py)
+# Install these if your workflow needs to read .hyper extracts.
+pantab>=1.0.0
+tableauhyperapi>=0.0.0
+
+
+
+
