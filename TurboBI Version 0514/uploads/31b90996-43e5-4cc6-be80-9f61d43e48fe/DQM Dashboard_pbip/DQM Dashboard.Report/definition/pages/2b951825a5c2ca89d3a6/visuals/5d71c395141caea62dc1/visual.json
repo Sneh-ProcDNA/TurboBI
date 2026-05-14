@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "5d71c395141caea62dc1",
+  "position": {
+    "x": 995,
+    "y": 276,
+    "z": 40000,
+    "height": 60,
+    "width": 274,
+    "tabOrder": 40000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Validation"
+                    }
+                  },
+                  "Property": "Label"
+                }
+              },
+              "queryRef": "Data Validation.Label",
+              "nativeQueryRef": "Label",
+              "active": true,
+              "displayName": "Label"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

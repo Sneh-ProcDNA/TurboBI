@@ -1,0 +1,28 @@
+table 'Data Quality'
+	lineageTag: 660782b9-8f44-c5d8-a64d-c3618313f8a4
+
+	column Value
+		dataType: string
+		lineageTag: 6856767d-2fdf-768c-de33-67b577b05045
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: dfd3190b-8344-12e2-ef2f-13dfc0672405
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Data Quality' = m
+		mode: import
+		source =
+			let
+			    Source = Table.FromRows({{"Accuracy", "Accuracy"}, {"Completeness", "Completeness"}, {"Consistency", "Consistency"}, {"Timeliness", "Timeliness"}, {"Uniqueness", "Uniqueness"}, {"Validity", "Validity"}}, type table [#"Value" = text, #"Label" = text])
+			in
+			    Source
+
+	annotation PBI_ResultType = Table

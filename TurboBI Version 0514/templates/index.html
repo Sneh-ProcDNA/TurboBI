@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TurboBI — Tableau to Power BI Converter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+/* ── Design tokens from reference ─────────────────────────────── */
+:root {
+  --pd-violet-950: #1a0b3d; --pd-violet-900: #2a1466; --pd-violet-800: #3a1d8a;
+  --pd-violet-700: #4f2da8; --pd-violet-600: #6440c9; --pd-violet-500: #8059e3;
+  --pd-violet-400: #a486f0; --pd-violet-200: #d9caf9; --pd-violet-100: #ece4fc;
+  --pd-violet-50: #f6f2fe;
+  --pd-magenta: #e63a8a; --pd-teal: #1aa39a; --pd-amber: #f5a524;
+  --pd-success: #16a34a; --pd-error: #dc2626;
+  --pd-ink-950: #0f0a1f; --pd-ink-900: #1c1530; --pd-ink-700: #3b3650;
+  --pd-ink-500: #6e6885; --pd-ink-400: #918ba8; --pd-ink-300: #b8b3c8;
+  --pd-ink-200: #d6d3e0; --pd-ink-100: #ebe9f1; --pd-ink-50: #f7f6fa;
+  --pd-paper: #fbfaff; --pd-white: #ffffff;
+  --radius-sm: 6px; --radius: 10px; --radius-lg: 16px; --radius-xl: 22px;
+  --shadow-sm: 0 1px 2px rgba(26,11,61,.04), 0 1px 1px rgba(26,11,61,.03);
+  --shadow:    0 4px 14px rgba(26,11,61,.06), 0 1px 3px rgba(26,11,61,.04);
+  --shadow-lg: 0 20px 50px rgba(26,11,61,.08), 0 6px 16px rgba(26,11,61,.05);
+  --font-sans:  'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'DM Serif Display', ui-serif, Georgia, serif;
+  /* ProcBlue accent palette */
+  --accent-primary: #0a3d91;
+  --accent-soft:    #e6efff;
+  --accent-dark:    #062c6c;
+  --accent-pop:     #3b82f6;
+  --accent-grad:    linear-gradient(135deg, #062c6c, #3b82f6);
+  --pad: 28px; --gap: 16px;
+}
+[data-theme="dark"] {
+  --pd-paper: #0a0f1d; --pd-white: #131a2c;
+  --pd-ink-950: #f7f8fc; --pd-ink-900: #e8edf7; --pd-ink-700: #c8cee0;
+  --pd-ink-500: #8b94ad; --pd-ink-400: #6d7693; --pd-ink-300: #4b536d;
+  --pd-ink-200: #2c3450; --pd-ink-100: #1d2440; --pd-ink-50: #161c34;
+  --accent-primary: #3b82f6;
+  --accent-soft:    rgba(59,130,246,.15);
+  --accent-dark:    #1d4ed8;
+  --accent-pop:     #60a5fa;
+  --accent-grad:    linear-gradient(135deg, #1d4ed8, #60a5fa);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font-sans);
+  color: var(--pd-ink-900);
+  background: var(--pd-paper);
+  background-image:
+    radial-gradient(1200px 600px at 90% -200px, rgba(59,130,246,.12), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(10,61,145,.08), transparent 55%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .2s, color .2s;
+}
+[data-theme="dark"] body {
+  background-image:
+    radial-gradient(1200px 600px at 90% -200px, rgba(59,130,246,.16), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(10,61,145,.20), transparent 55%);
+}
+button { font-family: inherit; cursor: pointer; }
+code, pre { font-family: var(--font-mono); }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.mono { font-family: var(--font-mono); }
+
+/* ── Header ─────────────────────────────────────────────────── */
+.tbi-header {
+  border-bottom: 1px solid var(--pd-ink-100);
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(10px);
+  position: sticky; top: 0; z-index: 20;
+}
+[data-theme="dark"] .tbi-header { background: rgba(19,26,44,.7); border-bottom-color: var(--pd-ink-100); }
+.tbi-header-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 24px; }
+.tbi-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.tbi-brandtext { line-height: 1.1; }
+.tbi-brandname { font-weight: 600; font-size: 18px; letter-spacing: -0.01em; color: var(--pd-ink-900); }
+.tbi-brandname-accent { color: var(--accent-pop); }
+.tbi-brandsub { font-size: 11.5px; color: var(--pd-ink-500); margin-top: 2px; display: flex; align-items: center; gap: 4px; }
+.tbi-poweredby { font-size: 10.5px; color: var(--pd-ink-400); font-weight: 500; letter-spacing: .02em; text-transform: uppercase; }
+.tbi-pdwordmark { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: -.005em; color: var(--accent-primary); }
+.tbi-pdwordmark-accent { color: var(--accent-pop); }
+.tbi-headright { display: flex; align-items: center; gap: 12px; }
+.tbi-statpill { font-size: 12px; color: var(--pd-ink-500); display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 8px; border-radius: 99px; background: var(--pd-ink-50); border: 1px solid var(--pd-ink-100); }
+[data-theme="dark"] .tbi-statpill { background: var(--pd-ink-50); border-color: var(--pd-ink-100); }
+.tbi-dot { width: 7px; height: 7px; border-radius: 99px; background: var(--pd-success); box-shadow: 0 0 0 3px rgba(22,163,74,.15); }
+.tbi-themetoggle { width: 34px; height: 34px; border-radius: 99px; border: 1px solid var(--pd-ink-100); background: white; color: var(--pd-ink-700); display: grid; place-items: center; cursor: pointer; transition: background .15s, border-color .15s, color .15s, transform .15s; }
+[data-theme="dark"] .tbi-themetoggle { background: var(--pd-ink-50); border-color: var(--pd-ink-100); color: var(--pd-ink-500); }
+.tbi-themetoggle:hover { border-color: var(--accent-pop); color: var(--accent-pop); transform: rotate(15deg); }
+.tbi-avatar { width: 32px; height: 32px; border-radius: 99px; background: var(--accent-grad); color: white; font-size: 12px; font-weight: 600; display: grid; place-items: center; }
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.tbi-hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; padding: 32px 0 36px; }
+.tbi-eyebrow { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-primary); font-size: 12px; font-weight: 600; margin-bottom: 14px; letter-spacing: .01em; }
+[data-theme="dark"] .tbi-eyebrow { background: rgba(59,130,246,.2); color: var(--accent-pop); }
+.tbi-h1 { font-family: var(--font-sans); font-size: 44px; line-height: 1.05; letter-spacing: -.025em; font-weight: 600; margin: 0 0 14px; }
+.tbi-h1-accent { background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; font-family: var(--font-serif); font-weight: 400; font-size: 1.05em; }
+.tbi-lede { font-size: 16.5px; line-height: 1.55; color: var(--pd-ink-500); max-width: 56ch; margin: 0; }
+.tbi-lede code { font-family: var(--font-mono); font-size: 14px; background: var(--pd-ink-100); padding: 1px 6px; border-radius: 4px; color: var(--pd-ink-900); }
+[data-theme="dark"] .tbi-lede code { background: var(--pd-ink-100); color: var(--pd-ink-900); }
+.tbi-hero-flow { display: flex; align-items: center; gap: 10px; padding: 20px; background: white; border: 1px solid var(--pd-ink-100); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+[data-theme="dark"] .tbi-hero-flow { background: var(--pd-white); border-color: var(--pd-ink-100); }
+.tbi-flowtile { flex: 1; display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: var(--radius); background: var(--pd-ink-50); border: 1px solid var(--pd-ink-100); }
+[data-theme="dark"] .tbi-flowtile { background: var(--pd-ink-50); border-color: var(--pd-ink-100); }
+.tbi-flowtile-target { background: var(--accent-soft); border-color: rgba(10,61,145,.18); }
+[data-theme="dark"] .tbi-flowtile-target { background: rgba(59,130,246,.18); border-color: rgba(59,130,246,.35); }
+.tbi-flowlabel { font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--pd-ink-500); font-weight: 600; }
+.tbi-flowname { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--pd-ink-900); margin-top: 2px; }
+.tbi-flowarrow { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 86px; }
+.tbi-flowarrow-line { width: 100%; height: 2px; background: linear-gradient(90deg, var(--pd-ink-200), var(--accent-primary)); position: relative; }
+.tbi-flowarrow-line::after { content: ""; position: absolute; right: -2px; top: -4px; width: 0; height: 0; border-left: 8px solid var(--accent-primary); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.tbi-flowarrow-tag { font-size: 11px; color: var(--accent-primary); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; background: var(--accent-soft); border-radius: 99px; }
+[data-theme="dark"] .tbi-flowarrow-tag { background: rgba(59,130,246,.2); color: var(--accent-pop); }
+
+/* ── Card ───────────────────────────────────────────────────── */
+.tbi-single { display: block; max-width: 880px; margin: 0 auto; }
+.tbi-card { background: white; border: 1px solid var(--pd-ink-100); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; }
+[data-theme="dark"] .tbi-card { background: var(--pd-white); border-color: var(--pd-ink-100); }
+.tbi-card-head { display: flex; align-items: flex-start; justify-content: space-between; padding: var(--pad) var(--pad) 0; gap: 16px; }
+.tbi-card-head-left { display: flex; flex-direction: column; gap: 6px; }
+.tbi-step-tag { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 99px; font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+.tbi-step-tag.tone-neutral { background: var(--pd-ink-100); color: var(--pd-ink-700); }
+.tbi-step-tag.tone-active  { background: var(--accent-soft); color: var(--accent-primary); }
+.tbi-step-tag.tone-running { background: #fef3c7; color: #92400e; }
+.tbi-step-tag.tone-success { background: #dcfce7; color: #166534; }
+.tbi-step-tag.tone-error   { background: #fee2e2; color: #991b1b; }
+[data-theme="dark"] .tbi-step-tag.tone-neutral { background: var(--pd-ink-100); color: var(--pd-ink-500); }
+[data-theme="dark"] .tbi-step-tag.tone-active  { background: rgba(59,130,246,.2); color: var(--accent-pop); }
+.tbi-card-title { font-size: 19px; font-weight: 600; letter-spacing: -.015em; color: var(--pd-ink-900); }
+.tbi-card-body { padding: 20px var(--pad) var(--pad); }
+
+/* ── Upload stage ───────────────────────────────────────────── */
+.tbi-upload { display: flex; flex-direction: column; gap: 22px; }
+.tbi-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tbi-slot { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 18px; border: 1.5px dashed var(--pd-ink-200); border-radius: var(--radius-lg); background: white; cursor: pointer; transition: border-color .15s, background .15s, transform .15s, box-shadow .15s; min-height: 200px; }
+[data-theme="dark"] .tbi-slot { background: var(--pd-white); border-color: var(--pd-ink-200); }
+.tbi-slot:hover { border-color: var(--accent-primary); background: color-mix(in srgb, var(--accent-soft) 50%, white); }
+[data-theme="dark"] .tbi-slot:hover { background: rgba(59,130,246,.1); }
+.tbi-slot.is-over { border-color: var(--accent-primary); background: var(--accent-soft); transform: scale(1.005); box-shadow: var(--shadow); }
+.tbi-slot.is-attached { border-style: solid; border-color: rgba(10,61,145,.4); cursor: default; background: linear-gradient(180deg, rgba(230,239,255,.7), white); box-shadow: var(--shadow-sm); }
+[data-theme="dark"] .tbi-slot.is-attached { border-color: rgba(59,130,246,.4); background: linear-gradient(180deg, rgba(59,130,246,.12), var(--pd-white)); }
+.tbi-slot-head { display: flex; align-items: center; gap: 12px; }
+.tbi-slot-icon { width: 42px; height: 42px; border-radius: 9px; background: var(--pd-ink-50); display: grid; place-items: center; border: 1px solid var(--pd-ink-100); flex-shrink: 0; }
+[data-theme="dark"] .tbi-slot-icon { background: var(--pd-ink-50); border-color: var(--pd-ink-100); }
+.tbi-slot.is-attached .tbi-slot-icon { background: white; }
+[data-theme="dark"] .tbi-slot.is-attached .tbi-slot-icon { background: var(--pd-white); }
+.tbi-slot.accent-accent .tbi-slot-icon { background: var(--accent-soft); color: var(--accent-primary); }
+.tbi-slot-meta { flex: 1; min-width: 0; }
+.tbi-slot-kind { font-size: 14px; font-weight: 600; letter-spacing: -.005em; display: flex; align-items: center; gap: 8px; }
+.tbi-req { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-primary); }
+[data-theme="dark"] .tbi-req { background: rgba(59,130,246,.2); color: var(--accent-pop); }
+.tbi-opt-pill { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 99px; background: var(--pd-ink-100); color: var(--pd-ink-500); }
+.tbi-slot-ext { font-size: 12px; color: var(--pd-ink-500); margin-top: 2px; }
+.tbi-slot-cta { flex: 1; display: flex; gap: 12px; align-items: center; padding: 12px; border-radius: var(--radius); background: var(--pd-ink-50); border: 1px solid var(--pd-ink-100); }
+[data-theme="dark"] .tbi-slot-cta { background: var(--pd-ink-50); border-color: var(--pd-ink-100); }
+.tbi-slot:hover .tbi-slot-cta { background: white; }
+[data-theme="dark"] .tbi-slot:hover .tbi-slot-cta { background: var(--pd-white); }
+.tbi-slot-uploadicon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-grad); color: white; display: grid; place-items: center; flex-shrink: 0; box-shadow: 0 4px 10px -3px rgba(10,61,145,.4); }
+.tbi-slot-cta-title { font-size: 13.5px; font-weight: 600; color: var(--pd-ink-900); }
+.tbi-slot-hint { font-size: 12px; color: var(--pd-ink-500); margin-top: 3px; line-height: 1.45; }
+.tbi-slot-attached { flex: 1; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 12px 14px; border-radius: var(--radius); background: white; border: 1px solid rgba(10,61,145,.2); }
+[data-theme="dark"] .tbi-slot-attached { background: var(--pd-white); border-color: rgba(59,130,246,.3); }
+.tbi-slot-checkdot { width: 28px; height: 28px; border-radius: 99px; background: var(--accent-primary); color: white; display: grid; place-items: center; }
+.tbi-slot-filemeta { min-width: 0; }
+.tbi-slot-filename { font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tbi-slot-filesub { font-size: 12px; color: var(--pd-ink-500); margin-top: 3px; }
+.tbi-slot-replace { font-size: 12.5px; color: var(--accent-primary); font-weight: 550; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; padding: 2px 0; align-self: flex-start; }
+.tbi-slot-replace:hover { text-decoration: underline; }
+.tbi-slot-footwrap { display: flex; }
+.tbi-slot-foot { background: transparent; border: 0; padding: 0; color: var(--accent-primary); font-size: 12.5px; font-weight: 550; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.tbi-slot-foot:hover { text-decoration: underline; }
+.tbi-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; border-top: 1px solid var(--pd-ink-100); }
+[data-theme="dark"] .tbi-actions { border-top-color: var(--pd-ink-100); }
+.tbi-actions-note { display: inline-flex; align-items: center; gap: 8px; color: var(--pd-ink-500); font-size: 12.5px; max-width: 60%; line-height: 1.45; }
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.tbi-primary { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 9px; border: 0; background: var(--accent-primary); color: white; font-weight: 600; font-size: 14px; letter-spacing: -.005em; box-shadow: 0 1px 0 rgba(255,255,255,.2) inset, 0 8px 22px -10px var(--accent-primary); transition: transform .12s, box-shadow .12s, background .12s; }
+.tbi-primary:hover:not(:disabled) { background: color-mix(in srgb, var(--accent-primary) 90%, black); transform: translateY(-1px); }
+.tbi-primary:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.tbi-primary-lg { padding: 14px 22px; font-size: 15px; }
+.tbi-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 9px; border: 1px solid var(--pd-ink-200); background: white; color: var(--pd-ink-900); font-weight: 550; font-size: 13.5px; transition: border-color .12s, background .12s; }
+[data-theme="dark"] .tbi-secondary { background: var(--pd-ink-50); border-color: var(--pd-ink-200); color: var(--pd-ink-900); }
+.tbi-secondary:hover { border-color: var(--pd-ink-300); background: var(--pd-ink-50); }
+.tbi-iconbtn { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 7px; border: 0; background: transparent; color: var(--pd-ink-500); }
+.tbi-iconbtn:hover { background: var(--pd-ink-50); color: var(--pd-ink-900); }
+
+/* ── Converting ──────────────────────────────────────────────── */
+.tbi-converting { display: flex; flex-direction: column; gap: 20px; }
+.tbi-conv-header { display: flex; align-items: center; gap: 14px; }
+.tbi-filerow-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--pd-ink-50); display: grid; place-items: center; border: 1px solid var(--pd-ink-100); flex-shrink: 0; }
+[data-theme="dark"] .tbi-filerow-icon { background: var(--pd-ink-50); border-color: var(--pd-ink-100); }
+.tbi-filerow-meta { flex: 1; min-width: 0; }
+.tbi-filerow-name { font-weight: 600; font-size: 14.5px; letter-spacing: -.005em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tbi-filerow-sub { font-size: 12.5px; color: var(--pd-ink-500); margin-top: 2px; }
+.tbi-conv-pct { font-family: var(--font-mono); font-size: 28px; font-weight: 500; color: var(--accent-primary); letter-spacing: -.02em; }
+.tbi-progress { height: 6px; border-radius: 99px; background: var(--pd-ink-100); overflow: hidden; }
+[data-theme="dark"] .tbi-progress { background: var(--pd-ink-100); }
+.tbi-progress-fill { height: 100%; background: var(--accent-grad); transition: width .3s ease; border-radius: 99px; }
+.tbi-steplist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.tbi-step { display: grid; grid-template-columns: 28px 1fr auto; gap: 12px; align-items: center; padding: 11px 12px; border-radius: var(--radius); transition: background .15s; }
+.tbi-step.state-active { background: var(--accent-soft); }
+[data-theme="dark"] .tbi-step.state-active { background: rgba(59,130,246,.15); }
+.tbi-step-marker { width: 24px; height: 24px; border-radius: 99px; display: grid; place-items: center; background: var(--pd-ink-100); color: var(--pd-ink-500); font-size: 11px; font-weight: 600; }
+[data-theme="dark"] .tbi-step-marker { background: var(--pd-ink-100); color: var(--pd-ink-400); }
+.tbi-step.state-active .tbi-step-marker { background: white; border: 1.5px solid var(--accent-primary); color: var(--accent-primary); }
+[data-theme="dark"] .tbi-step.state-active .tbi-step-marker { background: var(--pd-white); }
+.tbi-step.state-done .tbi-step-marker { background: var(--accent-primary); color: white; }
+.tbi-step-body { display: flex; flex-direction: column; gap: 2px; }
+.tbi-step-label { font-size: 13.5px; font-weight: 550; color: var(--pd-ink-900); }
+.tbi-step.state-active .tbi-step-label { color: var(--accent-primary); }
+.tbi-step.state-pending .tbi-step-label { color: var(--pd-ink-400); }
+.tbi-step-detail { font-size: 12px; color: var(--pd-ink-500); }
+.tbi-step.state-pending .tbi-step-detail { color: var(--pd-ink-300); }
+.tbi-step-time { font-family: var(--font-mono); font-size: 11.5px; color: var(--pd-ink-400); }
+.tbi-spinner { width: 12px; height: 12px; border-radius: 99px; border: 2px solid var(--accent-primary); border-top-color: transparent; animation: tbi-spin .8s linear infinite; }
+@keyframes tbi-spin { to { transform: rotate(360deg); } }
+
+/* Log toggle (raw SSE output, collapsed by default) */
+.tbi-log-toggle { display: flex; align-items: center; gap: 6px; background: transparent; border: 0; padding: 6px 0; font-size: 12.5px; color: var(--pd-ink-400); cursor: pointer; font-family: inherit; }
+.tbi-log-toggle:hover { color: var(--pd-ink-900); }
+.tbi-log-toggle svg { transition: transform .15s; }
+.tbi-log-toggle.open svg { transform: rotate(180deg); }
+.tbi-log-wrap { display: none; }
+.tbi-log-wrap.open { display: block; margin-top: 8px; }
+.tbi-terminal { background: #062c6c; border-radius: var(--radius); padding: 14px 16px; max-height: 200px; overflow-y: auto; font-family: var(--font-mono); font-size: 11.5px; line-height: 1.7; color: #dbeafe; }
+.tbi-terminal::-webkit-scrollbar { width: 4px; }
+.tbi-terminal::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 3px; }
+.log-line { display: block; }
+.log-line.warn  { color: #fde68a; }
+.log-line.error { color: #fca5a5; }
+.log-line.pass  { color: #86efac; }
+.log-line.muted { color: rgba(219,234,254,.4); }
+
+/* ── Done stage ──────────────────────────────────────────────── */
+.tbi-done { display: flex; flex-direction: column; gap: 20px; }
+.tbi-success-banner { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: linear-gradient(135deg, var(--accent-soft), rgba(230,239,255,.6)); border: 1px solid rgba(10,61,145,.28); border-radius: var(--radius); }
+[data-theme="dark"] .tbi-success-banner { background: linear-gradient(135deg, rgba(59,130,246,.2), var(--pd-white)); border-color: rgba(59,130,246,.38); }
+.tbi-success-icon { width: 36px; height: 36px; border-radius: 99px; background: var(--accent-primary); color: white; display: grid; place-items: center; flex-shrink: 0; }
+.tbi-success-title { font-weight: 600; font-size: 14.5px; color: var(--accent-dark); }
+[data-theme="dark"] .tbi-success-title { color: var(--pd-ink-900); }
+.tbi-success-sub { font-size: 12.5px; color: var(--accent-primary); opacity: .85; margin-top: 2px; }
+[data-theme="dark"] .tbi-success-sub { color: var(--pd-ink-500); opacity: 1; }
+.tbi-summary { display: flex; flex-direction: column; }
+.tbi-summary-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 12px 4px; border-bottom: 1px solid var(--pd-ink-100); align-items: center; }
+.tbi-summary-row:last-child { border-bottom: 0; }
+[data-theme="dark"] .tbi-summary-row { border-bottom-color: var(--pd-ink-100); }
+.tbi-summary-key { font-size: 13px; color: var(--pd-ink-500); }
+.tbi-summary-val { font-size: 13.5px; font-weight: 500; color: var(--pd-ink-900); }
+.tbi-pbipcard { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 18px 20px; border: 1px solid rgba(10,61,145,.22); border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--accent-soft), rgba(230,239,255,.45)); box-shadow: var(--shadow); }
+[data-theme="dark"] .tbi-pbipcard { background: linear-gradient(135deg, rgba(59,130,246,.22), var(--pd-white)); border-color: rgba(59,130,246,.35); }
+.tbi-pbipcard-icon { width: 56px; height: 56px; border-radius: 12px; display: grid; place-items: center; background: white; box-shadow: var(--shadow-sm); border: 1px solid var(--pd-ink-100); }
+[data-theme="dark"] .tbi-pbipcard-icon { background: var(--pd-white); border-color: var(--pd-ink-100); }
+.tbi-pbipcard-meta { min-width: 0; }
+.tbi-pbipcard-name { font-size: 15px; font-weight: 600; color: var(--pd-ink-900); letter-spacing: -.005em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tbi-pbipcard-sub { font-size: 12.5px; color: var(--pd-ink-500); margin-top: 4px; }
+.tbi-downloads { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--pd-ink-100); }
+[data-theme="dark"] .tbi-downloads { border-top-color: var(--pd-ink-100); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.tbi-footer { border-top: 1px solid var(--pd-ink-100); margin-top: 56px; padding: 22px 0; background: rgba(255,255,255,.6); }
+[data-theme="dark"] .tbi-footer { background: rgba(19,26,44,.4); border-top-color: var(--pd-ink-100); }
+.tbi-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.tbi-footer-brand { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--pd-ink-500); }
+[data-theme="dark"] .tbi-footer-brand { color: var(--pd-ink-500); }
+.tbi-footer-links { display: flex; gap: 22px; }
+.tbi-footer-links span { font-size: 12.5px; color: var(--pd-ink-500); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 980px) { .tbi-hero { grid-template-columns: 1fr; gap: 24px; } .tbi-h1 { font-size: 34px; } }
+@media (max-width: 720px) { .tbi-slots { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
+@media (max-width: 640px) { .tbi-pbipcard { grid-template-columns: auto 1fr; } .tbi-pbipcard > button { grid-column: 1 / -1; justify-content: center; } }
+</style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────── -->
+<header class="tbi-header">
+  <div class="container tbi-header-inner">
+    <a class="tbi-brand" href="#" aria-label="TurboBI">
+      <!-- TurboBI Logo: gradient tile with bar chart + trend arrow -->
+      <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="tbiGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#062c6c"/><stop offset="55%" stop-color="#1e6fdb"/><stop offset="100%" stop-color="#3b82f6"/>
+          </linearGradient>
+          <linearGradient id="tbiShine" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="white" stop-opacity="0.22"/><stop offset="55%" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#tbiGrad)"/>
+        <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#tbiShine)"/>
+        <rect x="5"  y="20" width="4" height="7"  rx="1.2" fill="white" opacity="0.55"/>
+        <rect x="11" y="16" width="4" height="11" rx="1.2" fill="white" opacity="0.75"/>
+        <rect x="17" y="11" width="4" height="16" rx="1.2" fill="white" opacity="0.92"/>
+        <path d="M5.5 22 L13 14.5 L18 18 L25.5 8" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M21 7 L26 7 L26 12" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="5.5" cy="22" r="1.4" fill="white"/>
+      </svg>
+      <div class="tbi-brandtext">
+        <div class="tbi-brandname">Turbo<span class="tbi-brandname-accent">BI</span></div>
+        <div class="tbi-brandsub">
+          <span class="tbi-poweredby">Powered by</span>
+          <span class="tbi-pdwordmark">Proc<span class="tbi-pdwordmark-accent">DNA</span></span>
+        </div>
+      </div>
+    </a>
+
+    <div class="tbi-headright">
+      <div class="tbi-statpill">
+        <span class="tbi-dot"></span>Engine v2.4 · healthy
+      </div>
+      <button class="tbi-themetoggle" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
+        <!-- Moon icon (shown in light mode) -->
+        <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <!-- Sun icon (shown in dark mode, hidden by default) -->
+        <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
+      <div class="tbi-avatar">PD</div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────────────────── -->
+<main class="container" style="flex:1; padding-top:28px; padding-bottom:60px;">
+
+  <!-- Hero -->
+  <div class="tbi-hero">
+    <div class="tbi-hero-text">
+      <div class="tbi-eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h7l-1 7 9-11h-7z"/></svg>
+        Internal ProcDNA tool
+      </div>
+      <h1 class="tbi-h1">
+        Migrate Tableau workbooks to <span class="tbi-h1-accent">Power BI</span>, in minutes.
+      </h1>
+      <p class="tbi-lede">
+        Drop a <code>.twbx</code>, attach your database credentials, and TurboBI returns a ready-to-open <code>.pbip</code> project — data model, measures, visuals, and connections wired up.
+      </p>
+    </div>
+
+    <div class="tbi-hero-flow" aria-hidden="true">
+      <!-- Tableau mark -->
+      <div class="tbi-flowtile">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.6"/>
+          <rect x="14.6" y="3.6"  width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="9.0"  width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="18.6" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="24.0" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="3.6"  y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="9.0"  y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="18.6" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="24.0" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="14.6" width="2.8" height="2.8" rx="0.6" fill="#e97627"/>
+        </svg>
+        <div>
+          <div class="tbi-flowlabel">Source</div>
+          <div class="tbi-flowname">.twbx</div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="tbi-flowarrow">
+        <div class="tbi-flowarrow-line"></div>
+        <div class="tbi-flowarrow-tag">
+          <svg width="12" height="12" viewBox="0 0 32 32" fill="none"><rect x="0" y="0" width="32" height="32" rx="8" fill="#0a3d91"/><rect x="11" y="16" width="4" height="11" rx="1.2" fill="white" opacity="0.75"/><rect x="17" y="11" width="4" height="16" rx="1.2" fill="white" opacity="0.92"/></svg>
+          TurboBI
+        </div>
+      </div>
+
+      <!-- Power BI mark -->
+      <div class="tbi-flowtile tbi-flowtile-target">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="pbiG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f7d24b"/><stop offset="100%" stop-color="#e8a90b"/></linearGradient></defs>
+          <rect x="0" y="0" width="32" height="32" rx="6" fill="url(#pbiG)"/>
+          <rect x="7"  y="17" width="4.5" height="9"  rx="1" fill="#a36e00" opacity="0.92"/>
+          <rect x="14" y="11" width="4.5" height="15" rx="1" fill="#a36e00" opacity="0.92"/>
+          <rect x="21" y="5"  width="4.5" height="21" rx="1" fill="#8a5a00"/>
+        </svg>
+        <div>
+          <div class="tbi-flowlabel">Output</div>
+          <div class="tbi-flowname">.pbip</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main converter card -->
+  <section class="tbi-single">
+    <div class="tbi-card tbi-converter">
+
+      <!-- Card header -->
+      <div class="tbi-card-head">
+        <div class="tbi-card-head-left">
+          <span class="tbi-step-tag tone-neutral" id="card-tag">Step 1 of 2</span>
+          <div class="tbi-card-title" id="card-title">Upload your files</div>
+        </div>
+      </div>
+
+      <!-- Card body -->
+      <div class="tbi-card-body">
+
+        <!-- ── UPLOAD STAGE ── -->
+        <div class="tbi-upload" id="stage-upload">
+          <div class="tbi-slots">
+
+            <!-- Tableau workbook slot -->
+            <div class="tbi-slot" id="slot-twbx" tabindex="0" role="button" aria-label="Upload Tableau workbook">
+              <div class="tbi-slot-head">
+                <div class="tbi-slot-icon">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                    <rect x="0" y="0" width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.6"/>
+                    <rect x="14.6" y="3.6"  width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+                    <rect x="14.6" y="9.0"  width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+                    <rect x="14.6" y="18.6" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+                    <rect x="14.6" y="24.0" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+                    <rect x="3.6"  y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+                    <rect x="9.0"  y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+                    <rect x="18.6" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+                    <rect x="24.0" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+                    <rect x="14.6" y="14.6" width="2.8" height="2.8" rx="0.6" fill="#e97627"/>
+                  </svg>
+                </div>
+                <div class="tbi-slot-meta">
+                  <div class="tbi-slot-kind">Tableau workbook <span class="tbi-req">Required</span></div>
+                  <div class="tbi-slot-ext mono">.twbx</div>
+                </div>
+              </div>
+              <!-- Empty state -->
+              <div class="tbi-slot-cta" id="slot-twbx-empty">
+                <div class="tbi-slot-uploadicon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M5 20h14"/></svg>
+                </div>
+                <div>
+                  <div class="tbi-slot-cta-title">Drop file or click to browse</div>
+                  <div class="tbi-slot-hint">The packaged Tableau file you want to convert.</div>
+                </div>
+              </div>
+              <!-- Attached state (hidden) -->
+              <div class="tbi-slot-attached" id="slot-twbx-attached" style="display:none">
+                <div class="tbi-slot-checkdot">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg>
+                </div>
+                <div class="tbi-slot-filemeta">
+                  <div class="tbi-slot-filename" id="twbx-filename">—</div>
+                  <div class="tbi-slot-filesub" id="twbx-filesub">—</div>
+                </div>
+                <button class="tbi-iconbtn" id="twbx-clear" aria-label="Remove">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6l-12 12"/></svg>
+                </button>
+              </div>
+              <div class="tbi-slot-replace" id="twbx-replace" style="display:none">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16"/><path d="M3 21v-5h5"/></svg>
+                Replace
+              </div>
+              <input type="file" id="twbx-input" accept=".twb,.twbx" style="display:none">
+            </div>
+
+            <!-- Credentials slot -->
+            <div class="tbi-slot accent-accent" id="slot-creds" tabindex="0" role="button" aria-label="Upload credentials JSON">
+              <div class="tbi-slot-head">
+                <div class="tbi-slot-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9"/><path d="M16 7l3 3"/></svg>
+                </div>
+                <div class="tbi-slot-meta">
+                  <div class="tbi-slot-kind">Database credentials <span class="tbi-opt-pill">Optional</span></div>
+                  <div class="tbi-slot-ext mono">.json</div>
+                </div>
+              </div>
+              <div class="tbi-slot-cta" id="slot-creds-empty">
+                <div class="tbi-slot-uploadicon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M5 20h14"/></svg>
+                </div>
+                <div>
+                  <div class="tbi-slot-cta-title">Drop file or click to browse</div>
+                  <div class="tbi-slot-hint">Connection details so the .pbip wires up to live data.</div>
+                </div>
+              </div>
+              <div class="tbi-slot-attached" id="slot-creds-attached" style="display:none">
+                <div class="tbi-slot-checkdot">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg>
+                </div>
+                <div class="tbi-slot-filemeta">
+                  <div class="tbi-slot-filename" id="creds-filename">—</div>
+                  <div class="tbi-slot-filesub" id="creds-filesub">—</div>
+                </div>
+                <button class="tbi-iconbtn" id="creds-clear" aria-label="Remove">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6l-12 12"/></svg>
+                </button>
+              </div>
+              <div class="tbi-slot-replace" id="creds-replace" style="display:none">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16"/><path d="M3 21v-5h5"/></svg>
+                Replace
+              </div>
+              <div class="tbi-slot-footwrap">
+                <span class="tbi-slot-foot" style="opacity:.5;font-size:12px">credentials optional — .pbip uses placeholders without it</span>
+              </div>
+              <input type="file" id="creds-input" accept=".json" style="display:none">
+            </div>
+          </div>
+
+          <!-- Skip LLM row
+          <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:var(--pd-ink-500);">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;">
+              <input type="checkbox" id="skip-llm-toggle" checked style="accent-color:var(--accent-primary);width:14px;height:14px;">
+              Skip LLM agent (faster, rule-based conversion)
+            </label>
+          </div> -->
+
+          <div class="tbi-actions">
+            <div class="tbi-actions-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.5"/></svg>
+              <span id="actions-note">Select a .twbx file to begin.</span>
+            </div>
+            <button class="tbi-primary" id="btn-start" disabled>
+              Start conversion
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CONVERTING STAGE (hidden initially) ── -->
+        <div class="tbi-converting" id="stage-converting" style="display:none">
+          <div class="tbi-conv-header">
+            <div class="tbi-filerow-icon">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                <rect x="0" y="0" width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.6"/>
+                <rect x="14.6" y="3.6" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+                <rect x="14.6" y="18.6" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+                <rect x="3.6" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+                <rect x="18.6" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+                <rect x="14.6" y="14.6" width="2.8" height="2.8" rx="0.6" fill="#e97627"/>
+              </svg>
+            </div>
+            <div class="tbi-filerow-meta">
+              <div class="tbi-filerow-name" id="conv-filename">—</div>
+              <div class="tbi-filerow-sub">in progress…</div>
+            </div>
+            <div class="tbi-conv-pct" id="conv-pct">0%</div>
+          </div>
+
+          <div class="tbi-progress">
+            <div class="tbi-progress-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+
+          <ul class="tbi-steplist" id="steplist"></ul>
+
+          <!-- Collapsible raw log -->
+          <div>
+            <button class="tbi-log-toggle" id="log-toggle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              View raw log
+            </button>
+            <div class="tbi-log-wrap" id="log-wrap">
+              <div class="tbi-terminal" id="terminal"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DONE STAGE (hidden initially) ── -->
+        <div class="tbi-done" id="stage-done" style="display:none">
+          <div class="tbi-success-banner">
+            <div class="tbi-success-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg>
+            </div>
+            <div>
+              <div class="tbi-success-title">Power BI project is ready</div>
+              <div class="tbi-success-sub" id="done-sub">Conversion complete</div>
+            </div>
+          </div>
+
+          <div class="tbi-summary" id="summary-table">
+            <!-- rows injected by JS -->
+          </div>
+
+          <div class="tbi-pbipcard" id="pbipcard">
+            <div class="tbi-pbipcard-icon">
+              <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                <defs><linearGradient id="pbiG2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f7d24b"/><stop offset="100%" stop-color="#e8a90b"/></linearGradient></defs>
+                <rect x="0" y="0" width="32" height="32" rx="6" fill="url(#pbiG2)"/>
+                <rect x="7"  y="17" width="4.5" height="9"  rx="1" fill="#a36e00" opacity="0.92"/>
+                <rect x="14" y="11" width="4.5" height="15" rx="1" fill="#a36e00" opacity="0.92"/>
+                <rect x="21" y="5"  width="4.5" height="21" rx="1" fill="#8a5a00"/>
+              </svg>
+            </div>
+            <div class="tbi-pbipcard-meta">
+              <div class="tbi-pbipcard-name mono" id="pbip-filename">output.pbip.zip</div>
+              <div class="tbi-pbipcard-sub">Power BI project · ready to open in Power BI Desktop</div>
+            </div>
+            <a class="tbi-primary tbi-primary-lg" id="btn-download" style="display:none; text-decoration:none;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+              Download .pbip
+            </a>
+          </div>
+
+          <div class="tbi-downloads">
+            <button class="tbi-secondary" id="btn-reset">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M5 20h14"/></svg>
+              Convert another workbook
+            </button>
+          </div>
+        </div>
+
+        <!-- ── ERROR STAGE (hidden initially) ── -->
+        <div id="stage-error" style="display:none; padding: 20px; background: #fff1f2; border:1px solid #fecaca; border-radius: var(--radius); color:#991b1b;">
+          <div style="font-weight:600; margin-bottom:6px; display:flex; align-items:center; gap:8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+            Conversion failed
+          </div>
+          <div style="font-size:13px;" id="error-msg">—</div>
+          <button class="tbi-secondary" id="btn-error-reset" style="margin-top:14px; font-size:13px;">Try again</button>
+        </div>
+
+      </div><!-- /card-body -->
+    </div><!-- /tbi-card -->
+  </section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<footer class="tbi-footer">
+  <div class="container tbi-footer-inner">
+    <div class="tbi-footer-brand">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+        <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#tbiGrad)"/>
+        <rect x="11" y="16" width="4" height="11" rx="1.2" fill="white" opacity="0.75"/>
+        <rect x="17" y="11" width="4" height="16" rx="1.2" fill="white" opacity="0.92"/>
+      </svg>
+      <span>TurboBI · Powered by <strong>ProcDNA</strong></span>
+    </div>
+    <div class="tbi-footer-links">
+      <span>© 2026 ProcDNA Pvt. Ltd. All rights reserved.</span>
+    </div>
+    <div class="tbi-footer-links">
+      <span>v1.0</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Theme ─────────────────────────────────────────────────────────────────
+const html = document.documentElement;
+const themeBtn = document.getElementById('theme-btn');
+const iconMoon = document.getElementById('icon-moon');
+const iconSun  = document.getElementById('icon-sun');
+
+function applyTheme(t) {
+  html.setAttribute('data-theme', t);
+  iconMoon.style.display = t === 'light' ? '' : 'none';
+  iconSun.style.display  = t === 'dark'  ? '' : 'none';
+  try { localStorage.setItem('turbobi-theme', t); } catch {}
+}
+applyTheme(localStorage.getItem('turbobi-theme') || 'light');
+themeBtn.addEventListener('click', () =>
+  applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light')
+);
+
+// ── Step definitions ──────────────────────────────────────────────────────
+const STEPS = [
+  { key:'parse',   label:'Parsing workbook',   detail:'Reading .twbx archive and extracting data model',            kw:/pars|extract|open|read/i },
+  { key:'model',   label:'Mapping data model', detail:'Translating sources, relationships, and calculations',       kw:/model|source|calcul|relat|field|measure/i },
+  { key:'visuals', label:'Converting visuals', detail:'Rebuilding sheets and dashboards as Power BI report pages',  kw:/visual|sheet|dashboard|report|page/i },
+  { key:'creds',   label:'Wiring credentials', detail:'Applying connection template and parameter bindings',       kw:/cred|connect|wire|param|config/i },
+  { key:'package', label:'Packaging .pbip',    detail:'Assembling project, dataset, and report folders',           kw:/packag|zip|writ|sav|output|done|complet/i },
+];
+
+function buildStepList(activeIdx) {
+  const ul = document.getElementById('steplist');
+  ul.innerHTML = '';
+  STEPS.forEach((s, i) => {
+    const state = i < activeIdx ? 'done' : i === activeIdx ? 'active' : 'pending';
+    const li = document.createElement('li');
+    li.className = `tbi-step state-${state}`;
+    let markerHtml;
+    if (state === 'done') {
+      markerHtml = `<span class="tbi-step-marker"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg></span>`;
+    } else if (state === 'active') {
+      markerHtml = `<span class="tbi-step-marker"><span class="tbi-spinner"></span></span>`;
+    } else {
+      markerHtml = `<span class="tbi-step-marker"><span class="tbi-step-num">${i+1}</span></span>`;
+    }
+    li.innerHTML = `
+      ${markerHtml}
+      <span class="tbi-step-body">
+        <span class="tbi-step-label">${s.label}</span>
+        <span class="tbi-step-detail">${s.detail}</span>
+      </span>
+      ${state === 'done' ? `<span class="tbi-step-time"></span>` : ''}
+    `;
+    ul.appendChild(li);
+  });
+}
+
+// ── State ─────────────────────────────────────────────────────────────────
+let twbxFile = null, credsFile = null, currentJob = null, currentStep = 0;
+
+// ── DOM refs ──────────────────────────────────────────────────────────────
+const slotTwbx      = document.getElementById('slot-twbx');
+const twbxInput     = document.getElementById('twbx-input');
+const slotCreds     = document.getElementById('slot-creds');
+const credsInput    = document.getElementById('creds-input');
+const btnStart      = document.getElementById('btn-start');
+const actionsNote   = document.getElementById('actions-note');
+const btnReset      = document.getElementById('btn-reset');
+const btnErrReset   = document.getElementById('btn-error-reset');
+const btnDownload   = document.getElementById('btn-download');
+const logToggle     = document.getElementById('log-toggle');
+const logWrap       = document.getElementById('log-wrap');
+const terminal      = document.getElementById('terminal');
+
+// ── File helpers ──────────────────────────────────────────────────────────
+function fmtBytes(n) {
+  if (!n) return '0 B';
+  const u = ['B','KB','MB','GB']; let i = 0, v = n;
+  while (v >= 1024 && i < u.length-1) { v /= 1024; i++; }
+  return `${v.toFixed(v >= 10 || i===0 ? 0 : 1)} ${u[i]}`;
+}
+
+function attachTwbx(file) {
+  twbxFile = file;
+  document.getElementById('twbx-filename').textContent = file.name;
+  document.getElementById('twbx-filesub').textContent  = fmtBytes(file.size);
+  document.getElementById('slot-twbx-empty').style.display    = 'none';
+  document.getElementById('slot-twbx-attached').style.display = '';
+  document.getElementById('twbx-replace').style.display       = '';
+  slotTwbx.classList.add('is-attached');
+  slotTwbx.style.cursor = 'default';
+  btnStart.disabled = false;
+  actionsNote.textContent = credsFile ? 'Both files staged — ready to convert.' : 'Credentials are optional. Without them, .pbip will use placeholder connection strings.';
+}
+
+function clearTwbx() {
+  twbxFile = null; twbxInput.value = '';
+  document.getElementById('slot-twbx-empty').style.display    = '';
+  document.getElementById('slot-twbx-attached').style.display = 'none';
+  document.getElementById('twbx-replace').style.display       = 'none';
+  slotTwbx.classList.remove('is-attached');
+  slotTwbx.style.cursor = '';
+  btnStart.disabled = true;
+  actionsNote.textContent = 'Select a .twbx file to begin.';
+}
+
+function attachCreds(file) {
+  credsFile = file;
+  document.getElementById('creds-filename').textContent = file.name;
+  document.getElementById('creds-filesub').textContent  = fmtBytes(file.size) + ' attached';
+  document.getElementById('slot-creds-empty').style.display    = 'none';
+  document.getElementById('slot-creds-attached').style.display = '';
+  document.getElementById('creds-replace').style.display       = '';
+  slotCreds.classList.add('is-attached');
+  slotCreds.style.cursor = 'default';
+  if (twbxFile) actionsNote.textContent = 'Both files staged — ready to convert.';
+}
+
+function clearCreds() {
+  credsFile = null; credsInput.value = '';
+  document.getElementById('slot-creds-empty').style.display    = '';
+  document.getElementById('slot-creds-attached').style.display = 'none';
+  document.getElementById('creds-replace').style.display       = 'none';
+  slotCreds.classList.remove('is-attached');
+  slotCreds.style.cursor = '';
+}
+
+// ── Slot interactions ──────────────────────────────────────────────────────
+slotTwbx.addEventListener('click', (e) => {
+  if (e.target.closest('#twbx-clear') || e.target.closest('#twbx-replace')) return;
+  if (!twbxFile) twbxInput.click();
+});
+slotTwbx.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (!twbxFile) twbxInput.click(); }});
+slotTwbx.addEventListener('dragover',  (e) => { e.preventDefault(); slotTwbx.classList.add('is-over'); });
+slotTwbx.addEventListener('dragleave', () => slotTwbx.classList.remove('is-over'));
+slotTwbx.addEventListener('drop', (e) => {
+  e.preventDefault(); slotTwbx.classList.remove('is-over');
+  const f = e.dataTransfer.files[0];
+  if (f && /\.twbx?$/i.test(f.name)) attachTwbx(f);
+});
+twbxInput.addEventListener('change', () => { if (twbxInput.files[0]) attachTwbx(twbxInput.files[0]); });
+document.getElementById('twbx-clear').addEventListener('click', (e) => { e.stopPropagation(); clearTwbx(); });
+document.getElementById('twbx-replace').addEventListener('click', (e) => { e.stopPropagation(); twbxInput.click(); });
+
+slotCreds.addEventListener('click', (e) => {
+  if (e.target.closest('#creds-clear') || e.target.closest('#creds-replace')) return;
+  if (!credsFile) credsInput.click();
+});
+slotCreds.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (!credsFile) credsInput.click(); }});
+slotCreds.addEventListener('dragover',  (e) => { e.preventDefault(); slotCreds.classList.add('is-over'); });
+slotCreds.addEventListener('dragleave', () => slotCreds.classList.remove('is-over'));
+slotCreds.addEventListener('drop', (e) => {
+  e.preventDefault(); slotCreds.classList.remove('is-over');
+  const f = e.dataTransfer.files[0];
+  if (f && /\.json$/i.test(f.name)) attachCreds(f);
+});
+credsInput.addEventListener('change', () => { if (credsInput.files[0]) attachCreds(credsInput.files[0]); });
+document.getElementById('creds-clear').addEventListener('click', (e) => { e.stopPropagation(); clearCreds(); });
+document.getElementById('creds-replace').addEventListener('click', (e) => { e.stopPropagation(); credsInput.click(); });
+
+// ── Stage transitions ──────────────────────────────────────────────────────
+function setStage(s) {
+  document.getElementById('stage-upload').style.display     = s === 'upload'     ? '' : 'none';
+  document.getElementById('stage-converting').style.display = s === 'converting' ? '' : 'none';
+  document.getElementById('stage-done').style.display       = s === 'done'       ? '' : 'none';
+  document.getElementById('stage-error').style.display      = s === 'error'      ? '' : 'none';
+  const tagEl   = document.getElementById('card-tag');
+  const titleEl = document.getElementById('card-title');
+  if (s === 'upload') {
+    tagEl.className = 'tbi-step-tag tone-' + (twbxFile ? 'active' : 'neutral');
+    tagEl.textContent = 'Step 1 of 2';
+    titleEl.textContent = 'Upload your files';
+  } else if (s === 'converting') {
+    tagEl.className = 'tbi-step-tag tone-running';
+    tagEl.textContent = 'Converting…';
+    titleEl.textContent = 'Building Power BI project';
+  } else if (s === 'done') {
+    tagEl.className = 'tbi-step-tag tone-success';
+    tagEl.textContent = 'Conversion complete';
+    titleEl.textContent = 'Download your project';
+  } else if (s === 'error') {
+    tagEl.className = 'tbi-step-tag tone-error';
+    tagEl.textContent = 'Failed';
+    titleEl.textContent = 'Conversion error';
+  }
+}
+
+// ── Log toggle ─────────────────────────────────────────────────────────────
+logToggle.addEventListener('click', () => {
+  const open = logWrap.classList.toggle('open');
+  logToggle.classList.toggle('open', open);
+  logToggle.querySelector('span') && (logToggle.querySelector('span').textContent = open ? 'Hide raw log' : 'View raw log');
+  const spans = logToggle.querySelectorAll('span');
+  if (spans.length) spans[0].textContent = open ? 'Hide raw log' : 'View raw log';
+});
+
+// ── Convert ────────────────────────────────────────────────────────────────
+btnStart.addEventListener('click', startConversion);
+
+async function startConversion() {
+  if (!twbxFile) return;
+  btnStart.disabled = true;
+  currentStep = 0;
+  terminal.innerHTML = '';
+
+  document.getElementById('conv-filename').textContent = twbxFile.name;
+  buildStepList(0);
+  setStage('converting');
+
+  const formData = new FormData();
+  formData.append('twbx', twbxFile);
+  if (credsFile) formData.append('credentials', credsFile);
+  // formData.append('skip_llm', document.getElementById('skip-llm-toggle').checked ? 'true' : 'false');
+
+  let res;
+  try {
+    res = await fetch('/convert', { method: 'POST', body: formData });
+    const data = await res.json();
+    if (!res.ok) { showError('Upload failed: ' + (data.error || res.status)); return; }
+    currentJob = data.job_id;
+  } catch (err) {
+    showError('Network error: ' + err.message); return;
+  }
+
+  const evtSource = new EventSource(`/stream/${currentJob}`);
+
+  evtSource.onmessage = (e) => {
+    appendLog(e.data);
+    advanceStep(e.data);
+  };
+
+  evtSource.addEventListener('done', async (e) => {
+    evtSource.close();
+    if (e.data === 'done') {
+      // Mark all steps done, 100%
+      currentStep = STEPS.length;
+      buildStepList(STEPS.length);
+      setProgress(1);
+      // Fetch status for report
+      try {
+        const sr = await fetch(`/status/${currentJob}`);
+        const sd = await sr.json();
+        showDone(sd);
+      } catch { showDone({}); }
+    } else {
+      showError('Conversion failed — see raw log for details');
+    }
+  });
+
+  evtSource.onerror = () => {
+    evtSource.close();
+    showError('Stream disconnected unexpectedly');
+  };
+}
+
+function advanceStep(text) {
+  for (let i = currentStep; i < STEPS.length; i++) {
+    if (STEPS[i].kw.test(text)) {
+      currentStep = i;
+      buildStepList(currentStep);
+      setProgress(currentStep / STEPS.length);
+      break;
+    }
+  }
+}
+
+function setProgress(p) {
+  const pct = Math.round(p * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('conv-pct').textContent = pct + '%';
+}
+
+function showDone(sd) {
+  const report = sd.report || {};
+  const zipName = sd.zip_name || (twbxFile ? twbxFile.name.replace(/\.twbx?$/i, '') + '.pbip.zip' : 'output.pbip.zip');
+
+  // Summary table
+  const rows = [
+    ['Source workbook',         twbxFile?.name || '—'],
+    ['Warnings before',         report.warnings_before ?? '—'],
+    ['Warnings after',          report.warnings_after  ?? '—'],
+    ['Hints added',             report.hints_added     ?? '—'],
+    ['Hints total',             report.hints_total     ?? '—'],
+  ];
+  const tbl = document.getElementById('summary-table');
+  tbl.innerHTML = rows.map(([k,v]) => `
+    <div class="tbi-summary-row">
+      <div class="tbi-summary-key">${k}</div>
+      <div class="tbi-summary-val">${v}</div>
+    </div>`).join('');
+
+  document.getElementById('done-sub').textContent = 'Conversion complete · ready to download';
+  document.getElementById('pbip-filename').textContent = zipName;
+
+  if (sd.zip_name) {
+    const dl = document.getElementById('btn-download');
+    dl.href = `/download/${currentJob}`;
+    dl.style.display = '';
+  }
+
+  setStage('done');
+}
+
+function showError(msg) {
+  document.getElementById('error-msg').textContent = msg;
+  setStage('error');
+}
+
+function appendLog(text) {
+  const span = document.createElement('span');
+  span.className = 'log-line ' + classifyLine(text);
+  span.textContent = text;
+  terminal.appendChild(span);
+  terminal.appendChild(document.createTextNode('\n'));
+  terminal.scrollTop = terminal.scrollHeight;
+}
+function classifyLine(t) {
+  if (/\[ERROR\]|error|Error/i.test(t)) return 'error';
+  if (/WARNING|warn/i.test(t))          return 'warn';
+  if (/✓|done|complete|ready|saved/i.test(t)) return 'pass';
+  if (t.startsWith(':') || t.trim() === '') return 'muted';
+  return '';
+}
+
+// ── Reset ──────────────────────────────────────────────────────────────────
+function fullReset() {
+  clearTwbx(); clearCreds();
+  currentJob = null; currentStep = 0;
+  terminal.innerHTML = '';
+  document.getElementById('btn-download').style.display = 'none';
+  logWrap.classList.remove('open');
+  logToggle.classList.remove('open');
+  setStage('upload');
+}
+btnReset.addEventListener('click', fullReset);
+btnErrReset.addEventListener('click', fullReset);
+</script>
+</body>
+</html>

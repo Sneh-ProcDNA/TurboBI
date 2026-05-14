@@ -1,0 +1,193 @@
+{
+  "comment": [
+    "Visual type selection rules.",
+    "",
+    "Selection order:",
+    "  1. Geo override   - if the worksheet has lat/lon or location fields,",
+    "                      jump straight to map / filledMap.",
+    "  2. Direct mark    - if the Tableau mark class is in 'mark_to_visual',",
+    "                      use that mapping (Bar, Line, Pie, etc.). Direct-mark",
+    "                      overrides in visual_picker.py refine pie→donut and",
+    "                      table↔matrix based on shelf layout.",
+    "  3. Automatic mark - apply 'auto_rules' in order; the first whose",
+    "                      'when' all match wins.",
+    "  4. Fallback       - 'fallback_visual'.",
+    "",
+    "'when' supports six predicates:",
+    "  has_date        - any field is a date or has a date-part agg (yr/qr/mn).",
+    "  measure_count   - count of fields with a measure agg (sum/avg/cnt/etc).",
+    "  dimension_count - count of fields without a measure agg.",
+    "  row_count       - count of fields on the rows shelf.",
+    "  col_count       - count of fields on the cols shelf.",
+    "  encoding        - true if the matching encoding shelf is set.",
+    "",
+    "All counts can be:  exact int  ('==1'),  '>=1', '>1', '0', '>=2', etc."
+  ],
+  "mark_to_visual": {
+    "bar": "barChart",
+    "column": "columnChart",
+    "line": "lineChart",
+    "area": "areaChart",
+    "circle": "pieChart",
+    "point": "azureMap",
+    "square": "pivotTable",
+    "shape": "scatterChart",
+    "pie": "pieChart",
+    "gantt": "tableEx",
+    "polygon": "azureMap",
+    "filled-map": "azureMap",
+    "multipolygon": "azureMap",
+    "map": "azureMap",
+    "treemap": "treemap",
+    "histogram": "columnChart",
+    "donut": "donutChart",
+    "waterfall": "waterfallChart",
+    "bullet": "barChart",
+    "funnel": "funnel",
+    "heatmap": "pivotTable",
+    "matrix": "pivotTable",
+    "boxplot": "tableEx",
+    "wordcloud": "tableEx",
+    "dual": "lineClusteredColumnComboChart",
+    "linechart": "lineChart",
+    "barchart": "barChart",
+    "columnchart": "columnChart",
+    "areachart": "areaChart",
+    "scatter": "scatterChart",
+    "bubble": "scatterChart",
+    "packed-bubble": "scatterChart",
+    "text": "cardVisual",
+    "markbar": "barChart",
+    "markline": "lineChart",
+    "markarea": "areaChart",
+    "markcircle": "pieChart",
+    "marktext": "cardVisual",
+    "markautomatic": "tableEx",
+    "step": "areaChart",
+    "step-line": "lineChart",
+    "step-area": "areaChart",
+    "bump": "lineChart",
+    "radial": "pieChart",
+    "sunburst": "donutChart",
+    "sankey": "tableEx",
+    "decomposition": "treemap",
+    "kpi": "cardVisual",
+    "scorecard": "multiRowCard",
+    "combo": "lineClusteredColumnComboChart",
+    "stacked": "stackedBarChart",
+    "horizon": "areaChart",
+    "density": "scatterChart"
+  },
+  "closest_match": {
+    "comment": "When a mark is not in mark_to_visual, find the closest key by substring/keyword similarity.",
+    "keywords": {
+      "bar": ["bar", "bullet", "gantt", "histogram", "stacked"],
+      "column": ["column", "histogram"],
+      "line": ["line", "step", "bump", "dual", "combo"],
+      "area": ["area", "horizon", "stream"],
+      "scatter": ["scatter", "shape", "density"],
+      "pie": ["pie", "donut", "radial", "sunburst"],
+      "map": ["map", "polygon", "geo", "filled", "circle", "point", "bubble"],
+      "tableEx": ["text", "box", "wordcloud", "gantt", "mark"],
+      "pivotTable": ["square", "matrix", "heatmap", "crosstab"],
+      "treemap": ["treemap", "partition"],
+      "funnel": ["funnel", "pyramid"],
+      "card": ["kpi", "score", "metric", "big number"],
+      "waterfallChart": ["waterfall", "bridge", "cascade"]
+    },
+    "default_group": "tableEx"
+  },
+  "auto_rules": [
+    {
+      "name": "cardVisual (text-only worksheet — empty rows/cols)",
+      "when": {
+        "measure_count": "0",
+        "dimension_count": "0"
+      },
+      "visual": "cardVisual",
+      "priority": 10
+    },
+    {
+      "name": "scatter (two measures, no dims)",
+      "when": {
+        "measure_count": ">=2",
+        "dimension_count": "0"
+      },
+      "visual": "scatterChart"
+    },
+    {
+      "name": "card (single measure, nothing else)",
+      "when": {
+        "measure_count": "==1",
+        "dimension_count": "0"
+      },
+      "visual": "cardVisual"
+    },
+    {
+      "name": "line chart (date axis + measure)",
+      "when": {
+        "has_date": true,
+        "measure_count": ">=1"
+      },
+      "visual": "lineChart"
+    },
+    {
+      "name": "matrix (dim on BOTH rows and cols, with measure values)",
+      "when": {
+        "row_count":       ">=1",
+        "col_count":       ">=1",
+        "dimension_count": ">=2",
+        "measure_count":   ">=1"
+      },
+      "visual": "pivotTable",
+      "priority": 40
+    },
+    {
+      "name": "table (fields on one shelf only, mixed measure + dims)",
+      "when": {
+        "measure_count":   ">=1",
+        "dimension_count": ">=2"
+      },
+      "visual": "tableEx",
+      "priority": 45
+    },
+    {
+      "name": "column chart (single dim + single measure)",
+      "when": {
+        "dimension_count": "==1",
+        "measure_count": "==1"
+      },
+      "visual": "columnChart"
+    },
+    {
+      "name": "clustered column (dim + measure + color)",
+      "when": {
+        "dimension_count": ">=1",
+        "measure_count": ">=1",
+        "encoding": "color"
+      },
+      "visual": "clusteredColumnChart"
+    },
+    {
+      "name": "table (many dims, no measures)",
+      "when": {
+        "dimension_count": ">=2",
+        "measure_count": "0"
+      },
+      "visual": "tableEx"
+    },
+    {
+      "name": "card fallback (any single non-empty)",
+      "when": {
+        "measure_count": "==1",
+        "dimension_count": "0"
+      },
+      "visual": "cardVisual"
+    }
+  ],
+  "fallback_visual": "tableEx",
+  "geo_visuals": {
+    "filled": "azureMap",
+    "scatter": "azureMap"
+  }
+}
