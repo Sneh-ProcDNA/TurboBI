@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "c682d124bdf9339d3a02",
-  "displayName": "Patient 360",
-  "displayOption": "ActualSize",
-  "height": 900,
-  "width": 1600
-}
