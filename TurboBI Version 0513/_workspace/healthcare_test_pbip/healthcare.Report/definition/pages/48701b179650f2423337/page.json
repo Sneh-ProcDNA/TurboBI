@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "48701b179650f2423337",
-  "displayName": "Disease/Drugs",
-  "displayOption": "ActualSize",
-  "height": 768,
-  "width": 1366
-}

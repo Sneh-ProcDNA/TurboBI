@@ -1,0 +1,110 @@
+table hco_ordered
+	lineageTag: 70305dc0-267a-63db-9503-eb76de250892
+
+	column 'Account Facility Name'
+		dataType: string
+		lineageTag: c4fa1791-cd90-f599-7ad1-47aba7141fc6
+		summarizeBy: none
+		sourceColumn: account_facility_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Type'
+		dataType: string
+		lineageTag: 681f2f02-91a0-d784-0df8-6779e39da640
+		summarizeBy: none
+		sourceColumn: account_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Crx Account Id'
+		dataType: string
+		lineageTag: dca5641e-5ffa-1d6a-ce70-07330e830839
+		summarizeBy: none
+		sourceColumn: crx_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: int64
+		lineageTag: 0c60a9dc-bfb5-90e8-0ab0-78b74b96ad41
+		summarizeBy: none
+		sourceColumn: postal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Id'
+		dataType: int64
+		lineageTag: 01cee747-b11e-5a15-d9b9-1c265aa7874c
+		summarizeBy: none
+		sourceColumn: region_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Name'
+		dataType: string
+		lineageTag: f7e0766b-b9ac-9d40-9fc1-9e76dd37d07a
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Id'
+		dataType: string
+		lineageTag: bbdd5d25-c2db-bedb-6b5f-65f0cea3a24d
+		summarizeBy: none
+		sourceColumn: territory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name'
+		dataType: string
+		lineageTag: b21ca062-1412-bcd7-87b5-516e002d4648
+		summarizeBy: none
+		sourceColumn: territory_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column LTD
+		dataType: int64
+		lineageTag: 9120efa8-b4af-3bb7-270e-3b84c94da0f8
+		summarizeBy: none
+		sourceColumn: LTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column MTD
+		dataType: int64
+		lineageTag: 89fd96c8-7fbb-4376-9b7a-7753cb82e5aa
+		summarizeBy: none
+		sourceColumn: MTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD
+		dataType: int64
+		lineageTag: 7eb108d2-0955-10a3-39ca-1e25f432fc4d
+		summarizeBy: none
+		sourceColumn: QTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column YTD
+		dataType: int64
+		lineageTag: c37ddab2-2b50-4bda-8e22-3225d10815b6
+		summarizeBy: none
+		sourceColumn: YTD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition hco_ordered = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\SnehVirenShah\Downloads\TWBX_to_PBIP_FIXED\TWBX_to_PBIP_FIXED\TurboBI Version 0514\uploads\f9971b2b-35ca-4b01-a712-b1e4db6cdee2\Account Leads Dashboard_pbip\Account Leads Dashboard (4) (1).SemanticModel\data\federated.1krsj8l110x_c1acecc0\Extract.hco!ordered_5C706728086_6ecd0adf.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"crx_account_id", type text}, {"account_facility_name", type text}, {"account_type", type text}, {"postal_code", Int64.Type}, {"territory_id", type text}, {"territory_name", type text}, {"region_id", Int64.Type}, {"region_name", type text}, {"LTD", Int64.Type}, {"MTD", Int64.Type}, {"QTD", Int64.Type}, {"YTD", Int64.Type}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,2462 @@
+table pt_360_table
+	lineageTag: 7e393d2e-9ca5-6f81-aa2e-0908cfa338e9
+
+	column 'Most Recent Visit'
+		dataType: dateTime
+		lineageTag: a298469e-026e-7134-bd3a-19ce2ec7ac53
+		summarizeBy: none
+		sourceColumn: MOST_RECENT_VISIT
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No Of Visits'
+		dataType: int64
+		lineageTag: 742e03ff-fa83-ab80-2353-c87dea236d08
+		summarizeBy: sum
+		sourceColumn: NO_OF_VISITS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient Age'
+		dataType: int64
+		lineageTag: 9ed43487-ab21-0a2b-eafa-4dabc4abd4f0
+		summarizeBy: sum
+		sourceColumn: PATIENT_AGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient Gender'
+		dataType: string
+		lineageTag: 02197d2c-95f0-dd3e-4161-871fcf2ac775
+		summarizeBy: none
+		sourceColumn: PATIENT_GENDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient Id'
+		dataType: string
+		lineageTag: 59fbb459-31a3-b524-8005-c0411ffd1fc4
+		summarizeBy: none
+		sourceColumn: PATIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient Yob'
+		dataType: dateTime
+		lineageTag: b816503f-331b-5770-76e2-9085f0f1c639
+		summarizeBy: none
+		sourceColumn: PATIENT_YOB
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Hcp Npi'
+		dataType: int64
+		lineageTag: 61e82e89-1191-d6bd-c784-c315126db7aa
+		summarizeBy: sum
+		sourceColumn: PRIMARY_HCP_NPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avlayah Status'
+		dataType: string
+		lineageTag: a744c863-f3fd-5b72-e876-0f3cba7b93d4
+		summarizeBy: none
+		sourceColumn: avlayah_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avlayah Switch Date'
+		dataType: string
+		lineageTag: ff6f271d-b39e-bfb5-9b7a-d4a87bca555d
+		summarizeBy: none
+		sourceColumn: avlayah_switch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comorbidity Categories'
+		dataType: string
+		lineageTag: 81dbb177-a72e-c498-9e92-443e4802afb8
+		summarizeBy: none
+		sourceColumn: comorbidity_categories
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count Of Comorbidity Categories'
+		dataType: int64
+		lineageTag: b13598b3-4ac2-3739-d373-2ad1f15a0f10
+		summarizeBy: sum
+		sourceColumn: count_of_comorbidity_categories
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count Of Distinct Comorbidities'
+		dataType: int64
+		lineageTag: 4fbf20cd-7edd-fda0-f03a-ab41a7954668
+		summarizeBy: sum
+		sourceColumn: count_of_distinct_comorbidities
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distinct Comorbidities'
+		dataType: string
+		lineageTag: 3c9db6d9-0783-42c0-1d11-34fd2007e66c
+		summarizeBy: none
+		sourceColumn: distinct_comorbidities
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx All Visit Count 5Yr'
+		dataType: int64
+		lineageTag: 827c5964-6376-1c79-0c25-387568b031da
+		summarizeBy: none
+		sourceColumn: first_dx_all_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx Hco Name 5Yr'
+		dataType: string
+		lineageTag: 91cdda02-aa28-d68f-4a93-267a22a1a3e7
+		summarizeBy: none
+		sourceColumn: first_dx_hco_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx Hcp 5Yr'
+		dataType: int64
+		lineageTag: 25e66697-d459-f28e-b303-d43041467ccf
+		summarizeBy: none
+		sourceColumn: first_dx_hcp_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx Hcp Name 5Yr'
+		dataType: string
+		lineageTag: 4ef538bd-6779-47e2-ccea-f9ca4f35c405
+		summarizeBy: none
+		sourceColumn: first_dx_hcp_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx Hcp Specialty'
+		dataType: string
+		lineageTag: 3870363a-c12e-1926-4088-42ee73f07684
+		summarizeBy: none
+		sourceColumn: first_dx_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx Last Visit 5Yr'
+		dataType: dateTime
+		lineageTag: b30dbb72-7ee2-072a-c506-fc0ddf46d3d9
+		summarizeBy: none
+		sourceColumn: first_dx_last_visit_5yr
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx After Diagnosis'
+		dataType: dateTime
+		lineageTag: ab035d87-a973-7565-992c-1339582669d3
+		summarizeBy: none
+		sourceColumn: first_tx_after_diagnosis
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx All Visit Count 5Yr'
+		dataType: int64
+		lineageTag: 907ae063-e7ca-f7dd-3eaa-d7d9f1ea3a5f
+		summarizeBy: none
+		sourceColumn: first_tx_all_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx Hco Name 5Yr'
+		dataType: string
+		lineageTag: fb1c25fc-2ced-6c7e-6f65-044a15d7901c
+		summarizeBy: none
+		sourceColumn: first_tx_hco_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx Hcp 5Yr'
+		dataType: string
+		lineageTag: 28e69807-42b9-7d77-b1f8-a9eeec275abf
+		summarizeBy: none
+		sourceColumn: first_tx_hcp_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx Hcp Name 5Yr'
+		dataType: string
+		lineageTag: 66fc0cff-cd29-7638-8a0f-5f440129c3ec
+		summarizeBy: none
+		sourceColumn: first_tx_hcp_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx Hcp Specialty'
+		dataType: string
+		lineageTag: 0aed452c-837b-8cad-5f38-05597d18fe21
+		summarizeBy: none
+		sourceColumn: first_tx_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Tx Last Visit 5Yr'
+		dataType: string
+		lineageTag: 0b58e1d6-ff74-a462-76f0-423156e59450
+		summarizeBy: none
+		sourceColumn: first_tx_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incidence Date'
+		dataType: dateTime
+		lineageTag: a648ea65-8329-83bd-d734-5f320abbe01d
+		summarizeBy: none
+		sourceColumn: incidence_date
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Claim Date'
+		dataType: dateTime
+		lineageTag: b4918a92-2e09-7e7d-9868-e3c2199780e8
+		summarizeBy: none
+		sourceColumn: latest_claim_date
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Claim Hcp Hco Name'
+		dataType: string
+		lineageTag: 86fdbbf0-484b-db14-3256-2999b131121d
+		summarizeBy: none
+		sourceColumn: latest_claim_hcp_hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Claim Hcp Name'
+		dataType: string
+		lineageTag: 6c0ed57a-0c97-6a5d-1a45-c6d3b645e605
+		summarizeBy: none
+		sourceColumn: latest_claim_hcp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Claim Hcp Npi'
+		dataType: string
+		lineageTag: 87c831fe-0d65-697c-b300-15cd764b110c
+		summarizeBy: none
+		sourceColumn: latest_claim_hcp_npi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Claim Hcp Specialty'
+		dataType: string
+		lineageTag: ad2e20a7-b481-67eb-4287-02c6ba8720fe
+		summarizeBy: none
+		sourceColumn: latest_claim_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Claim Hcp Visit Count'
+		dataType: int64
+		lineageTag: 4d0155e4-20ff-084d-bd05-380fe2f1bc00
+		summarizeBy: sum
+		sourceColumn: latest_claim_hcp_visit_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Mpsii Tx Type'
+		dataType: string
+		lineageTag: 194ab75a-cb79-0e95-a466-f6e6571a8ec2
+		summarizeBy: none
+		sourceColumn: latest_mpsii_tx_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Date'
+		dataType: dateTime
+		lineageTag: 6d640dcc-9acd-ef17-185e-82cb1967cc91
+		summarizeBy: none
+		sourceColumn: latest_treatment_date
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Hcp Hco Name'
+		dataType: string
+		lineageTag: dc4f6589-c387-ef93-e2ce-1aaa1785976a
+		summarizeBy: none
+		sourceColumn: latest_treatment_hcp_hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Hcp Name'
+		dataType: string
+		lineageTag: e0ca0737-1865-93be-20d4-6a7ab4f24311
+		summarizeBy: none
+		sourceColumn: latest_treatment_hcp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Hcp Npi'
+		dataType: string
+		lineageTag: 07ee4256-fd37-5436-77df-1152cfbae512
+		summarizeBy: none
+		sourceColumn: latest_treatment_hcp_npi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Hcp Specialty'
+		dataType: string
+		lineageTag: 21b2a7ff-6b99-4369-8f3c-e04f03919478
+		summarizeBy: none
+		sourceColumn: latest_treatment_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Hcp Visit Count'
+		dataType: int64
+		lineageTag: f6654dca-c841-fb40-5b5f-7a6f1e8460ba
+		summarizeBy: sum
+		sourceColumn: latest_treatment_hcp_visit_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recent Infusion Description'
+		dataType: string
+		lineageTag: f8891263-7293-d9af-42fe-ede2063a3b40
+		summarizeBy: none
+		sourceColumn: most_recent_infusion_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recent Tx Hcp 2Yr Last Visit 5Yr'
+		dataType: string
+		lineageTag: d662c249-8961-f087-d20d-ad665f116173
+		summarizeBy: none
+		sourceColumn: most_recent_tx_hcp_2yr_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp 2Yr'
+		dataType: string
+		lineageTag: c06ee8dd-1268-982d-e9f9-6fb382ee69c4
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp 2Yr No Of Visits 5Yr'
+		dataType: string
+		lineageTag: 5c7c2e74-d3c2-1fa9-69d3-f83fe2b1eb34
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_2yr_no_of_visits_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp Hco Name'
+		dataType: string
+		lineageTag: 1053481b-cca1-cb13-98c1-d86c88a0269a
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp Name 2Yr'
+		dataType: string
+		lineageTag: 9f14b61f-504c-f7a0-7b47-c8e2859768fa
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_name_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp Region 2Yr'
+		dataType: string
+		lineageTag: d64181c7-3897-fde9-b602-4455fcec7e60
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_region_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp Region Id 2Yr'
+		dataType: string
+		lineageTag: 00e4dca2-57a4-8918-14a2-96d8fe037d32
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_region_id_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Recently Treated Hcp Specialty 2Yr'
+		dataType: string
+		lineageTag: 43f33356-3f49-1d16-afb0-58edec648c20
+		summarizeBy: none
+		sourceColumn: most_recently_treated_hcp_specialty_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hco1 Name 3Yr'
+		dataType: string
+		lineageTag: a0db80db-9873-ade1-4213-35d1b3fd6744
+		summarizeBy: none
+		sourceColumn: most_seen_hco1_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hco2 Name 3Yr'
+		dataType: string
+		lineageTag: 438f2221-281d-ee98-402f-3d6b8f78f658
+		summarizeBy: none
+		sourceColumn: most_seen_hco2_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hco3 Name 3Yr'
+		dataType: string
+		lineageTag: 51e58a04-862f-7809-96e9-d2cd9e6dda99
+		summarizeBy: none
+		sourceColumn: most_seen_hco3_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hco4 Name 3Yr'
+		dataType: string
+		lineageTag: c05577fe-c2c4-ada6-06b6-b23851e6a7fd
+		summarizeBy: none
+		sourceColumn: most_seen_hco4_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hco5 Name 3Yr'
+		dataType: string
+		lineageTag: d55ca285-d5aa-4138-8c1e-7cabc3e4cae3
+		summarizeBy: none
+		sourceColumn: most_seen_hco5_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp1 3Yr Ranked'
+		dataType: int64
+		lineageTag: 181be448-2a4c-28c1-b5cf-94847be4619b
+		summarizeBy: sum
+		sourceColumn: most_seen_hcp1_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp1 Last Visit 5Yr'
+		dataType: dateTime
+		lineageTag: c519fabb-775e-cb6b-a84a-8300f1eb49ed
+		summarizeBy: none
+		sourceColumn: most_seen_hcp1_last_visit_5yr
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp1 Name 3Yr'
+		dataType: string
+		lineageTag: c6a40dc8-b876-d4e2-fffd-238d7da671dc
+		summarizeBy: none
+		sourceColumn: most_seen_hcp1_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp1 Specialty'
+		dataType: string
+		lineageTag: 1611dcb9-ff5e-b331-d45a-136f3d931f2f
+		summarizeBy: none
+		sourceColumn: most_seen_hcp1_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp1 Visit Count 5Yr'
+		dataType: int64
+		lineageTag: 692dae67-bc7a-5ebc-c6e1-3f8975e24364
+		summarizeBy: none
+		sourceColumn: most_seen_hcp1_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp2 3Yr Ranked'
+		dataType: string
+		lineageTag: 6da9a5e0-ce26-2b74-a63e-42fb4f66e35e
+		summarizeBy: none
+		sourceColumn: most_seen_hcp2_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp2 Last Visit 5Yr'
+		dataType: string
+		lineageTag: 3f47f699-4a42-7648-fa6c-a8cc58af2253
+		summarizeBy: none
+		sourceColumn: most_seen_hcp2_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp2 Name 3Yr'
+		dataType: string
+		lineageTag: e1327ef5-fcbe-6857-27b0-6c32ae20113c
+		summarizeBy: none
+		sourceColumn: most_seen_hcp2_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp2 Specialty'
+		dataType: string
+		lineageTag: 848d55b1-2c6f-1178-a8ee-918b707335dc
+		summarizeBy: none
+		sourceColumn: most_seen_hcp2_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp2 Visit Count 5Yr'
+		dataType: int64
+		lineageTag: dbd4e251-3fa9-91e7-4de5-fb92b3110423
+		summarizeBy: none
+		sourceColumn: most_seen_hcp2_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp3 3Yr Ranked'
+		dataType: string
+		lineageTag: 8accbf7f-18db-fbc7-4e9e-7d07381a413d
+		summarizeBy: none
+		sourceColumn: most_seen_hcp3_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp3 Last Visit 5Yr'
+		dataType: string
+		lineageTag: 5ed74e6d-c4f7-583d-bfc5-7e1a640a7d51
+		summarizeBy: none
+		sourceColumn: most_seen_hcp3_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp3 Name 3Yr'
+		dataType: string
+		lineageTag: b3c54969-4e5c-44b7-b535-2bb604bbe68e
+		summarizeBy: none
+		sourceColumn: most_seen_hcp3_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp3 Specialty'
+		dataType: string
+		lineageTag: f4b1788d-6ee2-3832-3167-bf1b499e6425
+		summarizeBy: none
+		sourceColumn: most_seen_hcp3_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp3 Visit Count 5Yr'
+		dataType: int64
+		lineageTag: f79b5b83-6278-aacc-7089-d8ec78890c98
+		summarizeBy: none
+		sourceColumn: most_seen_hcp3_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp4 3Yr Ranked'
+		dataType: string
+		lineageTag: effcf580-1d18-2609-883c-40564a708e71
+		summarizeBy: none
+		sourceColumn: most_seen_hcp4_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp4 Last Visit 5Yr'
+		dataType: string
+		lineageTag: 50b07300-54c3-35ad-9c40-385c3905d027
+		summarizeBy: none
+		sourceColumn: most_seen_hcp4_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp4 Name 3Yr'
+		dataType: string
+		lineageTag: e670a121-d2fb-bcde-154c-08b4d222c091
+		summarizeBy: none
+		sourceColumn: most_seen_hcp4_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp4 Specialty'
+		dataType: string
+		lineageTag: 05d5f92a-ca69-3560-2b1b-7c759ba666f3
+		summarizeBy: none
+		sourceColumn: most_seen_hcp4_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp4 Visit Count 5Yr'
+		dataType: int64
+		lineageTag: 2765d2f9-5683-8b92-6bf5-ba5339fdbbcc
+		summarizeBy: none
+		sourceColumn: most_seen_hcp4_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp5 3Yr Ranked'
+		dataType: string
+		lineageTag: 32015cab-b56a-4793-c7ae-01f5f8177a63
+		summarizeBy: none
+		sourceColumn: most_seen_hcp5_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp5 Last Visit 5Yr'
+		dataType: string
+		lineageTag: cd27d4af-5a8f-445b-d876-a66157927596
+		summarizeBy: none
+		sourceColumn: most_seen_hcp5_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp5 Name 3Yr'
+		dataType: string
+		lineageTag: ac68d109-b21e-a1e0-bf31-971cd1f62641
+		summarizeBy: none
+		sourceColumn: most_seen_hcp5_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp5 Specialty'
+		dataType: string
+		lineageTag: ecb35e6e-efeb-fedf-cc2d-bbe3d58eb4bf
+		summarizeBy: none
+		sourceColumn: most_seen_hcp5_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Most Seen Hcp5 Visit Count 5Yr'
+		dataType: int64
+		lineageTag: 3656c889-02e1-3b40-01d4-2ea913777c56
+		summarizeBy: none
+		sourceColumn: most_seen_hcp5_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient State'
+		dataType: string
+		lineageTag: 077010a1-374c-ffbc-5b07-28b4ca2ee2b4
+		summarizeBy: none
+		sourceColumn: patient_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCO Name'
+		dataType: string
+		lineageTag: f3ac8acf-a6b2-ac38-e2c1-d7d99844e7a8
+		summarizeBy: none
+		sourceColumn: primary_hcp_hco_name_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCP Name'
+		dataType: string
+		lineageTag: 33f406da-3a8e-6dbd-d4fc-6ac8982d4daa
+		summarizeBy: none
+		sourceColumn: primary_hcp_name_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Hcp Region 2Yr'
+		dataType: string
+		lineageTag: 0a8928df-83cd-4007-ab4c-c4b3438ed4f2
+		summarizeBy: none
+		sourceColumn: primary_hcp_region_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Hcp Region Id 2Yr'
+		dataType: string
+		lineageTag: 94460d67-0062-d625-1bac-adb59b075ca1
+		summarizeBy: none
+		sourceColumn: primary_hcp_region_id_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Hcp Specialty'
+		dataType: string
+		lineageTag: 298bdbdd-6c82-4353-7b78-97f03ea1d5b5
+		summarizeBy: none
+		sourceColumn: primary_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Hcp Territory 2Yr'
+		dataType: string
+		lineageTag: 50976b01-30bb-f4e7-d2ad-901bdd15f4aa
+		summarizeBy: none
+		sourceColumn: primary_hcp_territory_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Hcp Territory Id 2Yr'
+		dataType: string
+		lineageTag: e6ee7646-17b7-cba7-1998-6ca77ca515e2
+		summarizeBy: none
+		sourceColumn: primary_hcp_territory_id_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Payer'
+		dataType: string
+		lineageTag: fdc648b3-a485-d385-837d-bd5601310672
+		summarizeBy: none
+		sourceColumn: primary_payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Secondary Payer'
+		dataType: string
+		lineageTag: 57fec24d-a89b-cb94-df56-18fb8ffd1e35
+		summarizeBy: none
+		sourceColumn: secondary_payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Severity
+		dataType: string
+		lineageTag: 2dfd7547-be6e-7ed8-960d-c4013fb46809
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Dx All Visit Count 5Yr'
+		dataType: string
+		lineageTag: 7c945889-68a5-3f65-35b1-6b1dbdbbe326
+		summarizeBy: none
+		sourceColumn: tivi_first_dx_all_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Dx Hco Name 5Yr'
+		dataType: string
+		lineageTag: cdcffcd1-6985-10c9-52de-b570b88cea8a
+		summarizeBy: none
+		sourceColumn: tivi_first_dx_hco_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Dx Hcp 5Yr'
+		dataType: string
+		lineageTag: a457bf8a-c0ac-7db2-8abd-af516d6699c8
+		summarizeBy: none
+		sourceColumn: tivi_first_dx_hcp_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Dx Hcp Name 5Yr'
+		dataType: string
+		lineageTag: 66c94258-8a9d-1406-db45-5f91d6df0ad8
+		summarizeBy: none
+		sourceColumn: tivi_first_dx_hcp_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Dx Hcp Specialty'
+		dataType: string
+		lineageTag: ade0e047-342e-8abd-06af-cedbbdb3db06
+		summarizeBy: none
+		sourceColumn: tivi_first_dx_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Dx Last Visit 5Yr'
+		dataType: string
+		lineageTag: d67e4a96-b92b-31bb-a9f4-9bf67afe99ee
+		summarizeBy: none
+		sourceColumn: tivi_first_dx_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Incidence Treatment Date'
+		dataType: string
+		lineageTag: 5b886433-1eb0-26c2-90cb-df6ff3b27bd6
+		summarizeBy: none
+		sourceColumn: tivi_first_incidence_treatment_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Tx All Visit Count 5Yr'
+		dataType: string
+		lineageTag: 976c0013-0978-12f1-d052-6a9fcb98d7de
+		summarizeBy: none
+		sourceColumn: tivi_first_tx_all_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Tx Hco Name 5Yr'
+		dataType: string
+		lineageTag: fa2b8b8f-c7be-cb81-4ef3-da4abbad64c5
+		summarizeBy: none
+		sourceColumn: tivi_first_tx_hco_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Tx Hcp 5Yr'
+		dataType: string
+		lineageTag: 57973875-a279-bc35-9186-847be4af1803
+		summarizeBy: none
+		sourceColumn: tivi_first_tx_hcp_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Tx Hcp Name 5Yr'
+		dataType: string
+		lineageTag: bc3ad604-f50b-9947-abc7-180d814fdb2e
+		summarizeBy: none
+		sourceColumn: tivi_first_tx_hcp_name_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Tx Hcp Specialty'
+		dataType: string
+		lineageTag: bc25bdab-62d2-2f0a-40e0-96affff3b21b
+		summarizeBy: none
+		sourceColumn: tivi_first_tx_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi First Tx Last Visit 5Yr'
+		dataType: string
+		lineageTag: fda04c4b-c305-c56d-d1ac-3f1cfc6837d1
+		summarizeBy: none
+		sourceColumn: tivi_first_tx_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Incidence Date'
+		dataType: string
+		lineageTag: 879fb559-71d5-2ccf-714a-9af77504aa04
+		summarizeBy: none
+		sourceColumn: tivi_incidence_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Claim Date'
+		dataType: string
+		lineageTag: 5543b89d-859b-f1a9-3d79-12b7fac326a8
+		summarizeBy: none
+		sourceColumn: tivi_latest_claim_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Claim Hcp Hco Name'
+		dataType: string
+		lineageTag: e73995c5-bff3-3e20-aa2a-f3e3bd48a209
+		summarizeBy: none
+		sourceColumn: tivi_latest_claim_hcp_hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Claim Hcp Name'
+		dataType: string
+		lineageTag: 6e78fd67-974a-ee32-d7e9-ce2327ecccb3
+		summarizeBy: none
+		sourceColumn: tivi_latest_claim_hcp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Claim Hcp Npi'
+		dataType: string
+		lineageTag: 34efccee-7113-ceca-1084-5a3f8721c5a0
+		summarizeBy: none
+		sourceColumn: tivi_latest_claim_hcp_npi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Claim Hcp Specialty'
+		dataType: string
+		lineageTag: 1fe7be36-20c4-f0a6-d058-c0c4e4853118
+		summarizeBy: none
+		sourceColumn: tivi_latest_claim_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Claim Hcp Visit Count'
+		dataType: string
+		lineageTag: db11e304-fa8f-28b7-80a5-6c60ef36f93d
+		summarizeBy: none
+		sourceColumn: tivi_latest_claim_hcp_visit_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Treatment Date'
+		dataType: string
+		lineageTag: 998557e5-0a9c-8d7a-c4e5-41c1871957b5
+		summarizeBy: none
+		sourceColumn: tivi_latest_treatment_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Treatment Hcp Hco Name'
+		dataType: string
+		lineageTag: 8ef66d19-35f1-c3d5-e8fa-88d5c0cba3c9
+		summarizeBy: none
+		sourceColumn: tivi_latest_treatment_hcp_hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Treatment Hcp Name'
+		dataType: string
+		lineageTag: 3fb3f65e-2230-688a-e4f4-c3c558187957
+		summarizeBy: none
+		sourceColumn: tivi_latest_treatment_hcp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Treatment Hcp Npi'
+		dataType: string
+		lineageTag: 457d677b-e278-2a57-394a-f3843a0849d7
+		summarizeBy: none
+		sourceColumn: tivi_latest_treatment_hcp_npi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Treatment Hcp Specialty'
+		dataType: string
+		lineageTag: 38671786-02de-b84e-ab14-89f2caaf333a
+		summarizeBy: none
+		sourceColumn: tivi_latest_treatment_hcp_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Latest Treatment Hcp Visit Count'
+		dataType: string
+		lineageTag: 18be5388-c8e7-4372-5ead-d2b85a6771a9
+		summarizeBy: none
+		sourceColumn: tivi_latest_treatment_hcp_visit_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recent Tx Hcp 2Yr Last Visit 5Yr'
+		dataType: string
+		lineageTag: 54f75b7a-012b-fc41-f43e-001f953092fe
+		summarizeBy: none
+		sourceColumn: tivi_most_recent_tx_hcp_2yr_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp 2Yr'
+		dataType: string
+		lineageTag: d3675c83-98b5-0c24-b805-85393da903dd
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp 2Yr No Of Visits 5Yr'
+		dataType: string
+		lineageTag: e36695bf-b138-d4d0-bd0b-de778aa0ed44
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_2yr_no_of_visits_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp Hco Name'
+		dataType: string
+		lineageTag: 3d8bc571-b3bf-3e2e-161e-57cd2e752914
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp Name 2Yr'
+		dataType: string
+		lineageTag: a4e53e8b-60f3-da84-2477-48d06e18e29a
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_name_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp Region 2Yr'
+		dataType: string
+		lineageTag: 136977a6-a111-bddf-670b-01e985b7b3e3
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_region_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp Region Id 2Yr'
+		dataType: string
+		lineageTag: 12463c41-817e-5833-56ea-0cd94bccde87
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_region_id_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Recently Treated Hcp Specialty 2Yr'
+		dataType: string
+		lineageTag: 545411f7-1eb0-f960-4c09-9b5701a50828
+		summarizeBy: none
+		sourceColumn: tivi_most_recently_treated_hcp_specialty_2yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hco1 Name 3Yr'
+		dataType: string
+		lineageTag: eee17dd3-7bd0-8ed4-44ad-154bee48b043
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hco1_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hco2 Name 3Yr'
+		dataType: string
+		lineageTag: 89082544-f9c0-552e-58a1-796515f0de8c
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hco2_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hco3 Name 3Yr'
+		dataType: string
+		lineageTag: 2f881e07-89f0-c95b-3748-275277c4101c
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hco3_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hco4 Name 3Yr'
+		dataType: string
+		lineageTag: 643d9650-062d-3852-a0e9-0af401f04918
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hco4_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hco5 Name 3Yr'
+		dataType: string
+		lineageTag: 79531c0a-8c96-eae4-29a0-f0e829b98d2e
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hco5_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp1 3Yr Ranked'
+		dataType: string
+		lineageTag: b4ad9fe9-c400-bcb0-3f82-afbe7005104a
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp1_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp1 Last Visit 5Yr'
+		dataType: string
+		lineageTag: f1c87f0a-0b09-a283-a2ed-f151078b746a
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp1_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp1 Name 3Yr'
+		dataType: string
+		lineageTag: 89ea73dc-95c2-32dd-33c5-c9293a9b4c9b
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp1_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp1 Specialty'
+		dataType: string
+		lineageTag: 0d17a715-d58b-1a49-1cec-e4e80b126d26
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp1_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp1 Visit Count 5Yr'
+		dataType: string
+		lineageTag: 53aa1829-6ca7-99a7-80f4-cf1ef7969c6d
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp1_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp2 3Yr Ranked'
+		dataType: string
+		lineageTag: cfd53cd4-f994-5ac6-3c71-a8368e54f5e4
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp2_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp2 Last Visit 5Yr'
+		dataType: string
+		lineageTag: e1bc8a69-0755-52d8-3a44-5733f90f91cd
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp2_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp2 Name 3Yr'
+		dataType: string
+		lineageTag: bd4b929d-8b7f-fa9c-2f6b-819b3502b7fe
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp2_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp2 Specialty'
+		dataType: string
+		lineageTag: 6f730d3b-5211-5915-ffe3-484f409e4b48
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp2_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp2 Visit Count 5Yr'
+		dataType: string
+		lineageTag: 4a59d168-1458-7252-c13c-3fee3f3e3e26
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp2_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp3 3Yr Ranked'
+		dataType: string
+		lineageTag: baf1e530-a173-3426-0e35-0baf64d475f5
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp3_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp3 Last Visit 5Yr'
+		dataType: string
+		lineageTag: 213877d8-8777-5c72-66da-7c0bafbc9594
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp3_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp3 Name 3Yr'
+		dataType: string
+		lineageTag: 9d8fa989-52a4-8cda-05ea-099f989b74f5
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp3_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp3 Specialty'
+		dataType: string
+		lineageTag: a9b98ca0-e88d-ef6a-f223-bca4a6300e0f
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp3_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp3 Visit Count 5Yr'
+		dataType: string
+		lineageTag: a9353a98-7b67-ef30-e61a-2b69bff42f6e
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp3_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp4 3Yr Ranked'
+		dataType: string
+		lineageTag: e2644f8f-ad0c-f157-adc2-32e6e8159899
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp4_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp4 Last Visit 5Yr'
+		dataType: string
+		lineageTag: edde0a6f-33e9-1492-9a2a-d2d0365190fd
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp4_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp4 Name 3Yr'
+		dataType: string
+		lineageTag: 97790afb-04bd-5510-9cc1-5ec8d285a3d9
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp4_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp4 Specialty'
+		dataType: string
+		lineageTag: ab869c64-cfcf-b262-930e-427e87a831f0
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp4_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp4 Visit Count 5Yr'
+		dataType: string
+		lineageTag: c904e676-ce3b-ba85-c569-5a2d92293c6c
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp4_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp5 3Yr Ranked'
+		dataType: string
+		lineageTag: b210414a-f9c5-3480-9a13-c7961d08efb6
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp5_3yr_ranked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp5 Last Visit 5Yr'
+		dataType: string
+		lineageTag: e77b1f04-c668-3f29-1086-7a65a654b9c9
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp5_last_visit_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp5 Name 3Yr'
+		dataType: string
+		lineageTag: 4ab945b3-a1d3-cb86-25fc-40e6d06a4e35
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp5_name_3yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp5 Specialty'
+		dataType: string
+		lineageTag: 50f5ee3e-ed83-9274-c8a8-28cb5ff8cdd1
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp5_specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tivi Most Seen Hcp5 Visit Count 5Yr'
+		dataType: string
+		lineageTag: 9d27e4a2-c182-e413-c0ec-6f6b40ffe6df
+		summarizeBy: none
+		sourceColumn: tivi_most_seen_hcp5_visit_count_5yr
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_region_filter = SWITCH(TRUE(), ISBLANK ('pt_360_table'[Primary Hcp Region 2Yr]) || 'pt_360_table'[Primary Hcp Region 2Yr] = "-" || TRIM('pt_360_table'[Primary Hcp Region 2Yr]) = "", "Unknown", 'pt_360_table'[Primary Hcp Region 2Yr])
+		dataType: string
+		lineageTag: fc11ed5b-ba38-e2d6-662f-cea2e9dc07c4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column TREND_MIN = 'pt_360_table'[trend_total_label] >= 1
+		dataType: boolean
+		lineageTag: cdf4ba8a-4bcb-b3bf-376e-18e062bb05b2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'age<17' = 'pt_360_table'[Patient Age] < 17
+		dataType: boolean
+		lineageTag: 7f7accbe-a711-9f49-5763-9c190b4f7044
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_territory = SWITCH(TRUE(), ISBLANK ('pt_360_table'[Primary Hcp Territory 2Yr]) || 'pt_360_table'[Primary Hcp Territory 2Yr] = "-" || TRIM('pt_360_table'[Primary Hcp Territory 2Yr]) = "", "N/A", 'pt_360_table'[Primary Hcp Territory 2Yr])
+		dataType: string
+		lineageTag: 4e053574-c0f5-7fa8-31ed-1b07eb1737fa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_hcp_list = SWITCH(TRUE(), ISBLANK ('pt_360_table'[HCP Name]) || 'pt_360_table'[HCP Name] = "-" || TRIM('pt_360_table'[HCP Name]) = "", "N/A", 'pt_360_table'[HCP Name])
+		dataType: string
+		lineageTag: 3e903e69-1948-25c8-39b3-f68c8888abdb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column edited_patient_filter = 'pt_360_table'[HCO Name (Measure)] & "-" & 'pt_360_table'[full_hcp_list] & "-" & 'pt_360_table'[Patient Id]
+		dataType: string
+		lineageTag: 08ec157e-69b4-559a-3fdb-e913151870e2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_region = SWITCH(TRUE(), ISBLANK ('pt_360_table'[Primary Hcp Region 2Yr]) || 'pt_360_table'[Primary Hcp Region 2Yr] = "-" || TRIM('pt_360_table'[Primary Hcp Region 2Yr]) = "", "Unknown", 'pt_360_table'[Primary Hcp Region 2Yr])
+		dataType: string
+		lineageTag: 0818046a-173a-4e31-a0d3-8b7be1dec6da
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Dx Date' = 'pt_360_table'[Incidence Date]
+		dataType: dateTime
+		lineageTag: 4d84e3b1-25d1-64ee-64b5-453997c410f6
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Visit Date' = 'pt_360_table'[Most Recent Visit]
+		dataType: dateTime
+		lineageTag: 3a4342e3-2d5b-8f48-457f-0205f58cd4c1
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lastest Infusion Date' = 'pt_360_table'[Latest Treatment Date]
+		dataType: dateTime
+		lineageTag: 48489d93-b043-1394-0371-85d6fe9f9dd4
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Infusion Location' = 'pt_360_table'[Most Recent Infusion Description]
+		dataType: string
+		lineageTag: 3a273607-7d23-6d6a-5a2e-2e2dfb1d7a88
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Treatment Type' = 'pt_360_table'[Latest Mpsii Tx Type]
+		dataType: string
+		lineageTag: 9bb76a9e-a511-2664-62f8-c7ba494d140f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient Type' = 'pt_360_table'[Avlayah Status]
+		dataType: string
+		lineageTag: 73961682-0dca-bedd-8fcb-cd12d0a48a80
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender = 'pt_360_table'[Patient Gender]
+		dataType: string
+		lineageTag: 2a407768-5b3e-4b43-5145-62f0a39b7647
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient ID (Column)' = 'pt_360_table'[edited_patient_filter]
+		dataType: string
+		lineageTag: e078605c-9f3a-5086-83f4-29c4a3f4103b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	measure pt_by_age_group_header = "<5yrs | 5-10yrs | 11-18yrs | >18yrs"
+		lineageTag: 77bfb788-8814-96ce-66c6-347293bb6a4a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure hcp_prescribed = "HCP Prescribed"
+		lineageTag: 9f1ef702-e412-b460-9916-7d522e631417
+
+		annotation SummarizationSetBy = Automatic
+
+	measure HCO_Ordered = "HCO Ordered"
+		lineageTag: ea6002f9-032a-c768-bb4d-afe00ad1fe1b
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_bg_payer = SWITCH(TRUE(), SELECTEDVALUE('HCO-HCP-Payer Selection'[Value]) = "PAYER", "Selected", "Unselected")
+		lineageTag: 3e4c6490-0b66-9087-5a0b-b91b927c941d
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_payer = SELECTEDVALUE('HCO-HCP-Payer Selection'[Value]) = "PAYER"
+		lineageTag: 7e3ba091-c324-01c0-651d-c5d5b8ae6393
+
+		annotation SummarizationSetBy = Automatic
+
+	measure PAYER = "PAYER"
+		lineageTag: fe99eec0-4068-f092-0c31-93e84008b8fd
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Insurance group header' = "Commercial | Medicare | Medicaid | Others"
+		lineageTag: 9f2e1b97-e921-36ed-875c-ac7919d7e8d1
+
+		annotation SummarizationSetBy = Automatic
+
+	measure trend_total_label = 'pt_360_table'[trend_elaprase_pt] + 'pt_360_table'[trends_tivi_pt] + 'pt_360_table'[trend_mpsii_patients]
+		lineageTag: 0151fcae-33f2-9998-3333-1c2933b607fa
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'tab_Care Team_tivi' = SELECTEDVALUE('Tab Selection'[Value]) = "Care Team AVLAYAH"
+		lineageTag: 1a924636-620d-6ee7-00ac-4b296beead81
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_Comorbidity = SELECTEDVALUE('Tab Selection'[Value]) = "Comorbidities"
+		lineageTag: 482ea332-2fe7-cf7d-f0d5-f67ddefea040
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_bg_care_tivi = SWITCH(TRUE(), SELECTEDVALUE('Tab Selection'[Value]) = "Care Team AVLAYAH", "Selected", "Unselected")
+		lineageTag: ce559764-9d1f-27ab-a9cd-fc45ca88a61e
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_bg_comorb = SWITCH(TRUE(), SELECTEDVALUE('Tab Selection'[Value]) = "Comorbidities", "Selected", "Unselected")
+		lineageTag: a4d5ab23-89db-337e-eb32-a9e681367032
+
+		annotation SummarizationSetBy = Automatic
+
+	measure t_com = "Comorbidities"
+		lineageTag: bb288b41-00da-d087-5442-d2aa0670b96c
+
+		annotation SummarizationSetBy = Automatic
+
+	measure t_ct_tivi = "Care Team AVLAYAH"
+		lineageTag: e93e9bb6-834d-6756-7b9f-6d2b168262a4
+
+		annotation SummarizationSetBy = Automatic
+
+	measure trends_tivi_pt = DISTINCTCOUNT(SWITCH(TRUE(), MIN('pt_360_table'[Patient Age]) < 17 && MIN('pt_360_table'[Latest Mpsii Tx Type]) = "AVLAYAH", MIN('pt_360_table'[Patient Id])))
+		lineageTag: 7bcbe706-94af-63fe-b02f-a4ea6efd6064
+
+		annotation SummarizationSetBy = Automatic
+
+	measure trend_mpsii_patients = BLANK() /* TODO: translate Tableau formula -- COUNTD( IF [PATIENT_AGE] >= 17 and [latest_mpsii_tx_type] in ('AVLAYAH', 'ELAPRASE') THEN [PATIENT_ID] END ) */
+		lineageTag: 550bffad-b4bf-ecd3-f858-e53fcd23d33d
+
+		annotation SummarizationSetBy = Automatic
+
+	measure acl_severity_header = "Severe | Attenuated"
+		lineageTag: 68a38bbe-4ef2-224e-5e9a-7b62248e123c
+
+		annotation SummarizationSetBy = Automatic
+
+	measure patient_navigation = "https://10ay.online.tableau.com/#/site/denali/views/AccountLeadsDashboard/Patient360?;embed=yes&full_region=" & 'pt_360_table'[full_region] & "&full_territory=" & 'pt_360_table'[full_territory] & "&edited_patient_filter=" & 'pt_360_table'[edited_patient_filter]
+		lineageTag: 99af9b74-d9c9-e2d8-bc66-31794f2e918f
+
+		annotation SummarizationSetBy = Automatic
+
+	measure trend_elaprase_pt = DISTINCTCOUNT(SWITCH(TRUE(), MIN('pt_360_table'[Patient Age]) < 17 && MIN('pt_360_table'[Latest Mpsii Tx Type]) = "ELAPRASE", MIN('pt_360_table'[Patient Id])))
+		lineageTag: 75f8ed19-c50c-204e-89de-59b0bd911795
+
+		annotation SummarizationSetBy = Automatic
+
+	measure HCP = "HCP"
+		lineageTag: a49a4bf0-9ccb-1d25-b775-fd1e21660dba
+
+		annotation SummarizationSetBy = Automatic
+
+	measure HCO = "HCO"
+		lineageTag: 01a29dd7-4b6b-eb94-ee97-077a0aa2392c
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_hco = SELECTEDVALUE('HCO-HCP-Payer Selection'[Value]) = "HCO"
+		lineageTag: 1a88c9d6-21df-9b3f-46e3-96b113695e44
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_hcp = SELECTEDVALUE('HCO-HCP-Payer Selection'[Value]) = "HCP"
+		lineageTag: 0298c5b6-aa87-cf55-4364-c9c9dfb7279a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_bg_hco = SWITCH(TRUE(), SELECTEDVALUE('HCO-HCP-Payer Selection'[Value]) = "HCO", "Selected", "Unselected")
+		lineageTag: d8e752e9-bb4f-f442-733e-3492b0f694f7
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_bg_hcp = SWITCH(TRUE(), SELECTEDVALUE('HCO-HCP-Payer Selection'[Value]) = "HCP", "Selected", "Unselected")
+		lineageTag: d26d3746-d626-baa0-736d-416322ed6883
+
+		annotation SummarizationSetBy = Automatic
+
+	measure rank_filter = BLANK() /* TODO: translate Tableau formula -- RANK_UNIQUE([Calculation_317503832938622976])<=10 */
+		lineageTag: cf4574d9-ec94-c5ab-bd96-4c9d3019917d
+
+		annotation SummarizationSetBy = Automatic
+
+	measure sp_percentage = SWITCH(TRUE(), SUM(SWITCH(TRUE(), MIN('vw_reporting_kpi_metrics_master'[Kpi Name]) = "TOTAL_VIALS", MIN('vw_reporting_kpi_metrics_master'[Kpi Value]))) = 0, 0, SUM(SWITCH(TRUE(), MIN('vw_reporting_kpi_metrics_master'[Kpi Name]) = "SP_VIALS", MIN('vw_reporting_kpi_metrics_master'[Kpi Value]))) / SUM(SWITCH(TRUE(), MIN('vw_reporting_kpi_metrics_master'[Kpi Name]) = "TOTAL_VIALS", MIN('vw_reporting_kpi_metrics_master'[Kpi Value]))))
+		lineageTag: 4ce39544-c165-68d3-aed3-346c5c119cda
+
+		annotation SummarizationSetBy = Automatic
+
+	measure hco_percentage = SWITCH(TRUE(), SUM(SWITCH(TRUE(), MIN('vw_reporting_kpi_metrics_master'[Kpi Name]) = "TOTAL_VIALS", MIN('vw_reporting_kpi_metrics_master'[Kpi Value]))) = 0, 0, SUM(SWITCH(TRUE(), MIN('vw_reporting_kpi_metrics_master'[Kpi Name]) = "HCO_VIALS", MIN('vw_reporting_kpi_metrics_master'[Kpi Value]))) / SUM(SWITCH(TRUE(), MIN('vw_reporting_kpi_metrics_master'[Kpi Name]) = "TOTAL_VIALS", MIN('vw_reporting_kpi_metrics_master'[Kpi Value]))))
+		lineageTag: 29c2883b-759f-7bf8-a8df-b71aeb89899f
+
+		annotation SummarizationSetBy = Automatic
+
+	measure mpsii_filter_hco = SWITCH(TRUE(), SUM('pt_hco_table'[Total Mpsii Avlayah Elaprase]) = 0 && SUM('pt_hco_table'[Avlayah Hub Pt Ct]) = 0 && SUM('pt_hco_table'[Avlayah Crm Pt Ct]) = 0 && SUM('pt_hco_table'[Avlayah Hub Pt Ct]) = 0, TRUE(), FALSE())
+		lineageTag: db1e1459-d57d-4f3c-212a-55d6e8506efb
+
+		annotation SummarizationSetBy = Automatic
+
+	measure patients_by_source = "Claims|SP|Hub|Field"
+		lineageTag: 318587cd-7a0d-5137-132b-4e63db050862
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'HCO Name (Measure)' = SWITCH(TRUE(), ISBLANK (MIN('tableau_long_view_pt360'[Primary HCO Name])) || MIN('tableau_long_view_pt360'[Primary HCO Name]) = "-" || TRIM(MIN('tableau_long_view_pt360'[Primary HCO Name])) = "", "N/A", MIN('tableau_long_view_pt360'[Primary HCO Name]))
+		lineageTag: 94e1f4f9-2582-24ed-9f16-442b83d9f600
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_ct_bg_elaprase = SWITCH(TRUE(), SELECTEDVALUE('Tab Selection'[Value]) = "Care Team Elaprase", "Selected", "Unselected")
+		lineageTag: f1a52746-d2da-b0f0-c08a-94dc3936a14a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure t_ct_elaprase = "Care Team Elaprase"
+		lineageTag: e3d73f64-ce99-14be-d102-0e343a6c5985
+
+		annotation SummarizationSetBy = Automatic
+
+	measure tab_care_team_elaprase = SELECTEDVALUE('Tab Selection'[Value]) = "Care Team Elaprase"
+		lineageTag: 124f8ec7-f447-9473-cbde-8271f69bc930
+
+		annotation SummarizationSetBy = Automatic
+
+	measure sort_hco = SWITCH(TRUE(), MIN('pt_360_table'[HCO Name (Measure)]) = "Unknown", 999999999, - MIN('pt_360_table'[total_mpsii_avlayah_elaprase 1]))
+		lineageTag: 31d409d5-9f61-6755-c3c6-ef3e03dbf07a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure sort_hcp = BLANK() /* TODO: translate Tableau formula -- IF([primary_hcp_name_2yr 1]) = 'Unknown' THEN 999999999 ELSE -[total_mpsii_avlayah_elaprase (vw_rpt_patient_360_hcp_table)] END */
+		lineageTag: 1782dbe4-6f27-54c3-6fe8-91eafd08c878
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Latest Mpsii Tx Type-KPI' = MIN('pt_360_table'[Latest Mpsii Tx Type])
+		lineageTag: 81603111-4134-0978-6c4e-130111971602
+
+		annotation SummarizationSetBy = Automatic
+
+	measure mpsii_filter_hcP = SWITCH(TRUE(), SUM('pt_hcp_table'[Total Mpsii Avlayah Elaprase]) = 0 && SUM('pt_hcp_table'[Avlayah Hub Pt Ct]) = 0 && SUM('pt_hcp_table'[Avlayah Crm Pt Ct]) = 0 && SUM('pt_hcp_table'[Avlayah Sp Pt Ct]) = 0, TRUE(), FALSE())
+		lineageTag: f8c295c4-294d-3f33-d9a5-cc1ebf1b2579
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'HCP Name (Measure)' = MIN('pt_hcp_table'[Hcp Name])
+		lineageTag: aa291477-e7e9-ee33-314b-778b75238e47
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'HCO Name (Measure) 2' = MIN('hco_ordered'[Account Facility Name])
+		lineageTag: 244fe027-d525-ef22-fbd3-30746be5d8d4
+
+		annotation SummarizationSetBy = Automatic
+
+	measure City = MIN('pt_hco_table'[Hco City])
+		lineageTag: 80fcc7d6-f162-6e89-95d3-3481acb6568d
+
+		annotation SummarizationSetBy = Automatic
+
+	measure State = MIN('pt_hcp_table'[Hco State])
+		lineageTag: 2470d3e5-1b72-f099-eec1-9c249cd8679a
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'City (Measure)' = MIN('pt_hco_table'[Hco City])
+		lineageTag: cc2bc303-c14c-ab53-7dfb-f48c77d32043
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'State (Measure)' = MIN('pt_hco_table'[Hco State])
+		lineageTag: c505a566-16d9-8ca7-d3c8-be2574243dca
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Trunc of Most Recent Visit' = DATE(YEAR([Most Recent Visit]), 1, 1)
+		dataType: dateTime
+		lineageTag: 6f00c25b-2821-ebae-fb4d-4b9515fce2ee
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Most Recent Visit' = DATE(YEAR([Most Recent Visit]), (QUARTER([Most Recent Visit])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 6b37b256-ba96-8ed8-594e-fdf090e735e9
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Most Recent Visit' = DATE(YEAR([Most Recent Visit]), MONTH([Most Recent Visit]), 1)
+		dataType: dateTime
+		lineageTag: c91fdd70-e635-7654-a9ff-9c6351f4641b
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Most Recent Visit' = MONTH([Most Recent Visit])
+		dataType: int64
+		lineageTag: 44f99a93-b6b0-d363-0065-6b9ab9af4326
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Most Recent Visit' = YEAR([Most Recent Visit])
+		dataType: int64
+		lineageTag: fa101fbc-05f8-1794-560e-0cf8ea7aeca6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Most Recent Visit' = "Qtr " & ROUNDUP(MONTH([Most Recent Visit]) / 3, 0)
+		dataType: string
+		lineageTag: 9b6745a3-fb29-62d3-7673-a564419b27fc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Most Recent Visit' = FORMAT([Most Recent Visit], "MMMM")
+		dataType: string
+		lineageTag: c456e594-de83-0bdb-2c86-a557202cd156
+		summarizeBy: none
+		sortByColumn: 'Month Number of Most Recent Visit'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Most Recent Visit' = DAY([Most Recent Visit])
+		dataType: int64
+		lineageTag: 46e7dff5-46d3-8d18-c61d-e2e43035316a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Most Recent Visit Hierarchy'
+		lineageTag: 6ac2c465-977e-9afe-2ab7-11c62032d31a
+
+		level Year
+			lineageTag: 9f34653f-a013-62ad-f031-ffe335abb76d
+			column: 'Year of Most Recent Visit'
+
+		level Quarter
+			lineageTag: bd469486-45aa-aa37-3584-b89869ef9313
+			column: 'Quarter of Most Recent Visit'
+
+		level Month
+			lineageTag: 2694e211-77b0-aac4-b541-79699749caf1
+			column: 'Month of Most Recent Visit'
+
+		level Day
+			lineageTag: 1912b8aa-c8be-cc04-1720-996671b85ce1
+			column: 'Day of Most Recent Visit'
+
+	column 'Year-Trunc of Patient Yob' = DATE(YEAR([Patient Yob]), 1, 1)
+		dataType: dateTime
+		lineageTag: 9fbedb78-8645-1cc7-4468-a1cf27793237
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Patient Yob' = DATE(YEAR([Patient Yob]), (QUARTER([Patient Yob])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 43e0215a-7664-08fe-70e8-8e9c6a00fb8c
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Patient Yob' = DATE(YEAR([Patient Yob]), MONTH([Patient Yob]), 1)
+		dataType: dateTime
+		lineageTag: c1e42b91-7996-c08e-37e4-e852d26a6e15
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Patient Yob' = MONTH([Patient Yob])
+		dataType: int64
+		lineageTag: 4be8ba4f-844b-a7b6-ea3a-5db0a1134d65
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Patient Yob' = YEAR([Patient Yob])
+		dataType: int64
+		lineageTag: 1764fe0d-936e-6ae7-765f-177afece312c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Patient Yob' = "Qtr " & ROUNDUP(MONTH([Patient Yob]) / 3, 0)
+		dataType: string
+		lineageTag: c124f551-bdf4-588f-6f29-e65afe1fab4f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Patient Yob' = FORMAT([Patient Yob], "MMMM")
+		dataType: string
+		lineageTag: b58ea156-13d2-cdf2-54c4-02fb7b1fba28
+		summarizeBy: none
+		sortByColumn: 'Month Number of Patient Yob'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Patient Yob' = DAY([Patient Yob])
+		dataType: int64
+		lineageTag: f62beb00-c030-01f6-dcad-c4a97ea5f4b3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Patient Yob Hierarchy'
+		lineageTag: 65ca29f7-c70d-a56c-ba1f-087f9719d690
+
+		level Year
+			lineageTag: c50d4f8b-cdfc-4c6f-6401-8599fee3bdf1
+			column: 'Year of Patient Yob'
+
+		level Quarter
+			lineageTag: 3acc8923-5560-552e-b122-b64934eae99d
+			column: 'Quarter of Patient Yob'
+
+		level Month
+			lineageTag: fe34dac3-c239-62e9-c938-ecf418f5595b
+			column: 'Month of Patient Yob'
+
+		level Day
+			lineageTag: 24dc5274-2e56-7016-8eeb-47b9d2a3d4d0
+			column: 'Day of Patient Yob'
+
+	column 'Year-Trunc of First Dx Last Visit 5Yr' = DATE(YEAR([First Dx Last Visit 5Yr]), 1, 1)
+		dataType: dateTime
+		lineageTag: 905f10cc-2bb2-1cd4-f156-9d6cb5932b5d
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of First Dx Last Visit 5Yr' = DATE(YEAR([First Dx Last Visit 5Yr]), (QUARTER([First Dx Last Visit 5Yr])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 574e92a2-2e49-bdbb-fb36-f1fa59071d2b
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of First Dx Last Visit 5Yr' = DATE(YEAR([First Dx Last Visit 5Yr]), MONTH([First Dx Last Visit 5Yr]), 1)
+		dataType: dateTime
+		lineageTag: 0e3a5f42-22a4-0310-bf2e-c80d9e53eb63
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of First Dx Last Visit 5Yr' = MONTH([First Dx Last Visit 5Yr])
+		dataType: int64
+		lineageTag: a6968304-f565-e88c-d094-d28b961a6ffa
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of First Dx Last Visit 5Yr' = YEAR([First Dx Last Visit 5Yr])
+		dataType: int64
+		lineageTag: 850db409-7e28-165d-5790-5b79d3eca36d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of First Dx Last Visit 5Yr' = "Qtr " & ROUNDUP(MONTH([First Dx Last Visit 5Yr]) / 3, 0)
+		dataType: string
+		lineageTag: c82f2e52-2715-b217-1084-65f479a6b61e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of First Dx Last Visit 5Yr' = FORMAT([First Dx Last Visit 5Yr], "MMMM")
+		dataType: string
+		lineageTag: d7f68d4f-0e9d-8242-10e2-705b39ca7d16
+		summarizeBy: none
+		sortByColumn: 'Month Number of First Dx Last Visit 5Yr'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of First Dx Last Visit 5Yr' = DAY([First Dx Last Visit 5Yr])
+		dataType: int64
+		lineageTag: 997d2c6c-f235-c6c9-a3c8-afc8fb9733a7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'First Dx Last Visit 5Yr Hierarchy'
+		lineageTag: 2f09dfb2-b8fc-68ef-cad1-510ff6cb6098
+
+		level Year
+			lineageTag: ee84face-bb1d-78a4-61c5-71be5c6a83ab
+			column: 'Year of First Dx Last Visit 5Yr'
+
+		level Quarter
+			lineageTag: 41cec7b9-579f-f4f9-197a-1d379bd620a8
+			column: 'Quarter of First Dx Last Visit 5Yr'
+
+		level Month
+			lineageTag: bb0a43d5-d5bb-9874-c7c0-c387f513853f
+			column: 'Month of First Dx Last Visit 5Yr'
+
+		level Day
+			lineageTag: 00247ad0-a3ce-4c9e-0c86-e41927e9e64a
+			column: 'Day of First Dx Last Visit 5Yr'
+
+	column 'Year-Trunc of First Tx After Diagnosis' = DATE(YEAR([First Tx After Diagnosis]), 1, 1)
+		dataType: dateTime
+		lineageTag: 8f971835-114d-42cd-a364-b31d301d1043
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of First Tx After Diagnosis' = DATE(YEAR([First Tx After Diagnosis]), (QUARTER([First Tx After Diagnosis])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 6da0fdb1-63ca-f4a7-70b8-7e4ecc524dd3
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of First Tx After Diagnosis' = DATE(YEAR([First Tx After Diagnosis]), MONTH([First Tx After Diagnosis]), 1)
+		dataType: dateTime
+		lineageTag: 97102cbc-8f43-6a3e-5058-371107344e7b
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of First Tx After Diagnosis' = MONTH([First Tx After Diagnosis])
+		dataType: int64
+		lineageTag: dcbfbcb9-5ac5-b0f4-cfc9-5b407b9f87f1
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of First Tx After Diagnosis' = YEAR([First Tx After Diagnosis])
+		dataType: int64
+		lineageTag: 7665b135-6c6b-d2bd-b6a6-61b58768c379
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of First Tx After Diagnosis' = "Qtr " & ROUNDUP(MONTH([First Tx After Diagnosis]) / 3, 0)
+		dataType: string
+		lineageTag: c44264e7-c38b-35ca-4ad3-db4d2e9b5d02
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of First Tx After Diagnosis' = FORMAT([First Tx After Diagnosis], "MMMM")
+		dataType: string
+		lineageTag: b642f80f-2e71-25d6-e01a-8e58a4431adf
+		summarizeBy: none
+		sortByColumn: 'Month Number of First Tx After Diagnosis'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of First Tx After Diagnosis' = DAY([First Tx After Diagnosis])
+		dataType: int64
+		lineageTag: f4d046e3-dc0d-e10a-ae42-954c0adc9fcc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'First Tx After Diagnosis Hierarchy'
+		lineageTag: f5fee78c-d72e-d90c-f6d9-411c7d05a02e
+
+		level Year
+			lineageTag: 3f63e503-12bd-ea00-7625-b40fa6b558da
+			column: 'Year of First Tx After Diagnosis'
+
+		level Quarter
+			lineageTag: 9689bf5e-4956-83be-de3e-5a8b5eacd7bd
+			column: 'Quarter of First Tx After Diagnosis'
+
+		level Month
+			lineageTag: 167cdaa4-e4b7-9db6-d8b7-e3dac4690cc1
+			column: 'Month of First Tx After Diagnosis'
+
+		level Day
+			lineageTag: 882c3e04-8063-b836-44e3-ecfa15f78447
+			column: 'Day of First Tx After Diagnosis'
+
+	column 'Year-Trunc of Incidence Date' = DATE(YEAR([Incidence Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: 68b080bf-f8e9-48ec-7318-cb8f4f85c1f9
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Incidence Date' = DATE(YEAR([Incidence Date]), (QUARTER([Incidence Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 8bf4d9f0-3e04-884a-ae21-9156b08e426a
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Incidence Date' = DATE(YEAR([Incidence Date]), MONTH([Incidence Date]), 1)
+		dataType: dateTime
+		lineageTag: b93c6121-67bc-e23e-a199-2276e4599f1e
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Incidence Date' = MONTH([Incidence Date])
+		dataType: int64
+		lineageTag: 621cc553-a219-1366-77ae-3d46cb02b016
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Incidence Date' = YEAR([Incidence Date])
+		dataType: int64
+		lineageTag: 20340382-c7bf-5788-06e8-019f52023bfc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Incidence Date' = "Qtr " & ROUNDUP(MONTH([Incidence Date]) / 3, 0)
+		dataType: string
+		lineageTag: 6b4abf60-a662-d845-d7b2-f73ea3ff7595
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Incidence Date' = FORMAT([Incidence Date], "MMMM")
+		dataType: string
+		lineageTag: 87b93631-f059-cb8a-f22d-0b76f8b80804
+		summarizeBy: none
+		sortByColumn: 'Month Number of Incidence Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Incidence Date' = DAY([Incidence Date])
+		dataType: int64
+		lineageTag: 1b9908f3-fd85-c546-b581-deccab5525d0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Incidence Date Hierarchy'
+		lineageTag: 2fb8a08b-a5b3-55bc-e352-e2311582f53c
+
+		level Year
+			lineageTag: fd02ab44-a7f9-b3a1-2aba-f06e756b65dd
+			column: 'Year of Incidence Date'
+
+		level Quarter
+			lineageTag: 473b7b1a-fd83-781c-f503-6b635ba922e3
+			column: 'Quarter of Incidence Date'
+
+		level Month
+			lineageTag: 4e78ca6c-1025-8e2a-5566-96bcba6c4056
+			column: 'Month of Incidence Date'
+
+		level Day
+			lineageTag: 65ebd338-c865-0326-0717-abae675c5c50
+			column: 'Day of Incidence Date'
+
+	column 'Year-Trunc of Latest Claim Date' = DATE(YEAR([Latest Claim Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: 98b841bd-4c3a-b512-467f-d1873f65be6f
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Latest Claim Date' = DATE(YEAR([Latest Claim Date]), (QUARTER([Latest Claim Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 907cb75a-bc1b-5c7e-6e84-95e5efd7b5d4
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Latest Claim Date' = DATE(YEAR([Latest Claim Date]), MONTH([Latest Claim Date]), 1)
+		dataType: dateTime
+		lineageTag: 66749749-acec-86c6-6c28-7e6a7b9bd9bc
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Latest Claim Date' = MONTH([Latest Claim Date])
+		dataType: int64
+		lineageTag: b8a23b46-260d-c548-e3d6-1bba1edb07aa
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Latest Claim Date' = YEAR([Latest Claim Date])
+		dataType: int64
+		lineageTag: ed5efa34-e1e2-2b8a-c471-16bb54f641e5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Latest Claim Date' = "Qtr " & ROUNDUP(MONTH([Latest Claim Date]) / 3, 0)
+		dataType: string
+		lineageTag: 18288f52-825f-4088-d397-32ee63fea9ea
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Latest Claim Date' = FORMAT([Latest Claim Date], "MMMM")
+		dataType: string
+		lineageTag: 75006d55-7e89-fa1d-4443-14bb8ea97d70
+		summarizeBy: none
+		sortByColumn: 'Month Number of Latest Claim Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Latest Claim Date' = DAY([Latest Claim Date])
+		dataType: int64
+		lineageTag: 1b63c584-c737-8b58-4607-7bdadafeac13
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Latest Claim Date Hierarchy'
+		lineageTag: cb5c9ccf-9368-be9f-3f05-c272104b72ea
+
+		level Year
+			lineageTag: e260fc88-c65e-8e53-2a59-6f9860805407
+			column: 'Year of Latest Claim Date'
+
+		level Quarter
+			lineageTag: e26cdaed-f791-5947-45cf-5ef0e6566601
+			column: 'Quarter of Latest Claim Date'
+
+		level Month
+			lineageTag: bdfa7eeb-a6f3-47cf-3d88-5cb6851cd236
+			column: 'Month of Latest Claim Date'
+
+		level Day
+			lineageTag: b02ef56c-2562-7275-f146-a1a96b701f76
+			column: 'Day of Latest Claim Date'
+
+	column 'Year-Trunc of Latest Treatment Date' = DATE(YEAR([Latest Treatment Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: bfdad164-8e22-7128-41e9-76bdab93b979
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Latest Treatment Date' = DATE(YEAR([Latest Treatment Date]), (QUARTER([Latest Treatment Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: e383914e-9f1b-b89a-1420-75600b86f388
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Latest Treatment Date' = DATE(YEAR([Latest Treatment Date]), MONTH([Latest Treatment Date]), 1)
+		dataType: dateTime
+		lineageTag: 84117ef7-9d40-c0a1-c6f6-37ac7990094b
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Latest Treatment Date' = MONTH([Latest Treatment Date])
+		dataType: int64
+		lineageTag: b87dac24-3ea4-f22b-b3c5-21123a683bfb
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Latest Treatment Date' = YEAR([Latest Treatment Date])
+		dataType: int64
+		lineageTag: 252171e0-b0ec-962c-62a2-50804a626296
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Latest Treatment Date' = "Qtr " & ROUNDUP(MONTH([Latest Treatment Date]) / 3, 0)
+		dataType: string
+		lineageTag: 7c0085a5-5132-a894-a6d4-615b21d2d4c2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Latest Treatment Date' = FORMAT([Latest Treatment Date], "MMMM")
+		dataType: string
+		lineageTag: 02530cea-9e51-f652-1517-7088da3847c6
+		summarizeBy: none
+		sortByColumn: 'Month Number of Latest Treatment Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Latest Treatment Date' = DAY([Latest Treatment Date])
+		dataType: int64
+		lineageTag: c5f68dbc-8980-a00e-1be6-8d60f806d0bf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Latest Treatment Date Hierarchy'
+		lineageTag: 71a7a485-fc67-9ce4-f074-95c43534e856
+
+		level Year
+			lineageTag: 564f8875-a13e-0f41-25e1-f8c2af911ea0
+			column: 'Year of Latest Treatment Date'
+
+		level Quarter
+			lineageTag: b01792cb-0431-8e5f-fee9-b0bf113d54cc
+			column: 'Quarter of Latest Treatment Date'
+
+		level Month
+			lineageTag: 9dbad51a-1300-9208-2931-ab4a53579c69
+			column: 'Month of Latest Treatment Date'
+
+		level Day
+			lineageTag: 52e0b19d-5fc5-63fd-8355-c89a9b457ee8
+			column: 'Day of Latest Treatment Date'
+
+	column 'Year-Trunc of Most Seen Hcp1 Last Visit 5Yr' = DATE(YEAR([Most Seen Hcp1 Last Visit 5Yr]), 1, 1)
+		dataType: dateTime
+		lineageTag: 1a04dec7-4591-bc57-2fbc-63b54827bbaa
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Most Seen Hcp1 Last Visit 5Yr' = DATE(YEAR([Most Seen Hcp1 Last Visit 5Yr]), (QUARTER([Most Seen Hcp1 Last Visit 5Yr])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: b94fc5c6-73c2-d583-165d-53adaa7e278b
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Most Seen Hcp1 Last Visit 5Yr' = DATE(YEAR([Most Seen Hcp1 Last Visit 5Yr]), MONTH([Most Seen Hcp1 Last Visit 5Yr]), 1)
+		dataType: dateTime
+		lineageTag: 5fa4a7aa-4d1d-55ec-d3cd-fed97c38f6da
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Most Seen Hcp1 Last Visit 5Yr' = MONTH([Most Seen Hcp1 Last Visit 5Yr])
+		dataType: int64
+		lineageTag: 5dbb2a80-7dce-e187-b3d8-126334359528
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Most Seen Hcp1 Last Visit 5Yr' = YEAR([Most Seen Hcp1 Last Visit 5Yr])
+		dataType: int64
+		lineageTag: 76fd3f74-4942-5207-6a7e-dde4cf334a4b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Most Seen Hcp1 Last Visit 5Yr' = "Qtr " & ROUNDUP(MONTH([Most Seen Hcp1 Last Visit 5Yr]) / 3, 0)
+		dataType: string
+		lineageTag: e2336138-fc7d-6be4-f4dc-94db2d62d788
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Most Seen Hcp1 Last Visit 5Yr' = FORMAT([Most Seen Hcp1 Last Visit 5Yr], "MMMM")
+		dataType: string
+		lineageTag: 530c06db-4552-ba36-4ecd-b1ea315c9b40
+		summarizeBy: none
+		sortByColumn: 'Month Number of Most Seen Hcp1 Last Visit 5Yr'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Most Seen Hcp1 Last Visit 5Yr' = DAY([Most Seen Hcp1 Last Visit 5Yr])
+		dataType: int64
+		lineageTag: f5cb217e-458b-5980-7966-bffc235fcd03
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Most Seen Hcp1 Last Visit 5Yr Hierarchy'
+		lineageTag: 870bdbe4-6d0d-2cb5-6b39-63d8798275ed
+
+		level Year
+			lineageTag: 2f94b3b4-82d9-22d7-1392-08fecbcd22d7
+			column: 'Year of Most Seen Hcp1 Last Visit 5Yr'
+
+		level Quarter
+			lineageTag: 888a1d21-8df2-b926-b021-ad52661e9465
+			column: 'Quarter of Most Seen Hcp1 Last Visit 5Yr'
+
+		level Month
+			lineageTag: 73f2acd2-0267-f09f-7c77-9986f9f73746
+			column: 'Month of Most Seen Hcp1 Last Visit 5Yr'
+
+		level Day
+			lineageTag: ab5759fc-3c43-a708-ebad-31c9d880b413
+			column: 'Day of Most Seen Hcp1 Last Visit 5Yr'
+
+	column 'Year-Trunc of First Dx Date' = DATE(YEAR([First Dx Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: df9fcd5e-f4a0-a979-49af-78a87a2e42ed
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of First Dx Date' = DATE(YEAR([First Dx Date]), (QUARTER([First Dx Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: ee513bd6-c4e0-f6b2-6c58-c332f9f4de6f
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of First Dx Date' = DATE(YEAR([First Dx Date]), MONTH([First Dx Date]), 1)
+		dataType: dateTime
+		lineageTag: 9e1ab432-2093-cb4a-d082-6b2108515804
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of First Dx Date' = MONTH([First Dx Date])
+		dataType: int64
+		lineageTag: 02f34630-430c-ff45-99ee-d0d919c57df4
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of First Dx Date' = YEAR([First Dx Date])
+		dataType: int64
+		lineageTag: be7d7489-ed05-2922-49c6-9b3a1bf10f46
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of First Dx Date' = "Qtr " & ROUNDUP(MONTH([First Dx Date]) / 3, 0)
+		dataType: string
+		lineageTag: 8a4e51f4-8fff-a7b8-dd2e-26a5b605971f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of First Dx Date' = FORMAT([First Dx Date], "MMMM")
+		dataType: string
+		lineageTag: b4d1aa75-7446-e2b3-6145-8ae10f1a2bcf
+		summarizeBy: none
+		sortByColumn: 'Month Number of First Dx Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of First Dx Date' = DAY([First Dx Date])
+		dataType: int64
+		lineageTag: 2ba735f2-bb44-2814-6f6c-9dd93bed7ecc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'First Dx Date Hierarchy'
+		lineageTag: a0a78853-2397-66f1-8725-2eaf653fbedd
+
+		level Year
+			lineageTag: d683d8a2-6b18-aa36-f7f2-79bfa9e80a1c
+			column: 'Year of First Dx Date'
+
+		level Quarter
+			lineageTag: bd9228da-83e6-cd89-2817-09b72a5e2260
+			column: 'Quarter of First Dx Date'
+
+		level Month
+			lineageTag: e8e68985-3335-8dd5-af8d-13615011242f
+			column: 'Month of First Dx Date'
+
+		level Day
+			lineageTag: 94be7562-a99d-4d59-3990-a01301c44cf4
+			column: 'Day of First Dx Date'
+
+	column 'Year-Trunc of Last Visit Date' = DATE(YEAR([Last Visit Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: fa093204-c970-a592-e9e0-5a14eca05936
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Last Visit Date' = DATE(YEAR([Last Visit Date]), (QUARTER([Last Visit Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: eb2a1754-fe38-29d7-8c58-ac036cb5fad7
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Last Visit Date' = DATE(YEAR([Last Visit Date]), MONTH([Last Visit Date]), 1)
+		dataType: dateTime
+		lineageTag: cbb36017-e0b6-0acd-8f53-b6bd56d68d81
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Last Visit Date' = MONTH([Last Visit Date])
+		dataType: int64
+		lineageTag: 6e5cb1fa-450e-d792-ab7e-0f2421ae3188
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Last Visit Date' = YEAR([Last Visit Date])
+		dataType: int64
+		lineageTag: 296fa4cd-37ca-0692-1f63-1dcda017a7f3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Last Visit Date' = "Qtr " & ROUNDUP(MONTH([Last Visit Date]) / 3, 0)
+		dataType: string
+		lineageTag: 9618747d-7670-f5a4-2192-5a099a3a7342
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Last Visit Date' = FORMAT([Last Visit Date], "MMMM")
+		dataType: string
+		lineageTag: 82279d3f-2916-5a23-2dad-7bcdfe71b50e
+		summarizeBy: none
+		sortByColumn: 'Month Number of Last Visit Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Last Visit Date' = DAY([Last Visit Date])
+		dataType: int64
+		lineageTag: d2aef36f-55fc-8404-57a6-50f11619f4bb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Last Visit Date Hierarchy'
+		lineageTag: 345e4885-2ff0-6c30-401c-09bbf6cdc9a9
+
+		level Year
+			lineageTag: 0cc51847-7b7c-b94e-3440-790c033a6db9
+			column: 'Year of Last Visit Date'
+
+		level Quarter
+			lineageTag: 90d81728-27df-4e34-71c9-ce4ecd7397a9
+			column: 'Quarter of Last Visit Date'
+
+		level Month
+			lineageTag: cb588fa4-e0a7-2476-3234-9ac31273eed0
+			column: 'Month of Last Visit Date'
+
+		level Day
+			lineageTag: 70c26f43-b957-d8d5-75c5-ae245b5f2ef4
+			column: 'Day of Last Visit Date'
+
+	column 'Year-Trunc of Lastest Infusion Date' = DATE(YEAR([Lastest Infusion Date]), 1, 1)
+		dataType: dateTime
+		lineageTag: 81fd9270-5d4d-498b-f828-ddcc91c47e96
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Lastest Infusion Date' = DATE(YEAR([Lastest Infusion Date]), (QUARTER([Lastest Infusion Date])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 9cd8e759-153e-0b23-6ce0-81f42b94f593
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Lastest Infusion Date' = DATE(YEAR([Lastest Infusion Date]), MONTH([Lastest Infusion Date]), 1)
+		dataType: dateTime
+		lineageTag: e67c68b6-68af-f265-b149-827919ce8d8a
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Lastest Infusion Date' = MONTH([Lastest Infusion Date])
+		dataType: int64
+		lineageTag: 09483781-b485-9766-2187-0e9d1a9a03fc
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Lastest Infusion Date' = YEAR([Lastest Infusion Date])
+		dataType: int64
+		lineageTag: 5fa81c97-f2e4-4099-e08d-05214e7a74fb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Lastest Infusion Date' = "Qtr " & ROUNDUP(MONTH([Lastest Infusion Date]) / 3, 0)
+		dataType: string
+		lineageTag: b6ba152a-a1d3-d1b7-fe52-cfd474e098f8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Lastest Infusion Date' = FORMAT([Lastest Infusion Date], "MMMM")
+		dataType: string
+		lineageTag: 51778455-d132-b698-5f63-d9314fa8e694
+		summarizeBy: none
+		sortByColumn: 'Month Number of Lastest Infusion Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Lastest Infusion Date' = DAY([Lastest Infusion Date])
+		dataType: int64
+		lineageTag: 2aef50bd-838d-c002-3849-587860c38b0d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Lastest Infusion Date Hierarchy'
+		lineageTag: 5a7b836a-470a-5e0f-ef55-db4a7dbd7034
+
+		level Year
+			lineageTag: dc8b2895-bff7-f10a-951e-25ee6617f615
+			column: 'Year of Lastest Infusion Date'
+
+		level Quarter
+			lineageTag: 8c99f5d0-f271-4ed4-51a7-1b1207a5b896
+			column: 'Quarter of Lastest Infusion Date'
+
+		level Month
+			lineageTag: 26c3142e-baeb-4ea7-2f6c-adf67fd0f9cb
+			column: 'Month of Lastest Infusion Date'
+
+		level Day
+			lineageTag: c35e8b19-4386-d6e5-3308-21756a797226
+			column: 'Day of Lastest Infusion Date'
+
+	partition pt_360_table = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\SnehVirenShah\Downloads\TWBX_to_PBIP_FIXED\TWBX_to_PBIP_FIXED\TurboBI Version 0514\uploads\f9971b2b-35ca-4b01-a712-b1e4db6cdee2\Account Leads Dashboard_pbip\Account Leads Dashboard (4) (1).SemanticModel\data\federated.1krsj8l110x_c1acecc0\Extract.pt!360!table_30B63D83AF_b8e75b67.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"PATIENT_ID", type text}, {"PATIENT_YOB", type datetime}, {"PATIENT_AGE", Int64.Type}, {"PATIENT_GENDER", type text}, {"patient_state", type text}, {"incidence_date", type datetime}, {"tivi_incidence_date", type text}, {"tivi_first_incidence_treatment_date", type text}, {"first_dx_hcp_5yr", Int64.Type}, {"first_dx_all_visit_count_5yr", Int64.Type}, {"first_dx_last_visit_5yr", type datetime}, {"tivi_first_dx_hcp_5yr", type text}, {"tivi_first_dx_all_visit_count_5yr", type text}, {"tivi_first_dx_last_visit_5yr", type text}, {"first_tx_hcp_5yr", type text}, {"first_tx_all_visit_count_5yr", Int64.Type}, {"first_tx_last_visit_5yr", type text}, {"tivi_first_tx_hcp_5yr", type text}, {"tivi_first_tx_all_visit_count_5yr", type text}, {"tivi_first_tx_last_visit_5yr", type text}, {"most_seen_hcp1_3yr_ranked", Int64.Type}, {"most_seen_hcp1_visit_count_5yr", Int64.Type}, {"most_seen_hcp1_last_visit_5yr", type datetime}, {"tivi_most_seen_hcp1_3yr_ranked", type text}, {"tivi_most_seen_hcp1_visit_count_5yr", type text}, {"tivi_most_seen_hcp1_last_visit_5yr", type text}, {"most_seen_hcp2_3yr_ranked", type text}, {"most_seen_hcp2_visit_count_5yr", Int64.Type}, {"most_seen_hcp2_last_visit_5yr", type text}, {"tivi_most_seen_hcp2_3yr_ranked", type text}, {"tivi_most_seen_hcp2_visit_count_5yr", type text}, {"tivi_most_seen_hcp2_last_visit_5yr", type text}, {"most_seen_hcp3_3yr_ranked", type text}, {"most_seen_hcp3_visit_count_5yr", Int64.Type}, {"most_seen_hcp3_last_visit_5yr", type text}, {"tivi_most_seen_hcp3_3yr_ranked", type text}, {"tivi_most_seen_hcp3_visit_count_5yr", type text}, {"tivi_most_seen_hcp3_last_visit_5yr", type text}, {"most_seen_hcp4_3yr_ranked", type text}, {"most_seen_hcp4_visit_count_5yr", Int64.Type}, {"most_seen_hcp4_last_visit_5yr", type text}, {"tivi_most_seen_hcp4_3yr_ranked", type text}, {"tivi_most_seen_hcp4_visit_count_5yr", type text}, {"tivi_most_seen_hcp4_last_visit_5yr", type text}, {"most_seen_hcp5_3yr_ranked", type text}, {"most_seen_hcp5_visit_count_5yr", Int64.Type}, {"most_seen_hcp5_last_visit_5yr", type text}, {"tivi_most_seen_hcp5_3yr_ranked", type text}, {"tivi_most_seen_hcp5_visit_count_5yr", type text}, {"tivi_most_seen_hcp5_last_visit_5yr", type text}, {"latest_treatment_date", type datetime}, {"latest_treatment_hcp_npi", type text}, {"latest_treatment_hcp_name", type text}, {"latest_treatment_hcp_specialty", type text}, {"latest_treatment_hcp_visit_count", Int64.Type}, {"latest_treatment_hcp_hco_name", type text}, {"tivi_latest_treatment_date", type text}, {"tivi_latest_treatment_hcp_npi", type text}, {"tivi_latest_treatment_hcp_name", type text}, {"tivi_latest_treatment_hcp_specialty", type text}, {"tivi_latest_treatment_hcp_visit_count", type text}, {"tivi_latest_treatment_hcp_hco_name", type text}, {"latest_claim_date", type datetime}, {"latest_claim_hcp_npi", type text}, {"latest_claim_hcp_name", type text}, {"latest_claim_hcp_specialty", type text}, {"latest_claim_hcp_visit_count", Int64.Type}, {"latest_claim_hcp_hco_name", type text}, {"tivi_latest_claim_date", type text}, {"tivi_latest_claim_hcp_npi", type text}, {"tivi_latest_claim_hcp_name", type text}, {"tivi_latest_claim_hcp_specialty", type text}, {"tivi_latest_claim_hcp_visit_count", type text}, {"tivi_latest_claim_hcp_hco_name", type text}, {"most_recently_treated_hcp_2yr", type text}, {"most_recently_treated_hcp_name_2yr", type text}, {"most_recently_treated_hcp_specialty_2yr", type text}, {"most_recently_treated_hcp_2yr_no_of_visits_5yr", type text}, {"most_recent_tx_hcp_2yr_last_visit_5yr", type text}, {"most_recently_treated_hcp_hco_name", type text}, {"most_recently_treated_hcp_region_id_2yr", type text}, {"most_recently_treated_hcp_region_2yr", type text}, {"tivi_most_recently_treated_hcp_2yr", type text}, {"tivi_most_recently_treated_hcp_name_2yr", type text}, {"tivi_most_recently_treated_hcp_2yr_no_of_visits_5yr", type text}, {"tivi_most_recent_tx_hcp_2yr_last_visit_5yr", type text}, {"tivi_most_recently_treated_hcp_hco_name", type text}, {"tivi_most_recently_treated_hcp_region_id_2yr", type text}, {"tivi_most_recently_treated_hcp_region_2yr", type text}, {"tivi_most_recently_treated_hcp_specialty_2yr", type text}, {"PRIMARY_HCP_NPI", Int64.Type}, {"NO_OF_VISITS", Int64.Type}, {"MOST_RECENT_VISIT", type datetime}, {"primary_hcp_name_2yr", type text}, {"primary_hcp_specialty", type text}, {"primary_hcp_hco_name_2yr", type text}, {"primary_hcp_region_id_2yr", type text}, {"primary_hcp_region_2yr", type text}, {"severity", type text}, {"comorbidity_categories", type text}, {"count_of_comorbidity_categories", Int64.Type}, {"distinct_comorbidities", type text}, {"count_of_distinct_comorbidities", Int64.Type}, {"first_tx_after_diagnosis", type datetime}, {"latest_mpsii_tx_type", type text}, {"most_recent_infusion_description", type text}, {"primary_payer", type text}, {"secondary_payer", type text}, {"avlayah_switch_date", type text}, {"primary_hcp_territory_id_2yr", type text}, {"primary_hcp_territory_2yr", type text}, {"avlayah_status", type text}, {"most_seen_hcp1_name_3yr", type text}, {"most_seen_hco1_name_3yr", type text}, {"most_seen_hcp1_specialty", type text}, {"most_seen_hcp2_name_3yr", type text}, {"most_seen_hco2_name_3yr", type text}, {"most_seen_hcp2_specialty", type text}, {"most_seen_hcp3_name_3yr", type text}, {"most_seen_hco3_name_3yr", type text}, {"most_seen_hcp3_specialty", type text}, {"most_seen_hcp4_name_3yr", type text}, {"most_seen_hco4_name_3yr", type text}, {"most_seen_hcp4_specialty", type text}, {"most_seen_hcp5_name_3yr", type text}, {"most_seen_hco5_name_3yr", type text}, {"most_seen_hcp5_specialty", type text}, {"first_dx_hcp_name_5yr", type text}, {"first_dx_hco_name_5yr", type text}, {"first_dx_hcp_specialty", type text}, {"first_tx_hcp_name_5yr", type text}, {"first_tx_hco_name_5yr", type text}, {"first_tx_hcp_specialty", type text}, {"tivi_most_seen_hcp1_name_3yr", type text}, {"tivi_most_seen_hco1_name_3yr", type text}, {"tivi_most_seen_hcp1_specialty", type text}, {"tivi_most_seen_hcp2_name_3yr", type text}, {"tivi_most_seen_hco2_name_3yr", type text}, {"tivi_most_seen_hcp2_specialty", type text}, {"tivi_most_seen_hcp3_name_3yr", type text}, {"tivi_most_seen_hco3_name_3yr", type text}, {"tivi_most_seen_hcp3_specialty", type text}, {"tivi_most_seen_hcp4_name_3yr", type text}, {"tivi_most_seen_hco4_name_3yr", type text}, {"tivi_most_seen_hcp4_specialty", type text}, {"tivi_most_seen_hcp5_name_3yr", type text}, {"tivi_most_seen_hco5_name_3yr", type text}, {"tivi_most_seen_hcp5_specialty", type text}, {"tivi_first_dx_hcp_name_5yr", type text}, {"tivi_first_dx_hco_name_5yr", type text}, {"tivi_first_dx_hcp_specialty", type text}, {"tivi_first_tx_hcp_name_5yr", type text}, {"tivi_first_tx_hco_name_5yr", type text}, {"tivi_first_tx_hcp_specialty", type text}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

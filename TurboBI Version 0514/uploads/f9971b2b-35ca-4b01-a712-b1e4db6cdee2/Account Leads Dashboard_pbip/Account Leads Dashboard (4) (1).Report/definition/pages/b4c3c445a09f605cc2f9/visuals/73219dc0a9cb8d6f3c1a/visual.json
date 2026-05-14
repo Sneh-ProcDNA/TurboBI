@@ -1,0 +1,252 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "73219dc0a9cb8d6f3c1a",
+  "position": {
+    "x": 879,
+    "y": 67,
+    "z": 58000,
+    "height": 120,
+    "width": 229,
+    "tabOrder": 58000
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dashboard_data_available_date"
+                    }
+                  },
+                  "Property": "sp_dispense_date"
+                }
+              },
+              "queryRef": "dashboard_data_available_date.sp_dispense_date",
+              "nativeQueryRef": "sp_dispense_date",
+              "active": true,
+              "displayName": "sp_dispense_date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dashboard_data_available_date"
+                    }
+                  },
+                  "Property": "claims_date"
+                }
+              },
+              "queryRef": "dashboard_data_available_date.claims_date",
+              "nativeQueryRef": "claims_date",
+              "active": true,
+              "displayName": "claims_date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dashboard_data_available_date"
+                    }
+                  },
+                  "Property": "hub_date"
+                }
+              },
+              "queryRef": "dashboard_data_available_date.hub_date",
+              "nativeQueryRef": "hub_date",
+              "active": true,
+              "displayName": "hub_date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dashboard_data_available_date"
+                    }
+                  },
+                  "Property": "veeva_crm_date"
+                }
+              },
+              "queryRef": "dashboard_data_available_date.veeva_crm_date",
+              "nativeQueryRef": "veeva_crm_date",
+              "active": true,
+              "displayName": "veeva_crm_date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dashboard_data_available_date"
+                    }
+                  },
+                  "Property": "sd_shipment_date"
+                }
+              },
+              "queryRef": "dashboard_data_available_date.sd_shipment_date",
+              "nativeQueryRef": "sd_shipment_date",
+              "active": true,
+              "displayName": "sd_shipment_date"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#ffffff'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "dataLabels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c50b93b5801460c2c78c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dashboard_data_available_date"
+              }
+            },
+            "Property": "sp_dispense_date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "93289d46fbb39c09e585",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dashboard_data_available_date"
+              }
+            },
+            "Property": "claims_date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "339a1ae75d493eb380cb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dashboard_data_available_date"
+              }
+            },
+            "Property": "hub_date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fd9476febcd3a6aacf94",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dashboard_data_available_date"
+              }
+            },
+            "Property": "veeva_crm_date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9f5b1a324cfcca1553c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dashboard_data_available_date"
+              }
+            },
+            "Property": "sd_shipment_date"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

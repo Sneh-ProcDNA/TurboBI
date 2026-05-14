@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "6adfd0e81f68bdaf7733",
-  "displayName": "Physical DB 1",
-  "displayOption": "ActualSize",
-  "height": 720,
-  "width": 1280
-}

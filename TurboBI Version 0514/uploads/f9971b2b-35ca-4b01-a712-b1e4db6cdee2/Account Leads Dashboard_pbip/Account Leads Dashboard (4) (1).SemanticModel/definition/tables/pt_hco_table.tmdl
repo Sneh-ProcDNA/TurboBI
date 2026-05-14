@@ -1,0 +1,158 @@
+table pt_hco_table
+	lineageTag: a156dad5-bbd1-762f-eb23-82394487da02
+
+	column 'Avlayah Crm Pt Ct'
+		dataType: int64
+		lineageTag: e1bc4290-8ca6-8af5-5cfb-d260970d0303
+		summarizeBy: sum
+		sourceColumn: avlayah_crm_pt_ct
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avlayah Hub Pt Ct'
+		dataType: int64
+		lineageTag: 61157aef-4701-4964-9f68-f46bd31af7a2
+		summarizeBy: sum
+		sourceColumn: avlayah_hub_pt_ct
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avlayah Sp Pt Ct'
+		dataType: int64
+		lineageTag: aa19287f-dcf0-a3e2-1e3e-1f4fe15a3a1e
+		summarizeBy: sum
+		sourceColumn: avlayah_sp_pt_ct
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hco City'
+		dataType: string
+		lineageTag: 7a993471-d576-3581-98c7-c6d251ffb99d
+		summarizeBy: none
+		sourceColumn: hco_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hco Name'
+		dataType: string
+		lineageTag: 6ea5b8f5-36a2-69b4-5ddb-20c4a67ccd89
+		summarizeBy: none
+		sourceColumn: hco_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hco State'
+		dataType: string
+		lineageTag: 8339064c-1062-39ca-4058-886d70168d57
+		summarizeBy: none
+		sourceColumn: hco_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hco Veeva Crm Id'
+		dataType: string
+		lineageTag: 09c4e86f-0fd6-93e8-b4d0-118398adc1b9
+		summarizeBy: none
+		sourceColumn: hco_veeva_crm_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Id'
+		dataType: int64
+		lineageTag: 01cee747-b11e-5a15-d9b9-1c265aa7874c
+		summarizeBy: none
+		sourceColumn: region_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Name'
+		dataType: string
+		lineageTag: f7e0766b-b9ac-9d40-9fc1-9e76dd37d07a
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Parent Tier'
+		dataType: string
+		lineageTag: 4ccfb1a3-c0c4-34d2-d55f-6b84bb6854dd
+		summarizeBy: none
+		sourceColumn: reporting_parent_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Id'
+		dataType: int64
+		lineageTag: bbdd5d25-c2db-bedb-6b5f-65f0cea3a24d
+		summarizeBy: none
+		sourceColumn: territory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name'
+		dataType: string
+		lineageTag: b21ca062-1412-bcd7-87b5-516e002d4648
+		summarizeBy: none
+		sourceColumn: territory_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Mpsii Avlayah'
+		dataType: int64
+		lineageTag: 4954acff-3bd6-0251-4fab-a8ef8083464a
+		summarizeBy: sum
+		sourceColumn: total_mpsii_avlayah
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Mpsii Avlayah Elaprase'
+		dataType: int64
+		lineageTag: efd152f5-e1a6-e77f-1840-33f3c2d763d9
+		summarizeBy: sum
+		sourceColumn: total_mpsii_avlayah_elaprase
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Mpsii Avlayah Elaprase U17'
+		dataType: int64
+		lineageTag: 573448de-b339-02b1-343d-cce56534ac93
+		summarizeBy: sum
+		sourceColumn: total_mpsii_avlayah_elaprase_u17
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Mpsii Avlayah U17'
+		dataType: int64
+		lineageTag: 12f4a938-664b-4a7f-e7a4-4152ba2d8ea7
+		summarizeBy: sum
+		sourceColumn: total_mpsii_avlayah_u17
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Mpsii Elaprase'
+		dataType: int64
+		lineageTag: e8f8e3f0-7b0d-9406-2c19-57fef3730a71
+		summarizeBy: sum
+		sourceColumn: total_mpsii_elaprase
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Mpsii Elaprase U17'
+		dataType: int64
+		lineageTag: 83811cb6-4fca-2b34-2d84-5137bc5fe038
+		summarizeBy: sum
+		sourceColumn: total_mpsii_elaprase_u17
+
+		annotation SummarizationSetBy = Automatic
+
+	partition pt_hco_table = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\SnehVirenShah\Downloads\TWBX_to_PBIP_FIXED\TWBX_to_PBIP_FIXED\TurboBI Version 0514\uploads\f9971b2b-35ca-4b01-a712-b1e4db6cdee2\Account Leads Dashboard_pbip\Account Leads Dashboard (4) (1).SemanticModel\data\federated.1krsj8l110x_c1acecc0\Extract.pt!hco!table_94507B7F69_06996071.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"hco_veeva_crm_id", type text}, {"hco_name", type text}, {"reporting_parent_tier", type text}, {"hco_city", type text}, {"hco_state", type text}, {"territory_id", Int64.Type}, {"territory_name", type text}, {"region_id", Int64.Type}, {"region_name", type text}, {"avlayah_sp_pt_ct", Int64.Type}, {"avlayah_hub_pt_ct", Int64.Type}, {"avlayah_crm_pt_ct", Int64.Type}, {"total_mpsii_avlayah", Int64.Type}, {"total_mpsii_elaprase", Int64.Type}, {"total_mpsii_avlayah_elaprase", Int64.Type}, {"total_mpsii_avlayah_u17", Int64.Type}, {"total_mpsii_elaprase_u17", Int64.Type}, {"total_mpsii_avlayah_elaprase_u17", Int64.Type}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

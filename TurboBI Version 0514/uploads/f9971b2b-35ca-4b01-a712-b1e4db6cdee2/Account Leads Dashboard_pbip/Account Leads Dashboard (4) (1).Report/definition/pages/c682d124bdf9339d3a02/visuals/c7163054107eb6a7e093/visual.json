@@ -1,0 +1,435 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "c7163054107eb6a7e093",
+  "position": {
+    "x": 320,
+    "y": 272,
+    "z": 27000,
+    "height": 401,
+    "width": 788,
+    "tabOrder": 27000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tableau_long_view_pt360"
+                    }
+                  },
+                  "Property": "Recordtype"
+                }
+              },
+              "queryRef": "tableau_long_view_pt360.Recordtype",
+              "nativeQueryRef": "Recordtype",
+              "active": true,
+              "displayName": "Recordtype"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tableau_long_view_pt360"
+                    }
+                  },
+                  "Property": "Primary HCO Name"
+                }
+              },
+              "queryRef": "tableau_long_view_pt360.Primary HCO Name",
+              "nativeQueryRef": "Primary HCO Name",
+              "active": true,
+              "displayName": "Primary HCO Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "HCP Name (Measure)"
+                }
+              },
+              "queryRef": "pt_360_table.HCP Name (Measure)",
+              "nativeQueryRef": "HCP Name (Measure)",
+              "active": true,
+              "displayName": "HCP Name (Measure)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tableau_long_view_pt360"
+                    }
+                  },
+                  "Property": "Hcp Specialty"
+                }
+              },
+              "queryRef": "tableau_long_view_pt360.Hcp Specialty",
+              "nativeQueryRef": "Hcp Specialty",
+              "active": true,
+              "displayName": "Hcp Specialty"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tableau_long_view_pt360"
+                    }
+                  },
+                  "Property": "All Visit Count 5Yr"
+                }
+              },
+              "queryRef": "tableau_long_view_pt360.All Visit Count 5Yr",
+              "nativeQueryRef": "All Visit Count 5Yr",
+              "active": true,
+              "displayName": "All Visit Count 5Yr"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tableau_long_view_pt360"
+                    }
+                  },
+                  "Property": "Lastvisit"
+                }
+              },
+              "queryRef": "tableau_long_view_pt360.Lastvisit",
+              "nativeQueryRef": "Lastvisit",
+              "active": true,
+              "displayName": "Lastvisit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "''"
+                }
+              },
+              "queryRef": "pt_360_table.''",
+              "nativeQueryRef": "''",
+              "active": true,
+              "displayName": "''"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'care_team_elaprase'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1b1b1b'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#000000'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "italic": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "underline": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pt_360_table"
+              }
+            },
+            "Property": "age<17"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "age<17",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "pt_360_table",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "t"
+                          }
+                        },
+                        "Property": "age<17"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "true"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter2",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pt_360_table"
+              }
+            },
+            "Property": "edited_patient_filter"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "edited_patient_filter",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "pt_360_table",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "t"
+                          }
+                        },
+                        "Property": "edited_patient_filter"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Corewell Health System-STACIE ADAMS-YZKGS5C3'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter3",
+        "type": "Categorical",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pt_360_table"
+              }
+            },
+            "Property": "tab_care_team_elaprase"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "tab_care_team_elaprase"
+      },
+      {
+        "name": "Filter4",
+        "type": "Categorical",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "tableau_long_view_pt360"
+              }
+            },
+            "Property": "Treatment Type"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "Treatment Type",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "tableau_long_view_pt360",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "t"
+                          }
+                        },
+                        "Property": "Treatment Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Elaprase'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

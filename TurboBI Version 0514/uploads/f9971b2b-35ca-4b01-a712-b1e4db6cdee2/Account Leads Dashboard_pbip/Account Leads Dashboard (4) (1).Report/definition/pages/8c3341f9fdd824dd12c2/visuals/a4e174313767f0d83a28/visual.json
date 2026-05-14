@@ -1,0 +1,401 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "a4e174313767f0d83a28",
+  "position": {
+    "x": 6,
+    "y": 157,
+    "z": 6000,
+    "height": 159,
+    "width": 1106,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "HCO Name"
+                }
+              },
+              "queryRef": "pt_360_table.HCO Name",
+              "nativeQueryRef": "HCO Name",
+              "active": true,
+              "displayName": "HCO Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "State"
+                }
+              },
+              "queryRef": "pt_360_table.State",
+              "nativeQueryRef": "State",
+              "active": true,
+              "displayName": "State"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "City"
+                }
+              },
+              "queryRef": "pt_360_table.City",
+              "nativeQueryRef": "City",
+              "active": true,
+              "displayName": "City"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Total Mpsii Avlayah Elaprase"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Total Mpsii Avlayah Elaprase)",
+              "nativeQueryRef": "Total Mpsii Avlayah Elaprase",
+              "active": true,
+              "displayName": "Sum of Total Mpsii Avlayah Elaprase"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Total Mpsii Avlayah Elaprase U17"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Total Mpsii Avlayah Elaprase U17)",
+              "nativeQueryRef": "Total Mpsii Avlayah Elaprase U17",
+              "active": true,
+              "displayName": "Sum of Total Mpsii Avlayah Elaprase U17"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Total Mpsii Elaprase U17"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Total Mpsii Elaprase U17)",
+              "nativeQueryRef": "Total Mpsii Elaprase U17",
+              "active": true,
+              "displayName": "Sum of Total Mpsii Elaprase U17"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Total Mpsii Avlayah U17"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Total Mpsii Avlayah U17)",
+              "nativeQueryRef": "Total Mpsii Avlayah U17",
+              "active": true,
+              "displayName": "Sum of Total Mpsii Avlayah U17"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Avlayah Hub Pt Ct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Avlayah Hub Pt Ct)",
+              "nativeQueryRef": "Avlayah Hub Pt Ct",
+              "active": true,
+              "displayName": "Sum of Avlayah Hub Pt Ct"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Avlayah Sp Pt Ct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Avlayah Sp Pt Ct)",
+              "nativeQueryRef": "Avlayah Sp Pt Ct",
+              "active": true,
+              "displayName": "Sum of Avlayah Sp Pt Ct"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pt_hco_table"
+                        }
+                      },
+                      "Property": "Avlayah Crm Pt Ct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pt_hco_table.Avlayah Crm Pt Ct)",
+              "nativeQueryRef": "Avlayah Crm Pt Ct",
+              "active": true,
+              "displayName": "Sum of Avlayah Crm Pt Ct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "''"
+                }
+              },
+              "queryRef": "pt_360_table.''",
+              "nativeQueryRef": "''",
+              "active": true,
+              "displayName": "''"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "HCO Name"
+                }
+              },
+              "queryRef": "pt_360_table.HCO Name",
+              "nativeQueryRef": "HCO Name",
+              "active": true,
+              "displayName": "HCO Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pt_360_table"
+                    }
+                  },
+                  "Property": "''"
+                }
+              },
+              "queryRef": "pt_360_table.''",
+              "nativeQueryRef": "''",
+              "active": true,
+              "displayName": "''"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'HCO_TABLE_2'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1b1b1b'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#000000'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "italic": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "underline": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1",
+        "type": "Categorical",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pt_360_table"
+              }
+            },
+            "Property": "mpsii_filter_hco"
+          }
+        },
+        "howCreated": "User",
+        "displayName": "mpsii_filter_hco"
+      }
+    ]
+  }
+}

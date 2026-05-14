@@ -1,0 +1,272 @@
+table trend_chart
+	lineageTag: 9ccad888-00d7-ac68-0f03-4e8b10e15750
+
+	column 'Dashboard Name'
+		dataType: string
+		lineageTag: a32451b9-69d7-601a-8052-b119304a66d4
+		summarizeBy: none
+		sourceColumn: dashboard_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Type'
+		dataType: string
+		lineageTag: 9e9b889f-16c7-9d8b-d746-9f3e2f01ea01
+		summarizeBy: none
+		sourceColumn: metric_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Value'
+		dataType: int64
+		lineageTag: 8407dd11-5dd4-d567-135f-dd5102f02973
+		summarizeBy: sum
+		sourceColumn: metric_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Month'
+		dataType: dateTime
+		lineageTag: 06675d5d-715c-8cc7-b612-f03838892570
+		summarizeBy: none
+		sourceColumn: period_month
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Start Dt'
+		dataType: dateTime
+		lineageTag: c1a7935d-9095-fa8a-b8a0-1c364746651b
+		summarizeBy: none
+		sourceColumn: period_start_dt
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 40d51aa7-324c-5ff1-50de-5e997e4b8dec
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Id'
+		dataType: int64
+		lineageTag: 01cee747-b11e-5a15-d9b9-1c265aa7874c
+		summarizeBy: none
+		sourceColumn: region_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Name'
+		dataType: string
+		lineageTag: f7e0766b-b9ac-9d40-9fc1-9e76dd37d07a
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Name'
+		dataType: string
+		lineageTag: 71e9b05d-8c5a-896f-b8cd-e88482402ac6
+		summarizeBy: none
+		sourceColumn: section_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Id'
+		dataType: string
+		lineageTag: bbdd5d25-c2db-bedb-6b5f-65f0cea3a24d
+		summarizeBy: none
+		sourceColumn: territory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name'
+		dataType: string
+		lineageTag: b21ca062-1412-bcd7-87b5-516e002d4648
+		summarizeBy: none
+		sourceColumn: territory_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Period'
+		dataType: string
+		lineageTag: 6406b8f9-d7b8-f40e-22b4-a6276f24259b
+		summarizeBy: none
+		sourceColumn: time_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Trunc of Period Month' = DATE(YEAR([Period Month]), 1, 1)
+		dataType: dateTime
+		lineageTag: 7776ef54-fbde-19e7-e90c-c87fb4d1543c
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Period Month' = DATE(YEAR([Period Month]), (QUARTER([Period Month])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 4523d7c5-2166-513e-4adf-b1495d089290
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Period Month' = DATE(YEAR([Period Month]), MONTH([Period Month]), 1)
+		dataType: dateTime
+		lineageTag: 3d4ab243-84f6-0ca8-252e-cc750eb01352
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Period Month' = MONTH([Period Month])
+		dataType: int64
+		lineageTag: 85a4cb43-29e3-46b6-a714-a74ae4860cf7
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Period Month' = YEAR([Period Month])
+		dataType: int64
+		lineageTag: 304bd7ef-02c8-1233-5867-be35b88fe059
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Period Month' = "Qtr " & ROUNDUP(MONTH([Period Month]) / 3, 0)
+		dataType: string
+		lineageTag: 1fe32b11-3472-5de0-c01c-0d29cba62389
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Period Month' = FORMAT([Period Month], "MMMM")
+		dataType: string
+		lineageTag: e2695177-4f04-b9c3-4f7c-1b57a1e0e91a
+		summarizeBy: none
+		sortByColumn: 'Month Number of Period Month'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Period Month' = DAY([Period Month])
+		dataType: int64
+		lineageTag: 1e5e421c-af24-c631-2c2d-87bc417eb1da
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Period Month Hierarchy'
+		lineageTag: 98efa247-2bed-5c14-1423-75272b1798f2
+
+		level Year
+			lineageTag: 775b8b5c-b976-2236-021a-5b8e6b3f13a2
+			column: 'Year of Period Month'
+
+		level Quarter
+			lineageTag: d9af906a-8343-23c7-667d-7875b484b99b
+			column: 'Quarter of Period Month'
+
+		level Month
+			lineageTag: 09d9c3fc-0be3-8c25-abde-c918a55d8912
+			column: 'Month of Period Month'
+
+		level Day
+			lineageTag: 14821b09-a3d4-54af-1240-80d7b8d1b810
+			column: 'Day of Period Month'
+
+	column 'Year-Trunc of Period Start Dt' = DATE(YEAR([Period Start Dt]), 1, 1)
+		dataType: dateTime
+		lineageTag: fe2387b9-e50b-7e40-d713-6f02a1d58f20
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Quarter of Period Start Dt' = DATE(YEAR([Period Start Dt]), (QUARTER([Period Start Dt])-1)*3+1, 1)
+		dataType: dateTime
+		lineageTag: 15c395a2-c49e-5cfe-52c4-434eb9b2411e
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month of Period Start Dt' = DATE(YEAR([Period Start Dt]), MONTH([Period Start Dt]), 1)
+		dataType: dateTime
+		lineageTag: 7a2e352e-9d59-e85e-1d78-a7a432ddd051
+		summarizeBy: none
+		formatString: General Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number of Period Start Dt' = MONTH([Period Start Dt])
+		dataType: int64
+		lineageTag: f822e00d-a484-db9a-3d73-36fb4a4b759e
+		summarizeBy: none
+		isHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year of Period Start Dt' = YEAR([Period Start Dt])
+		dataType: int64
+		lineageTag: ce054543-226e-8e99-4ef5-d1c9789e7b2b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter of Period Start Dt' = "Qtr " & ROUNDUP(MONTH([Period Start Dt]) / 3, 0)
+		dataType: string
+		lineageTag: e55f6b1a-26e0-b341-4e8e-45d963a45af6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Period Start Dt' = FORMAT([Period Start Dt], "MMMM")
+		dataType: string
+		lineageTag: 3437323d-3c2c-de52-731a-72fccc999fe2
+		summarizeBy: none
+		sortByColumn: 'Month Number of Period Start Dt'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Period Start Dt' = DAY([Period Start Dt])
+		dataType: int64
+		lineageTag: 61949ba5-4641-1d2b-b1c0-59119249db88
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Period Start Dt Hierarchy'
+		lineageTag: 300ba429-8147-f162-6c0a-22ee22501975
+
+		level Year
+			lineageTag: 2bf03086-474c-e1d9-7abb-24f356e0ea03
+			column: 'Year of Period Start Dt'
+
+		level Quarter
+			lineageTag: e61708c4-4db9-474c-3f36-c445110c7570
+			column: 'Quarter of Period Start Dt'
+
+		level Month
+			lineageTag: ed10a4af-fb4d-c8d2-e0d0-a189da388c69
+			column: 'Month of Period Start Dt'
+
+		level Day
+			lineageTag: 5e49dd7c-01c4-9ca9-1682-c48fafc59e7d
+			column: 'Day of Period Start Dt'
+
+	partition trend_chart = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\SnehVirenShah\Downloads\TWBX_to_PBIP_FIXED\TWBX_to_PBIP_FIXED\TurboBI Version 0514\uploads\f9971b2b-35ca-4b01-a712-b1e4db6cdee2\Account Leads Dashboard_pbip\Account Leads Dashboard (4) (1).SemanticModel\data\federated.1krsj8l110x_c1acecc0\Extract.trend!chart_EDE6FEF1F77_da3e0247.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"dashboard_name", type text}, {"section_name", type text}, {"metric_type", type text}, {"product_name", type text}, {"territory_id", type text}, {"territory_name", type text}, {"region_id", Int64.Type}, {"region_name", type text}, {"time_period", type text}, {"period_start_dt", type datetime}, {"period_month", type datetime}, {"metric_value", Int64.Type}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table pt_360_table
+ref table hco_ordered
+ref table tableau_long_view_pt360
+ref table pt_hcp_table
+ref table pt_hco_table
+ref table trend_chart
+ref table vw_reporting_kpi_metrics_master
+ref table dashboard_data_available_date
+ref table 'Tab Selection'
+ref table 'HCO-HCP-Payer Selection'
+ref table Toggle_view
+
+ref cultureInfo en-US

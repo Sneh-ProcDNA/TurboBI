@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "e5a798b34e1d62355aa4",
+  "position": {
+    "x": 72,
+    "y": 193,
+    "z": 47000,
+    "height": 527,
+    "width": 1032,
+    "tabOrder": 47000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Care Team Record Type Definitions: First Dx HCP (5yr) - The HCP from the patient’s earliest diagnosis claim in the 5-year diagnosis window. HCPs are ranked by earliest diagnosis date ascending First Tx HCP (5yr) - The HCP from the patient’s earliest treatment claim in the 5-year treatment window. HCPs are ranked by earliest treatment date ascending Last Infusion HCP - The HCP from the patient’s most recent treatment claim in the 5-year treatment window. Claims are ranked by treatment date descending Last Visited HCP - The HCP from the patient’s most recent overall claim in the 5-year combined claims window. Claims are ranked by claim date descending Most recently treated HCP (2yr) - The HCP from the patient’s most recent treatment claim in the refresh window of 2 years. Claims are ranked within each patient by prioritizing non-null NPI first, then latest treatment date descending Most seen HCP1 (3yr) - The top-ranked HCP based on distinct visit dates in the 3-year combined claims window. HCPs are ranked by visit count descending, then most recent visit date descending Most seen HCP2 (3yr) - The second-ranked HCP based on distinct visit dates in the 3-year combined claims window. Ranking is by visit count descending, then most recent visit date descending Most seen HCP3 (3yr) - The third-ranked HCP based on distinct visit dates in the 3-year combined claims window. Ranking is by visit count descending, then most recent visit date descending Most seen HCP4 (3yr) - The fourth-ranked HCP based on distinct visit dates in the 3-year combined claims window. Ranking is by visit count descending, then most recent visit date descending Most seen HCP5 (3yr) - The fifth-ranked HCP based on distinct visit dates in the 3-year combined claims window. Ranking is by visit count descending, then most recent visit date descending",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#000000",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#ffffff'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#666666'"
+                    }
+                  }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

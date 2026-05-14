@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Account Leads Dashboard (4) (1)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c56517ee-86b3-4d35-9784-c043448d2b44"
+  }
+}

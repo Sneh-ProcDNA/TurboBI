@@ -1,0 +1,155 @@
+﻿hco_veeva_crm_id,hco_name,reporting_parent_tier,hco_city,hco_state,territory_id,territory_name,region_id,region_name,avlayah_sp_pt_ct,avlayah_hub_pt_ct,avlayah_crm_pt_ct,total_mpsii_avlayah,total_mpsii_elaprase,total_mpsii_avlayah_elaprase,total_mpsii_avlayah_u17,total_mpsii_elaprase_u17,total_mpsii_avlayah_elaprase_u17
+V4T00000000N634,Caroline Kingston MD MPH Family Prectice LLC,Tier 3,SANTA FE,NM,2009,Southwest,202,West,0,0,0,0,0,0,0,0,0
+V4T000000011206,Jersey Shore University Medical Center,Tier 2,NEPTUNE,NJ,2013,NY Metro,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001S676,Saint Peter's University Hospital,Tier 1,NEW BRUNSWICK,NJ,2013,NY Metro,201,East,0,0,0,0,2,2,0,1,1
+V4T00000001G746,Ascend Hospice,Tier 3,LEAWOOD,KS,2009,Southwest,202,West,0,0,0,0,1,1,0,0,0
+V4T000000011322,University Medical Center of El Paso,Tier 2,EL PASO,TX,2009,Southwest,202,West,0,0,0,0,1,1,0,0,0
+V4T000000025674,UCLA Health,Tier 1,LOS ANGELES,CA,2010,Southern Cal,202,West,0,0,0,0,3,3,0,1,1
+V4T00000000Q147,Shults Pediatrics P. C.,Tier 3,KNOXVILLE,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,1,1
+V4T00000002B184,The Medical College of Wisconsin Inc.,Tier 2,MILWAUKEE,WI,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001I383,"Pediatrix Medical Group of Florida, Inc.",Tier 3,FORT LAUDERDALE,FL,2004,Southeast-ATL,201,East,0,0,0,0,1,1,0,0,0
+V4T00000000O896,Tuscaloosa Pediatrics,Tier 3,TUSCALOOSA,AL,2004,Southeast-ATL,201,East,0,0,0,0,2,2,0,2,2
+V4T000000011343,Synaptoveda PA,Tier 3,SAN ANTONIO,TX,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001G478,Columbia- Cornell Weill Medicine,Tier 1,NEW YORK,NY,2013,NY Metro,201,East,0,0,0,0,2,2,0,2,2
+V4T00000002A075,Anne Arundel Medical Center,Tier 3,ANNAPOLIS,MD,2003,MidAtlantic CTL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001O777,Florida Cancer Specialists,Tier 3,ORLANDO,FL,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001J994,SSM Health Saint Louis University Hospital,Tier 2,SAINT LOUIS,MO,2006,Midwest,202,West,0,0,0,0,2,2,0,0,0
+V4T00000001S408,University of Rochester,Tier 1,ROCHESTER,NY,2001,New England,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000N777,Yale-New Haven Hospital,Tier 1,NEW HAVEN,CT,2001,New England,201,East,0,0,0,0,0,0,0,0,0
+V4T000000034880,Medpace Inc,Tier 2,CINCINNATI,OH,2002,Northeast-PA,201,East,0,0,0,0,1,1,0,0,0
+V4T00000000M560,Erlanger Medical Center,Tier 2,CHATTANOOGA,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001Q270,Detroit Medical Center - DMC,Tier 1,DETROIT,MI,2005,Great Lakes-Detroit,201,East,0,0,0,0,1,1,0,0,0
+V4T00000002C385,Utah Valley Pediatrics LLC,Tier 3,PROVO,UT,2009,Southwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000M970,Lawrence General Hospital,Tier 3,LAWRENCE,MA,2001,New England,201,East,0,0,0,0,0,0,0,0,0
+V4T00000002B287,University of Michigan Hospitals and Health Centers,Tier 1,ANN ARBOR,MI,2005,Great Lakes-Detroit,201,East,0,0,0,0,2,2,0,0,0
+V4T00000000O046,St. Joseph's Healthcare System,Tier 1,PATERSON,NJ,2013,NY Metro,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000M740,James Robert Eells MD Ltd.,Tier 3,LAS VEGAS,NV,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001O595,Queen's Medical Center,Tier 2,HONOLULU,HI,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000L538,Modesto City Hospital,Tier 2,MODESTO,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001S899,University of Virginia Medical Center,Tier 1,CHARLOTTESVILLE,VA,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,0,0
+V4T000000011295,East Tennessee Childrens Hospital,Tier 1,KNOXVILLE,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,1,1
+V4T00000001T479,Vanderbilt- Monroe Carell Jr Children's Hospital,Tier 1,NASHVILLE,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,0,0
+V4T00000000L791,UC Davis Hospital,Tier 1,SACRAMENTO,CA,2010,Southern Cal,202,West,0,0,0,0,2,2,0,1,1
+V4T00000000L203,Akron Children's Hospital,Tier 1,AKRON,OH,2002,Northeast-PA,201,East,0,0,0,0,1,1,0,1,1
+V4T00000001K610,Kaiser NorCal,Tier 1,RICHMOND,CA,2012,Pac Northwest,202,West,0,0,0,0,4,4,0,2,2
+V4T00000000O816,Kettering Independent Medical Group Inc.,Tier 3,MIAMISBURG,OH,2005,Great Lakes-Detroit,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000N416,Albany Medical Center,Tier 2,ALBANY,NY,2001,New England,201,East,0,0,0,0,1,1,0,1,1
+V4T00000000O657,WK Bossier Health Center,Tier 2,BOSSIER CITY,LA,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001N452,University of North Carolina Hospitals,Tier 1,CHAPEL HILL,NC,2003,MidAtlantic CTL,201,East,0,0,0,0,2,2,0,0,0
+V4T00000001R584,St. Vincent Indianapolis Hospital,Tier 2,INDIANAPOLIS,IN,2005,Great Lakes-Detroit,201,East,0,0,0,0,1,1,0,0,0
+V4T00000000Q056,Concord Family Practice,Tier 3,KNOXVILLE,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000O858,Texas Childrens Hospital,Tier 1,HOUSTON,TX,2011,Southcentral,202,West,0,0,0,0,2,2,0,2,2
+V4T000000026630,UCSD Health,Tier 2,SAN DIEGO,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001R432,Indiana Clinic-Neurology LLC,Tier 3,INDIANAPOLIS,IN,2005,Great Lakes-Detroit,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000M467,Carilion Medical Group,Tier 2,ROANOKE,VA,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,0,0
+V4T00000000Q062,Christus Childrens San Antonio,Tier 1,SAN ANTONIO,TX,2011,Southcentral,202,West,0,0,0,0,2,2,0,2,2
+V4T00000000M725,Dell Children's Medical Center of Central Texas,Tier 2,Austin,TX,2011,Southcentral,202,West,0,0,0,0,1,1,0,1,1
+V4T00000000M374,Women and Infants Hospital of Rhode Island,Tier 2,PROVIDENCE,RI,2001,New England,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002403,UCSF Benioff Childrens Hospital-Oakland,Tier 1,OAKLAND,CA,2012,Pac Northwest,202,West,0,0,0,0,2,2,0,0,0
+V4T000000011271,Lexington Health Inc,Tier 2,LEXINGTON,SC,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000N406,Childrens Hospital Los Angeles,Tier 1,LOS ANGELES,CA,2010,Southern Cal,202,West,0,0,0,0,1,1,0,1,1
+V4T000000035319,North Jersey Primary Care Associates,Tier 3,HACKENSACK,NJ,2013,NY Metro,201,East,0,0,0,0,1,1,0,0,0
+V4T00000001L779,University of Kentucky,Tier 2,LEXINGTON,KY,2005,Great Lakes-Detroit,201,East,0,0,0,0,0,0,0,0,0
+V4T00000002C185,City of Hope Medical Foundation,Tier 3,DUARTE,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000N825,Baptist Medical Center,Tier 2,JACKSONVILLE,TX,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O249,Childrens Minnesota Hospital-Minneapolis,Tier 2,MINNEAPOLIS,MN,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000002C151,Perlman Clinic,Tier 3,LA JOLLA,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T000000002213,St. Louis Children's Hospital,Tier 1,SAINT LOUIS,MO,2006,Midwest,202,West,0,0,0,0,2,2,0,1,1
+V4T00000000Q092,Towne Centre Surgery Center LLC,Tier 3,SAGINAW,MI,2005,Great Lakes-Detroit,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000O285,Kaiser MidAtlantic,Tier 2,SILVER SPRING,MD,2003,MidAtlantic CTL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001S844,Northwell Health,Tier 2,MANHASSET,NY,2013,NY Metro,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001J446,MountainView Hospital,Tier 3,LAS VEGAS,NV,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000N860,Cincinnati Childrens,Tier 1,CINCINNATI,OH,2002,Northeast-PA,201,East,0,0,0,0,2,2,0,0,0
+V4T000000027964,University of Colorado Hospital,Tier 2,AURORA,CO,2009,Southwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O520,Overlake Medical Clinics LLC,Tier 3,BELLEVUE,WA,2012,Pac Northwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O131,Columbus Regional Health - Midtown Medical Center,Tier 3,COLUMBUS,GA,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000L675,ABC Pediatric Clinic P.A.,Tier 3,HOUSTON,TX,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000L326,Upstate University Hospital,Tier 1,SYRACUSE,NY,2001,New England,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002002,Childrens Hospital Of Orange County,Tier 1,ORANGE,CA,2010,Southern Cal,202,West,0,0,0,0,2,2,0,0,0
+V4T00000000O732,Phoenix Children's Hospital,Tier 1,PHOENIX,AZ,2009,Southwest,202,West,0,0,0,0,10,10,0,5,5
+V4T00000000N435,Children's Hospital Colorado,Tier 1,AURORA,CO,2009,Southwest,202,West,0,0,0,0,1,1,0,0,0
+V4T00000002C003,Valley Children's Healthcare,Tier 1,MADERA,CA,2010,Southern Cal,202,West,0,0,0,0,1,1,0,0,0
+V4T000000002283,Childrens Hospital Of Philadelphia,Tier 1,PHILADELPHIA,PA,2002,Northeast-PA,201,East,0,0,0,0,9,9,0,7,7
+V4T00000002C169,Mercy Medical Center Cedar Rapids Iowa,Tier 3,CEDAR RAPIDS,IA,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+-,-,-,-,-,0,-,0,-,0,0,0,0,3,3,0,0,0
+V4T00000001Q381,UT Health,Tier 1,HOUSTON,TX,2011,Southcentral,202,West,0,0,0,0,3,3,0,2,2
+V4T00000001J347,Maricopa Integrated Health System,Tier 2,PHOENIX,AZ,2009,Southwest,202,West,0,0,0,0,0,0,0,0,0
+V4T000000002225,Lurie Children's Hospital of Chicago,Tier 1,CHICAGO,IL,2006,Midwest,202,West,0,0,0,0,13,13,0,8,8
+V4T00000000O363,Internal Medicine Associates,Tier 2,FARGO,ND,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000N700,Children's Nebraska,Tier 1,OMAHA,NE,2006,Midwest,202,West,0,0,0,0,4,4,0,3,3
+V4T00000002B718,The University of Kansas Hospital,Tier 2,KANSAS CITY,KS,2009,Southwest,202,West,0,0,0,0,1,1,0,1,1
+V4T00000002A005,Montefiore Medical Center,Tier 2,BRONX,NY,2013,NY Metro,201,East,0,0,0,0,2,2,0,2,2
+V4T000000002133,Children's Wisconsin,Tier 1,MILWAUKEE,WI,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T000000002401,Shriners Hospitals for Children-Salt Lake City,Tier 2,SALT LAKE CITY,UT,2009,Southwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000M726,Slidell Memorial Hospital,Tier 2,SLIDELL,LA,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001P459,UAMS Medical Center,Tier 1,LITTLE ROCK,AR,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001J693,Seattle Children's Hospital,Tier 1,SEATTLE,WA,2012,Pac Northwest,202,West,0,0,0,0,2,2,0,1,1
+V4T00000000M360,Redlands Community Hospital,Tier 3,REDLANDS,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T000000002364,Penn State Milton S. Hershey Medical Center,Tier 2,HERSHEY,PA,2002,Northeast-PA,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001P604,Children's Healthcare of Atlanta at Scottish Rite,Tier 2,ATLANTA,GA,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002019,University Of Iowa Healthcare Medical Center,Tier 1,IOWA CITY,IA,2006,Midwest,202,West,0,0,0,0,4,4,0,0,0
+V4T00000000M732,Le Bonheur Children's Hospital,Tier 2,MEMPHIS,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,1,1
+V4T00000000M214,Driscoll Childrens Hospital-Corpus Christi,Tier 1,CORPUS CHRISTI,TX,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O980,WellStar Medical Group,Tier 3,MARIETTA,GA,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000M850,Texas Scottish Rite Hospital for Children,Tier 2,DALLAS,TX,2011,Southcentral,202,West,0,0,0,0,2,2,0,2,2
+V4T000000002120,Childrens National Hospital,Tier 1,WASHINGTON,DC,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,1,1
+V4T00000000M592,OHSU Hospital Portland,Tier 1,PORTLAND,OR,2012,Pac Northwest,202,West,0,0,0,0,2,2,0,0,0
+V4T000000002084,Riley Children's Health,Tier 1,INDIANAPOLIS,IN,2005,Great Lakes-Detroit,201,East,0,0,0,0,5,5,0,4,4
+V4T00000001K205,Alfred I. Dupont Hospital for Children,Tier 2,WILMINGTON,DE,2002,Northeast-PA,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000O608,Nationwide Children's Hospital,Tier 1,COLUMBUS,OH,2002,Northeast-PA,201,East,0,0,0,0,6,6,0,2,2
+V4T00000001I604,ACH Physician Services,Tier 2,LITTLE ROCK,AR,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001L984,Parkland Health Hospital System,Tier 1,Dallas,TX,2011,Southcentral,202,West,0,0,0,0,3,3,0,0,0
+V4T00000000N717,University of Mississippi Medical Center,Tier 2,JACKSON,MS,2011,Southcentral,202,West,0,0,0,0,4,4,0,2,2
+V4T00000001K780,Inova,Tier 1,FALLS CHURCH,VA,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,1,1
+V4T000000011143,Mayo Clinic Hospital - Rochester,Tier 1,ROCHESTER,MN,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001N309,Atrium Health,Tier 1,CHARLOTTE,NC,2003,MidAtlantic CTL,201,East,0,0,0,0,3,3,0,2,2
+V4T00000000O835,Mount Sinai Hospital,Tier 1,NEW YORK,NY,2013,NY Metro,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002056,Lucile Packard Children's Hospital Stanford,Tier 1,PALO ALTO,CA,2012,Pac Northwest,202,West,0,0,0,0,2,2,0,1,1
+V4T000000002007,The Greenwood Genetic Center,Tier 1,GREENVILLE,SC,2004,Southeast-ATL,201,East,0,0,0,0,3,3,0,2,2
+V4T00000000O867,Orlando Health Orlando Regional Medical Center,Tier 1,ORLANDO,FL,2004,Southeast-ATL,201,East,0,0,0,0,3,3,0,0,0
+V4T000000029018,M Health Fairview,Tier 1,MINNEAPOLIS,MN,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000N787,Eisenhower Medical Center,Tier 2,RANCHO MIRAGE,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O089,Dallas Pediatric Neurology Associates Texas Child Neurology,Tier 3,PLANO,TX,2011,Southcentral,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O320,Mercy Medical Center,Tier 3,CINCINNATI,OH,2002,Northeast-PA,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002114,Westchester Medical Center,Tier 1,VALHALLA,NY,2001,New England,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001S722,Mission Workwell,Tier 2,ASHEVILLE,NC,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,0,0
+V4T00000000L491,"Texas Oncology PA, Dallas",Tier 3,DALLAS,TX,2011,Southcentral,202,West,0,0,0,0,1,1,0,0,0
+V4T000000011190,Lehigh Valley Hospital,Tier 3,ALLENTOWN,PA,2002,Northeast-PA,201,East,0,0,0,0,1,1,0,0,0
+V4T000000002337,Oklahoma Children's Hospital OU Health,Tier 1,OKLAHOMA CITY,OK,2011,Southcentral,202,West,0,0,0,0,1,1,0,0,0
+V4T00000001R389,UnityPoint Health - Iowa Methodist Medical Center,Tier 2,DES MOINES,IA,2006,Midwest,202,West,0,0,0,0,1,1,0,0,0
+V4T00000002C229,Princeton Nassau Pediatrics P.A.,Tier 3,PRINCETON,NJ,2013,NY Metro,201,East,0,0,0,0,2,2,0,2,2
+V4T000000002404,Nicklaus Children's Hospital,Tier 2,MIAMI,FL,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002389,Childrens Mercy Hospital,Tier 1,KANSAS CITY,MO,2009,Southwest,202,West,0,0,0,0,2,2,0,2,2
+V4T000000002180,USF Health (University Medical Service Association),Tier 1,TAMPA,FL,2004,Southeast-ATL,201,East,0,0,0,0,2,2,0,1,1
+V4T000000035320,Corewell Health System,Tier 1,GRAND RAPIDS,MI,2005,Great Lakes-Detroit,201,East,0,0,0,0,2,2,0,0,0
+V4T00000000Q006,University of Wisconsin,Tier 1,MIDDLETON,WI,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000001S254,Johns Hopkins Hospital,Tier 1,BALTIMORE,MD,2003,MidAtlantic CTL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000001K862,Kaiser SoCal,Tier 1,SAN DIEGO,CA,2010,Southern Cal,202,West,0,0,0,0,1,1,0,1,1
+V4T00000001M368,University of Alabama Hospital,Tier 1,BIRMINGHAM,AL,2004,Southeast-ATL,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000N355,St. Catherine's Center for Children,Tier 3,ALBANY,NY,2001,New England,201,East,0,0,0,0,1,1,0,1,1
+V4T00000000Q132,Reading Hospital,Tier 2,READING,PA,2002,Northeast-PA,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000M851,J.M. Geiss D.O. APC,Tier 3,SANTA ANA,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000N929,Providence Sacred Heart Medical Center,Tier 2,SPOKANE,WA,2012,Pac Northwest,202,West,0,0,0,0,1,1,0,1,1
+V4T00000000Q178,Rady Childrens Hospital San Diego,Tier 1,SAN DIEGO,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000O315,Riverside Health System,Tier 3,KANKAKEE,IL,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000L104,MD Kids Pediatrics,Tier 3,DALLAS,TX,2011,Southcentral,202,West,0,0,0,0,1,1,0,1,1
+V4T00000001O280,Maine Medical Center,Tier 1,PORTLAND,ME,2001,New England,201,East,0,0,0,0,1,1,0,1,1
+V4T00000002B631,NYU Langone Medical Center,Tier 1,MINEOLA,NY,2013,NY Metro,201,East,0,0,0,0,1,1,0,0,0
+V4T000000002179,Memorial Hospital East,Tier 2,O FALLON,IL,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T00000000L566,Comanche County Hospital Cardiology,Tier 3,LAWTON,OK,2011,Southcentral,202,West,0,0,0,0,1,1,0,0,0
+V4T00000002C543,Sanford USD Medical Center,Tier 2,SIOUX FALLS,SD,2006,Midwest,202,West,0,0,0,0,0,0,0,0,0
+V4T000000035116,Mazen Sabbaq M.D. PC,Tier 3,ROCHESTER,MI,2005,Great Lakes-Detroit,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000Q210,MUSC Health,Tier 1,LANCASTER,SC,2004,Southeast-ATL,201,East,0,0,0,0,4,4,0,3,3
+V4T00000001P703,UPMC Children's Hospital of Pittsburgh,Tier 1,PITTSBURGH,PA,2002,Northeast-PA,201,East,0,0,0,0,2,2,0,2,2
+V4T000000002248,Boston Children's Hospital,Tier 1,BOSTON,MA,2001,New England,201,East,0,0,0,0,3,3,0,1,1
+V4T000000034731,Dartmouth-Hitchcock Medical Center,Tier 2,-,-,0,-,0,-,0,0,0,0,0,0,0,0,0
+V4T00000001G586,Hackensack University Medical Center,Tier 1,HACKENSACK,NJ,2013,NY Metro,201,East,0,0,0,0,0,0,0,0,0
+V4T000000002301,MultiCare Mary Bridge Children's Hospital,Tier 1,TACOMA,WA,2012,Pac Northwest,202,West,0,0,0,0,1,1,0,1,1
+V4T000000002311,University of New Mexico Hospitals,Tier 1,ALBUQUERQUE,NM,2009,Southwest,202,West,0,0,0,0,2,2,0,0,0
+V4T000000002252,Primary Childrens Hospital-Salt Lake City,Tier 1,SALT LAKE CITY,UT,2009,Southwest,202,West,0,0,0,0,1,1,0,0,0
+V4T00000001S570,UT Medical Group Inc.,Tier 2,MEMPHIS,TN,2003,MidAtlantic CTL,201,East,0,0,0,0,1,1,0,1,1
+V4T000000002079,Tulane University School Of Medicine,Tier 2,NEW ORLEANS,LA,2011,Southcentral,202,West,0,0,0,0,2,2,0,2,2
+V4T00000000L798,Kentucky Childrens Hospital,Tier 1,LEXINGTON,KY,2005,Great Lakes-Detroit,201,East,0,0,0,0,0,0,0,0,0
+V4T00000000M757,Emory University Hospital,Tier 1,ATLANTA,GA,2004,Southeast-ATL,201,East,0,0,0,0,8,8,0,3,3
+V4T000000011117,Barnes-Jewish Hospital,Tier 2,SAINT LOUIS,MO,2006,Midwest,202,West,0,0,0,0,1,1,0,1,1
+V4T00000001S700,Methodist Hospital of Southern California,Tier 3,ARCADIA,CA,2010,Southern Cal,202,West,0,0,0,0,0,0,0,0,0

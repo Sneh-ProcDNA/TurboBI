@@ -1,0 +1,86 @@
+table vw_reporting_kpi_metrics_master
+	lineageTag: 8a9c7e22-ba75-8785-da60-4ea567e3f361
+
+	column 'Dashboard Name'
+		dataType: string
+		lineageTag: a32451b9-69d7-601a-8052-b119304a66d4
+		summarizeBy: none
+		sourceColumn: dashboard_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kpi Name'
+		dataType: string
+		lineageTag: d4f276b8-172b-188e-cf21-be40f05b4c59
+		summarizeBy: none
+		sourceColumn: kpi_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kpi Value'
+		dataType: int64
+		lineageTag: 28c1f76f-b211-ebf4-7339-4a7eadd14457
+		summarizeBy: sum
+		sourceColumn: kpi_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Type'
+		dataType: string
+		lineageTag: 03540411-73af-5ba6-a00a-5927520051c0
+		summarizeBy: none
+		sourceColumn: period_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Id'
+		dataType: string
+		lineageTag: 01cee747-b11e-5a15-d9b9-1c265aa7874c
+		summarizeBy: none
+		sourceColumn: region_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Name'
+		dataType: string
+		lineageTag: f7e0766b-b9ac-9d40-9fc1-9e76dd37d07a
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Name'
+		dataType: string
+		lineageTag: 71e9b05d-8c5a-896f-b8cd-e88482402ac6
+		summarizeBy: none
+		sourceColumn: section_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Id'
+		dataType: string
+		lineageTag: bbdd5d25-c2db-bedb-6b5f-65f0cea3a24d
+		summarizeBy: none
+		sourceColumn: territory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name'
+		dataType: string
+		lineageTag: b21ca062-1412-bcd7-87b5-516e002d4648
+		summarizeBy: none
+		sourceColumn: territory_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_reporting_kpi_metrics_master = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\SnehVirenShah\Downloads\TWBX_to_PBIP_FIXED\TWBX_to_PBIP_FIXED\TurboBI Version 0514\uploads\f9971b2b-35ca-4b01-a712-b1e4db6cdee2\Account Leads Dashboard_pbip\Account Leads Dashboard (4) (1).SemanticModel\data\federated.1krsj8l110x_c1acecc0\Extract.vw!reporting!kpi!metric_b6253388.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"dashboard_name", type text}, {"section_name", type text}, {"region_id", type text}, {"region_name", type text}, {"territory_id", type text}, {"territory_name", type text}, {"kpi_name", type text}, {"kpi_value", Int64.Type}, {"period_type", type text}})
+			in
+			    ChangedTypes
+
+	annotation PBI_ResultType = Table

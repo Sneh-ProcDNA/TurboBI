@@ -1,0 +1,24 @@
+relationship 1b739808-7826-b536-08ca-a726ee219cda
+	fromCardinality: many
+	toCardinality: many
+	fromColumn: vw_reporting_kpi_metrics_master.'Territory Id'
+	toColumn: hco_ordered.'Territory Id'
+
+relationship 5e1bf936-d0b9-4bef-9000-bceed519faab
+	fromCardinality: many
+	toCardinality: many
+	fromColumn: pt_hcp_table.'Hcp Id'
+	toColumn: pt_360_table.'Primary Hcp Npi'
+
+relationship 40c8752f-c9bd-4d5d-bbcd-3edc3c14c427
+	fromCardinality: many
+	toCardinality: many
+	fromColumn: pt_hco_table.'Hco Veeva Crm Id'
+	toColumn: pt_hcp_table.'Hco Veeva Crm Id'
+
+relationship c979e1fa-d981-fdcf-2d1e-043e8d5c1294
+	fromCardinality: many
+	toCardinality: many
+	fromColumn: pt_360_table.'Patient Id'
+	toColumn: tableau_long_view_pt360.'Patient Id1'
+
