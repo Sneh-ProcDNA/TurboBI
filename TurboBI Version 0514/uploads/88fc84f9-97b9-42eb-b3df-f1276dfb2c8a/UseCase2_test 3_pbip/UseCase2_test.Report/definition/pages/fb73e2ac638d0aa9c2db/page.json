@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "fb73e2ac638d0aa9c2db",
+  "displayName": "Logical DB 1",
+  "displayOption": "ActualSize",
+  "height": 720,
+  "width": 1280
+}

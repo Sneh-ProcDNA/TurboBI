@@ -1,0 +1,187 @@
+table fact_referral_edge
+	lineageTag: e2461bf1-cc48-c998-aab7-7f42a83acc9b
+
+	column 'From Cluster ID'
+		dataType: int64
+		lineageTag: 8833dcc2-5e65-3818-3c70-00c75e227070
+		summarizeBy: none
+		sourceColumn: From_Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From HCO ID'
+		dataType: int64
+		lineageTag: 0b0fcd1f-d018-0bf6-1842-02749e81b846
+		summarizeBy: none
+		sourceColumn: From_HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From HCP ID'
+		dataType: int64
+		lineageTag: 2f25251b-32f1-706a-aca2-379b62ed563c
+		summarizeBy: none
+		sourceColumn: From_HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From HCP Name'
+		dataType: string
+		lineageTag: 8a348c96-db5d-4b27-26df-6c9df5488068
+		summarizeBy: none
+		sourceColumn: From_HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Latitude'
+		dataType: double
+		lineageTag: 05bf5144-2199-b4f6-e147-2e18b0874164
+		summarizeBy: none
+		sourceColumn: From_Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Longitude'
+		dataType: double
+		lineageTag: 54a44021-1e45-dd2e-c616-259a9d70d93c
+		summarizeBy: none
+		sourceColumn: From_Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Region'
+		dataType: string
+		lineageTag: aad482e6-559c-d4b3-83e3-566a2293ffd0
+		summarizeBy: none
+		sourceColumn: From_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Territory'
+		dataType: string
+		lineageTag: c243a592-d9e0-1201-8a7e-1d766044a123
+		summarizeBy: none
+		sourceColumn: From_Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Territory Name'
+		dataType: string
+		lineageTag: 85a4ff32-5bb7-80ce-eadf-648968afa46f
+		summarizeBy: none
+		sourceColumn: From_Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link ID'
+		dataType: int64
+		lineageTag: 20df4f0e-3cfd-8c0e-ab11-2fcbdb9780a6
+		summarizeBy: none
+		sourceColumn: Link_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Cluster ID'
+		dataType: int64
+		lineageTag: 7ad4a479-8ff6-d459-55e3-c855371c2fc7
+		summarizeBy: none
+		sourceColumn: To_Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To HCO ID'
+		dataType: int64
+		lineageTag: 156faf7c-a6c1-07b4-6c67-8b8abea01cd2
+		summarizeBy: none
+		sourceColumn: To_HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To HCP ID'
+		dataType: int64
+		lineageTag: fdaf0028-d7ed-1355-1dd7-04621cff75ed
+		summarizeBy: none
+		sourceColumn: To_HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To HCP Name'
+		dataType: string
+		lineageTag: ef17da8c-c5c0-c8ea-ff0d-4362a8661cff
+		summarizeBy: none
+		sourceColumn: To_HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Latitude'
+		dataType: double
+		lineageTag: df64b6d3-be88-89ac-8606-9b615cf4770f
+		summarizeBy: none
+		sourceColumn: To_Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Longitude'
+		dataType: double
+		lineageTag: 16740d2c-9a2e-33fe-cd8a-311b50341c41
+		summarizeBy: none
+		sourceColumn: To_Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Region'
+		dataType: string
+		lineageTag: 7c8f03ce-0f59-6f28-f4a5-d87f8466c755
+		summarizeBy: none
+		sourceColumn: To_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Territory'
+		dataType: string
+		lineageTag: 633f5103-3c93-1423-666f-e9594759a778
+		summarizeBy: none
+		sourceColumn: To_Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Territory Name'
+		dataType: string
+		lineageTag: cde795e7-3fdc-9693-0798-1f2d7118ae3f
+		summarizeBy: none
+		sourceColumn: To_Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'from HCO name'
+		dataType: string
+		lineageTag: 6024c7f3-45fe-c4dd-7b1f-89081bffc68f
+		summarizeBy: none
+		sourceColumn: from_HCO_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'to HCO name'
+		dataType: string
+		lineageTag: 23da033b-8591-9d9b-5740-ee5679a48c48
+		summarizeBy: none
+		sourceColumn: to_HCO_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_referral_edge = m
+		mode: directQuery
+		source =
+			let
+			    Source = DatabricksMultiCloud.Catalogs("dbc-3ee0f24b-247b.cloud.databricks.com", "", [Catalog="", Database="", QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+			    Catalog = Source{[Name="turbobi", Kind="Database"]}[Data],
+			    Schema = Catalog{[Name="takeda", Kind="Schema"]}[Data],
+			    Navigation = Schema{[Name="fact_referral_edge", Kind="Table"]}[Data]
+			in
+			    Navigation
+
+	annotation PBI_ResultType = Table

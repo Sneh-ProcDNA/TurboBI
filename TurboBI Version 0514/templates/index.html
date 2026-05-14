@@ -505,7 +505,12 @@ code, pre { font-family: var(--font-mono); }
                 Replace
               </div>
               <div class="tbi-slot-footwrap">
-                <span class="tbi-slot-foot" style="opacity:.5;font-size:12px">credentials optional — .pbip uses placeholders without it</span>
+                <a href="/credentials-template" class="tbi-slot-foot" download="credentials_template.json" onclick="event.stopPropagation()">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/>
+                  </svg>
+                  Download template
+                </a>
               </div>
               <input type="file" id="creds-input" accept=".json" style="display:none">
             </div>
@@ -755,13 +760,28 @@ function clearTwbx() {
 function attachCreds(file) {
   credsFile = file;
   document.getElementById('creds-filename').textContent = file.name;
-  document.getElementById('creds-filesub').textContent  = fmtBytes(file.size) + ' attached';
+  document.getElementById('creds-filesub').textContent  = fmtBytes(file.size) + ' · saving…';
   document.getElementById('slot-creds-empty').style.display    = 'none';
   document.getElementById('slot-creds-attached').style.display = '';
   document.getElementById('creds-replace').style.display       = '';
   slotCreds.classList.add('is-attached');
   slotCreds.style.cursor = 'default';
   if (twbxFile) actionsNote.textContent = 'Both files staged — ready to convert.';
+
+  // Auto-save to project folder so it persists for all future conversions
+  const fd = new FormData();
+  fd.append('credentials', file);
+  fetch('/save-credentials', { method: 'POST', body: fd })
+    .then(r => r.json())
+    .then(data => {
+      const sub = document.getElementById('creds-filesub');
+      sub.textContent = data.saved
+        ? fmtBytes(file.size) + ' · saved to project ✓'
+        : fmtBytes(file.size) + ' · save failed: ' + (data.error || 'unknown');
+    })
+    .catch(() => {
+      document.getElementById('creds-filesub').textContent = fmtBytes(file.size) + ' attached';
+    });
 }
 
 function clearCreds() {
@@ -791,7 +811,8 @@ document.getElementById('twbx-clear').addEventListener('click', (e) => { e.stopP
 document.getElementById('twbx-replace').addEventListener('click', (e) => { e.stopPropagation(); twbxInput.click(); });
 
 slotCreds.addEventListener('click', (e) => {
-  if (e.target.closest('#creds-clear') || e.target.closest('#creds-replace')) return;
+  if (e.target.closest('#creds-clear') || e.target.closest('#creds-replace') ||
+      e.target.closest('a')) return;
   if (!credsFile) credsInput.click();
 });
 slotCreds.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (!credsFile) credsInput.click(); }});

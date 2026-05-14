@@ -1,0 +1,250 @@
+table dim_hcp
+	lineageTag: 9ea2bdfd-7a3b-9bfa-4425-3d931ba0bb70
+
+	column 'Address Line1'
+		dataType: string
+		lineageTag: 62d7e6b0-3e87-91f3-924a-b7ffb28b5c9b
+		summarizeBy: none
+		sourceColumn: Address_Line1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bridge Score'
+		dataType: double
+		lineageTag: a996eedd-1217-e691-b594-f15ba01fed9e
+		summarizeBy: sum
+		sourceColumn: Bridge_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'City (dim hcp)'
+		dataType: string
+		lineageTag: 10344779-37a3-b5ff-4bd0-c9f9966eb785
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cluster ID'
+		dataType: int64
+		lineageTag: 99fab4f5-0629-a273-b87c-9065eda90848
+		summarizeBy: none
+		sourceColumn: Cluster_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eigenvector Score'
+		dataType: double
+		lineageTag: 5d6fc985-d871-25ba-168d-5f5dfe49caea
+		summarizeBy: sum
+		sourceColumn: Eigenvector_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Email (dim hcp)'
+		dataType: string
+		lineageTag: 0be8cbdc-7aa7-4ae2-17d0-7c45ad1be469
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Segment'
+		dataType: string
+		lineageTag: e5f616e1-4a44-bbf7-9990-59bb2ee21a89
+		summarizeBy: none
+		sourceColumn: Final_Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCO ID (dim hcp)'
+		dataType: int64
+		lineageTag: e3053c28-495b-bc90-3d81-2b8c528b0c37
+		summarizeBy: none
+		sourceColumn: HCO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hcp Id'
+		dataType: int64
+		lineageTag: ea06d51c-3944-6da9-4882-27c18944c75b
+		summarizeBy: none
+		sourceColumn: HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCP Name'
+		dataType: string
+		lineageTag: ed01dd8a-bd6a-f0f7-3814-dcf2f54954aa
+		summarizeBy: none
+		sourceColumn: HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incoming Referrals (dim hcp)'
+		dataType: int64
+		lineageTag: b6069bba-3eff-4b4e-20ba-fd94fbe2c6e6
+		summarizeBy: sum
+		sourceColumn: Incoming_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Influence Score'
+		dataType: double
+		lineageTag: f3c675b4-ea53-c043-4bdb-82eb75545d87
+		summarizeBy: sum
+		sourceColumn: Influence_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latitude (dim hcp)'
+		dataType: double
+		lineageTag: 0aa1f77f-c9e8-ef8a-3222-61db63da3d98
+		summarizeBy: none
+		sourceColumn: Latitude
+		dataCategory: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Longitude (dim hcp)'
+		dataType: double
+		lineageTag: 91535513-a929-e5c6-a00c-51013cb60b3d
+		summarizeBy: none
+		sourceColumn: Longitude
+		dataCategory: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mistreated Patients (dim hcp)'
+		dataType: int64
+		lineageTag: 53d56b94-d6ba-db28-98a1-cf6d919a5e38
+		summarizeBy: sum
+		sourceColumn: Mistreated_Patients
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outgoing Referrals (dim hcp)'
+		dataType: int64
+		lineageTag: a9df0693-83f9-a532-9d22-2af3a618733f
+		summarizeBy: sum
+		sourceColumn: Outgoing_Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Count (dim hcp)'
+		dataType: int64
+		lineageTag: 794bc143-feec-a7eb-ae06-46cd637f4feb
+		summarizeBy: sum
+		sourceColumn: Patients_Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Diagnosed (dim hcp)'
+		dataType: int64
+		lineageTag: b14c823f-5047-1908-317b-ad2f7188c10b
+		summarizeBy: sum
+		sourceColumn: Patients_Diagnosed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Prescribed (dim hcp)'
+		dataType: int64
+		lineageTag: 62c643dd-cf4d-447f-71a1-899aff9bd760
+		summarizeBy: sum
+		sourceColumn: Patients_Prescribed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patients Treated (dim hcp)'
+		dataType: int64
+		lineageTag: be566ad5-4e9b-7d4a-fc3a-8f24b186c009
+		summarizeBy: sum
+		sourceColumn: Patients_Treated
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region (dim hcp)'
+		dataType: string
+		lineageTag: 74eea325-d35d-ed51-1995-8fb658f717b2
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Specialty (group)' = SWITCH(TRUE(), [Specialty] IN { "NP/PA", "Other Non-Specialists", "Other Specialists" }, "Others", [Specialty] IN { "Psychiatrist", "Psychologist" }, "Psychiatrist", [Specialty] )
+		dataType: string
+		lineageTag: 315d1680-39b9-2e1f-0ca2-68c9a9525514
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialty
+		dataType: string
+		lineageTag: e03b2393-925d-0083-155d-28f780f94001
+		summarizeBy: none
+		sourceColumn: Specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'State (dim hcp)'
+		dataType: string
+		lineageTag: 3f41c1de-ad5a-31a8-d41b-53125d874fe3
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory (dim hcp)'
+		dataType: string
+		lineageTag: d2c8a6de-3517-f388-d1a2-a60e4c461c43
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Name (dim hcp)'
+		dataType: string
+		lineageTag: 442e9c6a-b022-33f4-42e1-09e6c60fe2e2
+		summarizeBy: none
+		sourceColumn: Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZIP (dim hcp)'
+		dataType: int64
+		lineageTag: c1aa7941-fae3-be55-bf9b-82e462032fb2
+		summarizeBy: none
+		sourceColumn: ZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Affiliation
+		dataType: string
+		lineageTag: 23478a6d-ad19-164b-9daf-aa317950eec7
+		summarizeBy: none
+		sourceColumn: Affiliation
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Sum of Patients' = SUM('dim_hco'[Patients Count])
+		lineageTag: 21814829-206d-4c1e-a373-35e01f7f8704
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Territories' = DISTINCTCOUNT('dim_hco'[Territory])
+		lineageTag: 18c76a9e-d034-3037-ec88-031a465b8916
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_hcp = m
+		mode: directQuery
+		source =
+			let
+			    Source = DatabricksMultiCloud.Catalogs("dbc-3ee0f24b-247b.cloud.databricks.com", "", [Catalog="", Database="", QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+			    Catalog = Source{[Name="turbobi", Kind="Database"]}[Data],
+			    Schema = Catalog{[Name="takeda", Kind="Schema"]}[Data],
+			    Navigation = Schema{[Name="dim_hcp", Kind="Table"]}[Data]
+			in
+			    Navigation
+
+	annotation PBI_ResultType = Table

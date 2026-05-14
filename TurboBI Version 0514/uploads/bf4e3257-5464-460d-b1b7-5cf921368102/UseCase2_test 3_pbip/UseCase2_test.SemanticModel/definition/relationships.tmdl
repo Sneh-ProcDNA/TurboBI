@@ -1,0 +1,12 @@
+relationship 4303efd2-983d-31da-f006-d05b0b260fb9
+	fromCardinality: many
+	toCardinality: many
+	fromColumn: fact_referral_edge.'From HCO ID'
+	toColumn: dim_hco.'Hco Id'
+
+relationship af24b366-8bb7-b7ab-da77-08fe41ad10fd
+	fromCardinality: many
+	toCardinality: many
+	fromColumn: dim_hco.'Hco Id'
+	toColumn: dim_hcp.'HCO ID (dim hcp)'
+

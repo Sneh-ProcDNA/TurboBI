@@ -63,6 +63,8 @@ app.config["MAX_CONTENT_LENGTH"] = 500 * 1024 * 1024  # 500 MB cap
 UPLOAD_ROOT = _HERE / "uploads"
 UPLOAD_ROOT.mkdir(exist_ok=True)
 
+CREDENTIALS_PATH = _HERE / "credentials.json"  # saved via UI upload
+
 # In-memory job registry  {job_id: JobState}
 _JOBS: Dict[str, Dict[str, Any]] = {}
 _JOBS_LOCK = threading.Lock()
@@ -250,13 +252,15 @@ def convert():
     twbx_dest = work_dir / twbx_filename
     twbx_file.save(str(twbx_dest))
 
-    # Save optional credentials
+    # Credentials: per-job upload takes priority, else use saved project-root file.
     creds_path: Optional[str] = None
     creds_file = request.files.get("credentials")
     if creds_file and creds_file.filename:
         creds_dest = work_dir / "credentials.json"
         creds_file.save(str(creds_dest))
         creds_path = str(creds_dest)
+    elif CREDENTIALS_PATH.exists():
+        creds_path = str(CREDENTIALS_PATH)
 
     # Register job and launch thread
     job = _new_job(job_id, work_dir)
@@ -344,6 +348,67 @@ def download(job_id: str):
         download_name=job["zip_name"],
         mimetype="application/zip",
     )
+
+
+# ---------------------------------------------------------------------------
+# Credentials — template download + save to project root
+# ---------------------------------------------------------------------------
+
+_CREDENTIALS_TEMPLATE = {
+    "note": (
+        "One entry per live data source. 'class' must match the Tableau connection "
+        "class (sqlserver, postgres, snowflake, etc.). 'server' is optional — "
+        "when omitted the entry matches any server of that class."
+    ),
+    "connections": [
+        {
+            "class":    "postgres",
+            "server":   "",
+            "database": "",
+            "port":     "5432",
+            "schema":   "public",
+            "username": "",
+            "password": ""
+        },
+        {
+            "class":              "databricks",
+            "server":             "",
+            "http_path":          "",
+            "catalog":            "",
+            "schema":             "",
+            "connector_function": "DatabricksMultiCloud.Catalogs",
+            "token":              ""
+        }
+    ]
+}
+
+
+@app.route("/credentials-template")
+def credentials_template():
+    """Serve the blank credentials template as a download."""
+    return Response(
+        json.dumps(_CREDENTIALS_TEMPLATE, indent=2),
+        mimetype="application/json",
+        headers={"Content-Disposition": "attachment; filename=credentials_template.json"},
+    )
+
+
+@app.route("/save-credentials", methods=["POST"])
+def save_credentials():
+    """Save uploaded file as credentials.json in the project root."""
+    f = request.files.get("credentials")
+    if not f or not f.filename:
+        return jsonify({"error": "No file provided"}), 400
+    raw = f.read()
+    try:
+        parsed = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        return jsonify({"error": f"Invalid JSON: {exc}"}), 400
+    if "connections" not in parsed:
+        return jsonify({"error": "JSON must contain a 'connections' array"}), 400
+    with open(CREDENTIALS_PATH, "wb") as fh:
+        fh.write(raw)
+    return jsonify({"saved": True, "connection_count": len(parsed["connections"])})
 
 
 # ---------------------------------------------------------------------------
