@@ -2216,11 +2216,10 @@ class ReportBuilder:
                 # aggregation function, so without this redirection the
                 # card would render the raw date instead of the year.
                 #
-                # The synthesized columns aren't in model.tables (they're
-                # written straight into TMDL), so the tmdl-type lookup
-                # below would miss them. Track the redirect's TMDL type
-                # explicitly so the agg-default picker still gets the
-                # right Min/CountNonNull fork.
+                # The synthesized columns are created during model.build()
+                # before report binding, but keep the redirect type explicit
+                # so the agg-default picker has the right Min/CountNonNull
+                # fork even if a workbook omits the helper column.
                 agg_field = (f.get("agg") or "").lower()
                 date_part_levels = {
                     "yr": ("Year",    "int64"),
@@ -2529,7 +2528,7 @@ class ReportBuilder:
         agg_key  = field.get("agg", "").lower()
 
         # Redirect date-part aggregations to the precomputed hierarchy
-        # column the model writer emits for every dateTime column.
+        # column the semantic model creates for every dateTime column.
         # Tableau's `yr:date_added:ok` resolves to ('netflix_titles.csv',
         # 'Date Added'), but the visual really wants the YEAR of that
         # date — bind to the synthesized 'Year of Date Added' column,
@@ -2537,9 +2536,8 @@ class ReportBuilder:
         # have a date-part aggregation function, so without redirection
         # we'd silently drop the agg and the card would show the raw
         # date value.
-        # No has_column guard needed: model.write_tmdl unconditionally
-        # emits Year/Quarter/Month/Day + Year-Trunc/Year-Quarter/Year-Month
-        # columns for every dateTime column.
+        # The generated columns are in model.tables before visual binding,
+        # matching Tableau's model-first order of operations.
         #
         # Two flavours:
         #   * date-part   (yr/qr/mn/dy) — extract an integer level; bind

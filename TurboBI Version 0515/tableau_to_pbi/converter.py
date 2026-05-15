@@ -502,6 +502,8 @@ def _build_ir(parser: TWBParser) -> Dict[str, Any]:
                 "caption":       ds["caption"],
                 "connection":    ds["connection"],
                 "extracts":      ds.get("extracts", []),
+                "extractFilters": ds.get("extractFilters", []),
+                "dataSourceFilters": ds.get("dataSourceFilters", []),
                 # Stringify (table, col) tuples so json.dump doesn't fail.
                 "colsMap":       {k: list(v) for k, v in
                                   (ds.get("colsMap") or {}).items()},

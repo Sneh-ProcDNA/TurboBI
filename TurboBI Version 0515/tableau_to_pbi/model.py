@@ -751,9 +751,14 @@ class SemanticModel:
         else:
             self._build_all_measures()
 
-        # After normal measure generation, ensure every visual/filter/value
-        # field exists. This catches visual-referenced measures that were
-        # skipped or could not be translated.
+        # Date hierarchy calculated columns must be model objects before any
+        # visual/filter fallback inference runs, otherwise direct references
+        # to generated date fields can be mistaken for missing physical columns.
+        self._build_generated_date_columns()
+
+        # After normal measure/date-column generation, ensure every
+        # visual/filter/value field exists. This catches visual-referenced
+        # measures that were skipped or could not be translated.
         self._ensure_visual_fields_in_model()
 
         if not self.tables:
@@ -2688,6 +2693,139 @@ class SemanticModel:
             })
         return result, fmap
 
+    def _build_generated_date_columns(self) -> None:
+        """Materialize date hierarchy helper columns before report binding.
+
+        Earlier versions emitted these columns only inside _render_table_tmdl().
+        That made the written model valid, but the report builder could not
+        inspect the generated columns while resolving axes, filters, tooltips,
+        and legends. Building them here keeps the conversion order closer to
+        Tableau: source tables and filters first, model calculated columns
+        next, visual bindings last.
+        """
+        for t in self.tables:
+            if t.get("paramRows") is not None or t.get("paramData") is not None:
+                continue
+
+            existing_ci = {
+                (c.get("name") or "").lower()
+                for c in t.get("columns") or []
+            }
+            generated: List[Dict[str, Any]] = []
+
+            for col in list(t.get("columns") or []):
+                if col.get("generatedDateHierarchy"):
+                    continue
+                if col.get("tmdlType") != "dateTime":
+                    continue
+
+                base_name = col["name"]
+                base_tag = col["lineageTag"]
+                base_dax = "[" + base_name.replace("]", "]]") + "]"
+
+                specs = [
+                    (
+                        f"Year-Trunc of {base_name}",
+                        "dateTime",
+                        f"DATE(YEAR({base_dax}), 1, 1)",
+                        lineage_tag("datetrunc", base_tag, "year"),
+                        False,
+                        "",
+                    ),
+                    (
+                        f"Year-Quarter of {base_name}",
+                        "dateTime",
+                        f"DATE(YEAR({base_dax}), (QUARTER({base_dax})-1)*3+1, 1)",
+                        lineage_tag("datetrunc", base_tag, "qtr"),
+                        False,
+                        "",
+                    ),
+                    (
+                        f"Year-Month of {base_name}",
+                        "dateTime",
+                        f"DATE(YEAR({base_dax}), MONTH({base_dax}), 1)",
+                        lineage_tag("datetrunc", base_tag, "mon"),
+                        False,
+                        "",
+                    ),
+                    (
+                        f"Month Number of {base_name}",
+                        "int64",
+                        f"MONTH({base_dax})",
+                        lineage_tag("datepart", base_tag, "monthnum"),
+                        True,
+                        "",
+                    ),
+                    (
+                        f"Year of {base_name}",
+                        "int64",
+                        f"YEAR({base_dax})",
+                        lineage_tag("datepart", base_tag, "year"),
+                        False,
+                        "",
+                    ),
+                    (
+                        f"Quarter of {base_name}",
+                        "string",
+                        f'"Qtr " & ROUNDUP(MONTH({base_dax}) / 3, 0)',
+                        lineage_tag("datepart", base_tag, "quarter"),
+                        False,
+                        "",
+                    ),
+                    (
+                        f"Month of {base_name}",
+                        "string",
+                        f'FORMAT({base_dax}, "MMMM")',
+                        lineage_tag("datepart", base_tag, "month"),
+                        False,
+                        f"Month Number of {base_name}",
+                    ),
+                    (
+                        f"Day of {base_name}",
+                        "int64",
+                        f"DAY({base_dax})",
+                        lineage_tag("datepart", base_tag, "day"),
+                        False,
+                        "",
+                    ),
+                ]
+
+                for name, dtype, expr, tag, hidden, sort_by in specs:
+                    if name.lower() in existing_ci:
+                        continue
+                    existing_ci.add(name.lower())
+                    new_col = {
+                        "name": name,
+                        "tmdlType": dtype,
+                        "lineageTag": tag,
+                        "sourceCol": name,
+                        "daxColumnExpr": expr,
+                        "hidden": hidden,
+                        "format": "",
+                        "role": "dimension",
+                        "semanticRole": "",
+                        "tableauRef": name,
+                        "generatedDateHierarchy": True,
+                    }
+                    if sort_by:
+                        new_col["sortByColumn"] = sort_by
+                    generated.append(new_col)
+
+            if not generated:
+                continue
+
+            t.setdefault("columns", []).extend(generated)
+            tname = t.get("name", "")
+            ds_name = t.get("datasource", "")
+            fmap = self.table_columns.setdefault(tname, {})
+            for col in generated:
+                name = col["name"]
+                fmap[name] = name
+                if ds_name:
+                    self.col_locator.setdefault((ds_name, name), []).append(
+                        (tname, name)
+                    )
+
     @staticmethod
     def _strip_obj_suffix(name: str) -> str:
         return re.sub(r"\s*\([^()]+!.+?\)\s*$", "", name).strip()
@@ -3718,6 +3856,8 @@ class SemanticModel:
                 lines.append("\t\tisHidden")
             if col["tmdlType"] == "dateTime":
                 lines.append("\t\tformatString: General Date")
+            if col.get("sortByColumn"):
+                lines.append(f"\t\tsortByColumn: {tmdl_quote(col['sortByColumn'])}")
             # Tag latitude/longitude columns so PBI Desktop's map visual
             # accepts them as geographic coordinates instead of treating
             # them as plain numeric measures (a numeric column without a
@@ -3750,13 +3890,10 @@ class SemanticModel:
             lines.append("\t\tannotation SummarizationSetBy = Automatic")
             lines.append("")
 
-        # Date hierarchies. For each dateTime column, emit Year / Quarter /
-        # Month / Day calculated columns plus a hierarchy block grouping
-        # them. This is the user-visible counterpart to PBI Desktop's
-        # Auto date/time feature — we declare the hierarchy explicitly in
-        # TMDL so it appears in the data pane on first open, and so card /
-        # chart visuals binding a date-part agg (yr/qr/mn/dy from Tableau)
-        # can target the precomputed level column.
+        # Date hierarchies. The calculated Year / Quarter / Month / Day
+        # columns are created during SemanticModel.build() so the report
+        # builder can resolve them before visuals are emitted. Here we only
+        # write the hierarchy object that groups those model columns.
         #
         # Skip parameter tables: parameters carry a single scalar value
         # (or a small list-of-values) — synthesizing 8+ hierarchy columns
@@ -3772,91 +3909,26 @@ class SemanticModel:
                 break
             if col.get("tmdlType") != "dateTime":
                 continue
+            if col.get("generatedDateHierarchy"):
+                continue
             base_name = col["name"]
             base_tag  = col["lineageTag"]
-            # DAX column references use bracket notation, not the TMDL
-            # single-quote form. `'Date Added'` in DAX is parsed as a
-            # *table* name; the column has to be `[Date Added]`. Embedded
-            # `]` is doubled per the DAX spec — extremely rare in practice
-            # but cheap to handle correctly.
-            base_dax = "[" + base_name.replace("]", "]]") + "]"
-            # Hidden Month-Number column powers the sortByColumn on
-            # 'Month of <date>' so the Month names sort Jan..Dec instead
-            # of alphabetically (Apr, Aug, Dec, ...).
-            month_num_name = f"Month Number of {base_name}"
-            # Truncated-date columns (dateTime type, value = first instant
-            # of the period). These give Tableau's TRUNCATE-DATE
-            # aggregations (`ty:`/`tqr:`/`tmn:`/`tmd:`) a binding target —
-            # without them, a slicer/filter on `tmn:Date of Visit` (which
-            # Tableau materialises as the 1st-of-month date) gets dropped
-            # because PBI has no native truncate-date aggregation. The
-            # resolver in report.py rewrites the binding to these columns.
-            year_trunc_name    = f"Year-Trunc of {base_name}"
-            quarter_trunc_name = f"Year-Quarter of {base_name}"
-            month_trunc_name   = f"Year-Month of {base_name}"
-            for trunc_name, expr, kind in (
-                (year_trunc_name,    f"= DATE(YEAR({base_dax}), 1, 1)",                    "year"),
-                (quarter_trunc_name, f"= DATE(YEAR({base_dax}), (QUARTER({base_dax})-1)*3+1, 1)", "qtr"),
-                (month_trunc_name,   f"= DATE(YEAR({base_dax}), MONTH({base_dax}), 1)",    "mon"),
-            ):
-                lines.append(f"\tcolumn {tmdl_quote(trunc_name)} {expr}")
-                lines.append("\t\tdataType: dateTime")
-                lines.append(
-                    f"\t\tlineageTag: "
-                    f"{lineage_tag('datetrunc', base_tag, kind)}"
-                )
-                lines.append("\t\tsummarizeBy: none")
-                lines.append("\t\tformatString: General Date")
-                lines.append("")
-                lines.append("\t\tannotation SummarizationSetBy = Automatic")
-                lines.append("")
-
             level_specs = [
                 ("Year",    f"Year of {base_name}",
-                 "int64",   f"= YEAR({base_dax})",
                  None),
                 ("Quarter", f"Quarter of {base_name}",
-                 "string",
-                 f'= "Qtr " & ROUNDUP(MONTH({base_dax}) / 3, 0)',
                  None),
                 ("Month",   f"Month of {base_name}",
-                 "string",
-                 f'= FORMAT({base_dax}, "MMMM")',
-                 month_num_name),
+                 None),
                 ("Day",     f"Day of {base_name}",
-                 "int64",   f"= DAY({base_dax})",
                  None),
             ]
-            # Emit Month Number first so the Month column's sortByColumn
-            # forward-reference resolves cleanly.
-            lines.append(f"\tcolumn {tmdl_quote(month_num_name)} = MONTH({base_dax})")
-            lines.append(f"\t\tdataType: int64")
-            lines.append(f"\t\tlineageTag: {lineage_tag('datepart', base_tag, 'monthnum')}")
-            lines.append("\t\tsummarizeBy: none")
-            lines.append("\t\tisHidden")
-            lines.append("")
-            lines.append("\t\tannotation SummarizationSetBy = Automatic")
-            lines.append("")
-
-            for level_name, col_name, dtype, expr, sort_by in level_specs:
-                lines.append(f"\tcolumn {tmdl_quote(col_name)} {expr}")
-                lines.append(f"\t\tdataType: {dtype}")
-                lines.append(
-                    f"\t\tlineageTag: "
-                    f"{lineage_tag('datepart', base_tag, level_name.lower())}"
-                )
-                lines.append("\t\tsummarizeBy: none")
-                if sort_by:
-                    lines.append(f"\t\tsortByColumn: {tmdl_quote(sort_by)}")
-                lines.append("")
-                lines.append("\t\tannotation SummarizationSetBy = Automatic")
-                lines.append("")
 
             hier_name = f"{base_name} Hierarchy"
             hier_tag  = lineage_tag("hierarchy", base_tag)
             lines.append(f"\thierarchy {tmdl_quote(hier_name)}")
             lines.append(f"\t\tlineageTag: {hier_tag}")
-            for level_name, col_name, _dtype, _expr, _sort_by in level_specs:
+            for level_name, col_name, _sort_by in level_specs:
                 lines.append("")
                 lines.append(f"\t\tlevel {level_name}")
                 lines.append(
