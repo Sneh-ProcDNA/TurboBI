@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "95e2d771085bf396be7e",
+  "position": {
+    "x": 238,
+    "y": 195,
+    "z": 46000,
+    "height": 293,
+    "width": 798,
+    "tabOrder": 46000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Dashboard Refresh Date: 31-Dec-2024 Time Period Information: CM: Current Month CY: Current Year PQ: Previous Quarter PY: Previous Year QTD: Quarter to Date Dashboard Functionality: Click on the \"ℹ️\" Button: View all instructions and information for this dashboard and click on \" x \" Button again to hide user guide. Module : Use this dropdown slicer to slice the data for respective report. Data Vendor : Use this slicer to select the Data vendor like IQVIA, VEEVA CRM etc. Dataset : Use this slicer to slice the data for respective dataset. Time Period : Use this slicer to dynamically switch between different time period like CM, QTD, YTD etc. Scroll Bars: Enabled when there is more data to be displayed on the chart.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "color": "#bdcb4c"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#ffffff'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#000000'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": []
+  }
+}

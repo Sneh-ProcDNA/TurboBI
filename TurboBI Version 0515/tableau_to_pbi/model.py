@@ -24,6 +24,19 @@ _HyperData = Any   # tableau_to_pbi.hyper.HyperData
 _DAXTranslator = Any  # tableau_to_pbi.dax_translator.translate_tableau_to_dax
 
 
+def _tableau_format_to_pbi(fmt: str) -> str:
+    import re
+    if not fmt:
+        return fmt
+    s = fmt.strip()
+    # Tableau percent formats: p, p%, p0, p1, p2, p0%, p1%, p2%
+    m = re.fullmatch(r'p(\d*)%?', s, re.IGNORECASE)
+    if m:
+        decimals = int(m.group(1)) if m.group(1) else 0
+        return ("0." + "0" * decimals + "%") if decimals > 0 else "0%"
+    return fmt
+
+
 def _flatten_dax_expr(expr: str) -> str:
     """Collapse a measure expression to a single line.
 
@@ -3885,7 +3898,7 @@ class SemanticModel:
             if meas.get("hidden"):
                 lines.append("\t\tisHidden")
             if meas.get("format"):
-                lines.append(f"\t\tformatString: {meas['format']}")
+                lines.append(f"\t\tformatString: {_tableau_format_to_pbi(meas['format'])}")
             lines.append("")
             lines.append("\t\tannotation SummarizationSetBy = Automatic")
             lines.append("")
