@@ -106,6 +106,8 @@ The all-`string` fallback is then corrected by **`_reconcile_column_types_with_d
 
 `DISTINCTCOUNT` / `COUNT` and `MIN` / `MAX` do NOT trigger promotion — they are valid over text, so `Count(distinct PatientID)` leaves `PatientID` as `string`.
 
+- **Coerces `SUM`/`AVERAGE` over a text column on a BOUND table (pass 3, 2026-06 fix)**: when the table is NOT a stub (parquet/CSV/live partition — promotion forbidden, see above), `SUM('T'[X])` over a `string` column evaluates to TEXT, which Power BI renders wrapped in quotes (a KPI card showing `'21'` instead of `21` — user report). The pass rewrites the aggregation to the iterator form with a numeric coercion: `SUM('T'[X])` → `SUMX('T', IFERROR(VALUE('T'[X]), BLANK()))` (and `AVERAGE` → `AVERAGEX`). Non-numeric rows blank out, matching Qlik's `Sum()`/`Avg()` semantics (text ignored). MIN/MAX are deliberately excluded — `MinString`/`MaxString` translate to legitimate text `MIN`/`MAX` (same exclusion as the pre-flight check, whose `SUM\s*\(` regex also no longer fires on the rewritten `SUMX(` form).
+
 ## Hidden columns (`isHidden`)
 
 Engine-schema fields tagged `$hidden` (`is_hidden` in the sidecar) emit `isHidden` in their TMDL column block. The column STAYS in the model (relationships / measure refs that target it still resolve) but is hidden from PBI's field list — mirroring Qlik's intent instead of cluttering the field well with engine-internal helper fields. Loadmodel-built models carry no hidden info, so this only applies to engine-schema builds.

@@ -1706,10 +1706,45 @@ class SemanticModel:
                         _q_in, cmp_b.sub(_q_b, cmp_a.sub(_q_a, expr))
                     )
 
-        if promoted or rewrites:
+        # Pass 3: SUM / AVERAGE directly over a column that stays TEXT
+        # because its table is BOUND to fetched data (parquet / CSV /
+        # live partitions deliver the column as text, so the declared
+        # type can't be promoted without failing the load). DAX
+        # evaluates the aggregation anyway and returns TEXT, which
+        # Power BI renders wrapped in quotes -- a KPI card showing
+        # ``'21'`` instead of ``21``. Rewrite to the iterator form with
+        # a VALUE() coercion so the measure returns a real number;
+        # non-numeric rows blank out, matching Qlik's Sum()/Avg()
+        # semantics (text values are ignored). MIN / MAX are left
+        # alone -- MinString/MaxString translate to legitimate text
+        # MIN/MAX (same exclusion as the pre-flight check).
+        coerce_re = re.compile(
+            r"\b(SUM|AVERAGE)\s*\(\s*'([^']+)'\[([^\]]+)\]\s*\)")
+        _AGG_TO_X = {"SUM": "SUMX", "AVERAGE": "AVERAGEX"}
+        coerced = 0
+
+        def _coerce(mt: "re.Match") -> str:
+            nonlocal coerced
+            fn, tbl, col = mt.groups()
+            c = col_index.get((tbl, col))
+            if (tbl in stub_tables or c is None
+                    or (c.get("dataType") or "").lower() != "string"):
+                return mt.group(0)
+            coerced += 1
+            return (f"{_AGG_TO_X[fn]}('{tbl}', "
+                    f"IFERROR(VALUE('{tbl}'[{col}]), BLANK()))")
+
+        for m in self.measures:
+            expr = m.get("expression") or ""
+            if "[" in expr:
+                m["expression"] = coerce_re.sub(_coerce, expr)
+
+        if promoted or rewrites or coerced:
             _log.info(
                 f"Type reconciliation: promoted {promoted} column(s) to numeric "
-                f"from measure usage; quoted {rewrites} text-comparison literal(s)."
+                f"from measure usage; quoted {rewrites} text-comparison literal(s); "
+                f"coerced {coerced} numeric aggregation(s) over text-typed "
+                f"bound column(s) to VALUE() form."
             )
 
     def write_tmdl(self, sem_model_dir: Path) -> None:

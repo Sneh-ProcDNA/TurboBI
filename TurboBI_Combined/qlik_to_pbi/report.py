@@ -35,6 +35,8 @@ from .config import (
 from .dax_translator import translate_qlik_to_dax
 from .ir import QlikIR
 from .model import SemanticModel
+from .pbi_theme import QLIK_HORIZON_12, QLIK_HORIZON_PRIMARY
+from .text_eval import eval_static_expression
 from .utils import clean_label, hex_id, lineage_tag
 
 _log = get_logger("REPORT")
@@ -75,6 +77,26 @@ def _normalize_hex(c: Any) -> Optional[str]:
     return None
 
 
+def _css_color_to_hex(css: Any) -> Optional[str]:
+    """Convert a CSS colour token to ``#RRGGBB``.  Handles ``#hex``,
+    ``rgb(r,g,b)``, and ``rgba(r,g,b,a)``."""
+    if not isinstance(css, str):
+        return None
+    css = css.strip()
+    h = _normalize_hex(css)
+    if h:
+        return h
+    m = re.match(
+        r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)",
+        css, re.IGNORECASE,
+    )
+    if m:
+        return "#{:02x}{:02x}{:02x}".format(
+            int(m.group(1)), int(m.group(2)), int(m.group(3)),
+        )
+    return None
+
+
 def _qlik_color_to_hex(color: Any) -> Optional[str]:
     """Return a hex colour string ``"#RRGGBB"`` (or with alpha) from a
     Qlik colour dict/string, normalised via ``_normalize_hex``. Returns
@@ -92,7 +114,48 @@ def _qlik_color_to_hex(color: Any) -> Optional[str]:
     # Sometimes nested another level: {color: {color: "#xxx"}}.
     if isinstance(inner, dict):
         return _normalize_hex(inner.get("color"))
+    # Index-only record ({index: N} without a "color" field): fall back
+    # to the general-palette lookup table.
+    idx = color.get("index")
+    if isinstance(idx, int):
+        return _QLIK_PALETTE.get(idx)
     return None
+
+
+# ---------------------------------------------------------------------------
+# Qlik colour palette tables
+# ---------------------------------------------------------------------------
+
+# General / UI palette -- maps the integer ``index`` values that Qlik
+# stores in ``{index, color, alpha}`` colour records.  When a record
+# carries only an index (no ``color`` field), _qlik_color_to_hex looks
+# here.  This is the full 16-entry "ui" palette from the Sense default
+# theme (every previously-confirmed index -- 2, 4, 10, 11, 13, 15 --
+# matches this table, validating the rest). Index 0 = "none"
+# (transparent) is deliberately absent so it resolves to no colour;
+# index -1 = custom (always carries ``color``, never needs a lookup).
+_QLIK_PALETTE: Dict[int, str] = {
+    1:  "#ffffff",  # white
+    2:  "#99cfcd",  # soft teal (backgrounds, highlights)
+    3:  "#66a9a6",  # teal
+    4:  "#c4cfda",  # soft blue-grey (KPI background)
+    5:  "#7e97ad",  # slate blue
+    6:  "#41555d",  # dark slate -- Qlik's DEFAULT KPI value colour
+    7:  "#dfe2e5",  # light grey
+    8:  "#b8c5cd",  # grey-blue
+    9:  "#7d8a91",  # mid grey-blue
+    10: "#f93f17",  # signal red-orange (negative trend indicators)
+    11: "#e0bd8d",  # warm tan (highlights)
+    12: "#f9ec86",  # pale yellow
+    13: "#b0afae",  # medium grey (table header background)
+    14: "#56473f",  # dark brown
+    15: "#000000",  # black (title / text colour)
+}
+
+# Qlik Sense default 12-colour DIMENSION palette (``dimensionScheme: "12"``).
+# The palette tables now live in pbi_theme.py (shared with the report-level
+# registered theme); this alias keeps the historical module-local name.
+_QLIK_DIM_PALETTE_12: List[str] = list(QLIK_HORIZON_12)
 
 
 def _qlik_font_pt(value: Any) -> Optional[int]:
@@ -165,12 +228,24 @@ def _resolve_bar_combo_type(
 
 
 def _resolve_pie_type(props: Dict[str, Any], default: Optional[str]) -> Optional[str]:
-    """Pick pie vs donut from Qlik's pie chart presentation. Qlik stores
-    the toggle as ``donut.showAsDonut: bool``; when True, render PBI's
-    ``donutChart`` instead of ``pieChart``."""
+    """Pick pie vs donut from Qlik's pie chart presentation.
+
+    Two detection paths:
+    * ``donut.showAsDonut: true`` (the explicit toggle).
+    * ``components[key=slices].style.innerRadius > 0`` (the visual
+      radius setting that produces a donut hole even when the toggle
+      is absent or false).
+    """
     donut = props.get("donut")
     if isinstance(donut, dict) and bool(donut.get("showAsDonut")):
         return "donutChart"
+    for comp in (props.get("components") or []):
+        if not isinstance(comp, dict):
+            continue
+        if (comp.get("key") or "").strip().lower() == "slices":
+            inner_r = (comp.get("style") or {}).get("innerRadius")
+            if isinstance(inner_r, (int, float)) and float(inner_r) > 0:
+                return "donutChart"
     return default
 
 
@@ -307,9 +382,17 @@ def _grid_tiles(n: int) -> List[Dict[str, float]]:
 _DEFAULT_FONT_FAMILY = "Arial"
 
 
-def _extract_visual_style(props: Dict[str, Any]) -> Dict[str, Any]:
+def _extract_visual_style(
+    props: Dict[str, Any],
+    resolve: Optional[Callable[[Any], str]] = None,
+) -> Dict[str, Any]:
     """Walk a Qlik cell qProperty and normalise every styling hint we
     care about into a flat dict the visual factories can consume.
+
+    ``resolve`` (optional) maps a raw Qlik title value -- a plain
+    string, an ``=``-expression, or a ``qStringExpression`` dict -- to
+    display text using the engine-evaluated snapshots; ``clean_label``
+    is the fallback when absent.
 
     Output keys (all optional -- missing means "leave PBI default"):
 
@@ -337,15 +420,17 @@ def _extract_visual_style(props: Dict[str, Any]) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
 
     # title / subtitle / footnote can be plain strings OR Qlik
-    # expression objects ({qStringExpression:{qExpr:...}}); clean_label
-    # normalises both shapes and strips the leading `=`.
-    title = clean_label(props.get("title"))
+    # expression objects ({qStringExpression:{qExpr:...}}); the resolver
+    # substitutes engine-evaluated snapshot text for expressions, with
+    # clean_label (strip `=` + quotes) as the final fallback.
+    _txt = resolve if resolve else clean_label
+    title = _txt(props.get("title"))
     if title:
         out["title"] = title
-    subtitle = clean_label(props.get("subtitle"))
+    subtitle = _txt(props.get("subtitle"))
     if subtitle:
         out["subtitle"] = subtitle
-    footnote = clean_label(props.get("footnote"))
+    footnote = _txt(props.get("footnote"))
     if footnote:
         out["footnote"] = footnote
     if "showTitles" in props:
@@ -484,6 +569,57 @@ def _extract_visual_style(props: Dict[str, Any]) -> Dict[str, Any]:
                 if hl and "borderColor" not in out:
                     out["borderColor"] = hl
 
+        elif key == "slices":
+            # Pie / donut slice border colour.
+            slice_style = comp.get("style") or {}
+            sc = _qlik_color_to_hex(slice_style.get("strokeColor"))
+            if sc and sc != "#ffffff":  # white stroke = invisible, skip
+                out["pieSliceStroke"] = sc
+
+    # Chart data colours from Qlik's ``color`` block (bar/line/pie/scatter).
+    # The ``mode`` field is the canonical discriminant:
+    #   * "primary"  (auto: false)  -- single fill for every data point;
+    #     hex comes from ``paletteColor``.
+    #   * "byDimension" / "byExpression" / "byMeasure" -- series /
+    #     expression / gradient colouring. Recorded as ``chartColorMode``
+    #     so the chart builder knows NOT to force the single-colour
+    #     default; the actual palette comes from the report-level
+    #     registered theme (pbi_theme.py), which is how PBI assigns
+    #     per-series colours. (Per-visual ``dataColors`` entries without
+    #     selectors can't express a palette -- the old multi-entry emit
+    #     collapsed to one fill in Desktop.)
+    color_block = props.get("color")
+    if isinstance(color_block, dict):
+        mode = (color_block.get("mode") or "").strip().lower()
+        auto = color_block.get("auto")
+        palette_ref = color_block.get("paletteColor")
+
+        if auto is False and mode == "primary":
+            # Explicit single-colour mode.
+            c = _qlik_color_to_hex(palette_ref)
+            if c:
+                out["chartPrimaryColor"] = c
+        elif mode in ("bydimension", "byexpression", "bymeasure") and auto is False:
+            out["chartColorMode"] = "dimension" if mode == "bydimension" else "expression"
+
+    # KPI value colour. When conditional coloring is OFF, Qlik renders
+    # the value in ``conditionalColoring.paletteSingleColor`` -- every
+    # real app stores it that way regardless of the ``singleColor``
+    # enum value (observed: singleColor 3 with paletteSingleColor
+    # {index: 6} = the default dark slate, or an explicit
+    # {index: -1, color: "#..."}). The previous ``singleColor == 2``
+    # gate matched no real app, so KPI values always fell back to the
+    # generic font colour. Conditional (segments-based) coloring stays
+    # un-replicated -- leave PBI's default then.
+    hc = props.get("qHyperCubeDef") or {}
+    measures = hc.get("qMeasures") or []
+    if measures:
+        cc = (measures[0].get("qDef") or {}).get("conditionalColoring") or {}
+        if not cc.get("useConditionalColoring"):
+            kpi_c = _qlik_color_to_hex(cc.get("paletteSingleColor"))
+            if kpi_c:
+                out["kpiValueColor"] = kpi_c
+
     # Default font family (Arial) when Qlik named none -- applied to
     # titles (_title_properties), data labels / axes, and KPI values.
     out.setdefault("fontFamily", _DEFAULT_FONT_FAMILY)
@@ -613,11 +749,40 @@ def _title_properties(style: Dict[str, Any], title: str) -> Dict[str, Any]:
 
 
 class ReportBuilder:
-    def __init__(self, ir: "QlikIR | Dict[str, Any]", model: SemanticModel):
+    def __init__(
+        self,
+        ir: "QlikIR | Dict[str, Any]",
+        model: SemanticModel,
+        theme_palette: Optional[Dict[str, Any]] = None,
+    ):
         # Same dual-accept contract as SemanticModel: typed QlikIR in the
         # normal pipeline, a plain dict from back-compat callers/tests.
         self.ir = QlikIR.from_dict(ir) if isinstance(ir, dict) else ir
         self.model = model
+        # Resolved Qlik colour palette (pbi_theme.resolve_palette shape).
+        # ``primary`` is the single-series default the chart builder
+        # stamps on auto-coloured one-measure charts so they match
+        # Qlik's default instead of PBI's theme colour 0.
+        theme_palette = theme_palette or {}
+        self.theme_primary: str = theme_palette.get("primary") or QLIK_HORIZON_PRIMARY
+        # Engine-evaluated text-expression snapshots from the unbuild
+        # (see text_eval.py). Empty when the IR predates the sidecar --
+        # resolution then falls through to local static evaluation.
+        evaluated = self.ir.get("evaluated") or {}
+        self._eval_objects: Dict[str, Dict[str, str]] = (
+            evaluated.get("objects") or {} if isinstance(evaluated, dict) else {}
+        )
+        self._eval_exprs: Dict[str, str] = (
+            evaluated.get("expressions") or {} if isinstance(evaluated, dict) else {}
+        )
+        # Variable name -> definition, for the local static evaluator's
+        # $(var) expansion.
+        self._var_defs: Dict[str, str] = {}
+        for v in self.ir.get("variables") or []:
+            vn = (v.get("qName") or "").strip()
+            vd = v.get("qDefinition")
+            if vn and isinstance(vd, str):
+                self._var_defs[vn] = vd
         # Index Qlik library items by qId for cell-level lookups.
         self.dim_by_id = {
             (d.get("qInfo", {}) or {}).get("qId", ""): d
@@ -643,6 +808,11 @@ class ReportBuilder:
         self._sheet_order: List[str] = []
         # Non-fatal per-cell build failures, surfaced in the report.
         self.build_issues: List[str] = []
+        # Dynamic textbox expressions that had no engine snapshot and
+        # weren't statically evaluable -- the textbox shows the label /
+        # formula instead of the value. Surfaced in conversion_report.md
+        # so the user knows a connected re-run would capture them.
+        self.text_eval_misses: set = set()
         # Shared, incrementally-maintained name index. Building a fresh
         # ``reserved_ci`` set from EVERY measure + EVERY column on every
         # inline-measure / calc-column synthesis was O(measures x columns)
@@ -653,6 +823,70 @@ class ReportBuilder:
         # owning table in O(1) instead of re-scanning ``model.measures``.
         self._reserved_ci: Optional[set] = None
         self._measure_home_cache: Dict[str, str] = {}
+
+    # ------------------------------------------------------------------
+    # Text-expression resolution (evaluated snapshots > static eval >
+    # clean_label). See text_eval.py for the unbuild-side evaluation.
+    # ------------------------------------------------------------------
+    def _lookup_text_expr(self, obj_id: str, cid: str, expr: Any) -> Optional[str]:
+        """Resolve one textbox expression reference to display text.
+
+        Order: the object-context engine snapshot (exact, formatted),
+        the doc-level snapshot keyed by the raw expression string, then
+        the local static evaluator (literals / ``&`` concats /
+        ``$(var)``). ``None`` means the caller keeps its label fallback.
+        """
+        if obj_id:
+            per_obj = self._eval_objects.get(obj_id)
+            if per_obj and cid in per_obj:
+                return per_obj[cid]
+        if isinstance(expr, str) and expr:
+            hit = self._eval_exprs.get(expr)
+            if hit is None:
+                hit = self._eval_exprs.get(expr.strip())
+            if hit is not None:
+                return hit
+            static = eval_static_expression(expr, self._var_defs)
+            if static is None and len(self.text_eval_misses) < 50:
+                self.text_eval_misses.add(expr.strip())
+            return static
+        return None
+
+    def _resolve_text(self, raw: Any) -> str:
+        """Resolve a title-ish value (plain string / ``=``-expression /
+        ``qStringExpression`` dict) to display text.
+
+        Expression values prefer the engine-evaluated snapshot, then the
+        local static evaluator; ``clean_label`` (strip ``=`` + quotes)
+        remains the last resort so behaviour never regresses for
+        unresolvable expressions.
+        """
+        expr: Optional[str] = None
+        if isinstance(raw, dict):
+            inner = raw.get("qStringExpression")
+            if isinstance(inner, dict):
+                expr = inner.get("qExpr") or ""
+            elif isinstance(inner, str):
+                expr = inner
+            else:
+                expr = raw.get("qExpr") or ""
+            expr = (expr or "").strip()
+            if not expr:
+                return clean_label(raw)
+        elif isinstance(raw, str) and raw.strip().startswith("="):
+            expr = raw.strip()
+        else:
+            return clean_label(raw)
+
+        hit = self._eval_exprs.get(expr)
+        if hit is None:
+            hit = self._eval_exprs.get(expr.lstrip("=").strip())
+        if hit is not None:
+            return hit.strip()
+        static = eval_static_expression(expr, self._var_defs)
+        if static is not None:
+            return static.strip()
+        return clean_label(expr)
 
     # ------------------------------------------------------------------
     def _reserved_names(self) -> set:
@@ -836,7 +1070,7 @@ class ReportBuilder:
         # Bar / combo charts: refine the PBI type from Qlik's stacking
         # + orientation so a stacked column doesn't become a clustered
         # bar (and vice-versa).
-        if ctype in ("barchart", "combochart", "mekko-chart", "sn-mekko-chart"):
+        if ctype in ("barchart", "mekko-chart", "sn-mekko-chart"):
             pbi_type = _resolve_bar_combo_type(ctype, props, pbi_type)
         # Pie charts: switch to donutChart when Qlik's
         # ``donut.showAsDonut`` is set in the presentation settings.
@@ -1080,7 +1314,7 @@ class ReportBuilder:
     def _frame(self, x: int, y: int, w: int, h: int, z: int, key: str) -> Dict[str, Any]:
         return {
             "$schema":  SCHEMA["visual"],
-            "name":     hex_id("v", key, str(x), str(y), str(z)),
+            "name":     hex_id("v", getattr(self, "_current_sheet_id", ""), key, str(x), str(y), str(z)),
             "position": {
                 "x": x, "y": y, "z": z,
                 "height": h, "width": w, "tabOrder": z,
@@ -1094,17 +1328,26 @@ class ReportBuilder:
         x: int, y: int, w: int, h: int, z: int,
         style: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
-        # Qlik's text-image cells carry their content in either the
-        # ``markdown`` field (rich-text with custom alignment/size/
-        # colour markers) or ``title`` (plain text). Prefer markdown
-        # when present; fall back to title; finally to the literal
-        # "Text" placeholder so PBI's textbox visual has something to
-        # render.
+        # Three content sources, in priority order:
+        #   1. ``text``  (sn-text / Lexical JSON) -- modern Qlik rich-text
+        #      format; carries inline CSS, bold/italic bitmask, and
+        #      expression-node references.
+        #   2. ``markdown`` -- legacy text-image format with custom
+        #      alignment/size/colour markers.
+        #   3. ``title`` -- plain text fallback (always present).
+        text_json = (props.get("text") or "").strip()
         markdown = (props.get("markdown") or "").strip()
-        if markdown:
+        if text_json and text_json.startswith("{"):
+            # Expression nodes resolve through the engine-evaluated
+            # snapshots captured at unbuild time (object-context first),
+            # so the PBI textbox shows Qlik's VALUES, not raw formulas.
+            obj_id = ((props.get("qInfo") or {}).get("qId") or "").strip()
+            lookup = lambda cid, expr: self._lookup_text_expr(obj_id, cid, expr)  # noqa: E731
+            paragraphs = _lexical_to_paragraphs(text_json, props, lookup)
+        elif markdown:
             paragraphs = _qlik_markdown_to_paragraphs(markdown)
         else:
-            label = clean_label(props.get("title", "")) or "Text"
+            label = self._resolve_text(props.get("title", "")) or "Text"
             paragraphs = [{"textRuns": [{"value": label}]}]
         # Pull the first non-empty value off the first run for the
         # frame-id hint so the visual ID is stable across re-runs.
@@ -1119,7 +1362,7 @@ class ReportBuilder:
         # Merge legacy ``style`` arg into the extracted style (style
         # arg takes precedence for backgroundColor since it's how
         # container cells force a tint).
-        extracted = _extract_visual_style(props)
+        extracted = _extract_visual_style(props, self._resolve_text)
         if style:
             extracted = {**extracted, **{k: v for k, v in style.items() if v}}
         # For text-image we don't render a container title -- the
@@ -1140,11 +1383,11 @@ class ReportBuilder:
         # (each may also be a ``qStringExpression`` -> clean_label
         # unwraps it). Without a real label PBI shows an empty button.
         label = (
-            clean_label(button_style.get("label", ""))
-            or clean_label(button_style.get("text", ""))
-            or clean_label(props.get("label", ""))
-            or clean_label(props.get("text", ""))
-            or clean_label(props.get("title", ""))
+            self._resolve_text(button_style.get("label", ""))
+            or self._resolve_text(button_style.get("text", ""))
+            or self._resolve_text(props.get("label", ""))
+            or self._resolve_text(props.get("text", ""))
+            or self._resolve_text(props.get("title", ""))
             or "Button"
         )
         default_sel = {"id": "default"}
@@ -1257,7 +1500,7 @@ class ReportBuilder:
         # the same Qlik styling extractor as charts. The button label
         # already lives in the ``text`` object bag, so suppress
         # container title.
-        style = _extract_visual_style(props)
+        style = _extract_visual_style(props, self._resolve_text)
         style["showTitle"] = False
         _apply_container_styling(visual_block, style)
         out = self._frame(x, y, w, h, z, "button-" + label[:24])
@@ -1361,7 +1604,7 @@ class ReportBuilder:
         # button text / fill. The Qlik master object's ``components``
         # array exposes a ``general`` block (bgColor, title.main.color)
         # and a ``theme`` block (defaultColor, highlightColor).
-        style = _extract_visual_style(props)
+        style = _extract_visual_style(props, self._resolve_text)
         if style.get("backgroundColor"):
             objects["fill"] = [{
                 "properties": {
@@ -1481,8 +1724,8 @@ class ReportBuilder:
         }
         # Slicer header text -- prefer the listbox's user-set title,
         # then the library dimension's title, then the column name.
-        style = _extract_visual_style(props)
-        header = clean_label(
+        style = _extract_visual_style(props, self._resolve_text)
+        header = self._resolve_text(
             style.get("title")
             or props.get("title")
             or (qdef.get("title") if isinstance(qdef, dict) else "")
@@ -1943,13 +2186,69 @@ class ReportBuilder:
             if ref_lines:
                 objects["referenceLine"] = ref_lines
 
+        # Chart data colours. Multi-series palettes come from the
+        # report-level registered theme (pbi_theme.py) -- per-visual
+        # ``dataColors`` entries can't express an ordered palette, so
+        # only a SINGLE default fill is emitted here:
+        #   * chartPrimaryColor -- the author's explicit single colour
+        #     (auto: false, mode "primary").
+        #   * Otherwise, an auto-coloured chart that renders as ONE
+        #     series in Qlik (<=1 dimension, exactly 1 measure) gets the
+        #     Qlik theme's primaryColor -- Qlik paints those with its
+        #     single-colour default, NOT data-palette colour 0, which is
+        #     what PBI would otherwise pick from the theme.
+        # Dimension-coloured types (pie/donut/treemap/funnel) and
+        # waterfall (sentiment colours) are left to the theme palette.
+        _COLOR_CHART_TYPES = (
+            "lineChart", "clusteredBarChart", "clusteredColumnChart",
+            "stackedBarChart", "stackedColumnChart", "columnChart",
+            "pieChart", "donutChart", "scatterChart", "treemap", "funnel",
+            "lineClusteredColumnComboChart", "lineStackedColumnComboChart",
+            "waterfallChart",
+        )
+        _SINGLE_SERIES_TYPES = (
+            "lineChart", "clusteredBarChart", "clusteredColumnChart",
+            "stackedBarChart", "stackedColumnChart", "columnChart",
+            "scatterChart",
+        )
+        if pbi_type in _COLOR_CHART_TYPES:
+            primary = style.get("chartPrimaryColor")
+            if (
+                not primary
+                and pbi_type in _SINGLE_SERIES_TYPES
+                and style.get("chartColorMode") not in ("dimension", "expression")
+            ):
+                dim_n, meas_n = _hypercube_counts(props)
+                if meas_n == 1 and dim_n <= 1:
+                    primary = self.theme_primary
+            if primary:
+                # ``dataPoint.defaultColor`` is the PBI object that
+                # actually drives the default series fill on cartesian /
+                # pie / scatter charts. (The earlier ``dataColors``
+                # emission was NOT a real visual-object name -- Desktop
+                # silently ignored it, so single-colour charts rendered
+                # with the theme palette instead of Qlik's colour.)
+                objects["dataPoint"] = [
+                    {"properties": {"defaultColor": _solid_color_expr(primary)}}
+                ]
+
         if pbi_type == "cardVisual":
             default_sel = {"id": "default"}
             objects.setdefault("fillCustom", [{
                 "properties": {"show": _bool_expr(False)},
             }])
             val_fs = style.get("fontSize") or 15
-            val_color = style.get("fontColor") or "#000000"
+            # kpiValueColor: the palette colour set on the KPI measure
+            # (resolved for every real app now -- see the
+            # conditionalColoring extraction). Falls back to fontColor
+            # (an explicit object-level theme colour), then Qlik's
+            # default KPI value colour -- the dark slate (#41555d), NOT
+            # black, which is what Qlik actually renders by default.
+            val_color = (
+                style.get("kpiValueColor")
+                or style.get("fontColor")
+                or "#41555d"
+            )
             val_align = style.get("textAlign") or "center"
             val_family = style.get("fontFamily") or "Arial"
             objects["value"] = [{
@@ -2036,8 +2335,8 @@ class ReportBuilder:
                 # author-set value).
                 query_state["Size"] = {"projections": [size]}
 
-        style = _extract_visual_style(props)
-        title = style.get("title") or clean_label(props.get("title", "")) or ""
+        style = _extract_visual_style(props, self._resolve_text)
+        title = style.get("title") or self._resolve_text(props.get("title", "")) or ""
 
         visual_block: Dict[str, Any] = {
             "visualType": pbi_type,
@@ -3031,6 +3330,160 @@ _QLIK_SIZE_RE = __import__("re").compile(
 # index inverts the typical HTML semantics (4 ~= h4); these are pulled
 # from inspecting saved Qlik apps and Power BI's textbox renderer.
 _QLIK_SIZE_TO_PT = {-2: 36, -1: 28, 0: 24, 1: 22, 2: 20, 3: 18, 4: 16, 5: 14}
+
+# Lexical format bitmask (same values as the Lexical editor source).
+_LEX_BOLD = 1
+_LEX_ITALIC = 2
+_LEX_UNDERLINE = 8
+
+
+def _lexical_style_to_textrun_style(
+    inline_css: str,
+    fmt_bitmask: int,
+) -> Dict[str, Any]:
+    """Build a PBI ``textStyle`` dict from a Lexical node's CSS ``style``
+    attribute and ``format`` bitmask.  Returns an empty dict when nothing
+    meaningful is present."""
+    ts: Dict[str, Any] = {}
+    if inline_css:
+        m = re.search(r"font-size:\s*(\d+(?:\.\d+)?)px", inline_css)
+        if m:
+            pt = max(6, min(96, int(round(float(m.group(1)) * 0.75))))
+            ts["fontSize"] = f"{pt}pt"
+        m = re.search(r"color:\s*(#[0-9a-fA-F]{3,8}|rgba?\([^)]+\))", inline_css)
+        if m:
+            c = _css_color_to_hex(m.group(1))
+            if c:
+                ts["fontColor"] = c
+    if fmt_bitmask & _LEX_BOLD:
+        ts["fontWeight"] = "bold"
+    if fmt_bitmask & _LEX_ITALIC:
+        ts["italic"] = True
+    if fmt_bitmask & _LEX_UNDERLINE:
+        ts["underline"] = True
+    return ts
+
+
+def _formatstyle_to_textrun_style(fmt_style: Dict[str, Any]) -> Dict[str, Any]:
+    """Build a PBI ``textStyle`` dict from a Lexical ``formatStyle`` object
+    (used on ``qlik.expression.node`` nodes)."""
+    ts: Dict[str, Any] = {}
+    if fmt_style.get("fontWeight") == "bold":
+        ts["fontWeight"] = "bold"
+    if fmt_style.get("fontStyle") == "italic":
+        ts["italic"] = True
+    sz = str(fmt_style.get("fontSize") or "")
+    m = re.search(r"(\d+(?:\.\d+)?)px", sz)
+    if m:
+        pt = max(6, min(96, int(round(float(m.group(1)) * 0.75))))
+        ts["fontSize"] = f"{pt}pt"
+    col = fmt_style.get("color") or ""
+    if col:
+        c = _css_color_to_hex(col)
+        if c:
+            ts["fontColor"] = c
+    return ts
+
+
+def _lexical_to_paragraphs(
+    text_json: str,
+    props: Dict[str, Any],
+    lookup: Optional[Callable[[str, Any], Optional[str]]] = None,
+) -> List[Dict[str, Any]]:
+    """Convert Qlik's ``sn-text`` Lexical JSON string to PBI textbox
+    paragraphs.
+
+    Static text nodes (``type: "text"``) are carried over verbatim with
+    their CSS colour/size and Lexical format bitmask (bold/italic) mapped
+    to PBI ``textStyle``.
+
+    Expression nodes (``type: "qlik.expression.node"``) resolve through
+    ``lookup(cId, rawExpr)`` -- the engine-evaluated snapshot captured
+    at unbuild time, falling back to local static evaluation (see
+    ``ReportBuilder._lookup_text_expr``) -- so the converted textbox
+    shows the VALUE Qlik rendered. Only when nothing resolves does the
+    measure's label (or its expression string) substitute, keeping the
+    textbox human-readable rather than blank.
+    """
+    import json as _json  # local import -- only called from textbox builder
+
+    # expressionId -> (label fallback, raw expression) from the
+    # hypercube measures.
+    hc = props.get("qHyperCubeDef") or {}
+    expr_label: Dict[str, str] = {}
+    expr_raw: Dict[str, str] = {}
+    for meas in hc.get("qMeasures") or []:
+        mdef = meas.get("qDef") or {}
+        cid = mdef.get("cId", "")
+        if cid:
+            raw = mdef.get("qDef", "")
+            if isinstance(raw, str) and raw.strip():
+                expr_raw[cid] = raw.strip()
+            lbl = (
+                clean_label(mdef.get("qLabel", ""))
+                or clean_label(mdef.get("qLabelExpression", ""))
+                or clean_label(raw)
+                or "[expression]"
+            )
+            expr_label[cid] = lbl[:4000]
+
+    try:
+        tree = _json.loads(text_json)
+    except (ValueError, TypeError):
+        return [{"textRuns": [{"value": ""}]}]
+
+    root = tree.get("root") or {}
+    paragraphs: List[Dict[str, Any]] = []
+
+    for para_node in root.get("children") or []:
+        if para_node.get("type") not in ("paragraph", "heading", "quote"):
+            continue
+        runs: List[Dict[str, Any]] = []
+        for node in para_node.get("children") or []:
+            ntype = node.get("type", "")
+            if ntype == "text":
+                txt = node.get("text", "")
+                if not txt:
+                    continue
+                ts = _lexical_style_to_textrun_style(
+                    node.get("style", ""), node.get("format", 0),
+                )
+                run: Dict[str, Any] = {"value": txt}
+                if ts:
+                    run["textStyle"] = ts
+                runs.append(run)
+            elif ntype == "qlik.expression.node":
+                eid = node.get("expressionId", "")
+                value: Optional[str] = None
+                if lookup is not None:
+                    value = lookup(eid, expr_raw.get(eid))
+                if value is None:
+                    value = expr_label.get(eid, "[expression]")
+                ts = _formatstyle_to_textrun_style(
+                    node.get("formatStyle") or {},
+                )
+                run = {"value": value}
+                if ts:
+                    run["textStyle"] = ts
+                runs.append(run)
+            elif ntype == "linebreak":
+                # Soft line-break within a paragraph -- emit as empty run.
+                runs.append({"value": ""})
+
+        if not runs:
+            runs = [{"value": ""}]
+        para: Dict[str, Any] = {"textRuns": runs}
+        # Paragraph-level text alignment from textStyle CSS.
+        para_css = para_node.get("textStyle", "")
+        if isinstance(para_css, str) and "text-align:" in para_css:
+            m = re.search(r"text-align:\s*(\w+)", para_css)
+            if m:
+                align = m.group(1).lower()
+                if align in ("left", "center", "right"):
+                    para["horizontalTextAlignment"] = align
+        paragraphs.append(para)
+
+    return paragraphs or [{"textRuns": [{"value": ""}]}]
 
 
 def _qlik_markdown_to_paragraphs(markdown: str) -> List[Dict[str, Any]]:

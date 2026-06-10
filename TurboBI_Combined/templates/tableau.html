@@ -680,12 +680,22 @@ themeBtn.addEventListener('click', () =>
 );
 
 // ── Step definitions ──────────────────────────────────────────────────────
+// Each kw is ANCHORED to the converter's actual stage markers
+// ([1/4]..[4/4], [HYPER] data extraction, [UI] zipping). Generic words
+// ("written", "output", "done") appear in every stage's lines -- the old
+// keyword regexes jumped the UI to "Packaging .pbip / 80%" while table
+// data was still being pulled from the .hyper extracts.
 const STEPS = [
-  { key:'parse',   label:'Parsing workbook',   detail:'Reading .twbx archive and extracting data model',            kw:/pars|extract|open|read/i },
-  { key:'model',   label:'Mapping data model', detail:'Translating sources, relationships, and calculations',       kw:/model|source|calcul|relat|field|measure/i },
-  { key:'visuals', label:'Converting visuals', detail:'Rebuilding sheets and dashboards as Power BI report pages',  kw:/visual|sheet|dashboard|report|page/i },
-  { key:'creds',   label:'Wiring credentials', detail:'Applying connection template and parameter bindings',       kw:/cred|connect|wire|param|config/i },
-  { key:'package', label:'Packaging .pbip',    detail:'Assembling project, dataset, and report folders',           kw:/packag|zip|writ|sav|output|done|complet/i },
+  { key:'parse',   label:'Parsing workbook',   detail:'Reading .twbx archive and extracting data model',
+    kw:/\[1\/4\]|Tableau -> PBIP|TurboBI conversion started/i },
+  { key:'model',   label:'Mapping data model', detail:'Translating sources, relationships, and calculations',
+    kw:/\[2\/4\]|\[HYPER|\[MODEL\]|\[DAX|\[CALC/i },
+  { key:'visuals', label:'Converting visuals', detail:'Rebuilding sheets and dashboards as Power BI report pages',
+    kw:/\[3\/4\]|\[REPORT\]/i },
+  { key:'creds',   label:'Wiring credentials', detail:'Applying connection template and parameter bindings',
+    kw:/\[CRED|credential|connection template|parameter binding/i },
+  { key:'package', label:'Packaging .pbip',    detail:'Assembling project, dataset, and report folders',
+    kw:/\[4\/4\]|Done\. Open|warnings (?:before|after)|hints (?:added|total)|\[UI\] Zipping|Zip ready|=== Conversion complete/i },
 ];
 
 function buildStepList(activeIdx) {

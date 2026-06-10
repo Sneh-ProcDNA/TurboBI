@@ -27,6 +27,7 @@ IR_SLOTS = (
     "app", "script", "dimensions", "measures", "variables", "bookmarks",
     "sheets", "master_objects", "load_model", "app_props", "engine_schema",
     "fields", "field_renames", "script_blocks", "db_sources",
+    "evaluated", "qlik_theme",
 )
 
 
@@ -59,6 +60,15 @@ class QlikIR:
     # {final_table: {connection, catalog, schema, source_table, sql_columns}}
     # for tables loaded from a SQL data connection (LIB CONNECT TO + SQL SELECT).
     db_sources: Dict[str, Dict[str, Any]] = field(default_factory=dict)
+    # Engine-evaluated text-expression snapshots from the unbuild's
+    # evaluated-expressions.json sidecar:
+    # {"objects": {objectId: {cId: text}}, "expressions": {expr: text}}.
+    # Read by the report builder (textbox content / title resolution) --
+    # NOT released by release_raw_inputs.
+    evaluated: Dict[str, Any] = field(default_factory=dict)
+    # The app's Qlik theme JSON (theme.json sidecar; cloud unbuild only).
+    # Consumed by pbi_theme.build_report_theme before the model build.
+    qlik_theme: Optional[Dict[str, Any]] = None
 
     # ------------------------------------------------------------------
     # Mapping-style access so every historical ``ir.get(...)`` /

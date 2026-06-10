@@ -67,6 +67,16 @@ def parse_qlik_output(output_dir: str | Path) -> QlikIR:
         # of truth for table layout, field-to-table mapping, and key
         # records. None when the engine path wasn't taken.
         "engine_schema": None,
+        # Engine-evaluated text-expression snapshots (textbox content,
+        # title expressions) written by the engine unbuild. {} when the
+        # unbuild didn't go through the engine (old folders, qvf-direct)
+        # -- the report builder then falls back to local static
+        # evaluation / labels.
+        "evaluated":   _read_json(root / "evaluated-expressions.json", default={}),
+        # The app's active Qlik theme JSON (custom themes fetched from
+        # the tenant during the cloud unbuild). None -> built-in palette
+        # lookup by theme id.
+        "qlik_theme":  _read_json(root / "theme.json", default=None),
     }
 
     objects_dir = root / "objects"

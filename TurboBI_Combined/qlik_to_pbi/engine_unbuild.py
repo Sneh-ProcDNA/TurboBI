@@ -96,7 +96,7 @@ def unbuild_via_engine(
     )
     client.connect()
     try:
-        _write_app_properties(client, output_dir)
+        theme_id = _write_app_properties(client, output_dir)
         _write_script(client, output_dir)
         _write_loadmodel(client, output_dir)
 
@@ -109,6 +109,18 @@ def unbuild_via_engine(
         # Bookmarks: the cloud unbuild CLI omits them; we recover via
         # the engine's BookmarkList listdef + per-bookmark GetProperties.
         _write_bookmarks(client, lists.get("bookmarks", []), output_dir)
+
+        # Snapshot every textbox / title expression to its evaluated
+        # value while the engine is on the line (PBI textboxes are
+        # static -- without this the converted report shows raw
+        # formulas). Runs AFTER _write_bookmarks, whose trailing
+        # ClearAll guarantees an unfiltered selection state.
+        from .text_eval import evaluate_unbuilt_expressions
+        evaluate_unbuilt_expressions(client, output_dir)
+
+        # The app's custom theme (cloud only): fetch theme.json from
+        # the tenant so the converted report can mirror its palette.
+        _write_theme_file(output_dir, tenant, api_key, theme_id)
 
         # Cloud CLI also writes inert config.yml and connections.yml.
         # The parser ignores them, but matching the layout makes it
@@ -126,7 +138,7 @@ def unbuild_via_engine(
 # App-level files
 # ---------------------------------------------------------------------------
 
-def _write_app_properties(client: EngineClient, out: Path) -> None:
+def _write_app_properties(client: EngineClient, out: Path) -> str:
     """Write app-properties.json in the cloud-unbuild shape.
 
     Cloud `qlik app unbuild` writes a FLAT JSON object with the keys:
@@ -141,6 +153,10 @@ def _write_app_properties(client: EngineClient, out: Path) -> None:
     properties. We merge both and fill ``description`` etc. with
     sensible defaults so the parser's ``qTitle`` lookup always
     resolves.
+
+    Returns the app's active theme id ("" when none is recorded) so
+    the caller can fetch the theme document / pick the matching
+    built-in palette.
     """
     props: Dict[str, Any] = {}
     try:
@@ -156,6 +172,10 @@ def _write_app_properties(client: EngineClient, out: Path) -> None:
     except RuntimeError as exc:
         _log.warning(f"GetAppLayout failed: {exc}")
 
+    # The Sense client records the selected theme id on the app
+    # properties (e.g. "horizon", "sense", or a custom theme's UUID).
+    theme_id = str(props.get("theme") or layout.get("theme") or "").strip()
+
     body = {
         "qTitle":                  layout.get("qTitle") or props.get("qTitle") or "Untitled",
         "qLastReloadTime":         layout.get("qLastReloadTime") or props.get("qLastReloadTime") or "",
@@ -166,7 +186,78 @@ def _write_app_properties(client: EngineClient, out: Path) -> None:
         "published":               bool(layout.get("published")) if "published" in layout else False,
         "hassectionaccess":        bool(layout.get("qHasSectionAccess")) if "qHasSectionAccess" in layout else False,
     }
+    if theme_id:
+        body["theme"] = theme_id
     _write_json(out / "app-properties.json", body)
+    return theme_id
+
+
+def _write_theme_file(
+    out: Path,
+    tenant: Optional[str],
+    api_key: Optional[str],
+    theme_id: str,
+) -> None:
+    """Fetch the app's CUSTOM theme JSON from the tenant -> theme.json.
+
+    Built-in theme ids (horizon, sense, breeze...) ship with the Sense
+    client, not the tenant's themes API -- and the converter already
+    carries their palettes (see :mod:`qlik_to_pbi.pbi_theme`), so only
+    custom themes are fetched. Cloud mode only (Desktop has no REST
+    surface). Best-effort: any failure just means the converter falls
+    back to the built-in palette table.
+    """
+    if not theme_id or not tenant or not api_key:
+        return
+    from .pbi_theme import builtin_theme_ids
+    if theme_id.lower() in builtin_theme_ids():
+        return
+    try:
+        import requests
+    except ImportError:
+        _log.info("requests not installed; skipping custom-theme fetch.")
+        return
+
+    base = tenant.rstrip("/")
+    if base.startswith(("ws://", "wss://")):
+        base = "https://" + base.split("://", 1)[1]
+    elif not base.startswith(("http://", "https://")):
+        base = "https://" + base
+    headers = {"Authorization": f"Bearer {api_key}"}
+
+    def _get_json(url: str) -> Optional[Any]:
+        try:
+            resp = requests.get(url, headers=headers, timeout=30)
+            if resp.status_code != 200:
+                return None
+            return resp.json()
+        except Exception:  # noqa: BLE001 -- network/JSON, both non-fatal
+            return None
+
+    # Direct file fetch first; fall back to resolving the id via the
+    # themes listing (the app may store the theme NAME rather than id).
+    theme_json = _get_json(f"{base}/api/v1/themes/{theme_id}/file/theme.json")
+    if not isinstance(theme_json, dict):
+        listing = _get_json(f"{base}/api/v1/themes") or {}
+        items = listing.get("data") if isinstance(listing, dict) else listing
+        resolved = ""
+        for item in items or []:
+            if not isinstance(item, dict):
+                continue
+            if theme_id in (str(item.get("id") or ""), str(item.get("name") or "")):
+                resolved = str(item.get("id") or "")
+                break
+        if resolved:
+            theme_json = _get_json(f"{base}/api/v1/themes/{resolved}/file/theme.json")
+
+    if isinstance(theme_json, dict) and theme_json:
+        _write_json(out / "theme.json", theme_json)
+        _log.info(f"Captured custom theme '{theme_id}' -> theme.json")
+    else:
+        _log.info(
+            f"Custom theme '{theme_id}' not fetchable from the tenant; "
+            "the converter will use the built-in palette table."
+        )
 
 
 def _write_script(client: EngineClient, out: Path) -> None:

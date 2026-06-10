@@ -691,14 +691,32 @@ function applyTheme(t){
 applyTheme(localStorage.getItem('turbobi-theme')||'light');
 themeBtn.addEventListener('click',()=>applyTheme(html.getAttribute('data-theme')==='light'?'dark':'light'));
 
-// Steps
+// Steps. Each kw is ANCHORED to the converter's actual module log
+// prefixes ([UNBUILD], [ENGINE] extract lines, [MODEL], [REPORT],
+// [WRITE]...) -- generic words like "written"/"output"/"done" appear in
+// EVERY stage's lines (e.g. the data fetch logs "5/5 table(s) written"),
+// and the old keyword regexes mis-jumped the UI to "Packaging .pbip /
+// 80%" while tables were still being extracted.
 const STEPS=[
-  {label:'Unbuild Qlik app',   detail:'Fetching JSON IR from Qlik Cloud via CLI',            kw:/unbuild|extract|fetch.*app|open|load|qlik.*app/i},
-  {label:'Fetching data',      detail:'Exporting table CSVs via qlik app object export',     kw:/fetch.*data|export|csv|object.*data/i},
-  {label:'Mapping data model', detail:'Translating Qlik data model to Power BI semantic model', kw:/model|measure|field|relat|calcul|dax|tmdl/i},
-  {label:'Converting visuals', detail:'Rebuilding sheets and charts as Power BI report pages', kw:/visual|sheet|chart|report|page/i},
-  {label:'Packaging .pbip',    detail:'Assembling dataset, report, and project folders',     kw:/packag|zip|writ|sav|output|done|complet|pbip/i},
+  {label:'Unbuild Qlik app',   detail:'Reading app structure via the Engine API',
+   kw:/\[UNBUILD\]|\[TEXTEVAL\]|\[THEME\]|\[QVD\]|\[DB\]|Loaded cloud creds|Cloud conversion:|Connecting to (?:cloud )?engine|Unbuild mode|TurboBI conversion started/i},
+  {label:'Fetching data',      detail:'Extracting table data via the Engine API',
+   kw:/\[FETCH\]|Engine extract|Column pruning|hypercube:|fetched [\d,]+\/|-> .+\.(?:parquet|csv) \(|row-fidelity|table\(s\) written|slices merged/i},
+  {label:'Mapping data model', detail:'Translating the Qlik model to a Power BI semantic model',
+   kw:/\[[12]\/4\]|\[PARSE\]|\[SCRIPT\]|\[MODEL\]|\[DAX/i},
+  {label:'Converting visuals', detail:'Rebuilding sheets and charts as Power BI report pages',
+   kw:/\[3\/4\]|\[REPORT\]/i},
+  {label:'Packaging .pbip',    detail:'Writing and zipping the project folders',
+   kw:/\[4\/4\]|\[WRITE\]|\[PREFLIGHT\]|Conversion report:|Zipping output|Zip ready|=== Conversion complete/i},
 ];
+// Progress weighting: the data fetch dominates wall-clock time on a
+// fetch-data run, so it owns the 12%..62% span; the in-process converter
+// stages are quick. Within the fetch, per-table completion lines advance
+// the bar proportionally ("across N pool table(s)" announces the plan,
+// each "Table -> file.parquet (...)" marks one landed).
+const STEP_BASE=[0.03,0.12,0.62,0.74,0.88];
+function stepSpan(i){return (i+1<STEP_BASE.length?STEP_BASE[i+1]:1)-STEP_BASE[i];}
+let fetchPool=0,fetchDone=0;
 
 function buildStepList(activeIdx){
   const ul=document.getElementById('steplist');ul.innerHTML='';
@@ -1136,9 +1154,10 @@ async function startConversion(){
   }
   const hasDb = Object.keys(dbConnections).length>0;
 
-  btnStart.disabled=true; currentStep=0; terminal.innerHTML=''; rawLines=[]; jobFinished=false;
+  btnStart.disabled=true; currentStep=0; fetchPool=0; fetchDone=0;
+  terminal.innerHTML=''; rawLines=[]; jobFinished=false;
   document.getElementById('conv-appid').textContent=appId;
-  buildStepList(0); setStage('converting');
+  buildStepList(0); setProgress(0); setStage('converting');
 
   let res;
   try{
@@ -1203,9 +1222,21 @@ async function failWithServerError(fallbackMsg){
 }
 
 function advanceStep(text){
+  // Monotonic forward scan: a line can only advance the stage, never
+  // regress it (fetch workers re-log "Connecting to cloud engine",
+  // which belongs to the unbuild stage we already passed).
   for(let i=currentStep;i<STEPS.length;i++){
-    if(STEPS[i].kw.test(text)){currentStep=i;buildStepList(i);setProgress(i/STEPS.length);break}
+    if(STEPS[i].kw.test(text)){
+      if(i!==currentStep){currentStep=i;buildStepList(i)}
+      break;
+    }
   }
+  const mp=text.match(/across ([\d,]+) pool table\(s\)/i);
+  if(mp)fetchPool=parseInt(mp[1].replace(/,/g,''),10)||0;
+  if(currentStep===1&&/-> .+\.(?:parquet|csv) \(/i.test(text))fetchDone++;
+  let frac=0;
+  if(currentStep===1&&fetchPool>0)frac=Math.min(1,fetchDone/fetchPool);
+  setProgress(STEP_BASE[currentStep]+stepSpan(currentStep)*frac);
 }
 function setProgress(p){
   const pct=Math.round(p*100);
@@ -1285,7 +1316,8 @@ function classifyLine(t){
   return '';
 }
 function fullReset(){
-  currentJob=null;currentStep=0;terminal.innerHTML='';rawLines=[];jobFinished=false;
+  currentJob=null;currentStep=0;fetchPool=0;fetchDone=0;
+  terminal.innerHTML='';rawLines=[];jobFinished=false;
   document.getElementById('btn-download').style.display='none';
   logWrap.classList.remove('open');logToggle.classList.remove('open');
   errLogWrap.classList.remove('open');errLogToggle.classList.remove('open');

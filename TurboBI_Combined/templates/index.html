@@ -281,7 +281,7 @@ function selectConverter(name, force){
   try{localStorage.setItem('turbobi-converter',name)}catch{}
   if(isMobile()) closeNav();
 }
-navItems.tableau.addEventListener('click',()=>selectConverter('tableau'));
+navItems.tableau.addEventListener('click',()=>window.open('/tableau/','_blank','noopener,noreferrer'));
 navItems.qlik.addEventListener('click',()=>selectConverter('qlik'));
 
 // ── Sidebar collapse / burger ──────────────────────────────────────────────

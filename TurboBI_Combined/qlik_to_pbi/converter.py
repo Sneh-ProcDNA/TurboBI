@@ -83,6 +83,26 @@ class Converter:
         _log.info("[1/4] Parsing Qlik output...")
         ir = parse_qlik_output(self.qlik_dir)
 
+        # Resolve the Qlik colour palette -> PBI report theme NOW (the
+        # app-properties slot that carries the theme id is released
+        # after the model build). The writer registers the theme; the
+        # report builder uses the palette's primary for single-series
+        # chart defaults.
+        from .pbi_theme import build_report_theme
+        theme_info = build_report_theme(
+            ir.get("qlik_theme"),
+            (ir.get("app") or {}).get("theme"),
+        )
+        _log.info(
+            f"Report theme: {len(theme_info['data_colors'])} Qlik data "
+            f"colours, primary {theme_info['primary']} "
+            f"(source: {theme_info['source']})."
+        )
+        evaluated = ir.get("evaluated") or {}
+        n_eval = len((evaluated.get("expressions") or {})) if isinstance(evaluated, dict) else 0
+        if n_eval:
+            _log.info(f"Evaluated text-expression snapshots available: {n_eval}.")
+
         # Load credentials (if any). The user can drop a
         # ``credentials.json`` at the project root and we'll pick it up
         # automatically when ``--live`` is set; an explicit
@@ -121,7 +141,7 @@ class Converter:
             self.name = safe_filename(model.app_title or "Report")
 
         _log.info(f"[3/4] Building report (name='{self.name}')...")
-        report = ReportBuilder(ir, model)
+        report = ReportBuilder(ir, model, theme_palette=theme_info)
         pages = report.build_pages()
 
         self._preflight_warnings: List[str] = []
@@ -139,7 +159,11 @@ class Converter:
         else:
             _log.info(f"[4/4] Writing PBIP to {self.output} ...")
             writer = PBIPWriter(self.output, self.name)
-            writer.write(model, pages, bookmarks=ir.get("bookmarks") or [])
+            writer.write(
+                model, pages,
+                bookmarks=ir.get("bookmarks") or [],
+                theme=theme_info.get("pbi_theme"),
+            )
 
             # Pre-flight structural validation. Catches dangling refs,
             # unknown visualContainerObjects keys, missing visualType
@@ -171,6 +195,20 @@ class Converter:
             for msg in getattr(report, "build_issues", []) or []:
                 report_data.add("warning", "visual", "cell", msg,
                                 suggestion="Rebuild this visual manually in PBI Desktop.")
+            # Dynamic textbox expressions that had no engine-evaluated
+            # snapshot (offline conversion / pre-sidecar unbuild folder)
+            # -- the textbox shows the label/formula instead of the value.
+            for expr in sorted(getattr(report, "text_eval_misses", []) or [])[:20]:
+                report_data.add(
+                    "info", "visual", "textbox expression",
+                    f"Textbox expression shown as label, not value "
+                    f"(no engine snapshot): {expr[:120]}",
+                    suggestion=(
+                        "Re-run the conversion with a Qlik connection "
+                        "(cloud context or Desktop engine) so text "
+                        "expressions are evaluated to their values."
+                    ),
+                )
             # Qlik conditional-visibility expressions that were detected
             # but not wired as PBI filters (PBI's filter schema needs a
             # real measure ref). Surface them so the user knows.

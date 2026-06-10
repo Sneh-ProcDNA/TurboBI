@@ -51,8 +51,13 @@ class PBIPWriter:
         model: SemanticModel,
         pages: List[Dict[str, Any]],
         bookmarks: Optional[List[Dict[str, Any]]] = None,
+        theme: Optional[Dict[str, Any]] = None,
     ) -> None:
         self.bookmarks = bookmarks or []
+        # Optional report theme (PBI theme JSON dict from
+        # pbi_theme.build_report_theme). Registered as a CustomTheme so
+        # default series colours match the Qlik palette.
+        self.theme = theme if isinstance(theme, dict) and theme else None
         mkdir_p(self.root)
 
         # Wipe any stale conversion output so PBI Desktop doesn't try to
@@ -207,28 +212,69 @@ class PBIPWriter:
             "$schema": SCHEMA["version"],
             "version": "2.0.0",
         })
+
+        # Theme registration. The base theme is always PBI's stock
+        # CY24SU02; when a Qlik-matching theme dict was supplied it is
+        # written under StaticResources/RegisteredResources/ and layered
+        # on top as the report's CustomTheme (PBI applies customTheme
+        # over baseTheme, so only the keys the theme sets -- the data
+        # palette -- are overridden).
+        theme_collection: Dict[str, Any] = {
+            "baseTheme": {
+                "name": "CY24SU02",
+                "reportVersionAtImport": {
+                    "visual": "1.8.89",
+                    "report": "2.0.89",
+                    "page":   "1.3.89",
+                },
+                "type": "SharedResources",
+            },
+        }
+        resource_packages: List[Dict[str, Any]] = [{
+            "name": "SharedResources",
+            "type": "SharedResources",
+            "items": [{
+                "name": "CY24SU02",
+                "path": "BaseThemes/CY24SU02.json",
+                "type": "BaseTheme",
+            }],
+        }]
+        if self.theme:
+            theme_file = f"{self.theme.get('name') or 'QlikSenseColors'}.json"
+            write_json(
+                self.report_dir / "StaticResources" / "RegisteredResources" / theme_file,
+                self.theme,
+            )
+            # ThemeMetadata (report schema 3.2.0) REQUIRES all three of
+            # name / reportVersionAtImport / type -- mirror the base
+            # theme's version block.
+            theme_collection["customTheme"] = {
+                "name": theme_file,
+                "reportVersionAtImport": {
+                    "visual": "1.8.89",
+                    "report": "2.0.89",
+                    "page":   "1.3.89",
+                },
+                "type": "RegisteredResources",
+            }
+            resource_packages.insert(0, {
+                "name": "RegisteredResources",
+                "type": "RegisteredResources",
+                "items": [{
+                    "name": theme_file,
+                    "path": theme_file,
+                    "type": "CustomTheme",
+                }],
+            })
+            _log.info(
+                f"Registered Qlik-matching report theme ({theme_file}, "
+                f"{len(self.theme.get('dataColors') or [])} data colours)."
+            )
+
         write_json(defdir / "report.json", {
             "$schema": SCHEMA["report"],
-            "themeCollection": {
-                "baseTheme": {
-                    "name": "CY24SU02",
-                    "reportVersionAtImport": {
-                        "visual": "1.8.89",
-                        "report": "2.0.89",
-                        "page":   "1.3.89",
-                    },
-                    "type": "SharedResources",
-                },
-            },
-            "resourcePackages": [{
-                "name": "SharedResources",
-                "type": "SharedResources",
-                "items": [{
-                    "name": "CY24SU02",
-                    "path": "BaseThemes/CY24SU02.json",
-                    "type": "BaseTheme",
-                }],
-            }],
+            "themeCollection": theme_collection,
+            "resourcePackages": resource_packages,
             "settings": {
                 "useStylableVisualContainerHeader": True,
                 "defaultDrillFilterOtherVisuals":   True,

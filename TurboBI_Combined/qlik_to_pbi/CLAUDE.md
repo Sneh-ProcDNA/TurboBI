@@ -30,6 +30,12 @@ orchestrated by `converter.py` / `__main__.py`. A UI-less copy lives at
 - Prune dangling relationships before write — one missing endpoint fails the whole load with no per-file context.
 - Don't stamp `formatString` on generic numeric columns — PBI renders it as cell text on a storage-type mismatch.
 - The parser returns a typed `QlikIR` dataclass (dict-compatible); the model releases the raw IR after build.
+- Text-expression evaluation (`text_eval.evaluate_unbuilt_expressions`) runs AFTER `_write_bookmarks` — its trailing ClearAll guarantees unfiltered snapshots; consult the sidecar with `is None` checks (empty-string results are legitimate).
+- `themeCollection.customTheme` requires `reportVersionAtImport` (report schema 3.2.0, additionalProperties false) — omit it and the report fails schema validation.
+- Per-visual chart colour = `objects.dataPoint[].defaultColor` — `dataColors` is NOT a real object name (Desktop silently ignores it); palettes go through the registered report theme (`pbi_theme.py`), never multi-entry selector-less fills.
+- KPI value colour lives in `conditionalColoring.paletteSingleColor` whenever `useConditionalColoring` is falsy — do NOT gate on the `singleColor` enum (real apps store 3, not 2).
+- SUM/AVERAGE over a string column on a BOUND table must be coerced to `SUMX/AVERAGEX(IFERROR(VALUE(...)))` (model pass 3) — the raw form returns TEXT and PBI renders cards as `'21'`; never "fix" it by promoting the bound column's dataType (load fails).
+- Web-UI progress stages key on module log prefixes (`[UNBUILD]`, `Engine extract`, `[1-4/4]`, `[WRITE]`, `[UI] Zipping`) — generic keywords (writ|output|done) appear in every stage and mis-jump the bar.
 
 ## Verify every change (hard gate)
 

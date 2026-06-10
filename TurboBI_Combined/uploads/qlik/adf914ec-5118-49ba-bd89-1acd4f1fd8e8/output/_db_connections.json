@@ -1,9 +1,0 @@
-{
-  "Databricks": {
-    "class": "databricks",
-    "server": "dbc-3ee0f24b-247b.cloud.databricks.com",
-    "http_path": "/sql/1.0/warehouses/2be996b7370ad54a",
-    "catalog": "turbobi",
-    "schema": "test"
-  }
-}
