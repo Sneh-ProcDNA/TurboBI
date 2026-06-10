@@ -1,0 +1,155 @@
+table Fact_CRM
+	lineageTag: 2e5897f2-dd6e-3231-7dba-a334609fef33
+
+	column Product_ID
+		dataType: string
+		lineageTag: 7403307c-1349-a327-387e-d8fa097497a0
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory_ID
+		dataType: string
+		lineageTag: 25dc6d48-788b-a829-50e0-19a5308efc1d
+		summarizeBy: none
+		sourceColumn: Territory_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCP_ID
+		dataType: string
+		lineageTag: 7c3f8861-f4e2-c412-fa1d-1ba31f173679
+		summarizeBy: none
+		sourceColumn: HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: dateTime
+		formatString: 'yyyy-MM-dd HH:mm:ss'
+		lineageTag: 4680d494-c160-499f-d528-0dce2ff294e6
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fact_ID
+		dataType: string
+		lineageTag: c6056c58-97a2-7ce2-24c2-a0ff7341af0a
+		summarizeBy: none
+		sourceColumn: Fact_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fact_CRM_Rep_ID
+		dataType: string
+		lineageTag: 57b8452a-55cf-76de-7601-a154ed143814
+		summarizeBy: none
+		sourceColumn: Fact_CRM.Rep_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Visit_Type
+		dataType: string
+		lineageTag: 7bad2b47-c1a7-8efe-362b-0d7dcb101bcf
+		summarizeBy: none
+		sourceColumn: Visit_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Call_Status
+		dataType: string
+		lineageTag: 1221b97a-aaa7-282c-1b0e-3caf7a7f4056
+		summarizeBy: none
+		sourceColumn: Call_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detail_Position
+		dataType: string
+		lineageTag: 8ec2ce63-aa30-62dc-de77-81963178cb82
+		summarizeBy: none
+		sourceColumn: Detail_Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column Samples_Dropped
+		dataType: int64
+		lineageTag: f87095a3-ee6a-124d-57e7-fd8850ca39b3
+		summarizeBy: sum
+		sourceColumn: Samples_Dropped
+
+		annotation SummarizationSetBy = Automatic
+
+	column NRx_Units
+		dataType: int64
+		lineageTag: e7d9da07-cf5e-eabc-3849-8a9e4bc6cf47
+		summarizeBy: sum
+		sourceColumn: NRx_Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRx_Units
+		dataType: int64
+		lineageTag: e35f757d-2c34-30dd-7d14-7e2a94663c6d
+		summarizeBy: sum
+		sourceColumn: TRx_Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_USD
+		dataType: double
+		lineageTag: fa21a258-588d-4a83-164c-c1b465753e2c
+		summarizeBy: sum
+		sourceColumn: Sales_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Goal_Flag
+		dataType: string
+		lineageTag: ee65366b-67bc-a9e1-e413-f0337cad3647
+		summarizeBy: none
+		sourceColumn: Goal_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Call_Duration_Min
+		dataType: int64
+		lineageTag: 3b7b4656-fd4d-c551-004e-b9d85bd64085
+		summarizeBy: sum
+		sourceColumn: Call_Duration_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Follow_Up_Flag
+		dataType: string
+		lineageTag: fa3c0e17-a38d-db48-7cc3-c37d732f31c6
+		summarizeBy: none
+		sourceColumn: Follow_Up_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Sum Sales_USD' = SUM('Fact_CRM'[Sales_USD])
+		lineageTag: 855906a4-a3d4-e181-7ea9-f95cd629d7c5
+
+	measure 'Count Fact_ID' = COUNT('Fact_CRM'[Fact_ID])
+		lineageTag: e26a035a-fef7-11ef-1749-0dbc83d48669
+
+	measure 'Sum If Goal_Flag Met 1 0 Count Fact_ID' = SUMX('Fact_CRM', If('Fact_CRM'[Goal_Flag] = "Met", 1, 0)) / COUNTA('Fact_CRM'[Fact_ID])
+		lineageTag: bf008c3b-e604-38ec-db6e-8d26b02cefba
+
+	measure 'Count Distinct Fact_ID' = DISTINCTCOUNT('Fact_CRM'[Fact_ID])
+		lineageTag: 1e4fa074-107c-7c15-1829-4795f9c4badc
+
+	partition Fact_CRM = m
+		mode: import
+		source =
+			let
+				Source = Parquet.Document(File.Contents(RepoPath & "/data/Fact_CRM.parquet"))
+			in
+				Source
+
+	annotation PBI_NavigationStepName = Source
+
+	annotation PBI_ResultType = Table

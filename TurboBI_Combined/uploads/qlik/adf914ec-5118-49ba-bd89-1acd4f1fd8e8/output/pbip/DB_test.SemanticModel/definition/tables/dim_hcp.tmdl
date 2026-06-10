@@ -1,0 +1,106 @@
+table dim_hcp
+	lineageTag: ed8c79ab-6835-ff51-8778-c253d89411d1
+
+	column HCP_ID
+		dataType: string
+		lineageTag: 059f4992-bce0-87aa-e0a7-272fba0c83dd
+		summarizeBy: none
+		sourceColumn: HCP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HCP_Name
+		dataType: string
+		lineageTag: d22c3859-e8a4-4121-ab97-6febc364e7d7
+		summarizeBy: none
+		sourceColumn: HCP_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialty
+		dataType: string
+		lineageTag: 7c3eccca-9f0e-c529-599b-78fafdf47fd0
+		summarizeBy: none
+		sourceColumn: Specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: d966e511-bb61-da16-f644-a84667a73b42
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: ff69a6ea-e394-4e4e-3297-8812a27a9b4b
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column dim_hcp_Region
+		dataType: string
+		lineageTag: ef4b5ec7-cd02-5d30-8d28-54b0ee82ebbc
+		summarizeBy: none
+		sourceColumn: dim_hcp_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tier
+		dataType: string
+		lineageTag: 1a30802d-a2f9-f4c7-25ab-c5b43349f8a9
+		summarizeBy: none
+		sourceColumn: Tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 722529d1-4c47-1993-82ba-4dc9305f76ed
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prescriber_Decile
+		dataType: int64
+		lineageTag: adef8614-5bae-e6d6-827f-11b8a5adbfcb
+		summarizeBy: sum
+		sourceColumn: Prescriber_Decile
+
+		annotation SummarizationSetBy = Automatic
+
+	column NPI_Number
+		dataType: int64
+		lineageTag: 42656a62-0214-2643-bf0c-64737629c7d1
+		summarizeBy: sum
+		sourceColumn: NPI_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account_Type
+		dataType: string
+		lineageTag: d8407dea-fbe7-9115-ac50-ae72493078e8
+		summarizeBy: none
+		sourceColumn: Account_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_hcp = m
+		mode: import
+		source =
+			let
+				Source = DatabricksMultiCloud.Catalogs("dbc-3ee0f24b-247b.cloud.databricks.com", "/sql/1.0/warehouses/2be996b7370ad54a", [Catalog="", Database="", QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				Catalog = Source{[Name="turbobi", Kind="Database"]}[Data],
+				Schema = Catalog{[Name="test", Kind="Schema"]}[Data],
+				Navigation = Schema{[Name="dim_hcp", Kind="Table"]}[Data],
+				Renamed = Table.RenameColumns(Navigation, {{"Region", "dim_hcp_Region"}})
+			in
+				Renamed
+
+	annotation PBI_NavigationStepName = Renamed
+
+	annotation PBI_ResultType = Table

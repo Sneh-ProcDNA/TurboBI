@@ -1,0 +1,368 @@
+﻿HCO_ID,HCO_Name,HCO_Type,City,State,ZIP,Region,Territory,Territory_Name,Latitude,Longitude,Email,Incoming_Referrals,Outgoing_Referrals,Patients_Treated,Patients_Diagnosed,Patients_Count,Mistreated_Patients,Total_HCPs,Patients_Prescribed
+9000003,16TH STREET COMMUNITY HEALTH CENTER,Provider Organization,MILWAUKEE,WI,53215,Midwest,2140003,Wisconsin,42.99931,-87.94625,16th.street@email.com,2,1,5,7,8,8,2,35
+9000011,AAIRS CLINIC AND TROY SLEEP CENTER,Clinic,TROY,MI,48084,Midwest,2140005,"Detroit, MI",42.56065,-83.17559,aairs.clinic@email.com,8,11,0,11,11,20,4,73
+9000020,ACCESS COMMUNITY HEALTH NETWORK,Provider Organization,ADDISON,IL,60101,Midwest,2140004,"Chicago, IL",41.931,-88.01072,access.community@email.com,1,1,6,6,3,2,2,17
+9000031,ADAMS HEALTH NETWORK,Provider Organization,DECATUR,IN,46733,Midwest,2140006,"Indianapolis, IN",40.83033,-84.94023,adams.health@email.com,3,2,2,8,5,18,3,79
+9000033,ADE MEDICAL GROUP,Medical Group,MOLINE,IL,61265,Midwest,2140004,"Chicago, IL",41.48195,-90.48895,ade.medical@email.com,0,1,0,1,1,3,1,34
+9000037,ADVANCED BRAIN AND BODY CLINIC PLLC,Clinic,GOLDEN VALLEY,MN,55427,Midwest,2140002,Minnesota,45.00665,-93.38031,advanced.brain@email.com,1,1,1,6,2,15,2,32
+9000043,ADVANCED MIDWEST MEDICAL,Provider Organization,HOFFMAN ESTATES,IL,60169,Midwest,2140003,Wisconsin,42.05192,-88.11656,advanced.midwest@email.com,1,0,1,5,2,3,1,24
+9000052,ADVANCED PULMONARY SLEEP DISORDERS AND INTERNAL MEDICINE,Specialty Center,SAINT GEORGE,UT,84770,Midwest,2140007,"Salt Lake City, UT",37.13818,-113.6294,advanced.pulmonary@email.com,1,2,7,4,4,12,3,73
+9000057,ADVOCATE HEALTH,Provider Organization,PARK RIDGE,WI,60068,Midwest,2140003,Wisconsin,43.22139,-87.95351,advocate.health@email.com,28,22,38,63,53,159,28,463
+9000058,"ADVOCATE HEALTH, INC",Provider Organization,KENOSHA,WI,53142,Midwest,2140003,Wisconsin,42.95445,-87.94374,"advocate.health,@email.com",9,8,20,37,37,61,13,295
+9000059,ADVOCATE MD,Provider Organization,MIDDLETON,WI,53562,Midwest,2140003,Wisconsin,43.11592,-89.54188,advocate.md@email.com,1,1,5,8,7,16,2,34
+9000063,AHMAD ABDEL-HALIM MD MEDICAL GROUP,Medical Group,FLINT,MI,48503,Midwest,2140005,"Detroit, MI",43.01139,-83.68901,ahmad.abdel-halim@email.com,1,1,4,2,2,7,2,58
+9000074,ALCONA CITIZENS FOR HEALTH INC,Provider Organization,ALPENA,MI,49707,Midwest,2140005,"Detroit, MI",45.52303,-84.99887,alcona.citizens@email.com,3,2,8,12,8,18,4,44
+9000080,ALIVATION RESEARCH LLC,Provider Organization,LINCOLN,NE,68526,Midwest,2140001,Iowa/Nebraska,40.7324,-96.58269,alivation.research@email.com,4,1,4,5,8,11,2,4
+9000082,ALL IN FAMILY MEDICINE,Provider Organization,COLORADO SPRINGS,CO,80920,Midwest,2140007,"Salt Lake City, UT",38.95579,-104.77191,all.in@email.com,1,1,3,5,8,17,2,32
+9000092,ALLIANCE URGENT CARE AND FAMILY PRACTICE,Provider Organization,COLORADO SPRINGS,CO,80924,Midwest,2140007,"Salt Lake City, UT",38.96727,-104.72199,alliance.urgent@email.com,1,0,3,5,4,5,1,30
+9000095,ALLINA HEALTH,Provider Organization,BUFFALO,MN,55313,Midwest,2140002,Minnesota,44.75492,-93.51713,allina.health@email.com,7,5,21,23,27,39,9,171
+9000101,AMERICAN BEHAVIORAL CLINICS,Clinic,MILWAUKEE,WI,53220,Midwest,2140003,Wisconsin,42.96515,-87.99142,american.behavioral@email.com,4,2,14,4,10,16,3,78
+9000107,AMERICAN SENIOR COMMUNITIES,Provider Organization,RICHMOND,IN,47167,Midwest,2140006,"Indianapolis, IN",39.67247,-86.0759,american.senior@email.com,5,5,23,26,22,52,8,113
+9000108,AMG INTEGRATED HEALTHCARE MANAGEMENT,Provider Organization,MUNCIE,IN,47303,Midwest,2140006,"Indianapolis, IN",40.27108,-85.37648,amg.integrated@email.com,0,2,0,2,2,3,2,40
+9000114,ANDREW M LAFLEUR MD PLC,Provider Organization,SAGINAW,MI,48603,Midwest,2140005,"Detroit, MI",43.46332,-84.03115,andrew.m@email.com,3,1,4,7,5,9,2,2
+9000123,ARCTURUS HEALTHCARE PLC,Provider Organization,TROY,MI,48098,Midwest,2140005,"Detroit, MI",42.59903,-83.1789,arcturus.healthcare@email.com,3,1,10,12,11,15,4,96
+9000132,ARTHUR J ROSNER MD MEDICAL GROUP,Medical Group,ROCHESTER HILLS,MI,48307,Midwest,2140005,"Detroit, MI",42.65953,-83.12301,arthur.j@email.com,7,6,12,13,15,32,5,69
+9000135,ASCENSION,Provider Organization,GRAND BLANC,MI,48439,Midwest,2140005,"Detroit, MI",43.02635,-83.60527,ascension@email.com,60,54,103,150,133,332,64,1227
+9000138,ASPIRUS INC,Provider Organization,STEVENS POINT,WI,54481,Midwest,2140003,Wisconsin,44.51935,-89.63678,aspirus.inc@email.com,1,1,4,3,6,13,2,22
+9000140,ASSOCIATES IN MENTAL HEALTH,Medical Group,PEORIA,IL,61602,Midwest,2140006,"Indianapolis, IN",40.68005,-89.60395,associates.in@email.com,4,2,2,8,9,8,2,51
+9000142,ASSOCIATES IN NEUROLOGY PC,Medical Group,FARMINGTON HILLS,MI,48334,Midwest,2140005,"Detroit, MI",42.50662,-83.34964,associates.in@email.com,1,2,7,5,4,10,2,5
+9000143,ASSOCIATES IN PSYCHIATRY,Medical Group,STERLING HEIGHTS,MI,48313,Midwest,2140005,"Detroit, MI",42.59985,-82.99984,associates.in@email.com,1,2,0,2,2,10,2,20
+9000152,AUBURN CLINIC PC,Clinic,AUBURN,MI,48611,Midwest,2140005,"Detroit, MI",43.63187,-84.0936,auburn.clinic@email.com,1,1,7,8,7,11,2,33
+9000161,AVENUE HEALTH,Provider Organization,OKEMOS,MI,48864,Midwest,2140005,"Detroit, MI",42.70215,-84.40902,avenue.health@email.com,0,1,0,1,1,8,1,24
+9000164,AVISTA NURSING AND REHAB,Provider Organization,SAGINAW,MI,48601,Midwest,2140005,"Detroit, MI",43.40096,-83.8952,avista.nursing@email.com,1,0,2,7,5,3,1,11
+9000193,BEACON HEALTH SYSTEM,Health System,KALAMAZOO,MI,49048,Midwest,2140005,"Detroit, MI",42.27202,-85.49893,beacon.health@email.com,11,8,20,26,20,40,11,181
+9000194,BEACON WELLNESS AND PSYCHIATRY,Provider Organization,PETOSKEY,MI,49770,Midwest,2140005,"Detroit, MI",45.34396,-84.88903,beacon.wellness@email.com,1,0,3,4,7,7,1,9
+9000199,BELOIT HEALTH SYSTEM INC,Health System,BELOIT,WI,53511,Midwest,2140003,Wisconsin,42.54627,-89.09792,beloit.health@email.com,1,0,7,7,2,5,1,32
+9000200,"BELOIT HEALTH SYSTEM, INC",Health System,BELOIT,WI,53511,Midwest,2140003,Wisconsin,42.54627,-89.09792,beloit.health@email.com,1,1,0,1,1,4,1,14
+9000204,BERKLEY PRIMARY CARE PLC,Provider Organization,HUNTINGTON WOODS,MI,48070,Midwest,2140005,"Detroit, MI",42.48161,-83.16852,berkley.primary@email.com,1,0,6,6,5,6,1,25
+9000208,BETHEL LUTHERAN NURSING AND REHABILITATION CENTER,Provider Organization,WILLISTON,ND,58801,Midwest,2140002,Minnesota,48.23522,-103.76747,bethel.lutheran@email.com,1,0,2,1,2,6,1,2
+9000212,BG TRI COUNTY NEUROLOGY AND SLEEP CLINIC,Clinic,WARREN,MI,48093,Midwest,2140005,"Detroit, MI",42.51483,-83.01554,bg.tri@email.com,10,8,11,14,11,16,4,51
+9000213,BI COUNTY PHYSICIANS,Provider Organization,SAINT CLAIR SHORES,MI,48080,Midwest,2140005,"Detroit, MI",42.46418,-82.90031,bi.county@email.com,1,0,1,5,4,7,1,17
+9000217,BITTERROOT HEALTH,Provider Organization,HAMILTON,MT,59840,Midwest,2140002,Minnesota,46.17558,-114.11674,bitterroot.health@email.com,5,8,16,12,17,34,7,119
+9000230,BLUESTEM HEALTH,Provider Organization,LINCOLN,NE,68502,Midwest,2140001,Iowa/Nebraska,40.78361,-96.70083,bluestem.health@email.com,2,1,3,3,8,15,2,16
+9000237,BONNEVILLE FAMILY PRACTICE,Provider Organization,TOOELE,UT,84074,Midwest,2140007,"Salt Lake City, UT",40.57379,-112.29914,bonneville.family@email.com,3,4,13,5,7,30,5,150
+9000243,BOYS TOWN NATIONAL RESEARCH HOSPITAL,Hospital,BOYS TOWN,NE,68010,Midwest,2140001,Iowa/Nebraska,41.25616,-96.13352,boys.town@email.com,2,2,3,6,7,8,2,59
+9000249,BRIDGES OF HOPE,Provider Organization,ANDERSON,IN,46011,Midwest,2140006,"Indianapolis, IN",40.12759,-85.76178,bridges.of@email.com,1,1,1,2,2,8,2,31
+9000251,BRIGHTSPRING HEALTH SERVICES,Provider Organization,FORT WAYNE,IN,46808,Midwest,2140006,"Indianapolis, IN",41.09887,-85.17619,brightspring.health@email.com,1,1,6,7,5,8,2,18
+9000252,BRONSON HEALTHCARE GROUP INC,Medical Group,KALAMAZOO,MI,49009,Midwest,2140005,"Detroit, MI",42.20207,-85.61917,bronson.healthcare@email.com,3,3,7,10,8,24,4,63
+9000253,"BRONSON HEALTHCARE GROUP, INC",Medical Group,PORTAGE,MI,49024,Midwest,2140005,"Detroit, MI",42.20207,-85.61917,bronson.healthcare@email.com,2,1,6,12,11,20,3,51
+9000257,BRYAN HEALTH,Provider Organization,LINCOLN,NE,68506,Midwest,2140001,Iowa/Nebraska,40.78361,-96.70083,bryan.health@email.com,4,3,15,16,17,24,6,97
+9000260,BURLINGTON NEUROLOGY AND SLEEP CLINIC,Clinic,WEST BURLINGTON,IA,52655,Midwest,2140001,Iowa/Nebraska,40.84768,-91.21174,burlington.neurology@email.com,2,2,4,5,14,17,4,59
+9000275,CAPITAL INTERNAL MEDICINE ASSOCIATES PC,Medical Group,LANSING,MI,48911,Midwest,2140005,"Detroit, MI",42.67351,-84.57285,capital.internal@email.com,2,3,6,10,6,28,4,71
+9000278,CAPITOL AREA PULMONARY ASSOCIATES,Medical Group,LANSING,MI,48911,Midwest,2140005,"Detroit, MI",42.67351,-84.57285,capitol.area@email.com,5,4,5,10,8,17,3,86
+9000283,CARE FREE MEDICAL INC,Provider Organization,LANSING,MI,48915,Midwest,2140005,"Detroit, MI",42.73885,-84.57076,care.free@email.com,2,1,11,9,4,15,3,84
+9000308,CENTER FOR HUMAN POTENTIAL,Provider Organization,SALT LAKE CITY,UT,84111,Midwest,2140007,"Salt Lake City, UT",40.75575,-111.88431,center.for@email.com,1,1,6,6,7,12,2,29
+9000309,CENTER FOR NEUROSCIENCE LLC,Provider Organization,MOLINE,IL,61265,Midwest,2140004,"Chicago, IL",41.48195,-90.48895,center.for@email.com,1,2,0,2,2,7,2,6
+9000310,CENTER FOR PULMONARY AND SLEEP MEDICINE,Specialty Center,PETOSKEY,MI,49770,Midwest,2140005,"Detroit, MI",45.34396,-84.88903,center.for@email.com,3,7,3,11,8,16,3,70
+9000316,CENTRAL MICHIGAN UNIVERSITY,Health System,SAGINAW,MI,48604,Midwest,2140005,"Detroit, MI",43.49749,-83.95887,central.michigan@email.com,0,2,0,2,2,15,2,37
+9000323,CGH MEDICAL CENTER,Hospital,MORRISON,IL,61270,Midwest,2140004,"Chicago, IL",41.82971,-89.9656,cgh.medical@email.com,1,0,7,1,4,3,1,28
+9000326,CHANGE YOUR SLEEP,Specialty Center,RIVERTON,UT,84096,Midwest,2140007,"Salt Lake City, UT",40.50539,-112.08546,change.your@email.com,0,2,0,2,2,12,2,42
+9000330,CHARLES EGELER RECEPTION AND GUIDANCE CENTER,Provider Organization,JACKSON,MI,49201,Midwest,2140005,"Detroit, MI",42.25213,-84.38301,charles.egeler@email.com,1,2,0,2,2,9,2,17
+9000338,CHENMED LLC,Provider Organization,DETROIT,MI,48219,Midwest,2140005,"Detroit, MI",42.42573,-83.25282,chenmed.llc@email.com,2,1,0,1,1,1,1,19
+9000339,CHESANING NURSING AND REHABILITATION CENTER,Provider Organization,CHESANING,MI,48616,Midwest,2140005,"Detroit, MI",43.19336,-84.11311,chesaning.nursing@email.com,5,2,2,4,7,10,3,53
+9000343,CHICAGO ENT,Provider Organization,CHICAGO,IL,60657,Midwest,2140004,"Chicago, IL",41.93965,-87.65495,chicago.ent@email.com,3,2,6,4,7,15,3,90
+9000344,CHICAGO SLEEP HEALTH,Specialty Center,CHICAGO,IL,60611,Midwest,2140004,"Chicago, IL",41.89483,-87.61944,chicago.sleep@email.com,0,2,0,2,2,6,1,22
+9000359,CLEAR IMMEDIATE CARE,Provider Organization,CHICAGO,IL,60616,Midwest,2140004,"Chicago, IL",41.84502,-87.62745,clear.immediate@email.com,2,2,5,5,7,22,3,39
+9000365,CLINICAL NEUROPHYSIOLOGY SERVICES,Clinic,STERLING HEIGHTS,MI,48314,Midwest,2140005,"Detroit, MI",42.60978,-83.05426,clinical.neurophysiology@email.com,0,7,0,6,7,3,1,31
+9000367,CLINIX CENTER FOR HEALTH,Provider Organization,CENTENNIAL,CO,80112,Midwest,2140007,"Salt Lake City, UT",39.57288,-104.85854,clinix.center@email.com,2,1,6,2,3,5,2,30
+9000368,CLINTON COUNTY MEDICAL CENTER PC,Hospital,SAINT JOHNS,MI,48879,Midwest,2140005,"Detroit, MI",43.00629,-84.57981,clinton.county@email.com,3,2,7,15,13,24,4,49
+9000376,COGNOSIS HEALTH,Provider Organization,GRAND BLANC,MI,48439,Midwest,2140005,"Detroit, MI",42.91733,-83.63018,cognosis.health@email.com,3,4,2,10,10,29,5,95
+9000383,COLORADO SLEEP INSTITUTE,Specialty Center,BOULDER,CO,80301,Midwest,2140007,"Salt Lake City, UT",40.04795,-105.19876,colorado.sleep@email.com,1,1,0,1,1,9,1,35
+9000384,COLORADO WEST HEALTH CARE,Provider Organization,GRAND JUNCTION,CO,81505,Midwest,2140007,"Salt Lake City, UT",39.18593,-108.59997,colorado.west@email.com,2,1,4,11,8,11,3,22
+9000392,COMMUNITY ACTION PARTNERSHIP OF WESTERN NEBRASKA,Medical Group,GERING,NE,69341,Midwest,2140001,Iowa/Nebraska,41.74154,-103.67937,community.action@email.com,2,1,7,4,4,5,2,16
+9000400,COMMUNITY HEALTH NETWORK INC,Provider Organization,GREENWOOD,IN,46143,Midwest,2140006,"Indianapolis, IN",39.67607,-86.13145,community.health@email.com,7,4,19,21,13,18,7,103
+9000401,"COMMUNITY HEALTH NETWORK, INC",Provider Organization,INDIANAPOLIS,IN,46256,Midwest,2140006,"Indianapolis, IN",39.90682,-86.01152,community.health@email.com,5,11,11,23,26,59,10,183
+9000406,COMMUNITY SLEEP SPECIALIST,Specialty Center,INDIANAPOLIS,IN,46256,Midwest,2140006,"Indianapolis, IN",39.90682,-86.01152,community.sleep@email.com,1,2,0,2,2,3,2,26
+9000409,COMPLETE CARE FAMILY PRACTICE,Provider Organization,SCOTTSBLUFF,NE,69361,Midwest,2140001,Iowa/Nebraska,42.01254,-103.56802,complete.care@email.com,1,2,3,4,3,11,3,51
+9000424,COMPREHENSIVE SLEEP CENTER,Specialty Center,EAST LANSING,MI,48823,Midwest,2140005,"Detroit, MI",42.76225,-84.45407,comprehensive.sleep@email.com,29,40,5,48,48,19,5,77
+9000433,CONSULTANTS IN SLEEP AND PULMONARY MEDICINE PLLC,Specialty Center,FARMINGTON HILLS,MI,48336,Midwest,2140005,"Detroit, MI",42.46333,-83.34803,consultants.in@email.com,5,3,8,18,14,18,5,110
+9000438,CORE PSYCH PLLC,Provider Organization,DEARBORN,MI,48124,Midwest,2140005,"Detroit, MI",42.29828,-83.24796,core.psych@email.com,1,2,1,3,8,13,3,57
+9000439,COREWELL HEALTH,Provider Organization,GRAND RAPIDS,MI,49546,Midwest,2140005,"Detroit, MI",42.92815,-85.53629,corewell.health@email.com,62,69,85,145,158,367,65,1104
+9000443,COTTONTREE FAMILY PRACTICE,Provider Organization,PROVO,UT,84604,Midwest,2140007,"Salt Lake City, UT",40.3313,-111.57284,cottontree.family@email.com,2,1,2,10,7,17,3,23
+9000448,COVENANT MEDICAL CENTER INC,Hospital,SAGINAW,MI,48603,Midwest,2140005,"Detroit, MI",43.46332,-84.03115,covenant.medical@email.com,5,3,29,23,23,38,8,153
+9000449,"COVENANT MEDICAL CENTER, INC",Hospital,SAGINAW,MI,48602,Midwest,2140005,"Detroit, MI",43.41971,-83.97469,covenant.medical@email.com,2,0,2,4,1,1,1,26
+9000456,CROSSROADS HEALTH AND COSMETIC CENTER,Provider Organization,GOSHEN,IN,46528,Midwest,2140006,"Indianapolis, IN",41.60698,-85.786,crossroads.health@email.com,1,1,0,1,1,8,1,0
+9000478,DECATUR COUNTY MEMORIAL HOSPITAL,Hospital,GREENSBURG,IN,47240,Midwest,2140006,"Indianapolis, IN",39.32394,-85.48028,decatur.county@email.com,2,4,0,4,4,15,2,9
+9000482,DEL PILAR MEDICAL AND URGENT CARE,Provider Organization,MISHAWAKA,IN,46545,Midwest,2140006,"Indianapolis, IN",41.69376,-86.14602,del.pilar@email.com,5,3,8,10,9,22,5,95
+9000489,DEVINDERJIT S BHANGU MD PLLC,Provider Organization,GRAND BLANC,MI,48439,Midwest,2140005,"Detroit, MI",42.91733,-83.63018,devinderjit.s@email.com,0,1,0,1,1,4,1,22
+9000504,DOWNRIVER INTERNAL MEDICINE PC,Provider Organization,RIVERVIEW,MI,48193,Midwest,2140005,"Detroit, MI",42.17341,-83.21042,downriver.internal@email.com,1,0,6,3,3,7,1,5
+9000505,DOWNRIVER MEDICAL ASSOCIATES,Medical Group,WYANDOTTE,MI,48192,Midwest,2140005,"Detroit, MI",42.21156,-83.15654,downriver.medical@email.com,1,3,3,6,7,16,3,41
+9000514,DSM SLEEP SPECIALISTS PLC,Specialty Center,CLIVE,IA,50325,Midwest,2140001,Iowa/Nebraska,41.61475,-93.79864,dsm.sleep@email.com,1,3,4,6,5,19,4,77
+9000516,DULY HEALTH AND CARE,Provider Organization,QUINCY,IL,62301,Midwest,2140006,"Indianapolis, IN",39.93139,-91.38741,duly.health@email.com,2,3,11,11,9,20,4,63
+9000522,EATON RAPIDS MEDICAL CENTER,Hospital,EATON RAPIDS,MI,48827,Midwest,2140005,"Detroit, MI",42.509,-84.65971,eaton.rapids@email.com,1,1,0,1,1,3,1,15
+9000539,EMPLIFY HEALTH,Provider Organization,LA CROSSE,WI,54601,Midwest,2140003,Wisconsin,44.48193,-88.02029,emplify.health@email.com,18,22,40,51,53,129,23,470
+9000541,ENDEAVOR HEALTH,Provider Organization,ARLINGTON HEIGHTS,IL,60005,Midwest,2140003,"Chicago, IL",42.19588,-87.92439,endeavor.health@email.com,9,6,24,33,37,62,12,191
+9000552,EPIC HEALTH,Provider Organization,DETROIT,MI,48075,Midwest,2140005,"Detroit, MI",42.41003,-83.05601,epic.health@email.com,4,6,7,11,20,30,8,158
+9000553,ESSENTIA HEALTH,Provider Organization,SUPERIOR,WI,54880,Midwest,2140003,Wisconsin,46.0251,-91.29494,essentia.health@email.com,5,3,9,15,24,38,7,100
+9000561,"EXODUS HEALTHCARE NETWORK, PLLC",Provider Organization,WEST VALLEY CITY,UT,84120,Midwest,2140007,"Salt Lake City, UT",40.69686,-112.00178,exodus.healthcare@email.com,0,1,0,1,1,3,1,11
+9000562,EXTENDED CARE SPECIALISTS,Provider Organization,FORT WAYNE,IN,46815,Midwest,2140006,"Indianapolis, IN",41.1034,-85.05913,extended.care@email.com,1,0,3,6,4,2,1,17
+9000564,FAIRVIEW HEALTH SERVICES,Provider Organization,HIBBING,MN,55746,Midwest,2140002,Minnesota,47.47994,-93.18579,fairview.health@email.com,1,2,0,2,2,16,2,29
+9000568,FAMILY DOCTORS FAMILY HEALTH CARE SC,Provider Organization,CHICAGO,IL,60646,Midwest,2140004,"Chicago, IL",41.99365,-87.76128,family.doctors@email.com,3,1,4,2,2,10,2,3
+9000581,FAMILY MEDICINE OF MICHIGAN,Provider Organization,GRAND LEDGE,MI,48837,Midwest,2140005,"Detroit, MI",42.7453,-84.76701,family.medicine@email.com,6,3,0,3,3,14,3,57
+9000587,FARWELL FAMILY MEDICAL CLINIC,Clinic,FARWELL,MI,48622,Midwest,2140005,"Detroit, MI",43.83304,-84.884,farwell.family@email.com,2,1,0,1,1,8,1,25
+9000589,FELLER BEHAVIORAL HEALTH,Specialty Center,BOUNTIFUL,UT,84010,Midwest,2140007,"Salt Lake City, UT",40.87433,-111.83042,feller.behavioral@email.com,2,1,1,4,4,12,2,68
+9000597,FLINT NEUROLOGICAL CENTER PC,Provider Organization,FLINT,MI,48532,Midwest,2140005,"Detroit, MI",43.01203,-83.79429,flint.neurological@email.com,1,1,1,5,6,5,2,27
+9000603,FLYING HORSE MEDICAL CENTER,Hospital,COLORADO SPRINGS,CO,80917,Midwest,2140007,"Salt Lake City, UT",38.88684,-104.74049,flying.horse@email.com,1,1,3,5,6,11,2,20
+9000607,FOREST HILLS PEDIATRIC ASSOCIATES,Medical Group,GRAND RAPIDS,MI,49546,Midwest,2140005,"Detroit, MI",42.92815,-85.53629,forest.hills@email.com,1,0,4,5,4,6,1,21
+9000609,FORUM MEDICAL CLINIC,Clinic,STERLING HEIGHTS,MI,48089,Midwest,2140005,"Detroit, MI",42.60978,-83.05426,forum.medical@email.com,1,1,3,8,7,10,2,38
+9000611,FOX VALLEY PULMONARY MEDICINE AND SLEEP CENTER,Specialty Center,APPLETON,WI,54911,Midwest,2140003,Wisconsin,44.28174,-88.38086,fox.valley@email.com,2,1,5,8,7,10,2,40
+9000612,FRANCISCAN HEALTH INC,Provider Organization,GREENWOOD,IN,46143,Midwest,2140006,"Indianapolis, IN",40.48541,-86.98584,franciscan.health@email.com,3,4,9,11,17,44,6,118
+9000613,"FRANCISCAN HEALTH, INC",Provider Organization,GREENWOOD,IN,46143,Midwest,2140006,"Indianapolis, IN",39.59484,-86.11323,"franciscan.health,@email.com",6,4,2,9,8,20,5,79
+9000620,FROEDTERT AND THE MEDICAL COLLEGE OF WISCONSIN,Provider Organization,MILWAUKEE,WI,53226,Midwest,2140003,Wisconsin,43.04975,-88.04209,froedtert.and@email.com,22,18,32,59,48,103,20,439
+9000621,FRONTIER NEUROHEALTH,Provider Organization,CODY,WY,82414,Midwest,2140007,"Salt Lake City, UT",44.45727,-109.59671,frontier.neurohealth@email.com,0,1,0,1,1,3,1,16
+9000628,GAMMONS MEDICAL,Provider Organization,ROYAL OAK,MI,48067,Midwest,2140005,"Detroit, MI",42.64597,-83.35603,gammons.medical@email.com,8,12,8,20,24,55,9,169
+9000629,GANDAM S JAYAKAR MD PC,Provider Organization,SAINT CLAIR SHORES,MI,48080,Midwest,2140005,"Detroit, MI",42.46418,-82.90031,gandam.s@email.com,1,1,3,5,5,17,2,42
+9000630,GANDHI AND GANDHI MDS MEDICAL GROUP,Medical Group,WYANDOTTE,MI,48192,Midwest,2140005,"Detroit, MI",42.21156,-83.15654,gandhi.and@email.com,4,2,1,5,5,10,2,56
+9000631,GANESHA INSTITUTE OF NEUROLOGY AND PSYCHIATRY SC,Specialty Center,LIBERTYVILLE,IL,60048,Midwest,2140003,Wisconsin,42.29494,-87.9466,ganesha.institute@email.com,1,0,7,4,4,1,1,22
+9000642,GENESIS PSYCHIATRIC GROUP LLC,Medical Group,LINCOLN,NE,68502,Midwest,2140001,Iowa/Nebraska,40.78361,-96.70083,genesis.psychiatric@email.com,0,1,1,1,1,8,1,18
+9000644,GEODE HEALTH,Provider Organization,LAKE IN THE HILLS,IL,60156,Midwest,2140003,Wisconsin,42.19121,-88.34788,geode.health@email.com,4,4,16,24,12,34,6,120
+9000661,GOSHEN FAMILY PHYSICIANS,Provider Organization,GOSHEN,IN,46526,Midwest,2140006,"Indianapolis, IN",41.55307,-85.88448,goshen.family@email.com,0,2,0,2,2,1,1,29
+9000662,GOSHEN HEALTH,Provider Organization,GOSHEN,IN,46526,Midwest,2140006,"Indianapolis, IN",41.55307,-85.88448,goshen.health@email.com,8,8,6,12,11,31,7,100
+9000666,GRANGER MEDICAL CLINIC,Clinic,RIVERTON,UT,84096,Midwest,2140007,"Salt Lake City, UT",40.50539,-112.08546,granger.medical@email.com,2,1,7,10,8,14,3,42
+9000669,GREAT LAKES BAY HEALTH CENTERS,Provider Organization,BAY CITY,MI,48708,Midwest,2140005,"Detroit, MI",43.55653,-83.84853,great.lakes@email.com,2,2,0,2,2,6,1,33
+9000670,GREAT LAKES SURGICAL ASSOCIATES,Medical Group,ALMA,MI,48801,Midwest,2140005,"Detroit, MI",43.37871,-84.67667,great.lakes@email.com,1,0,7,6,6,2,1,25
+9000676,GREY CLINIC,Clinic,INDIANAPOLIS,IN,46254,Midwest,2140006,"Indianapolis, IN",39.84796,-86.26936,grey.clinic@email.com,0,1,1,1,1,9,1,20
+9000678,GUIDESTAR ELDERCARE,Provider Organization,CROWN POINT,IN,46307,Midwest,2140006,"Indianapolis, IN",41.40215,-87.32693,guidestar.eldercare@email.com,4,5,5,11,10,29,6,88
+9000681,HABER IRVING I OFFICE,Provider Organization,TERRE HAUTE,IN,47804,Midwest,2140006,"Indianapolis, IN",39.49756,-87.39031,haber.irving@email.com,1,1,3,2,4,13,2,30
+9000690,HANCOCK REGIONAL HOSPITAL,Hospital,GREENFIELD,IN,46140,Midwest,2140006,"Indianapolis, IN",39.80358,-85.77049,hancock.regional@email.com,3,2,6,6,15,10,3,72
+9000691,HANSON DALE A OFFICE,Provider Organization,FLINT,MI,48507,Midwest,2140005,"Detroit, MI",42.96498,-83.71687,hanson.dale@email.com,1,0,6,6,1,7,1,19
+9000697,HARMONYCARES MEDICAL GROUP,Medical Group,GRAND RAPIDS,MI,49525,Midwest,2140005,"Detroit, MI",43.02144,-85.5918,harmonycares.medical@email.com,3,1,2,6,2,4,2,38
+9000698,HART AND ARNDT FAMILY HEALTH PC,Provider Organization,LINCOLN,NE,68510,Midwest,2140001,Iowa/Nebraska,40.80654,-96.64835,hart.and@email.com,1,0,3,2,5,7,1,27
+9000710,HEALTH WEST INC,Provider Organization,PROVIDENCE,UT,84332,Midwest,2140007,"Salt Lake City, UT",41.70313,-111.81205,health.west@email.com,1,0,4,4,6,1,1,24
+9000714,HEALTHPARTNERS INC,Medical Group,SAINT LOUIS PARK,MN,55379,Midwest,2140002,Minnesota,44.95635,-93.38139,healthpartners.inc@email.com,2,4,6,8,11,8,4,58
+9000715,"HEALTHPARTNERS, INC",Medical Group,SAINT LOUIS PARK,MN,55426,Midwest,2140002,Minnesota,44.95635,-93.38139,"healthpartners,.inc@email.com",1,0,3,7,7,3,1,15
+9000727,HELIOS PSYCHIATRY AND COUNSELING,Provider Organization,CHESTERFIELD,MI,48047,Midwest,2140005,"Detroit, MI",42.67754,-82.77744,helios.psychiatry@email.com,6,3,7,13,10,18,5,89
+9000729,HENDRICKS COUNTY PSYCHOTHERAPY PSC,Provider Organization,DANVILLE,IN,46122,Midwest,2140006,"Indianapolis, IN",39.76822,-86.5475,hendricks.county@email.com,1,0,6,7,5,4,1,11
+9000731,HENNEPIN HEALTHCARE SYSTEM INC,Provider Organization,MINNEAPOLIS,MN,55404,Midwest,2140002,Minnesota,44.9619,-93.26145,hennepin.healthcare@email.com,2,1,1,6,5,6,2,22
+9000733,HENRY FORD HEALTH,Provider Organization,DETROIT,MI,48202,Midwest,2140005,"Detroit, MI",42.56511,-83.06694,henry.ford@email.com,27,17,29,46,59,105,21,407
+9000735,HERITAGE POINTE OF FORT WAYNE,Provider Organization,FORT WAYNE,IN,46835,Midwest,2140006,"Indianapolis, IN",41.15086,-85.04536,heritage.pointe@email.com,1,0,4,5,5,5,1,5
+9000740,HIGH EXPECTATIONS AESTHETICS PLLC,Provider Organization,DANVILLE,IL,61832,Midwest,2140006,"Indianapolis, IN",40.13186,-87.63256,high.expectations@email.com,3,2,6,7,5,21,3,46
+9000744,HOLLAND HOSPITAL INC,Hospital,HOLLAND,MI,49423,Midwest,2140005,"Detroit, MI",42.73964,-86.09015,holland.hospital@email.com,4,5,7,6,11,10,5,74
+9000753,HOPE NETWORK,Provider Organization,EAST LANSING,MI,48823,Midwest,2140005,"Detroit, MI",42.76225,-84.45407,hope.network@email.com,2,2,1,6,7,16,2,47
+9000759,HOSPITAL PSYCHIATRY PLLC,Hospital,SAGINAW,MI,48603,Midwest,2140005,"Detroit, MI",43.46332,-84.03115,hospital.psychiatry@email.com,2,0,7,5,2,6,1,6
+9000771,HURON FAMILY PRACTICE CENTER PC,Provider Organization,PORT HURON,MI,48060,Midwest,2140005,"Detroit, MI",42.97835,-82.46297,huron.family@email.com,1,0,4,1,1,7,1,0
+9000784,INDIANA NEUROLOGY AND PAIN CENTER,Specialty Center,INDIANAPOLIS,IN,46250,Midwest,2140006,"Indianapolis, IN",39.90399,-86.06864,indiana.neurology@email.com,1,1,2,4,7,9,2,55
+9000786,INDIANA SLEEP CENTER,Specialty Center,GREENWOOD,IN,46143,Midwest,2140006,"Indianapolis, IN",39.59484,-86.11323,indiana.sleep@email.com,0,1,0,1,1,1,1,32
+9000787,INDIANA UNIVERSITY HEALTH,Health System,INDIANAPOLIS,IN,46202,Midwest,2140006,"Indianapolis, IN",39.76502,-86.40015,indiana.university@email.com,35,28,50,80,82,147,32,555
+9000788,INDIANA UNIVERSITY MEDICAL CENTER MOLECULAR GENETICS SERVICES,Health System,INDIANAPOLIS,IN,46202,Midwest,2140006,"Indianapolis, IN",39.78363,-86.16187,indiana.university@email.com,0,1,0,1,1,3,1,14
+9000802,INTEGRATED HEALTH PARTNERS,Medical Group,BATTLE CREEK,MI,49017,Midwest,2140005,"Detroit, MI",42.3979,-85.2111,integrated.health@email.com,1,0,2,7,2,5,1,30
+9000806,INTEGRATED PSYCH LLC,Provider Organization,SAINT GEORGE,UT,84770,Midwest,2140007,"Salt Lake City, UT",37.13818,-113.6294,integrated.psych@email.com,2,2,0,2,2,8,1,24
+9000814,INTERMOUNTAIN HEALTH,Provider Organization,SAINT GEORGE,UT,84790,Midwest,2140007,"Salt Lake City, UT",40.73841,-111.85982,intermountain.health@email.com,39,35,77,117,96,162,38,600
+9000815,INTERNAL MEDICINE AND FAMILY PHYSICIANS,Provider Organization,OMAHA,NE,68130,Midwest,2140001,Iowa/Nebraska,41.23394,-96.19613,internal.medicine@email.com,1,1,1,8,7,8,2,44
+9000819,IOWA ORTHOPAEDIC CENTER PC,Provider Organization,PLEASANT HILL,IA,50327,Midwest,2140001,Iowa/Nebraska,41.58402,-93.48856,iowa.orthopaedic@email.com,0,3,0,3,3,27,3,51
+9000820,IOWA PSYCHIATRY LLC,Provider Organization,URBANDALE,IA,50322,Midwest,2140001,Iowa/Nebraska,41.63383,-93.73589,iowa.psychiatry@email.com,1,0,3,3,5,2,1,31
+9000821,IOWA SLEEP CENTER,Specialty Center,WEST DES MOINES,IA,50266,Midwest,2140001,Iowa/Nebraska,41.56323,-93.81107,iowa.sleep@email.com,5,4,10,8,15,20,4,93
+9000822,ISABELLA CITIZENS FOR HEALTH INC,Provider Organization,MOUNT PLEASANT,MI,48858,Midwest,2140005,"Detroit, MI",43.61483,-84.79576,isabella.citizens@email.com,1,3,0,3,3,1,1,10
+9000824,IU SCHOOL OF MEDICINE DEPARTMENT OF NEUROLOGICAL SURGERY,Provider Organization,INDIANAPOLIS,IN,46202,Midwest,2140006,"Indianapolis, IN",39.78363,-86.16187,iu.school@email.com,2,1,2,8,3,5,2,23
+9000832,JCH HEALTHCARE,Provider Organization,JERSEYVILLE,IL,62052,Midwest,2140006,"Indianapolis, IN",39.11179,-90.32004,jch.healthcare@email.com,1,0,5,5,4,5,1,30
+9000837,JOEL WELLNESS CLINIC,Clinic,LIVONIA,MI,48154,Midwest,2140005,"Detroit, MI",42.39737,-83.37315,joel.wellness@email.com,1,0,1,6,3,5,1,7
+9000841,JOSEPHSON WALLACK MUNSHOWER NEUROLOGY PC,Specialty Center,KOKOMO,IN,46902,Midwest,2140006,"Indianapolis, IN",40.43743,-86.09111,josephson.wallack@email.com,1,2,2,5,4,17,3,66
+9000842,"JOSEPHSON WALLACK MUNSHOWER NEUROLOGY, PC",Specialty Center,KOKOMO,IN,46902,Midwest,2140006,"Indianapolis, IN",40.43743,-86.09111,josephson.wallack@email.com,1,2,0,2,2,8,1,35
+9000846,KARLE MEDICAL GROUP,Medical Group,ROCHESTER HILLS,MI,48307,Midwest,2140005,"Detroit, MI",42.65953,-83.12301,karle.medical@email.com,2,2,9,12,9,23,4,37
+9000847,KARU MEDICAL ASSOCIATES,Medical Group,SAGINAW,MI,48638,Midwest,2140005,"Detroit, MI",43.41681,-84.01958,karu.medical@email.com,1,3,5,10,7,20,4,81
+9000854,KERR FAMILY MEDICINE LLC,Provider Organization,BAY CITY,MI,48706,Midwest,2140005,"Detroit, MI",43.59937,-83.95623,kerr.family@email.com,1,0,6,3,5,6,1,16
+9000861,KODALI RAMAKRISHNA AND KODALI MEDICAL GROUP,Medical Group,LIVONIA,MI,48152,Midwest,2140005,"Detroit, MI",42.42597,-83.37433,kodali.ramakrishna@email.com,0,1,0,1,1,2,1,11
+9000866,LAFAYETTE NEUROLOGY,Specialty Center,LAFAYETTE,IN,47905,Midwest,2140006,"Indianapolis, IN",40.4218,-86.76418,lafayette.neurology@email.com,0,2,0,2,2,16,2,45
+9000875,LAPEER MEDICAL ASSOCIATES PC,Medical Group,LAPEER,MI,48446,Midwest,2140005,"Detroit, MI",43.05259,-83.33745,lapeer.medical@email.com,1,0,7,1,4,5,1,0
+9000894,LIFESTANCE HEALTH INC,Provider Organization,LANSING,MI,48911,Midwest,2140005,"Detroit, MI",33.54479,-111.95873,lifestance.health@email.com,16,14,49,63,54,105,24,437
+9000895,LIFETIME INSIGHT LLC,Provider Organization,OMAHA,NE,68131,Midwest,2140001,Iowa/Nebraska,41.26435,-95.96479,lifetime.insight@email.com,1,0,6,4,2,6,1,16
+9000902,LIVE WELL NEUROLOGY AND SLEEP CENTER,Specialty Center,AUBURN HILLS,MI,48326,Midwest,2140005,"Detroit, MI",42.67536,-83.2531,live.well@email.com,2,3,5,6,5,22,3,40
+9000903,LOGAN HEALTH,Provider Organization,KALISPELL,MT,59901,Midwest,2140002,Minnesota,48.22873,-114.40564,logan.health@email.com,1,1,1,8,5,13,2,37
+9000927,MACOMB MEDICAL CLINIC PC,Clinic,STERLING HEIGHTS,MI,48310,Midwest,2140005,"Detroit, MI",42.56511,-83.06694,macomb.medical@email.com,2,2,0,2,2,18,2,9
+9000928,MADISON MEDICAL AFFILIATES,Provider Organization,MEQUON,WI,53097,Midwest,2140003,Wisconsin,43.24574,-88.0069,madison.medical@email.com,1,2,7,8,5,16,3,17
+9000932,MAJOR HEALTH PARTNERS,Medical Group,SHELBYVILLE,IN,46176,Midwest,2140006,"Indianapolis, IN",39.52684,-85.77297,major.health@email.com,7,6,15,22,18,19,5,112
+9000934,MANKATO CLINIC LTD,Clinic,MANKATO,MN,56001,Midwest,2140002,Minnesota,44.13193,-93.97789,mankato.clinic@email.com,3,2,4,14,13,27,5,68
+9000941,MARGARET MARY HEALTH,Provider Organization,BATESVILLE,IN,47006,Midwest,2140006,"Indianapolis, IN",39.29141,-85.21365,margaret.mary@email.com,1,0,5,1,4,1,1,4
+9000945,MARRI LAXMA R OFFICE,Provider Organization,TERRE HAUTE,IN,47802,Midwest,2140006,"Indianapolis, IN",39.35153,-87.4106,marri.laxma@email.com,1,1,5,4,3,9,2,29
+9000946,MARSHFIELD CLINIC HEALTH SYSTEM,Health System,MARSHFIELD,WI,54449,Midwest,2140003,Wisconsin,44.63914,-90.19755,marshfield.clinic@email.com,9,8,8,24,25,53,9,190
+9000953,MATTHEW A FELGUS LLC,Provider Organization,MADISON,WI,53719,Midwest,2140003,Wisconsin,43.0281,-89.50003,matthew.a@email.com,1,0,3,7,5,2,1,33
+9000961,MCLAREN HEALTH CARE CORP,Provider Organization,LANSING,MI,49770,Midwest,2140005,"Detroit, MI",43.59937,-83.95623,mclaren.health@email.com,12,15,32,45,51,112,21,327
+9000964,MEADOW BROOK MEDICAL CARE FACILITY,Provider Organization,BELLAIRE,MI,49615,Midwest,2140005,"Detroit, MI",44.97219,-85.20683,meadow.brook@email.com,0,2,0,2,2,8,2,19
+9000971,MEDICAL ASSOCIATES CLINIC,Clinic,DUBUQUE,IA,52002,Midwest,2140001,Iowa/Nebraska,42.52481,-90.77184,medical.associates@email.com,1,1,3,3,6,5,2,30
+9000974,MEDICAL ASSOCIATES OF TERRE HAUTE LLC,Medical Group,TERRE HAUTE,IN,47802,Midwest,2140006,"Indianapolis, IN",39.35153,-87.4106,medical.associates@email.com,6,6,11,11,13,33,6,87
+9000981,MEDICAL SPECIALISTS OF MADISON COUNTY,Provider Organization,ANDERSON,IN,46016,Midwest,2140006,"Indianapolis, IN",40.09781,-85.68152,medical.specialists@email.com,4,4,10,16,12,38,6,70
+9000987,MEMORIAL HEALTHCARE,Provider Organization,OWOSSO,MI,48867,Midwest,2140005,"Detroit, MI",42.70215,-84.40902,memorial.healthcare@email.com,8,5,28,18,24,48,8,119
+9000990,MENDING MENTAL HEALTH,Provider Organization,RICHFIELD,MN,55423,Midwest,2140002,Minnesota,44.87663,-93.28144,mending.mental@email.com,1,4,4,6,6,15,3,69
+9000993,MENTALLY STRONG,Provider Organization,COLORADO SPRINGS,CO,80907,Midwest,2140007,"Salt Lake City, UT",38.87912,-104.82137,mentally.strong@email.com,4,2,7,9,11,21,4,63
+9000997,MERCYHEALTH,Provider Organization,JANESVILLE,WI,53548,Midwest,2140003,Wisconsin,42.68907,-89.13095,mercyhealth@email.com,1,1,6,5,5,8,2,40
+9001000,MERIDIAN HEALTH SERVICES,Provider Organization,INDIANAPOLIS,IN,46237,Midwest,2140006,"Indianapolis, IN",39.67247,-86.0759,meridian.health@email.com,1,1,0,1,1,4,1,6
+9001002,METHODIST HEALTH SYSTEM,Health System,OMAHA,NE,68114,Midwest,2140001,Iowa/Nebraska,41.43749,-96.49158,methodist.health@email.com,17,20,30,40,39,85,19,345
+9001004,METRO VEIN CENTERS,Provider Organization,ROCHESTER HILLS,MI,48307,Midwest,2140005,"Detroit, MI",42.65953,-83.12301,metro.vein@email.com,6,3,1,8,4,9,2,54
+9001008,METROPOLITAN HEALTH CARE PARTNERS PLLC,Medical Group,CHICAGO,IL,60630,Midwest,2140004,"Chicago, IL",41.97222,-87.75758,metropolitan.health@email.com,3,2,5,3,5,22,3,51
+9001009,METROPOLITAN NEUROSURGERY PA,Provider Organization,SAINT PAUL,MN,55102,Midwest,2140002,Minnesota,44.93216,-93.12149,metropolitan.neurosurgery@email.com,1,1,2,5,6,11,2,42
+9001010,MI PSYCHIATRY,Provider Organization,AUBURN HILLS,MI,48326,Midwest,2140005,"Detroit, MI",42.67536,-83.2531,mi.psychiatry@email.com,0,2,0,2,2,15,2,62
+9001012,MICHIGAN HEALTHCARE PROFESSIONALS PC,Provider Organization,ROCHESTER HILLS,MI,48307,Midwest,2140005,"Detroit, MI",42.84544,-83.28785,michigan.healthcare@email.com,9,9,15,23,25,68,13,200
+9001013,MICHIGAN INSTITUTE FOR NEUROLOGICAL DISORDERS,Provider Organization,ROSEVILLE,MI,48066,Midwest,2140005,"Detroit, MI",42.50735,-82.93697,michigan.institute@email.com,2,3,9,9,12,26,5,81
+9001014,MICHIGAN NEUROLOGY ASSOCIATES PC,Medical Group,CLINTON TOWNSHIP,MI,48035,Midwest,2140005,"Detroit, MI",42.55615,-82.90948,michigan.neurology@email.com,4,3,0,3,3,19,3,69
+9001015,MICHIGAN PRIMARY CARE PLLC,Provider Organization,STERLING HEIGHTS,MI,48314,Midwest,2140005,"Detroit, MI",42.60978,-83.05426,michigan.primary@email.com,1,2,0,2,2,12,2,25
+9001016,MICHIGAN PROGRESSIVE HEALTH,Provider Organization,ROYAL OAK,MI,48067,Midwest,2140005,"Detroit, MI",42.49053,-83.13786,michigan.progressive@email.com,1,0,7,4,6,6,1,35
+9001017,MICHIGAN PSYCHIATRIC AND PRIMARY CARE,Provider Organization,EAST LANSING,MI,48823,Midwest,2140005,"Detroit, MI",42.76225,-84.45407,michigan.psychiatric@email.com,8,2,9,20,19,20,5,121
+9001018,MICHIGAN STATE UNIVERSITY HEALTHTEAM,Health System,EAST LANSING,MI,48824,Midwest,2140005,"Detroit, MI",42.72129,-84.47607,michigan.state@email.com,9,4,19,32,43,44,12,194
+9001019,MICHIGAN WISCONSIN FAMILY PRACTICE ASSOCIATES PC,Medical Group,IRON MOUNTAIN,MI,49801,Midwest,2140003,Wisconsin,45.9191,-88.01795,michigan.wisconsin@email.com,1,0,1,6,3,7,1,31
+9001022,MID MICHIGAN MEDICINE,Provider Organization,CARO,MI,48723,Midwest,2140005,"Detroit, MI",43.4861,-83.38499,mid.michigan@email.com,0,1,0,1,1,9,1,15
+9001023,MID MICHIGAN NEUROLOGY,Specialty Center,MOUNT PLEASANT,MI,48858,Midwest,2140005,"Detroit, MI",43.61483,-84.79576,mid.michigan@email.com,1,2,0,2,2,9,2,52
+9001024,MID MICHIGAN SLEEP CENTER,Specialty Center,GRAND BLANC,MI,48439,Midwest,2140005,"Detroit, MI",42.91733,-83.63018,mid.michigan@email.com,1,2,0,2,2,6,1,23
+9001036,MIDLAND FAMILY PHYSICIANS PC,Provider Organization,MIDLAND,MI,48640,Midwest,2140005,"Detroit, MI",43.58394,-84.33648,midland.family@email.com,1,2,0,2,2,17,2,31
+9001039,MIDWEST NEUROLOGY ASSOCIATES PC,Medical Group,DYER,IN,46311,Midwest,2140006,"Indianapolis, IN",41.46846,-87.50918,midwest.neurology@email.com,2,0,14,5,13,8,2,0
+9001042,MIDWEST SLEEP INSTITUTE AND INTERNAL MEDICINE,Specialty Center,GURNEE,IL,60031,Midwest,2140003,Wisconsin,42.37494,-87.94119,midwest.sleep@email.com,2,2,1,5,8,21,3,80
+9001043,MILLENNIUM PARK MEDICAL ASSOCIATES,Medical Group,CHICAGO,IL,60603,Midwest,2140004,"Chicago, IL",41.88018,-87.6274,millennium.park@email.com,2,1,1,6,4,12,2,35
+9001046,MILWAUKEE MEDICAL ASSOCIATES,Medical Group,BURLINGTON,WI,53105,Midwest,2140003,Wisconsin,42.66412,-88.28045,milwaukee.medical@email.com,0,2,0,2,2,11,2,44
+9001048,MIND AND SPIRIT COUNSELING CENTER,Provider Organization,URBANDALE,IA,50322,Midwest,2140001,Iowa/Nebraska,41.63383,-93.73589,mind.and@email.com,1,2,3,4,9,17,3,70
+9001050,MIND PLUS NEUROLOGY,Specialty Center,MEQUON,WI,53092,Midwest,2140003,Wisconsin,43.22139,-87.95351,mind.plus@email.com,1,0,1,1,3,6,1,16
+9001053,MINNEAPOLIS CLINIC OF NEUROLOGY LTD,Clinic,MINNEAPOLIS,MN,55422,Midwest,2140002,Minnesota,45.00922,-93.33941,minneapolis.clinic@email.com,0,1,0,1,1,1,1,1
+9001058,MOBILE MEDICAL GROUP,Medical Group,MURRAY,UT,84107,Midwest,2140007,"Salt Lake City, UT",40.65799,-111.88447,mobile.medical@email.com,2,1,5,3,7,6,2,18
+9001071,MOUNTAIN LAND REHABILITATION HOME HEALTH,Provider Organization,SALT LAKE CITY,UT,84121,Midwest,2140007,"Salt Lake City, UT",40.62557,-111.69864,mountain.land@email.com,1,1,5,3,2,13,2,37
+9001076,MUNSON HEALTHCARE,Provider Organization,GAYLORD,MI,49735,Midwest,2140005,"Detroit, MI",44.82841,-85.53597,munson.healthcare@email.com,5,3,14,17,16,26,6,118
+9001077,MYMICHIGAN PHYSICIANS GROUP,Medical Group,KINCHELOE,MI,49788,Midwest,2140003,Wisconsin,43.58394,-84.33648,mymichigan.physicians@email.com,1,4,2,10,5,25,5,47
+9001081,NATIONAL JEWISH HEALTH,Provider Organization,DENVER,CO,80206,Midwest,2140007,"Salt Lake City, UT",39.73041,-104.95258,national.jewish@email.com,1,1,1,6,6,4,2,49
+9001084,NEBRASKA PULMONARY SPECIALTIES LLC,Specialty Center,LINCOLN,NE,68506,Midwest,2140001,Iowa/Nebraska,40.78422,-96.63959,nebraska.pulmonary@email.com,11,7,27,34,39,55,13,241
+9001085,"NEBRASKA PULMONARY SPECIALTIES, LLC",Specialty Center,LINCOLN,NE,68506,Midwest,2140001,Iowa/Nebraska,40.78422,-96.63959,nebraska.pulmonary@email.com,3,6,0,6,6,7,3,29
+9001094,NEUROLOGICAL INSTITUTE OF MICHIGAN,Provider Organization,CLINTON TOWNSHIP,MI,48038,Midwest,2140005,"Detroit, MI",42.6054,-82.94152,neurological.institute@email.com,2,2,5,8,8,15,3,39
+9001106,NEUROLOGY CONSULTANTS OF NEBRASKA,Specialty Center,OMAHA,NE,68154,Midwest,2140001,Iowa/Nebraska,41.26408,-96.11665,neurology.consultants@email.com,1,0,5,7,4,3,1,7
+9001110,NEUROSCIENCE GROUP,Medical Group,NEENAH,WI,54956,Midwest,2140003,Wisconsin,44.18444,-88.52778,neuroscience.group@email.com,1,0,3,7,3,1,1,8
+9001111,NEUROSLEEP AND PAIN MANAGEMENT CENTER,Specialty Center,FORT GRATIOT,MI,48059,Midwest,2140005,"Detroit, MI",43.08253,-82.49913,neurosleep.and@email.com,1,1,1,2,3,17,2,22
+9001117,NEWAYGO COUNTY COMMUNITY MENTAL HEALTH,Provider Organization,WHITE CLOUD,MI,49349,Midwest,2140005,"Detroit, MI",43.58291,-85.74167,newaygo.county@email.com,1,1,7,2,8,6,2,44
+9001126,NORAN NEUROLOGICAL CLINIC,Clinic,BLOOMINGTON,MN,55435,Midwest,2140002,Minnesota,45.1681,-93.25069,noran.neurological@email.com,6,6,7,15,8,31,6,107
+9001128,NORMAN WEBER A OFFICE,Provider Organization,KENTWOOD,MI,49508,Midwest,2140005,"Detroit, MI",42.87459,-85.62586,norman.weber@email.com,0,1,0,1,1,1,1,12
+9001134,NORTH MEMORIAL HEALTH,Provider Organization,ROBBINSDALE,MN,55422,Midwest,2140002,Minnesota,45.00922,-93.33941,north.memorial@email.com,1,1,3,3,3,9,2,53
+9001150,NORTHWEST FAMILY CLINICS,Clinic,ROGERS,MN,55374,Midwest,2140002,Minnesota,45.17715,-93.58035,northwest.family@email.com,3,1,6,4,10,21,3,35
+9001153,NORTHWESTERN MEDICINE,Provider Organization,CHICAGO,IL,60611,Midwest,2140004,"Chicago, IL",41.89483,-87.61944,northwestern.medicine@email.com,1,4,2,6,8,15,5,78
+9001163,NUMINUS,Provider Organization,SPRINGVILLE,UT,84663,Midwest,2140007,"Salt Lake City, UT",40.19266,-111.48917,numinus@email.com,2,3,1,7,7,19,4,118
+9001169,OAKWOOD ACCOUNTABLE CARE ORGANIZATION LLC,Provider Organization,SOUTHFIELD,MI,48033,Midwest,2140005,"Detroit, MI",42.46478,-83.28812,oakwood.accountable@email.com,1,1,1,6,4,6,2,38
+9001179,OGDEN CLINIC PC,Clinic,OGDEN,UT,84405,Midwest,2140007,"Salt Lake City, UT",41.19379,-111.9038,ogden.clinic@email.com,11,9,33,25,30,51,10,219
+9001194,ONE HEALTH SOUTH LYON,Provider Organization,SOUTH LYON,MI,48178,Midwest,2140005,"Detroit, MI",42.44463,-83.66399,one.health@email.com,1,1,1,8,6,13,2,56
+9001199,OPHTHALMIC SURGERY,Provider Organization,BERLIN,WI,54923,Midwest,2140003,Wisconsin,43.99456,-88.96883,ophthalmic.surgery@email.com,1,0,5,3,4,3,1,15
+9001207,OSF HEALTHCARE SYSTEM,Provider Organization,PEORIA,IL,61614,Midwest,2140006,"Indianapolis, IN",38.93988,-90.12829,osf.healthcare@email.com,6,8,2,15,17,47,7,111
+9001213,OWOSSO MEDICAL GROUP PC,Medical Group,OWOSSO,MI,48867,Midwest,2140005,"Detroit, MI",43.00537,-84.18766,owosso.medical@email.com,0,1,0,1,1,7,1,35
+9001219,PACKARD HEALTH,Provider Organization,YPSILANTI,MI,48198,Midwest,2140005,"Detroit, MI",42.27519,-83.58822,packard.health@email.com,1,1,0,1,1,1,1,32
+9001222,PAIN CARE CENTER,Provider Organization,ROCK SPRINGS,WY,82901,Midwest,2140007,"Salt Lake City, UT",41.38121,-109.02469,pain.care@email.com,1,1,4,7,3,14,2,39
+9001228,PARK URGENT CARE,Provider Organization,ALLEN PARK,MI,48101,Midwest,2140005,"Detroit, MI",42.25976,-83.21067,park.urgent@email.com,1,0,2,6,1,1,1,34
+9001229,PARKVIEW HEALTH SYSTEM,Health System,FORT WAYNE,IN,46825,Midwest,2140006,"Indianapolis, IN",41.15397,-85.12425,parkview.health@email.com,7,8,23,26,28,48,10,148
+9001234,PATIENT CENTRAL,Provider Organization,LANSING,MI,48912,Midwest,2140005,"Detroit, MI",42.73896,-84.52319,patient.central@email.com,1,0,7,7,1,3,1,5
+9001257,PHYSICIAN HEALTHCARE NETWORK PC,Provider Organization,LENOX,MI,48048,Midwest,2140005,"Detroit, MI",42.7417,-82.79558,physician.healthcare@email.com,3,3,10,13,8,33,6,99
+9001264,PINE HOLLOW PARTNERS LLC,Medical Group,EAST LANSING,MI,48823,Midwest,2140005,"Detroit, MI",42.76225,-84.45407,pine.hollow@email.com,2,0,6,3,3,5,1,35
+9001265,PINE REST CHRISTIAN MENTAL HEALTH SERVICES,Provider Organization,GRAND RAPIDS,MI,49548,Midwest,2140005,"Detroit, MI",42.86795,-85.66273,pine.rest@email.com,11,11,23,35,36,102,18,277
+9001272,PIONEER COMPREHENSIVE MEDICAL,Provider Organization,DRAPER,UT,84020,Midwest,2140007,"Salt Lake City, UT",40.49885,-111.8635,pioneer.comprehensive@email.com,1,2,0,1,2,18,2,65
+9001276,PONTIAC CORRECTIONAL CENTER,Provider Organization,PONTIAC,IL,61764,Midwest,2140004,"Chicago, IL",40.88343,-88.6263,pontiac.correctional@email.com,1,1,7,8,6,10,2,46
+9001286,PREFERRED MEDICAL GROUP PC,Medical Group,MADISON HEIGHTS,MI,48071,Midwest,2140005,"Detroit, MI",42.50726,-83.10337,preferred.medical@email.com,3,2,8,16,21,19,5,100
+9001291,PREMIERE FAMILY MEDICINE LLC,Provider Organization,GREENWOOD,IN,46143,Midwest,2140006,"Indianapolis, IN",39.59484,-86.11323,premiere.family@email.com,2,1,13,7,10,16,3,8
+9001296,PRIMARY CARE ASSOCIATES OF APPLETON LTD,Medical Group,APPLETON,WI,54913,Midwest,2140003,Wisconsin,44.34145,-88.40136,primary.care@email.com,0,1,0,1,1,5,1,4
+9001299,PRIMARY HEALTH ASSOCIATES PC,Medical Group,ORLAND PARK,IL,60467,Midwest,2140004,"Chicago, IL",41.59855,-87.88848,primary.health@email.com,1,2,6,5,7,6,2,59
+9001310,PROCARE MEDICAL GROUP,Medical Group,MILWAUKEE,WI,53208,Midwest,2140003,Wisconsin,43.04556,-87.96556,procare.medical@email.com,1,0,2,3,5,1,1,35
+9001314,PROHEALTH CARE,Provider Organization,WAUKESHA,WI,53188,Midwest,2140003,Wisconsin,43.02106,-88.29265,prohealth.care@email.com,1,1,4,1,5,11,2,33
+9001324,PSYCHIATRIC FIDELITY TMS CENTRE,Provider Organization,EDINA,MN,55435,Midwest,2140002,Minnesota,44.87343,-93.3347,psychiatric.fidelity@email.com,8,5,10,12,13,30,5,82
+9001326,PSYCHIATRIC SERVICES SC,Provider Organization,MADISON,WI,53705,Midwest,2140003,Wisconsin,43.07427,-89.46246,psychiatric.services@email.com,1,0,7,4,3,7,1,11
+9001329,PUEBLO PULMONARY ASSOCIATES,Medical Group,PUEBLO,CO,81003,Midwest,2140007,"Salt Lake City, UT",38.27782,-104.65668,pueblo.pulmonary@email.com,3,3,5,4,5,16,3,64
+9001331,PULMONARY ALLERGY CRITICAL CARE SLEEP ASSOCIATES SLEEP CENTER,Medical Group,ROCHESTER HILLS,MI,48307,Midwest,2140005,"Detroit, MI",42.65953,-83.12301,pulmonary.allergy@email.com,2,3,2,10,8,22,4,90
+9001332,PULMONARY AND CRITICAL CARE ASSOCIATES PC,Medical Group,SHELBY TOWNSHIP,MI,48315,Midwest,2140005,"Detroit, MI",42.67254,-82.9963,pulmonary.and@email.com,4,6,6,11,10,23,5,111
+9001335,PULMONARY AND CRITICAL CARE MEDICINE CONSULTANTS,Specialty Center,CLARKSTON,MI,48346,Midwest,2140005,"Detroit, MI",42.72156,-83.42388,pulmonary.and@email.com,2,3,11,14,13,20,4,46
+9001336,PULMONARY AND CRITICAL CARE SPECIALISTS PC,Specialty Center,NOVI,MI,48375,Midwest,2140005,"Detroit, MI",42.46537,-83.46385,pulmonary.and@email.com,2,2,0,2,2,9,1,16
+9001345,PULMONARY AND SLEEP MEDICINE CLINIC LLC,Clinic,ALGONQUIN,IL,60102,Midwest,2140003,Wisconsin,42.16406,-88.30928,pulmonary.and@email.com,1,0,1,3,1,3,1,19
+9001359,PULMONARY ASSOCIATES PC,Medical Group,FLINT,MI,48532,Midwest,2140005,"Detroit, MI",43.01203,-83.79429,pulmonary.associates@email.com,3,7,6,13,12,37,6,117
+9001361,PULMONARY CLINICS OF SOUTHERN MICHIGAN,Clinic,JACKSON,MI,49201,Midwest,2140005,"Detroit, MI",42.25213,-84.38301,pulmonary.clinics@email.com,1,1,4,2,8,15,2,1
+9001372,PULMONARY N SLEEP SPECIALISTS PC,Specialty Center,MONROE,MI,48162,Midwest,2140005,"Detroit, MI",41.96045,-83.43503,pulmonary.n@email.com,1,2,0,2,2,19,2,36
+9001376,PULMONARY SLEEP AND WELLNESS CENTER,Specialty Center,PONTIAC,MI,48341,Midwest,2140005,"Detroit, MI",42.6275,-83.29433,pulmonary.sleep@email.com,3,1,3,6,2,10,2,21
+9001379,PURE PSYCHIATRY OF MICHIGAN,Provider Organization,WAYNE,MI,48184,Midwest,2140005,"Detroit, MI",42.27403,-83.39494,pure.psychiatry@email.com,0,1,0,1,1,5,1,14
+9001380,PUTMAN FAMILY MEDICINE,Provider Organization,CARO,MI,48723,Midwest,2140005,"Detroit, MI",43.4861,-83.38499,putman.family@email.com,1,1,0,1,1,9,1,13
+9001381,PUTNAM COUNTY HOSPITAL,Hospital,BAINBRIDGE,IN,46105,Midwest,2140006,"Indianapolis, IN",39.76388,-86.81487,putnam.county@email.com,1,1,5,6,4,5,2,27
+9001384,QUALITY LIVING INC,Provider Organization,OMAHA,NE,68104,Midwest,2140001,Iowa/Nebraska,41.29525,-96.00104,quality.living@email.com,4,1,7,2,7,9,2,56
+9001385,QUALITY SLEEP AND NEUROLOGY PC,Specialty Center,SAGINAW,MI,48603,Midwest,2140005,"Detroit, MI",43.46332,-84.03115,quality.sleep@email.com,2,2,7,4,7,11,3,61
+9001387,RA NEUROLOGICAL,Provider Organization,OMAHA,NE,68144,Midwest,2140001,Iowa/Nebraska,41.23473,-96.11909,ra.neurological@email.com,4,0,4,5,4,1,1,8
+9001391,REBIS HEALTH,Provider Organization,LONGMONT,CO,80503,Midwest,2140007,"Salt Lake City, UT",40.16922,-105.20725,rebis.health@email.com,1,0,7,3,4,6,1,21
+9001394,RED SANDS PSYCHIATRY,Provider Organization,SAINT GEORGE,UT,84770,Midwest,2140007,"Salt Lake City, UT",37.13818,-113.6294,red.sands@email.com,5,4,2,9,8,13,4,35
+9001397,REDICARE OKEMOS,Provider Organization,OKEMOS,MI,48864,Midwest,2140005,"Detroit, MI",42.70215,-84.40902,redicare.okemos@email.com,1,1,0,1,1,4,1,16
+9001399,REED FAMILY MEDICINE LLC,Provider Organization,LAFAYETTE,IN,47905,Midwest,2140006,"Indianapolis, IN",40.4218,-86.76418,reed.family@email.com,1,1,0,1,1,2,1,9
+9001402,REGENT MENTAL HEALTH GROUP,Medical Group,MADISON,WI,53711,Midwest,2140003,Wisconsin,43.01521,-89.40641,regent.mental@email.com,2,1,5,8,8,5,2,14
+9001404,REHABILITATION ASSOCIATES OF INDIANA,Medical Group,INDIANAPOLIS,IN,46250,Midwest,2140006,"Indianapolis, IN",39.90399,-86.06864,rehabilitation.associates@email.com,0,1,0,1,1,8,1,33
+9001406,REMHEALTH,Provider Organization,LOUISVILLE,CO,80027,Midwest,2140007,"Salt Lake City, UT",39.9508,-105.16354,remhealth@email.com,2,3,7,7,8,20,3,66
+9001414,REVERE HEALTH,Provider Organization,PROVO,UT,84604,Midwest,2140007,"Salt Lake City, UT",40.41209,-111.87377,revere.health@email.com,15,15,22,37,33,57,14,251
+9001419,RICHARD A PITTSLEY MD PC,Provider Organization,EAST LANSING,MI,48823,Midwest,2140005,"Detroit, MI",42.76225,-84.45407,richard.a@email.com,1,1,0,1,1,7,1,29
+9001426,RIDGEVIEW MEDICAL CENTER,Hospital,WACONIA,MN,55387,Midwest,2140002,Minnesota,44.85643,-93.77903,ridgeview.medical@email.com,3,2,7,6,5,23,3,53
+9001427,RIGGS COMMUNITY HEALTH CENTER INC,Provider Organization,LAFAYETTE,IN,47904,Midwest,2140006,"Indianapolis, IN",40.43835,-86.87609,riggs.community@email.com,1,0,3,4,2,7,1,14
+9001430,RIVER VALLEY MEDICAL GROUP,Medical Group,DAVENPORT,IA,52807,Midwest,2140001,Iowa/Nebraska,41.61061,-90.51634,river.valley@email.com,7,4,1,4,4,18,3,58
+9001435,RIVERTON AND ZENITH FAMILY HEALTH CENTER LLC,Provider Organization,RIVERTON,UT,84065,Midwest,2140007,"Salt Lake City, UT",40.495,-111.9444,riverton.and@email.com,1,1,6,5,3,6,2,34
+9001437,RIVERVIEW HEALTH,Provider Organization,CROOKSTON,MN,56716,Midwest,2140002,Minnesota,47.74189,-96.55522,riverview.health@email.com,0,1,0,0,1,7,1,6
+9001440,ROCHESTER CENTER FOR BEHAVIORAL MEDICINE,Specialty Center,ROCHESTER,MI,48307,Midwest,2140005,"Detroit, MI",42.65953,-83.12301,rochester.center@email.com,7,5,11,19,15,24,5,99
+9001441,ROCHESTER NEUROLOGICAL AND SLEEP CENTER,Specialty Center,ROCHESTER HILLS,MI,48307,Midwest,2140005,"Detroit, MI",42.65953,-83.12301,rochester.neurological@email.com,2,2,0,2,2,7,1,20
+9001448,ROSEVILLE PULMONARY AND SLEEP MEDICINE,Specialty Center,ROSEVILLE,MI,48066,Midwest,2140005,"Detroit, MI",42.50735,-82.93697,roseville.pulmonary@email.com,2,3,1,6,9,3,2,25
+9001452,RUBENFAER LEON OFFICE,Provider Organization,FARMINGTON HILLS,MI,48334,Midwest,2140005,"Detroit, MI",42.50662,-83.34964,rubenfaer.leon@email.com,4,1,0,1,1,9,1,1
+9001454,RUSH HEALTH,Provider Organization,CHICAGO,IL,60612,Midwest,2140004,"Chicago, IL",41.8805,-87.68783,rush.health@email.com,1,0,3,4,4,5,1,22
+9001455,RUSH SYSTEM FOR HEALTH,Provider Organization,CHICAGO,IL,60612,Midwest,2140004,"Chicago, IL",41.8805,-87.68783,rush.system@email.com,5,2,12,12,18,32,5,80
+9001465,SAINT CLAIR MEDICAL PC,Provider Organization,EAST CHINA,MI,48054,Midwest,2140005,"Detroit, MI",42.77054,-82.54515,saint.clair@email.com,4,2,1,4,9,21,3,53
+9001482,SANCTA FAMILIA MEDICAL APOSTOLATE,Provider Organization,OMAHA,NE,68114,Midwest,2140001,Iowa/Nebraska,41.26318,-96.05208,sancta.familia@email.com,0,1,0,1,1,3,1,10
+9001483,SANFORD HEALTH,Provider Organization,SIOUX FALLS,SD,57105,Midwest,2140001,Iowa/Nebraska,47.50985,-94.84921,sanford.health@email.com,0,4,0,4,4,17,3,77
+9001490,SCHACKMAN KRAMER AND ASSOCIATES,Medical Group,BEMIDJI,MN,56601,Midwest,2140002,Minnesota,47.50985,-94.84921,schackman.kramer@email.com,1,1,5,4,8,10,2,50
+9001492,SCHEURER HEALTH,Provider Organization,PIGEON,MI,48755,Midwest,2140005,"Detroit, MI",43.83571,-83.26832,scheurer.health@email.com,2,2,2,5,3,4,2,11
+9001507,SERENITY BAY HEALTH PLLC,Provider Organization,AUBURN,MI,48611,Midwest,2140005,"Detroit, MI",43.63187,-84.0936,serenity.bay@email.com,5,2,9,11,10,6,3,59
+9001512,SHEETS FAMILY PRACTICE,Provider Organization,RENSSELAER,IN,47978,Midwest,2140006,"Indianapolis, IN",40.97991,-87.1163,sheets.family@email.com,3,4,0,4,4,13,2,52
+9001513,SHELBURN MEDICAL CLINIC,Clinic,SHELBURN,IN,47879,Midwest,2140006,"Indianapolis, IN",39.18863,-87.37619,shelburn.medical@email.com,2,0,3,1,2,6,1,29
+9001516,SHER PSYCHIATRY AND ASSOCIATES,Medical Group,STERLING HEIGHTS,MI,48314,Midwest,2140005,"Detroit, MI",42.60978,-83.05426,sher.psychiatry@email.com,1,1,0,1,1,4,1,34
+9001524,SILVER PINE MEDICAL GROUP PLC,Medical Group,MACOMB,MI,48044,Midwest,2140005,"Detroit, MI",42.64988,-82.9296,silver.pine@email.com,2,2,1,2,8,17,3,54
+9001556,SMITH MEDICAL GROUP INC,Medical Group,MUNSTER,IN,46321,Midwest,2140006,"Indianapolis, IN",41.54704,-87.50402,smith.medical@email.com,1,0,2,2,6,7,1,26
+9001561,SONDERMIND,Provider Organization,DENVER,CO,80202,Midwest,2140007,"Salt Lake City, UT",39.75156,-104.99768,sondermind@email.com,1,0,4,7,2,4,1,0
+9001564,SOUND ASLEEP LAB,Specialty Center,SAGINAW,MI,48604,Midwest,2140005,"Detroit, MI",43.49749,-83.95887,sound.asleep@email.com,22,39,2,42,43,22,4,40
+9001582,SOUTHERN ILLINOIS HEALTHCARE FOUNDATION INC,Provider Organization,ALTON,IL,62002,Midwest,2140006,"Indianapolis, IN",38.93988,-90.12829,southern.illinois@email.com,1,1,4,2,4,5,2,40
+9001584,SOUTHERN ILLINOIS UNIVERSITY HEALTHCARE,Health System,SPRINGFIELD,IL,62701,Midwest,2140006,"Indianapolis, IN",39.80063,-89.64902,southern.illinois@email.com,1,1,6,3,3,12,2,26
+9001586,SOUTHGATE MEDICAL GROUP,Medical Group,SOUTHGATE,MI,48195,Midwest,2140005,"Detroit, MI",42.20472,-83.20568,southgate.medical@email.com,1,1,7,2,7,12,2,20
+9001593,SOUTHWEST HEALTH,Provider Organization,PLATTEVILLE,WI,53818,Midwest,2140003,Wisconsin,42.74725,-90.49177,southwest.health@email.com,2,2,5,8,7,15,3,54
+9001603,SPRINGFIELD CLINIC LLP,Clinic,SPRINGFIELD,IL,62703,Midwest,2140006,"Indianapolis, IN",39.76276,-89.63106,springfield.clinic@email.com,3,2,7,8,11,20,4,58
+9001604,"SPRINGFIELD CLINIC, LLP",Clinic,SPRINGFIELD,IL,62703,Midwest,2140006,"Indianapolis, IN",39.76276,-89.63106,"springfield.clinic,@email.com",1,3,0,3,3,16,3,81
+9001607,SSM HEALTH,Provider Organization,FITCHBURG,WI,53713,Midwest,2140003,Wisconsin,43.03743,-89.39254,ssm.health@email.com,12,9,34,43,49,85,17,340
+9001615,STELLIS HEALTH PA,Provider Organization,BUFFALO,MN,55313,Midwest,2140002,Minnesota,45.17382,-93.84859,stellis.health@email.com,3,2,10,9,12,16,4,58
+9001618,STEVANOVIC FAMILY CLINIC,Clinic,WEST ALLIS,WI,53227,Midwest,2140003,Wisconsin,42.99562,-88.04264,stevanovic.family@email.com,2,2,6,7,7,21,3,53
+9001619,STEWARD HEALTH CARE SYSTEM LLC,Provider Organization,WEST JORDAN,UT,84088,Midwest,2140007,"Salt Lake City, UT",40.59507,-111.96077,steward.health@email.com,0,1,0,1,1,8,1,4
+9001622,STONE CREEK PSYCHIATRY,Provider Organization,CHANHASSEN,MN,55317,Midwest,2140002,Minnesota,44.85711,-93.55096,stone.creek@email.com,1,0,2,3,3,7,1,22
+9001623,STONE RIDGE MEDICAL GROUP,Medical Group,EAST MOLINE,IL,61244,Midwest,2140004,"Chicago, IL",41.52138,-90.39424,stone.ridge@email.com,2,0,4,6,3,6,1,32
+9001624,STONEBROOKE FAMILY PHYSICIANS,Provider Organization,ROCHESTER HILLS,MI,48309,Midwest,2140005,"Detroit, MI",42.65866,-83.18348,stonebrooke.family@email.com,2,1,2,7,7,7,2,43
+9001633,SUNRISE URGENT CARE,Provider Organization,WARREN,MI,48092,Midwest,2140005,"Detroit, MI",42.51308,-83.05968,sunrise.urgent@email.com,1,1,2,4,6,7,2,48
+9001634,SUNSET SENIOR LIVING,Provider Organization,QUINCY,IL,62301,Midwest,2140006,"Indianapolis, IN",39.93139,-91.38741,sunset.senior@email.com,3,2,4,8,4,17,3,76
+9001639,SWANSON CENTER,Provider Organization,MICHIGAN CITY,IN,46360,Midwest,2140006,"Indianapolis, IN",41.68739,-86.86464,swanson.center@email.com,0,1,0,1,1,8,1,23
+9001640,SWEET DREAMS SLEEP SERVICES PC,Specialty Center,RAPID CITY,SD,57701,Midwest,2140001,Iowa/Nebraska,44.1209,-103.20562,sweet.dreams@email.com,2,0,9,8,12,6,2,61
+9001642,SWETECH MEDICAL CENTER,Hospital,CLINTON TOWNSHIP,MI,48038,Midwest,2140005,"Detroit, MI",42.6054,-82.94152,swetech.medical@email.com,2,0,2,1,7,1,1,27
+9001654,TANNER CLINIC,Clinic,LAYTON,UT,84041,Midwest,2140007,"Salt Lake City, UT",41.07137,-111.98416,tanner.clinic@email.com,6,5,8,15,17,26,7,107
+9001662,TENET HEALTHCARE,Provider Organization,FRANKLIN,WI,53132,Midwest,2140003,Wisconsin,42.88589,-88.01063,tenet.healthcare@email.com,2,2,7,7,9,25,4,57
+9001674,THE CARLE FOUNDATION,Provider Organization,PEORIA,IL,61602,Midwest,2140006,"Indianapolis, IN",40.68005,-89.60395,the.carle@email.com,7,6,11,13,14,47,7,158
+9001676,THE CENTER FOR SLEEP MEDICINE,Specialty Center,LIBERTYVILLE,IL,60048,Midwest,2140003,"Chicago, IL",41.70901,-88.19961,the.center@email.com,7,13,3,20,18,19,6,100
+9001692,THE INSTITUTE OF NEUROBEHAVIORAL SERVICES,Specialty Center,ORLAND PARK,IL,60467,Midwest,2140004,"Chicago, IL",41.59855,-87.88848,the.institute@email.com,1,1,5,7,7,5,2,13
+9001693,THE IOWA CLINIC PC,Clinic,WEST DES MOINES,IA,50266,Midwest,2140001,Iowa/Nebraska,41.56323,-93.81107,the.iowa@email.com,4,5,5,12,12,32,6,98
+9001697,THE MEDILODGE GROUP,Medical Group,ALPENA,MI,48617,Midwest,2140005,"Detroit, MI",45.09375,-83.50186,the.medilodge@email.com,2,0,9,8,5,7,2,50
+9001698,THE METHODIST HOSPITAL SYSTEM,Hospital,MERRILLVILLE,IN,46410,Midwest,2140006,"Indianapolis, IN",29.70597,-95.40253,the.methodist@email.com,1,3,6,10,5,25,4,97
+9001711,THE REMEDY KETAMINE,Provider Organization,VADNAIS HEIGHTS,MN,55110,Midwest,2140002,Minnesota,45.08961,-93.00418,the.remedy@email.com,0,1,1,1,1,3,1,35
+9001714,THE SLEEPWELL CENTER,Specialty Center,GREENWOOD VILLAGE,CO,80111,Midwest,2140007,"Salt Lake City, UT",39.6124,-104.88025,the.sleepwell@email.com,3,4,6,8,8,18,4,90
+9001717,THE TRAINI COUNSELING GROUP,Medical Group,FLINT,MI,48532,Midwest,2140005,"Detroit, MI",43.01203,-83.79429,the.traini@email.com,0,1,0,1,1,8,1,14
+9001718,THE UNIVERSITY OF CHICAGO MEDICINE,Health System,CHICAGO,IL,60637,Midwest,2140004,"Chicago, IL",41.80019,-87.92883,the.university@email.com,4,4,10,13,13,40,6,134
+9001724,THEDACARE INC,Provider Organization,MENASHA,WI,54952,Midwest,2140003,Wisconsin,44.20086,-88.33719,thedacare.inc@email.com,3,5,4,7,11,29,6,126
+9001726,THINK WHOLE PERSON HEALTHCARE,Provider Organization,OMAHA,NE,68106,Midwest,2140001,Iowa/Nebraska,41.23885,-96.00244,think.whole@email.com,2,0,1,1,7,3,1,1
+9001727,THOMAS PARK MD AND ASSOCIATES,Medical Group,SOUTHFIELD,MI,48075,Midwest,2140005,"Detroit, MI",42.4618,-83.2299,thomas.park@email.com,1,1,0,1,1,7,1,5
+9001729,THORNAPPLE VALLEY FAMILY PHYSICIANS PC,Provider Organization,HASTINGS,MI,49058,Midwest,2140005,"Detroit, MI",42.63331,-85.29316,thornapple.valley@email.com,2,2,4,12,6,20,4,82
+9001736,TIMBER OAKS,Provider Organization,UNION GROVE,WI,53182,Midwest,2140003,Wisconsin,42.69815,-88.04096,timber.oaks@email.com,1,1,5,3,2,7,2,61
+9001742,TOTAL FAMILY HEALTHCARE,Provider Organization,BAY CITY,MI,48706,Midwest,2140005,"Detroit, MI",43.59937,-83.95623,total.family@email.com,2,0,5,4,5,7,1,15
+9001752,TRICITY LUNG AND SLEEP,Specialty Center,BAY CITY,MI,48706,Midwest,2140005,"Detroit, MI",43.59937,-83.95623,tricity.lung@email.com,0,2,0,2,2,1,1,18
+9001758,TRINITY HEALTH,Provider Organization,YPSILANTI,MI,48197,Midwest,2140005,"Detroit, MI",39.86801,-83.12088,trinity.health@email.com,58,68,129,185,212,362,75,1383
+9001759,TROY MEDICAL PC,Provider Organization,TROY,MI,48084,Midwest,2140005,"Detroit, MI",42.56065,-83.17559,troy.medical@email.com,3,3,0,3,3,6,2,34
+9001772,UCS HEALTHCARE,Provider Organization,WEST DES MOINES,IA,50265,Midwest,2140001,Iowa/Nebraska,41.55129,-93.73821,ucs.healthcare@email.com,1,2,4,7,9,12,3,100
+9001773,UESTHETICS,Provider Organization,INDIANAPOLIS,IN,46225,Midwest,2140006,"Indianapolis, IN",39.74062,-86.16294,uesthetics@email.com,1,0,5,3,1,7,1,3
+9001778,UNION HEALTH,Provider Organization,TERRE HAUTE,IN,47802,Midwest,2140006,"Indianapolis, IN",39.35153,-87.4106,union.health@email.com,13,15,17,31,31,58,11,178
+9001786,UNITED PHYSICIANS,Provider Organization,BINGHAM FARMS,MI,48025,Midwest,2140005,"Detroit, MI",42.52032,-83.26744,united.physicians@email.com,0,3,0,3,3,2,1,20
+9001787,UNITED PSYCHOLOGICAL SERVICES,Provider Organization,SHELBY TOWNSHIP,MI,48317,Midwest,2140005,"Detroit, MI",42.64673,-83.05334,united.psychological@email.com,2,0,6,10,2,3,2,43
+9001788,UNITEDHEALTH GROUP,Medical Group,HOUSTON,IN,77025,Midwest,2140006,"Indianapolis, IN",39.96535,-86.17104,unitedhealth.group@email.com,75,90,118,202,176,325,69,1113
+9001790,UNITY HEALTHCARE,Provider Organization,LAFAYETTE,IN,47905,Midwest,2140006,"Indianapolis, IN",40.4218,-86.76418,unity.healthcare@email.com,2,0,7,3,5,5,1,31
+9001791,UNITYPOINT HEALTH,Provider Organization,FORT DODGE,IA,50501,Midwest,2140001,Iowa/Nebraska,41.47799,-90.57608,unitypoint.health@email.com,8,10,26,35,34,53,15,321
+9001793,UNIVERSAL HEALTH SERVICES INC,Provider Organization,SAINT JOHNS,MI,48879,Midwest,2140005,"Detroit, MI",33.62346,-84.52591,universal.health@email.com,9,10,26,50,50,73,16,297
+9001802,UNIVERSITY OF COLORADO HEALTH,Health System,CHEYENNE,CO,82009,Midwest,2140007,"Salt Lake City, UT",38.95579,-104.77191,university.of@email.com,2,2,11,13,10,20,4,63
+9001803,UNIVERSITY OF IOWA HOSPITALS AND CLINICS,Health System,IOWA CITY,IA,52242,Midwest,2140001,Iowa/Nebraska,41.66195,-91.54317,university.of@email.com,1,1,1,2,7,12,2,22
+9001807,UNIVERSITY OF MICHIGAN HEALTH SYSTEM,Health System,ANN ARBOR,MI,48109,Midwest,2140005,"Detroit, MI",43.37871,-84.67667,university.of@email.com,49,51,98,145,153,314,64,1193
+9001809,UNIVERSITY OF UTAH HOSPITALS AND CLINICS,Health System,SALT LAKE CITY,UT,84132,Midwest,2140007,"Salt Lake City, UT",,,university.of@email.com,1,1,4,7,2,11,2,34
+9001816,URBANCARE LLC,Provider Organization,LAKE IN THE HILLS,IL,60156,Midwest,2140003,Wisconsin,42.19121,-88.34788,urbancare.llc@email.com,2,1,8,6,4,3,2,24
+9001820,UW HEALTH,Provider Organization,MADISON,WI,53719,Midwest,2140003,Wisconsin,43.0281,-89.50003,uw.health@email.com,11,11,12,26,24,67,11,192
+9001826,VALLEY OAKS HEALTH,Provider Organization,LAFAYETTE,IN,47904,Midwest,2140006,"Indianapolis, IN",40.43835,-86.87609,valley.oaks@email.com,1,1,6,2,7,9,2,46
+9001842,VISTA HEALTHCARE,Provider Organization,HURRICANE,UT,84737,Midwest,2140007,"Salt Lake City, UT",37.08321,-113.26032,vista.healthcare@email.com,3,2,2,6,3,16,3,66
+9001851,WALNUT CREEK PSYCHIATRY,Provider Organization,JOHNSTON,IA,50131,Midwest,2140001,Iowa/Nebraska,41.69749,-93.72021,walnut.creek@email.com,3,0,4,4,2,3,1,28
+9001854,WATERFORD PULMONARY GROUP,Medical Group,WATERFORD,MI,48327,Midwest,2140005,"Detroit, MI",42.6443,-83.41417,waterford.pulmonary@email.com,2,0,3,2,4,2,1,2
+9001855,WATERTOWN FAMILY PRACTICE,Provider Organization,WATERTOWN,WI,53098,Midwest,2140003,Wisconsin,43.24955,-88.71461,watertown.family@email.com,1,2,2,6,7,16,3,46
+9001857,WAYNE HEALTH,Provider Organization,DETROIT,MI,48201,Midwest,2140005,"Detroit, MI",42.34706,-83.06009,wayne.health@email.com,3,2,2,3,7,24,3,52
+9001858,WAYNE NEUROLOGY PLC,Specialty Center,WAYNE,MI,48184,Midwest,2140005,"Detroit, MI",42.27403,-83.39494,wayne.neurology@email.com,2,0,3,4,1,1,1,16
+9001861,WELL NOURISHED LLC,Provider Organization,GOLDEN,CO,80401,Midwest,2140007,"Salt Lake City, UT",39.71672,-105.23286,well.nourished@email.com,2,1,1,6,8,9,2,37
+9001880,WHEAT MEDICAL LLC,Provider Organization,CLINTON,IN,47842,Midwest,2140006,"Indianapolis, IN",39.67569,-87.462,wheat.medical@email.com,2,0,5,1,6,6,1,16
+9001895,WITHAM HEALTH SERVICES,Provider Organization,LEBANON,IN,46052,Midwest,2140006,"Indianapolis, IN",40.04448,-86.46086,witham.health@email.com,2,3,5,9,6,21,4,64
+9001900,WOODLAWN HEALTH,Provider Organization,ROCHESTER,IN,46975,Midwest,2140006,"Indianapolis, IN",41.0718,-86.25177,woodlawn.health@email.com,1,0,5,1,7,3,1,24

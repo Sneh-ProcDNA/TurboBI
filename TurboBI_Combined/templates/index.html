@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TurboBI — BI Migration Suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pd-ink-950:#0f0a1f;--pd-ink-900:#1c1530;--pd-ink-700:#3b3650;
+  --pd-ink-500:#6e6885;--pd-ink-400:#918ba8;--pd-ink-300:#b8b3c8;
+  --pd-ink-200:#d6d3e0;--pd-ink-100:#ebe9f1;--pd-ink-50:#f7f6fa;
+  --pd-paper:#fbfaff;--pd-white:#ffffff;--pd-success:#16a34a;
+  --radius-sm:6px;--radius:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(26,11,61,.04),0 1px 1px rgba(26,11,61,.03);
+  --shadow:0 4px 14px rgba(26,11,61,.06),0 1px 3px rgba(26,11,61,.04);
+  --shadow-lg:0 20px 50px rgba(26,11,61,.10),0 6px 16px rgba(26,11,61,.06);
+  --font-sans:'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --font-serif:'DM Serif Display',ui-serif,Georgia,serif;
+  --accent-primary:#0a3d91;--accent-soft:#e6efff;--accent-dark:#062c6c;
+  --accent-pop:#3b82f6;--accent-grad:linear-gradient(135deg,#062c6c,#3b82f6);
+  --tableau:#1f447e;--tableau-accent:#e97627;--qlik:#009845;
+  --sidebar-w:268px;
+}
+[data-theme="dark"]{
+  --pd-paper:#0a0f1d;--pd-white:#131a2c;
+  --pd-ink-950:#f7f8fc;--pd-ink-900:#e8edf7;--pd-ink-700:#c8cee0;
+  --pd-ink-500:#8b94ad;--pd-ink-400:#6d7693;--pd-ink-300:#4b536d;
+  --pd-ink-200:#2c3450;--pd-ink-100:#1d2440;--pd-ink-50:#161c34;
+  --accent-primary:#3b82f6;--accent-soft:rgba(59,130,246,.15);
+  --accent-dark:#1d4ed8;--accent-pop:#60a5fa;
+  --accent-grad:linear-gradient(135deg,#1d4ed8,#60a5fa);
+  --qlik:#22c55e;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-sans);color:var(--pd-ink-900);background:var(--pd-paper);
+  display:flex;flex-direction:column;height:100vh;overflow:hidden;
+  -webkit-font-smoothing:antialiased;transition:background-color .2s,color .2s;
+}
+button{font-family:inherit;cursor:pointer}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.shell-header{
+  flex-shrink:0;height:62px;display:flex;align-items:center;gap:16px;
+  padding:0 20px;border-bottom:1px solid var(--pd-ink-100);
+  background:rgba(255,255,255,.72);backdrop-filter:blur(10px);z-index:30;
+}
+[data-theme="dark"] .shell-header{background:rgba(19,26,44,.72);border-bottom-color:var(--pd-ink-100)}
+.burger{
+  width:38px;height:38px;border-radius:10px;border:1px solid var(--pd-ink-100);
+  background:var(--pd-white);color:var(--pd-ink-700);display:grid;place-items:center;
+  transition:background .15s,border-color .15s,color .15s;flex-shrink:0;
+}
+.burger:hover{border-color:var(--accent-pop);color:var(--accent-pop)}
+[data-theme="dark"] .burger{background:var(--pd-ink-50)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.brandname{font-weight:600;font-size:18px;letter-spacing:-.01em;color:var(--pd-ink-900);line-height:1.1}
+.brandname-accent{color:var(--accent-pop)}
+.brandsub{font-size:11px;color:var(--pd-ink-500);margin-top:1px;display:flex;align-items:center;gap:4px}
+.poweredby{font-size:10.5px;color:var(--pd-ink-400);font-weight:500}
+.pdwordmark{font-size:12px;font-weight:700;letter-spacing:-.005em;color:var(--accent-primary)}
+.pdwordmark-accent{color:var(--accent-pop)}
+.header-divider{width:1px;height:26px;background:var(--pd-ink-100);flex-shrink:0}
+.header-context{display:flex;align-items:center;gap:9px;min-width:0}
+.header-context-glyph{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;background:var(--pd-ink-50);border:1px solid var(--pd-ink-100);flex-shrink:0}
+.header-context-text{line-height:1.15;min-width:0}
+.header-context-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--pd-ink-400);font-weight:600}
+.header-context-name{font-size:13.5px;font-weight:600;color:var(--pd-ink-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:12px;flex-shrink:0}
+.statpill{font-size:12px;color:var(--pd-ink-500);display:flex;align-items:center;gap:8px;padding:6px 11px 6px 9px;border-radius:99px;background:var(--pd-ink-50);border:1px solid var(--pd-ink-100)}
+.dot{width:7px;height:7px;border-radius:99px;background:var(--pd-success);box-shadow:0 0 0 3px rgba(22,163,74,.15)}
+.themetoggle{width:34px;height:34px;border-radius:99px;border:1px solid var(--pd-ink-100);background:var(--pd-white);color:var(--pd-ink-700);display:grid;place-items:center;transition:border-color .15s,color .15s,transform .15s}
+.themetoggle:hover{border-color:var(--accent-pop);color:var(--accent-pop);transform:rotate(15deg)}
+[data-theme="dark"] .themetoggle{background:var(--pd-ink-50)}
+.avatar{width:32px;height:32px;border-radius:99px;background:var(--accent-grad);color:white;font-size:12px;font-weight:600;display:grid;place-items:center}
+
+/* ── Body / layout ──────────────────────────────────────────── */
+.shell-body{flex:1;display:flex;min-height:0;position:relative}
+.sidebar{
+  width:var(--sidebar-w);flex-shrink:0;display:flex;flex-direction:column;gap:4px;
+  padding:18px 14px;border-right:1px solid var(--pd-ink-100);background:var(--pd-white);
+  overflow-y:auto;transition:margin-left .26s cubic-bezier(.4,0,.2,1);z-index:20;
+}
+[data-theme="dark"] .sidebar{background:#0d1426}
+body.nav-collapsed .sidebar{margin-left:calc(-1 * var(--sidebar-w))}
+.sidebar-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--pd-ink-400);font-weight:700;padding:6px 10px 8px}
+.navitem{
+  display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;
+  border:1px solid transparent;background:transparent;text-align:left;width:100%;
+  transition:background .14s,border-color .14s;color:inherit;
+}
+.navitem:hover{background:var(--pd-ink-50)}
+.navitem.active{background:var(--accent-soft);border-color:rgba(10,61,145,.18)}
+[data-theme="dark"] .navitem.active{background:rgba(59,130,246,.16);border-color:rgba(59,130,246,.34)}
+.navitem-glyph{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--pd-white);border:1px solid var(--pd-ink-100);flex-shrink:0;box-shadow:var(--shadow-sm)}
+[data-theme="dark"] .navitem-glyph{background:var(--pd-ink-50)}
+.navitem-text{min-width:0;flex:1}
+.navitem-name{font-size:14px;font-weight:600;letter-spacing:-.005em;color:var(--pd-ink-900);display:flex;align-items:center;gap:7px}
+.navitem-flow{font-size:11.5px;color:var(--pd-ink-500);margin-top:2px;display:flex;align-items:center;gap:5px;font-family:var(--font-mono)}
+.navitem.active .navitem-name{color:var(--accent-primary)}
+[data-theme="dark"] .navitem.active .navitem-name{color:var(--accent-pop)}
+.navitem-check{margin-left:auto;color:var(--accent-primary);opacity:0;transition:opacity .14s;flex-shrink:0}
+.navitem.active .navitem-check{opacity:1}
+.sidebar-spacer{flex:1}
+.sidebar-card{margin:8px 6px 2px;padding:14px;border-radius:12px;background:var(--pd-ink-50);border:1px solid var(--pd-ink-100)}
+.sidebar-card-title{font-size:12px;font-weight:600;color:var(--pd-ink-900);display:flex;align-items:center;gap:7px}
+.sidebar-card-body{font-size:11.5px;color:var(--pd-ink-500);margin-top:6px;line-height:1.5}
+.sidebar-foot{font-size:11px;color:var(--pd-ink-400);padding:12px 10px 2px;line-height:1.5}
+
+.shell-main{flex:1;min-width:0;position:relative;background:var(--pd-paper)}
+.frame{width:100%;height:100%;border:0;display:block;background:transparent}
+.scrim{display:none;position:absolute;inset:0;background:rgba(15,10,31,.4);z-index:15}
+
+@media(max-width:860px){
+  .sidebar{position:absolute;top:0;left:0;height:100%;box-shadow:var(--shadow-lg)}
+  body:not(.nav-collapsed) .scrim{display:block}
+  .header-context{display:none}
+}
+@media(min-width:861px){ .scrim{display:none!important} }
+@media(max-width:560px){ .statpill{display:none} .brandsub{display:none} }
+</style>
+</head>
+<body>
+
+<header class="shell-header">
+  <button class="burger" id="burger" aria-label="Toggle navigation" title="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+
+  <a class="brand" href="/">
+    <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tbiGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#062c6c"/><stop offset="55%" stop-color="#1e6fdb"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+        <linearGradient id="tbiShine" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="white" stop-opacity="0.22"/><stop offset="55%" stop-color="white" stop-opacity="0"/></linearGradient>
+      </defs>
+      <rect width="32" height="32" rx="8" fill="url(#tbiGrad)"/><rect width="32" height="32" rx="8" fill="url(#tbiShine)"/>
+      <rect x="5" y="20" width="4" height="7" rx="1.2" fill="white" opacity="0.55"/>
+      <rect x="11" y="16" width="4" height="11" rx="1.2" fill="white" opacity="0.75"/>
+      <rect x="17" y="11" width="4" height="16" rx="1.2" fill="white" opacity="0.92"/>
+      <path d="M5.5 22 L13 14.5 L18 18 L25.5 8" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M21 7 L26 7 L26 12" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="5.5" cy="22" r="1.4" fill="white"/>
+    </svg>
+    <div>
+      <div class="brandname">Turbo<span class="brandname-accent">BI</span></div>
+      <div class="brandsub"><span class="poweredby">Powered by</span><span class="pdwordmark">Proc<span class="pdwordmark-accent">DNA</span></span></div>
+    </div>
+  </a>
+
+  <div class="header-divider"></div>
+  <div class="header-context">
+    <div class="header-context-glyph" id="ctx-glyph"></div>
+    <div class="header-context-text">
+      <div class="header-context-kicker">Converter</div>
+      <div class="header-context-name" id="ctx-name">Tableau → Power BI</div>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <div class="statpill"><span class="dot"></span>Suite v1.0 · healthy</div>
+    <button class="themetoggle" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <div class="avatar">PD</div>
+  </div>
+</header>
+
+<div class="shell-body">
+  <nav class="sidebar" id="sidebar" aria-label="Converters">
+    <div class="sidebar-label">Converters</div>
+
+    <button class="navitem active" data-conv="tableau" id="nav-tableau">
+      <span class="navitem-glyph">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.6"/>
+          <rect x="14.6" y="3.6" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="9.0" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="18.6" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="24.0" width="2.8" height="4.4" rx="0.7" fill="#1f447e"/>
+          <rect x="3.6" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="9.0" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="18.6" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="24.0" y="14.6" width="4.4" height="2.8" rx="0.7" fill="#1f447e"/>
+          <rect x="14.6" y="14.6" width="2.8" height="2.8" rx="0.6" fill="#e97627"/>
+        </svg>
+      </span>
+      <span class="navitem-text">
+        <span class="navitem-name">Tableau</span>
+        <span class="navitem-flow">.twbx&nbsp;→&nbsp;.pbip</span>
+      </span>
+      <span class="navitem-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg></span>
+    </button>
+
+    <button class="navitem" data-conv="qlik" id="nav-qlik">
+      <span class="navitem-glyph">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.6"/>
+          <circle cx="14" cy="14" r="7" fill="#009845"/>
+          <circle cx="14" cy="14" r="4" fill="white"/>
+          <path d="M19 19 L25 25" stroke="#009845" stroke-width="2.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="navitem-text">
+        <span class="navitem-name">Qlik Sense</span>
+        <span class="navitem-flow">App&nbsp;ID&nbsp;→&nbsp;.pbip</span>
+      </span>
+      <span class="navitem-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg></span>
+    </button>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+        One destination
+      </div>
+      <div class="sidebar-card-body">Both converters emit a ready-to-open Power BI Project (<span class="mono">.pbip</span>) — data model, measures, visuals and connections wired up.</div>
+    </div>
+    <div class="sidebar-foot">© 2026 ProcDNA Pvt. Ltd.<br>BI Migration Suite · v1.0</div>
+  </nav>
+
+  <main class="shell-main">
+    <div class="scrim" id="scrim"></div>
+    <iframe class="frame" id="frame" title="Converter" src="/tableau/"></iframe>
+  </main>
+</div>
+
+<script>
+// ── Theme (shared key with both child apps; same-origin localStorage) ──────
+const root=document.documentElement;
+const iconMoon=document.getElementById('icon-moon'),iconSun=document.getElementById('icon-sun');
+const frame=document.getElementById('frame');
+
+function applyThemeToFrame(t){
+  try{
+    const d=frame.contentDocument;
+    if(d&&d.documentElement) d.documentElement.setAttribute('data-theme',t);
+  }catch(e){/* cross-doc not ready; onload will re-apply */}
+}
+function applyTheme(t){
+  root.setAttribute('data-theme',t);
+  iconMoon.style.display=t==='light'?'':'none';
+  iconSun.style.display=t==='dark'?'':'none';
+  try{localStorage.setItem('turbobi-theme',t)}catch{}
+  applyThemeToFrame(t);
+}
+applyTheme(localStorage.getItem('turbobi-theme')||'light');
+document.getElementById('theme-btn').addEventListener('click',()=>
+  applyTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+// Keep the child in sync once its document finishes loading.
+frame.addEventListener('load',()=>applyThemeToFrame(root.getAttribute('data-theme')));
+
+// ── Converter switching ────────────────────────────────────────────────────
+const CONVERTERS={
+  tableau:{src:'/tableau/', name:'Tableau → Power BI',
+    glyph:'<svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect x="14.6" y="3.6" width="2.8" height="24.8" rx="0.7" fill="#1f447e"/><rect x="3.6" y="14.6" width="24.8" height="2.8" rx="0.7" fill="#1f447e"/><rect x="14.6" y="14.6" width="2.8" height="2.8" rx="0.6" fill="#e97627"/></svg>'},
+  qlik:{src:'/qlik/', name:'Qlik Sense → Power BI',
+    glyph:'<svg width="18" height="18" viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="7" fill="#009845"/><circle cx="14" cy="14" r="4" fill="white"/><path d="M19 19 L25 25" stroke="#009845" stroke-width="2.8" stroke-linecap="round"/></svg>'}
+};
+const navItems={tableau:document.getElementById('nav-tableau'),qlik:document.getElementById('nav-qlik')};
+let current=null;
+
+function selectConverter(name, force){
+  if(!CONVERTERS[name]) name='tableau';
+  if(name===current && !force){ if(isMobile()) closeNav(); return; }
+  current=name;
+  const c=CONVERTERS[name];
+  // Only (re)load the iframe when the target actually changes — preserves any
+  // in-flight conversion on the currently shown converter.
+  const want=c.src;
+  if(!frame.src.endsWith(want)) frame.src=want;
+  Object.entries(navItems).forEach(([k,el])=>el.classList.toggle('active',k===name));
+  document.getElementById('ctx-name').textContent=c.name;
+  document.getElementById('ctx-glyph').innerHTML=c.glyph;
+  try{localStorage.setItem('turbobi-converter',name)}catch{}
+  if(isMobile()) closeNav();
+}
+navItems.tableau.addEventListener('click',()=>selectConverter('tableau'));
+navItems.qlik.addEventListener('click',()=>selectConverter('qlik'));
+
+// ── Sidebar collapse / burger ──────────────────────────────────────────────
+const body=document.body, scrim=document.getElementById('scrim');
+function isMobile(){return window.matchMedia('(max-width:860px)').matches;}
+function openNav(){body.classList.remove('nav-collapsed');}
+function closeNav(){body.classList.add('nav-collapsed');}
+function toggleNav(){body.classList.toggle('nav-collapsed');}
+document.getElementById('burger').addEventListener('click',toggleNav);
+scrim.addEventListener('click',closeNav);
+// Mobile starts collapsed (overlay); desktop starts open.
+if(isMobile()) closeNav();
+window.addEventListener('resize',()=>{ if(!isMobile()) scrim.style.display='none'; });
+
+// Restore last-used converter (default: tableau).
+selectConverter(localStorage.getItem('turbobi-converter')||'tableau', true);
+</script>
+</body>
+</html>

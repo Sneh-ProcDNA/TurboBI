@@ -1,0 +1,48 @@
+{
+  "report": {
+    "pages/0716a1b15133f12abce2/page.json": "26a3f05e3ec035c370ebe8ffb9266f1cd5cf14a57c44bbdf023a9597ce465917",
+    "pages/0716a1b15133f12abce2/visuals/00ab63976ee611a16f7e/visual.json": "c241ba93ba572279afb3d01a00a204056502766fada19ae8de33aa5df223fe76",
+    "pages/0716a1b15133f12abce2/visuals/070591308b39616b33c5/visual.json": "d69c504a032c516702313a6cd3bef643e20e74b87a0350c5d9ca4c87dd5d6287",
+    "pages/0716a1b15133f12abce2/visuals/0d6691e0a53157176ef7/visual.json": "bfaf2082ff4847b75cc45e1e56fad305ec2f187f8b6336695c319ed5e5c991a4",
+    "pages/0716a1b15133f12abce2/visuals/3252b39b6da5571ec3dc/visual.json": "a0146376fd3b8638bb270823aef0e76c3f3b753195e3e553af7b0bd24191212c",
+    "pages/0716a1b15133f12abce2/visuals/3404e6182089603a643b/visual.json": "e7e0f14add7674ea5175758cb3579b3f1c308d8095c303538d18662ba75fe1b3",
+    "pages/0716a1b15133f12abce2/visuals/44b3917a44d459264b59/visual.json": "668b504e4203c5b9de551a6e5482424a6dea9db85c0d84004b94ec7b93b56c93",
+    "pages/0716a1b15133f12abce2/visuals/6abd5e0588f6c7cec71a/visual.json": "80cdc05aef18ef7eafd9cb7199e0aa8514315bc6f062ef186e25eb649460af79",
+    "pages/0716a1b15133f12abce2/visuals/74086c2c75eb13e08be5/visual.json": "cecda368b284b412c0451ea05209cc693497f3bdc141c5f06c85f4b9f0626f9a",
+    "pages/0716a1b15133f12abce2/visuals/8a247a473dbac54d31bc/visual.json": "93958fad8cd7350074f250da21eeec631fdd3593b7bb1800d93e9d519f901512",
+    "pages/0716a1b15133f12abce2/visuals/8e77567e47a1f3bde680/visual.json": "e2f96380292175539382672b79c688ff1607a11b64d3967ce16a825b553dd5c0",
+    "pages/0716a1b15133f12abce2/visuals/9920eb875b1e83b7df03/visual.json": "6b1dad9fc644dc2d8b4191dfcea2fdfd093e7767129f57d0705dba991fb6f4fe",
+    "pages/0716a1b15133f12abce2/visuals/a9c317d4fe24feda22d0/visual.json": "263eeb7902905dd9f6c9d77e97b2216386b5bcb020242e4bbc32332989531cb6",
+    "pages/0716a1b15133f12abce2/visuals/cc76221c299fef913696/visual.json": "faa10c4703ee859e3eedf4911da6dcad60d1310daab883cdf6ad2031c8560ea9",
+    "pages/0716a1b15133f12abce2/visuals/e486191375d774222d4e/visual.json": "7e1b85e6a9fd2aaaf8ffe65597fdac8c239339e70dcea9fbb7e3f1b93909e27a",
+    "pages/0716a1b15133f12abce2/visuals/e6019148115483ac5a13/visual.json": "130e8ab3ba80b73295a9031a96a5045e78e1398ebbaf27d44e711c71b4f6f684",
+    "pages/0716a1b15133f12abce2/visuals/ef7940e8aea1b0081116/visual.json": "5d703d9b715fe4d5b19342c916583848225179ebc025974fbd7533a28af89960",
+    "pages/pages.json": "6820b799fcfed138bc7ef6938269bf86541c50ba4e81105b68846e563310e98c",
+    "report.json": "49ee61cfe1dc8f4fe1c818fdb4537059c5bc4e4c8e681e426e54d796776dd46f",
+    "version.json": "32bc72b8e7996a054f96e655c8dd8fda82e5f502532610b45bc21a18cffe30b6"
+  },
+  "semantic_model": {
+    "cultures/en-US.tmdl": "a995d477a1d573696686ae8d71e4e145e6f59a77effcace88992a3491440c77a",
+    "database.tmdl": "096660e23083c923efa9a31c6632d20e2e360280f4fa1dadc2170f81976709e5",
+    "model.tmdl": "fb08ef36a95e684bc3b290cf2cfeb0a17fb15b628d3a1dc3cc9a74892d9a0a80",
+    "relationships.tmdl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tables/netflix_titles.csv.tmdl": "d76281fd812427208c0848f40e30918839bb34c7e91086784d4b502dc829e750"
+  },
+  "summary": {
+    "columns": 20,
+    "measures": 0,
+    "pages": 1,
+    "relationships": 0,
+    "tables": 1,
+    "visual_types": {
+      "areaChart": 1,
+      "azureMap": 1,
+      "cardVisual": 6,
+      "columnChart": 2,
+      "pieChart": 1,
+      "slicer": 2,
+      "textbox": 3
+    },
+    "visuals": 16
+  }
+}

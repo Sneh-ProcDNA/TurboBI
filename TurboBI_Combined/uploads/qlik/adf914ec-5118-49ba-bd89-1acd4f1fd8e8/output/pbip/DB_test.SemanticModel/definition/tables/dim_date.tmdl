@@ -1,0 +1,107 @@
+table dim_date
+	lineageTag: 81cb0c30-e175-a043-481b-801b5f6bf5c9
+
+	column DateKey
+		dataType: dateTime
+		formatString: 'yyyy-MM-dd HH:mm:ss'
+		lineageTag: 83bd66f9-9275-2131-b87c-7300268ba271
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: 'yyyy-MM-dd HH:mm:ss'
+		lineageTag: 0976363e-4e38-8c7a-9fda-9887f8bdd3c2
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		lineageTag: 67b74562-1eb4-dc61-e965-5356abcf9f78
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		lineageTag: 16434390-d85e-999a-9a80-a22f53d48034
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: cc5f05cf-34a4-c82e-a308-6e6e747a22c3
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 5bcc4565-8510-32eb-4793-cf57792ed70d
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		lineageTag: 430395c3-25d7-3d6e-7175-01c7543b1b01
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNumber
+		dataType: int64
+		lineageTag: 1046d61e-7d5c-fb1c-6cde-daf5cc798d7a
+		summarizeBy: sum
+		sourceColumn: WeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: string
+		lineageTag: 5ff20c30-2557-896b-bac5-94b81d4bdb44
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: string
+		lineageTag: 5088bb18-9cdc-962c-682c-50ee6143d5d0
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column HalfYear
+		dataType: string
+		lineageTag: b7d82a28-990f-e40b-37eb-e6289f1dcf80
+		summarizeBy: none
+		sourceColumn: HalfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = m
+		mode: import
+		source =
+			let
+				Source = DatabricksMultiCloud.Catalogs("dbc-3ee0f24b-247b.cloud.databricks.com", "/sql/1.0/warehouses/2be996b7370ad54a", [Catalog="", Database="", QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				Catalog = Source{[Name="turbobi", Kind="Database"]}[Data],
+				Schema = Catalog{[Name="test", Kind="Schema"]}[Data],
+				Navigation = Schema{[Name="dim_date", Kind="Table"]}[Data]
+			in
+				Navigation
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

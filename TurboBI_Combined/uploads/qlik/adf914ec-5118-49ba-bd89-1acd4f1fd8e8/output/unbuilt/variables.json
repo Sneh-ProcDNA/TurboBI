@@ -1,0 +1,58 @@
+[
+  {
+    "qInfo": {
+      "qId": "9804ee22-bc92-4119-afde-c38db92edb60",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "name",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "dim_territory"
+  },
+  {
+    "qInfo": {
+      "qId": "1f1f2405-da3f-44a8-a43f-bae851fa359a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "index",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "0"
+  },
+  {
+    "qInfo": {
+      "qId": "329d339d-1506-415d-a8c7-11d41784e7fd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "currentName",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "dim_territory"
+  },
+  {
+    "qInfo": {
+      "qId": "50e1bb91-c37c-4db9-981e-15d61734a825",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "matches",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "0"
+  }
+]

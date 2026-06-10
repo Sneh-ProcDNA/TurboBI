@@ -1,0 +1,28 @@
+relationship e8f84843-db60-1ffd-7c4d-6a07ceb550f0
+	fromCardinality: many
+	toCardinality: many
+	crossFilteringBehavior: oneDirection
+	fromColumn: Fact_CRM.DateKey
+	toColumn: Dim_Date.DateKey
+
+relationship f9f69c6f-d726-daee-e205-7c37f4d56d3c
+	fromCardinality: many
+	toCardinality: many
+	crossFilteringBehavior: oneDirection
+	fromColumn: Fact_CRM.HCP_ID
+	toColumn: Dim_HCP.HCP_ID
+
+relationship 12f9e798-d2ce-6b09-f6fb-41a39eb397a7
+	fromCardinality: many
+	toCardinality: many
+	crossFilteringBehavior: oneDirection
+	fromColumn: Fact_CRM.Product_ID
+	toColumn: Dim_Product.Product_ID
+
+relationship 831b5f5e-7a4c-618d-b184-da940112448b
+	fromCardinality: many
+	toCardinality: many
+	crossFilteringBehavior: oneDirection
+	fromColumn: Fact_CRM.Territory_ID
+	toColumn: Dim_Territory.Territory_ID
+

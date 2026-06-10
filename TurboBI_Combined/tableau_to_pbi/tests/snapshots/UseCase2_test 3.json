@@ -1,0 +1,54 @@
+{
+  "report": {
+    "pages/c411b33e4a8c88464568/page.json": "cbeb07f399748e98cae4ff7ab2be42bc51aa009e67c29478e177bab52e932159",
+    "pages/c411b33e4a8c88464568/visuals/2fc94733385294df3306/visual.json": "393130aed56a0e1129c0ffe58f3fe2e1c68dca1d6d0a69ef2c300ecd26fd29a4",
+    "pages/c411b33e4a8c88464568/visuals/e579883a5f4696f469fa/visual.json": "e3da05c81106fc2ceb47406d29d6c64fc92755c8258ec439079d0ee4f518828c",
+    "pages/c411b33e4a8c88464568/visuals/fec02cde5bb216a44302/visual.json": "c299b4befdd1aa7e6b4afd3dcd8722846bbea85c43640b744e4d34a1d133fad1",
+    "pages/fb73e2ac638d0aa9c2db/page.json": "7ae05d6e0e975d01b92b710446d89b6e613561a7a9f511d196376965dad2e5bb",
+    "pages/fb73e2ac638d0aa9c2db/visuals/09587cd755b1c5ab0644/visual.json": "0f8a213ffd230f1291ebfc7dea480d1413e099ab1e3eda0e613a897e22d8849f",
+    "pages/fb73e2ac638d0aa9c2db/visuals/218c936278876ea5c9bc/visual.json": "a240da1d322d09a4ef76e0964b7f8fefd57822255aa0c8ee63e69924c008ce36",
+    "pages/fb73e2ac638d0aa9c2db/visuals/342e274d5a7ba9583b5a/visual.json": "cdc0996fea75210de2cdf6f72c10934a5cf88b1a0f13b9da31cc10b323b501f6",
+    "pages/fb73e2ac638d0aa9c2db/visuals/4d76027e78902167e427/visual.json": "23346c5669ff0e42725cc276718ea9f1f39bc2ea78c171f98747581fa4bacad6",
+    "pages/fb73e2ac638d0aa9c2db/visuals/6e56511245b6246d8651/visual.json": "1501cbe4ce0b26326e5eabd3ac5cfa411083b12b3206577d66f19bdb996a8394",
+    "pages/fb73e2ac638d0aa9c2db/visuals/7265a77cf3d8b4e2104c/visual.json": "a413949bbb5fe730fb2a436c86fe67cd9ec2c3185ec7f7e0f89c8b314d924b89",
+    "pages/fb73e2ac638d0aa9c2db/visuals/822bfc38cb38c3c53e14/visual.json": "c46324d1513ea777c0c4b65e743ed47284b4f7883f018c4c5796808e54b681d3",
+    "pages/fb73e2ac638d0aa9c2db/visuals/aa95c16c746820056a29/visual.json": "cc5529347d81369f9ac0c9cd2b4f47dc86ddd456398cbc32608645834e33f00c",
+    "pages/fb73e2ac638d0aa9c2db/visuals/b1acad5c98d79b52ed02/visual.json": "5f3d36909652d0d6e259b64654754e701577650ed802b5dcb4d2b4869f9bd4e6",
+    "pages/fb73e2ac638d0aa9c2db/visuals/ba21e22a81943c2ce957/visual.json": "6e9bd00f5690c6ede9b001c24a567d7e065b0025628434fa4c1e05600528bd86",
+    "pages/fb73e2ac638d0aa9c2db/visuals/bab95c08d2970e353951/visual.json": "249e8b572f388a269328d8aef09586c2c3e2b9599ed9ea612c87380cfc506f13",
+    "pages/fb73e2ac638d0aa9c2db/visuals/c23070598428471daa08/visual.json": "2c744715ae819acb9521df587793504739060b4b92df0810eb6bcdc28ce1a2de",
+    "pages/fb73e2ac638d0aa9c2db/visuals/d08f2f63b00dffcfd629/visual.json": "8400921c2d59a2c448bad81fb3e321e9d4158c2505893c0a72d1119967eefa7c",
+    "pages/pages.json": "c5014b70fd0a4981935ff830bc6a32b20c5c0d392f1bcdf7cd24417870ee3abb",
+    "report.json": "49ee61cfe1dc8f4fe1c818fdb4537059c5bc4e4c8e681e426e54d796776dd46f",
+    "version.json": "32bc72b8e7996a054f96e655c8dd8fda82e5f502532610b45bc21a18cffe30b6"
+  },
+  "semantic_model": {
+    "cultures/en-US.tmdl": "a995d477a1d573696686ae8d71e4e145e6f59a77effcace88992a3491440c77a",
+    "database.tmdl": "096660e23083c923efa9a31c6632d20e2e360280f4fa1dadc2170f81976709e5",
+    "model.tmdl": "2827dfb02c652552c0ea90477125c0c20afd083f8227e8c0b8ac065ce159583a",
+    "relationships.tmdl": "f4b7185faee6c37578aede729285a518f980735d2868643f037a4ffc03b5b7a3",
+    "tables/Persona Selector.tmdl": "bd52453e2f45012cc57f3e3d0246f553b0a2990acdb9297731a2fe99f506b885",
+    "tables/dim_hco.tmdl": "58f829ee4cac73bc4b201020dbc181f1bf677d2be0d0293f1e5d2ae94a76bdeb",
+    "tables/dim_hcp.tmdl": "4c0027cfadeda2bc34412f8d0e182dfea14ffcc364879b761b129707af9e5e40",
+    "tables/fact_referral_edge.tmdl": "8a049273f43db9d611d789209bb0a87b2e8e29f317f55f2490e776f9ee327661"
+  },
+  "summary": {
+    "columns": 71,
+    "measures": 2,
+    "pages": 2,
+    "relationships": 2,
+    "tables": 4,
+    "visual_types": {
+      "azureMap": 1,
+      "barChart": 1,
+      "columnChart": 1,
+      "multiRowCard": 1,
+      "pageNavigator": 2,
+      "pieChart": 1,
+      "slicer": 2,
+      "tableEx": 1,
+      "textbox": 6
+    },
+    "visuals": 16
+  }
+}

@@ -1,0 +1,2129 @@
+{
+  "qInfo": {
+    "qId": "LoadModel",
+    "qType": "LoadModel"
+  },
+  "qMetaDef": {},
+  "connectionMetaDataModels": {
+    "Downloads": {
+      "name": "Downloads",
+      "displayName": "Downloads",
+      "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+      "type": {
+        "provider": "folder",
+        "type": "folder",
+        "isFolderConnector": true,
+        "displayName": "scripteditor.dataconnectors.filedirectory",
+        "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+        "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+        "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+        "needsConnect": false,
+        "isStandardConnector": true
+      },
+      "typeName": "folder",
+      "sourceConnectorID": "folder",
+      "dataconnectorPrefix": "",
+      "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+      "canDelete": true,
+      "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+      "connectorDisplayName": "Folder",
+      "dbInfo": {
+        "dbusage": false,
+        "ownerusage": false,
+        "dbfirst": false,
+        "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+        "dbseparator": "",
+        "ownerseparator": "",
+        "quotesuffix": "\"",
+        "quoteprefix": "\"",
+        "quotesuffixfordoublequotes": "]",
+        "quoteprefixfordoublequotes": "[",
+        "keywords": []
+      }
+    }
+  },
+  "tables": [
+    {
+      "dataconnectorName": "Downloads",
+      "dataconnectorPrefix": "",
+      "boxType": "load-file",
+      "databaseName": "Demo_CRM_Star_Schema.xlsx",
+      "ownerName": "TYPE9_EXCEL_OOXML",
+      "tableName": "★ Schema & Guide",
+      "tableAlias": "★ Schema & Guide",
+      "key": "Downloads:Demo_CRM_Star_Schema.xlsx:TYPE9_EXCEL_OOXML:★ Schema & Guide",
+      "fields": [],
+      "connectionInfo": {
+        "name": "Downloads",
+        "displayName": "Downloads",
+        "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+        "type": {
+          "provider": "folder",
+          "type": "folder",
+          "isFolderConnector": true,
+          "displayName": "scripteditor.dataconnectors.filedirectory",
+          "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+          "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+          "needsConnect": false,
+          "isStandardConnector": true
+        },
+        "typeName": "folder",
+        "sourceConnectorID": "folder",
+        "dataconnectorPrefix": "",
+        "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+        "connectorDisplayName": "Folder",
+        "dbInfo": {
+          "dbusage": false,
+          "ownerusage": false,
+          "dbfirst": false,
+          "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+          "dbseparator": "",
+          "ownerseparator": "",
+          "quotesuffix": "\"",
+          "quoteprefix": "\"",
+          "quotesuffixfordoublequotes": "]",
+          "quoteprefixfordoublequotes": "[",
+          "keywords": []
+        }
+      },
+      "id": "dsd.★ Schema & Guide",
+      "fileFormatSettings": {
+        "qLabel": "embedded labels",
+        "qHeaderSize": 0,
+        "qDelimiter": {
+          "qNumber": 0,
+          "qIsMultiple": false
+        },
+        "qQuote": "standard",
+        "qCodePage": 1252,
+        "qIgnoreEOF": false,
+        "qFixedWidthDelimiters": "1",
+        "qTabSize": 0,
+        "qRecordSize": 0,
+        "qComment": ""
+      },
+      "formatSpec": "(ooxml, embedded labels, table is [★ Schema & Guide])",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Downloads",
+      "dataconnectorPrefix": "",
+      "boxType": "load-file",
+      "databaseName": "Demo_CRM_Star_Schema.xlsx",
+      "ownerName": "TYPE9_EXCEL_OOXML",
+      "tableName": "Dim_Date",
+      "tableAlias": "Dim_Date",
+      "key": "Downloads:Demo_CRM_Star_Schema.xlsx:TYPE9_EXCEL_OOXML:Dim_Date",
+      "fields": [
+        {
+          "id": "dsd.Dim_Date.DateKey",
+          "name": "DateKey",
+          "alias": "Dim_Date.DateKey",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.Date",
+          "name": "Date",
+          "alias": "Date",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.Day",
+          "name": "Day",
+          "alias": "Day",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.Month",
+          "name": "Month",
+          "alias": "Month",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.MonthName",
+          "name": "MonthName",
+          "alias": "MonthName",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.Quarter",
+          "name": "Quarter",
+          "alias": "Quarter",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.Year",
+          "name": "Year",
+          "alias": "Year",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.WeekNumber",
+          "name": "WeekNumber",
+          "alias": "WeekNumber",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.DayOfWeek",
+          "name": "DayOfWeek",
+          "alias": "DayOfWeek",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.IsWeekend",
+          "name": "IsWeekend",
+          "alias": "IsWeekend",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Date.HalfYear",
+          "name": "HalfYear",
+          "alias": "HalfYear",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Downloads",
+        "displayName": "Downloads",
+        "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+        "type": {
+          "provider": "folder",
+          "type": "folder",
+          "isFolderConnector": true,
+          "displayName": "scripteditor.dataconnectors.filedirectory",
+          "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+          "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+          "needsConnect": false,
+          "isStandardConnector": true
+        },
+        "typeName": "folder",
+        "sourceConnectorID": "folder",
+        "dataconnectorPrefix": "",
+        "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+        "connectorDisplayName": "Folder",
+        "dbInfo": {
+          "dbusage": false,
+          "ownerusage": false,
+          "dbfirst": false,
+          "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+          "dbseparator": "",
+          "ownerseparator": "",
+          "quotesuffix": "\"",
+          "quoteprefix": "\"",
+          "quotesuffixfordoublequotes": "]",
+          "quoteprefixfordoublequotes": "[",
+          "keywords": []
+        }
+      },
+      "id": "dsd.Dim_Date",
+      "fileFormatSettings": {
+        "qLabel": "embedded labels",
+        "qHeaderSize": 0,
+        "qDelimiter": {
+          "qNumber": 0,
+          "qIsMultiple": false
+        },
+        "qQuote": "standard",
+        "qCodePage": 1252,
+        "qIgnoreEOF": false,
+        "qFixedWidthDelimiters": "1",
+        "qTabSize": 0,
+        "qRecordSize": 0,
+        "qComment": ""
+      },
+      "formatSpec": "(ooxml, embedded labels, table is Dim_Date)",
+      "selectStatement": "LOAD [DateKey] AS [DateKey],\n\t[Date] AS [Date],\n\t[Day] AS [Day],\n\t[Month] AS [Month],\n\t[MonthName] AS [MonthName],\n\t[Quarter] AS [Quarter],\n\t[Year] AS [Year],\n\t[WeekNumber] AS [WeekNumber],\n\t[DayOfWeek] AS [DayOfWeek],\n\t[IsWeekend] AS [IsWeekend],\n\t[HalfYear] AS [HalfYear]\nFROM [lib://Downloads/Demo_CRM_Star_Schema.xlsx]\n(ooxml, embedded labels, table is Dim_Date);\n",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Downloads",
+      "dataconnectorPrefix": "",
+      "boxType": "load-file",
+      "databaseName": "Demo_CRM_Star_Schema.xlsx",
+      "ownerName": "TYPE9_EXCEL_OOXML",
+      "tableName": "Dim_HCP",
+      "tableAlias": "Dim_HCP",
+      "key": "Downloads:Demo_CRM_Star_Schema.xlsx:TYPE9_EXCEL_OOXML:Dim_HCP",
+      "fields": [
+        {
+          "id": "dsd.Dim_HCP.HCP_ID",
+          "name": "HCP_ID",
+          "alias": "Dim_HCP.HCP_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.HCP_Name",
+          "name": "HCP_Name",
+          "alias": "HCP_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.Specialty",
+          "name": "Specialty",
+          "alias": "Specialty",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.City",
+          "name": "City",
+          "alias": "City",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.State",
+          "name": "State",
+          "alias": "State",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.Region",
+          "name": "Region",
+          "alias": "Dim_HCP.Region",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.Tier",
+          "name": "Tier",
+          "alias": "Tier",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.Segment",
+          "name": "Segment",
+          "alias": "Segment",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.Prescriber_Decile",
+          "name": "Prescriber_Decile",
+          "alias": "Prescriber_Decile",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.NPI_Number",
+          "name": "NPI_Number",
+          "alias": "NPI_Number",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_HCP.Account_Type",
+          "name": "Account_Type",
+          "alias": "Account_Type",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Downloads",
+        "displayName": "Downloads",
+        "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+        "type": {
+          "provider": "folder",
+          "type": "folder",
+          "isFolderConnector": true,
+          "displayName": "scripteditor.dataconnectors.filedirectory",
+          "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+          "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+          "needsConnect": false,
+          "isStandardConnector": true
+        },
+        "typeName": "folder",
+        "sourceConnectorID": "folder",
+        "dataconnectorPrefix": "",
+        "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+        "connectorDisplayName": "Folder",
+        "dbInfo": {
+          "dbusage": false,
+          "ownerusage": false,
+          "dbfirst": false,
+          "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+          "dbseparator": "",
+          "ownerseparator": "",
+          "quotesuffix": "\"",
+          "quoteprefix": "\"",
+          "quotesuffixfordoublequotes": "]",
+          "quoteprefixfordoublequotes": "[",
+          "keywords": []
+        }
+      },
+      "id": "dsd.Dim_HCP",
+      "fileFormatSettings": {
+        "qLabel": "embedded labels",
+        "qHeaderSize": 0,
+        "qDelimiter": {
+          "qNumber": 0,
+          "qIsMultiple": false
+        },
+        "qQuote": "standard",
+        "qCodePage": 1252,
+        "qIgnoreEOF": false,
+        "qFixedWidthDelimiters": "1",
+        "qTabSize": 0,
+        "qRecordSize": 0,
+        "qComment": ""
+      },
+      "formatSpec": "(ooxml, embedded labels, table is Dim_HCP)",
+      "selectStatement": "LOAD [HCP_ID] AS [HCP_ID],\n\t[HCP_Name] AS [HCP_Name],\n\t[Specialty] AS [Specialty],\n\t[City] AS [City],\n\t[State] AS [State],\n\t[Region] AS [Region],\n\t[Tier] AS [Tier],\n\t[Segment] AS [Segment],\n\t[Prescriber_Decile] AS [Prescriber_Decile],\n\t[NPI_Number] AS [NPI_Number],\n\t[Account_Type] AS [Account_Type]\nFROM [lib://Downloads/Demo_CRM_Star_Schema.xlsx]\n(ooxml, embedded labels, table is Dim_HCP);\n",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Downloads",
+      "dataconnectorPrefix": "",
+      "boxType": "load-file",
+      "databaseName": "Demo_CRM_Star_Schema.xlsx",
+      "ownerName": "TYPE9_EXCEL_OOXML",
+      "tableName": "Dim_Product",
+      "tableAlias": "Dim_Product",
+      "key": "Downloads:Demo_CRM_Star_Schema.xlsx:TYPE9_EXCEL_OOXML:Dim_Product",
+      "fields": [
+        {
+          "id": "dsd.Dim_Product.Product_ID",
+          "name": "Product_ID",
+          "alias": "Dim_Product.Product_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Product.Product_Name",
+          "name": "Product_Name",
+          "alias": "Product_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Product.Molecule",
+          "name": "Molecule",
+          "alias": "Molecule",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Product.Category",
+          "name": "Category",
+          "alias": "Category",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Product.Therapeutic_Area",
+          "name": "Therapeutic_Area",
+          "alias": "Therapeutic_Area",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Product.Strength",
+          "name": "Strength",
+          "alias": "Strength",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Product.Unit_Price_USD",
+          "name": "Unit_Price_USD",
+          "alias": "Unit_Price_USD",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Downloads",
+        "displayName": "Downloads",
+        "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+        "type": {
+          "provider": "folder",
+          "type": "folder",
+          "isFolderConnector": true,
+          "displayName": "scripteditor.dataconnectors.filedirectory",
+          "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+          "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+          "needsConnect": false,
+          "isStandardConnector": true
+        },
+        "typeName": "folder",
+        "sourceConnectorID": "folder",
+        "dataconnectorPrefix": "",
+        "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+        "connectorDisplayName": "Folder",
+        "dbInfo": {
+          "dbusage": false,
+          "ownerusage": false,
+          "dbfirst": false,
+          "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+          "dbseparator": "",
+          "ownerseparator": "",
+          "quotesuffix": "\"",
+          "quoteprefix": "\"",
+          "quotesuffixfordoublequotes": "]",
+          "quoteprefixfordoublequotes": "[",
+          "keywords": []
+        }
+      },
+      "id": "dsd.Dim_Product",
+      "fileFormatSettings": {
+        "qLabel": "embedded labels",
+        "qHeaderSize": 0,
+        "qDelimiter": {
+          "qNumber": 0,
+          "qIsMultiple": false
+        },
+        "qQuote": "standard",
+        "qCodePage": 1252,
+        "qIgnoreEOF": false,
+        "qFixedWidthDelimiters": "1",
+        "qTabSize": 0,
+        "qRecordSize": 0,
+        "qComment": ""
+      },
+      "formatSpec": "(ooxml, embedded labels, table is Dim_Product)",
+      "selectStatement": "LOAD [Product_ID] AS [Product_ID],\n\t[Product_Name] AS [Product_Name],\n\t[Molecule] AS [Molecule],\n\t[Category] AS [Category],\n\t[Therapeutic_Area] AS [Therapeutic_Area],\n\t[Strength] AS [Strength],\n\t[Unit_Price_USD] AS [Unit_Price_USD]\nFROM [lib://Downloads/Demo_CRM_Star_Schema.xlsx]\n(ooxml, embedded labels, table is Dim_Product);\n",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Downloads",
+      "dataconnectorPrefix": "",
+      "boxType": "load-file",
+      "databaseName": "Demo_CRM_Star_Schema.xlsx",
+      "ownerName": "TYPE9_EXCEL_OOXML",
+      "tableName": "Dim_Territory",
+      "tableAlias": "Dim_Territory",
+      "key": "Downloads:Demo_CRM_Star_Schema.xlsx:TYPE9_EXCEL_OOXML:Dim_Territory",
+      "fields": [
+        {
+          "id": "dsd.Dim_Territory.Territory_ID",
+          "name": "Territory_ID",
+          "alias": "Dim_Territory.Territory_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.Territory_Name",
+          "name": "Territory_Name",
+          "alias": "Territory_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.Region",
+          "name": "Region",
+          "alias": "Dim_Territory.Region",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.District",
+          "name": "District",
+          "alias": "District",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.Rep_ID",
+          "name": "Rep_ID",
+          "alias": "Dim_Territory.Rep_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.Rep_Name",
+          "name": "Rep_Name",
+          "alias": "Rep_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.Rep_Manager",
+          "name": "Rep_Manager",
+          "alias": "Rep_Manager",
+          "selected": true
+        },
+        {
+          "id": "dsd.Dim_Territory.Annual_Goal_USD",
+          "name": "Annual_Goal_USD",
+          "alias": "Annual_Goal_USD",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Downloads",
+        "displayName": "Downloads",
+        "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+        "type": {
+          "provider": "folder",
+          "type": "folder",
+          "isFolderConnector": true,
+          "displayName": "scripteditor.dataconnectors.filedirectory",
+          "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+          "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+          "needsConnect": false,
+          "isStandardConnector": true
+        },
+        "typeName": "folder",
+        "sourceConnectorID": "folder",
+        "dataconnectorPrefix": "",
+        "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+        "connectorDisplayName": "Folder",
+        "dbInfo": {
+          "dbusage": false,
+          "ownerusage": false,
+          "dbfirst": false,
+          "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+          "dbseparator": "",
+          "ownerseparator": "",
+          "quotesuffix": "\"",
+          "quoteprefix": "\"",
+          "quotesuffixfordoublequotes": "]",
+          "quoteprefixfordoublequotes": "[",
+          "keywords": []
+        }
+      },
+      "id": "dsd.Dim_Territory",
+      "fileFormatSettings": {
+        "qLabel": "embedded labels",
+        "qHeaderSize": 0,
+        "qDelimiter": {
+          "qNumber": 0,
+          "qIsMultiple": false
+        },
+        "qQuote": "standard",
+        "qCodePage": 1252,
+        "qIgnoreEOF": false,
+        "qFixedWidthDelimiters": "1",
+        "qTabSize": 0,
+        "qRecordSize": 0,
+        "qComment": ""
+      },
+      "formatSpec": "(ooxml, embedded labels, table is Dim_Territory)",
+      "selectStatement": "LOAD [Territory_ID] AS [Territory_ID],\n\t[Territory_Name] AS [Territory_Name],\n\t[Region] AS [Region],\n\t[District] AS [District],\n\t[Rep_ID] AS [Rep_ID],\n\t[Rep_Name] AS [Rep_Name],\n\t[Rep_Manager] AS [Rep_Manager],\n\t[Annual_Goal_USD] AS [Annual_Goal_USD]\nFROM [lib://Downloads/Demo_CRM_Star_Schema.xlsx]\n(ooxml, embedded labels, table is Dim_Territory);\n",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Downloads",
+      "dataconnectorPrefix": "",
+      "boxType": "load-file",
+      "databaseName": "Demo_CRM_Star_Schema.xlsx",
+      "ownerName": "TYPE9_EXCEL_OOXML",
+      "tableName": "Fact_CRM",
+      "tableAlias": "Fact_CRM",
+      "key": "Downloads:Demo_CRM_Star_Schema.xlsx:TYPE9_EXCEL_OOXML:Fact_CRM",
+      "fields": [
+        {
+          "id": "dsd.Fact_CRM.Fact_ID",
+          "name": "Fact_ID",
+          "alias": "Fact_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.DateKey",
+          "name": "DateKey",
+          "alias": "Fact_CRM.DateKey",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.HCP_ID",
+          "name": "HCP_ID",
+          "alias": "Fact_CRM.HCP_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Product_ID",
+          "name": "Product_ID",
+          "alias": "Fact_CRM.Product_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Territory_ID",
+          "name": "Territory_ID",
+          "alias": "Fact_CRM.Territory_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Rep_ID",
+          "name": "Rep_ID",
+          "alias": "Fact_CRM.Rep_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Visit_Type",
+          "name": "Visit_Type",
+          "alias": "Visit_Type",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Call_Status",
+          "name": "Call_Status",
+          "alias": "Call_Status",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Detail_Position",
+          "name": "Detail_Position",
+          "alias": "Detail_Position",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Samples_Dropped",
+          "name": "Samples_Dropped",
+          "alias": "Samples_Dropped",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.NRx_Units",
+          "name": "NRx_Units",
+          "alias": "NRx_Units",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.TRx_Units",
+          "name": "TRx_Units",
+          "alias": "TRx_Units",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Sales_USD",
+          "name": "Sales_USD",
+          "alias": "Sales_USD",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Goal_Flag",
+          "name": "Goal_Flag",
+          "alias": "Goal_Flag",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Call_Duration_Min",
+          "name": "Call_Duration_Min",
+          "alias": "Call_Duration_Min",
+          "selected": true
+        },
+        {
+          "id": "dsd.Fact_CRM.Follow_Up_Flag",
+          "name": "Follow_Up_Flag",
+          "alias": "Follow_Up_Flag",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Downloads",
+        "displayName": "Downloads",
+        "id": "25cdbb5f-2b05-4aa4-bbbe-27ac2b630c03",
+        "type": {
+          "provider": "folder",
+          "type": "folder",
+          "isFolderConnector": true,
+          "displayName": "scripteditor.dataconnectors.filedirectory",
+          "connectDialog": "scripteditor.views/fileconnectdialog/fileconnectdialog",
+          "selectDialog": "scripteditor.views/fileselectdialog/fileselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-file-connector/connector-main",
+          "needsConnect": false,
+          "isStandardConnector": true
+        },
+        "typeName": "folder",
+        "sourceConnectorID": "folder",
+        "dataconnectorPrefix": "",
+        "connectionString": "C:\\Users\\ShrikantPansare\\Downloads\\",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-folder-qvx-logo.png",
+        "connectorDisplayName": "Folder",
+        "dbInfo": {
+          "dbusage": false,
+          "ownerusage": false,
+          "dbfirst": false,
+          "specialchars": "!  　\"$&'()*+,-/:;<>´`{}~[]\r\n\t",
+          "dbseparator": "",
+          "ownerseparator": "",
+          "quotesuffix": "\"",
+          "quoteprefix": "\"",
+          "quotesuffixfordoublequotes": "]",
+          "quoteprefixfordoublequotes": "[",
+          "keywords": []
+        }
+      },
+      "id": "dsd.Fact_CRM",
+      "fileFormatSettings": {
+        "qLabel": "embedded labels",
+        "qHeaderSize": 0,
+        "qDelimiter": {
+          "qNumber": 0,
+          "qIsMultiple": false
+        },
+        "qQuote": "standard",
+        "qCodePage": 1252,
+        "qIgnoreEOF": false,
+        "qFixedWidthDelimiters": "1",
+        "qTabSize": 0,
+        "qRecordSize": 0,
+        "qComment": ""
+      },
+      "formatSpec": "(ooxml, embedded labels, table is Fact_CRM)",
+      "selectStatement": "LOAD [Fact_ID] AS [Fact_ID],\n\t[DateKey] AS [DateKey],\n\t[HCP_ID] AS [HCP_ID],\n\t[Product_ID] AS [Product_ID],\n\t[Territory_ID] AS [Territory_ID],\n\t[Rep_ID] AS [Rep_ID],\n\t[Visit_Type] AS [Visit_Type],\n\t[Call_Status] AS [Call_Status],\n\t[Detail_Position] AS [Detail_Position],\n\t[Samples_Dropped] AS [Samples_Dropped],\n\t[NRx_Units] AS [NRx_Units],\n\t[TRx_Units] AS [TRx_Units],\n\t[Sales_USD] AS [Sales_USD],\n\t[Goal_Flag] AS [Goal_Flag],\n\t[Call_Duration_Min] AS [Call_Duration_Min],\n\t[Follow_Up_Flag] AS [Follow_Up_Flag]\nFROM [lib://Downloads/Demo_CRM_Star_Schema.xlsx]\n(ooxml, embedded labels, table is Fact_CRM);\n",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "88dc88e3-8996-425f-b23c-c393444d18c9",
+      "type": "Query",
+      "name": "Dim_Date",
+      "tableRef": "dsd.Dim_Date",
+      "status": "",
+      "fields": [
+        {
+          "id": "fd7c2519-5d39-474e-91b0-780eaa2f40d2",
+          "type": "QueryField",
+          "name": "Dim_Date.DateKey",
+          "fieldRef": "dsd.Dim_Date.DateKey",
+          "classifications": [
+            "date"
+          ],
+          "originalClassification": [
+            "date"
+          ],
+          "transformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "fd7c2519-5d39-474e-91b0-780eaa2f40d2",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "fd7c2519-5d39-474e-91b0-780eaa2f40d2",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "9ecb3366-30a2-47a6-83d5-f9bab6204a6c",
+          "type": "QueryField",
+          "name": "Date",
+          "fieldRef": "dsd.Dim_Date.Date",
+          "classifications": [
+            "date"
+          ],
+          "originalClassification": [
+            "date"
+          ],
+          "transformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "9ecb3366-30a2-47a6-83d5-f9bab6204a6c",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYY-MM-DD"
+                ],
+                "sourceFieldType": "string"
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "9ecb3366-30a2-47a6-83d5-f9bab6204a6c",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYY-MM-DD"
+                ],
+                "sourceFieldType": "string"
+              }
+            }
+          ]
+        },
+        {
+          "id": "e5a6ddc8-eee1-46c7-a9af-8bfab189418c",
+          "type": "QueryField",
+          "name": "Day",
+          "fieldRef": "dsd.Dim_Date.Day",
+          "classifications": [
+            "monthDay"
+          ],
+          "originalClassification": [
+            "monthDay"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "08cea771-88be-458d-a28f-cba3fdee9c3a",
+          "type": "QueryField",
+          "name": "Month",
+          "fieldRef": "dsd.Dim_Date.Month",
+          "classifications": [
+            "month"
+          ],
+          "originalClassification": [
+            "month"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "81f1f104-f60b-4a9a-918d-3f6ef5f2ecf5",
+          "type": "QueryField",
+          "name": "MonthName",
+          "fieldRef": "dsd.Dim_Date.MonthName",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "4b793dda-d5aa-41aa-9d5d-f5fcba110a67",
+          "type": "QueryField",
+          "name": "Quarter",
+          "fieldRef": "dsd.Dim_Date.Quarter",
+          "classifications": [
+            "quarter"
+          ],
+          "originalClassification": [
+            "quarter"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "7502b955-3dba-4087-a335-ed69390839c4",
+          "type": "QueryField",
+          "name": "Year",
+          "fieldRef": "dsd.Dim_Date.Year",
+          "classifications": [
+            "year"
+          ],
+          "originalClassification": [
+            "year"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "f12c67d1-7e0a-400e-9af4-f257c5dd1881",
+          "type": "QueryField",
+          "name": "WeekNumber",
+          "fieldRef": "dsd.Dim_Date.WeekNumber",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "4c138c7c-73ae-433c-84cd-edd06131619d",
+          "type": "QueryField",
+          "name": "DayOfWeek",
+          "fieldRef": "dsd.Dim_Date.DayOfWeek",
+          "classifications": [
+            "weekDay"
+          ],
+          "originalClassification": [
+            "weekDay"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "4103391f-35c6-4a00-9d31-77fdb4fb39a2",
+          "type": "QueryField",
+          "name": "IsWeekend",
+          "fieldRef": "dsd.Dim_Date.IsWeekend",
+          "classifications": [
+            "boolean"
+          ],
+          "originalClassification": [
+            "boolean"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "33b1f028-9e43-406f-add7-a1f24d6869c2",
+          "type": "QueryField",
+          "name": "HalfYear",
+          "fieldRef": "dsd.Dim_Date.HalfYear",
+          "classifications": [
+            "year"
+          ],
+          "originalClassification": [
+            "year"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    },
+    {
+      "id": "6b9b9060-8a4d-4c24-bd18-a8f3eaa9eabb",
+      "type": "Query",
+      "name": "Dim_HCP",
+      "tableRef": "dsd.Dim_HCP",
+      "status": "",
+      "fields": [
+        {
+          "id": "8a2d2bc4-94dc-4aa7-9106-75a5dbe73109",
+          "type": "QueryField",
+          "name": "Dim_HCP.HCP_ID",
+          "fieldRef": "dsd.Dim_HCP.HCP_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "97a31549-b8ad-472b-a725-80a901b69f6f",
+          "type": "QueryField",
+          "name": "HCP_Name",
+          "fieldRef": "dsd.Dim_HCP.HCP_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "97a31549-b8ad-472b-a725-80a901b69f6f",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": ".",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "97a31549-b8ad-472b-a725-80a901b69f6f",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": ".",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "1f75b091-5cf7-477d-aa7a-8be85663e78d",
+          "type": "QueryField",
+          "name": "Specialty",
+          "fieldRef": "dsd.Dim_HCP.Specialty",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "ab15a578-4eb5-498b-89a5-6d989641e7ec",
+          "type": "QueryField",
+          "name": "City",
+          "fieldRef": "dsd.Dim_HCP.City",
+          "classifications": [
+            "city"
+          ],
+          "originalClassification": [
+            "city"
+          ],
+          "transformations": [
+            {
+              "op": "lookupGeoInfo",
+              "appliedTo": "ab15a578-4eb5-498b-89a5-6d989641e7ec",
+              "arguments": {
+                "geoType": "cityAlias",
+                "matchRatio": 1
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "lookupGeoInfo",
+              "appliedTo": "ab15a578-4eb5-498b-89a5-6d989641e7ec",
+              "arguments": {
+                "geoType": "cityAlias",
+                "matchRatio": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "3ccdb0a8-f0a5-44a1-98a0-c0af80daba96",
+          "type": "QueryField",
+          "name": "State",
+          "fieldRef": "dsd.Dim_HCP.State",
+          "classifications": [
+            "stateProvince"
+          ],
+          "originalClassification": [
+            "stateProvince"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "25aa79ae-5509-4864-a55a-e4f33549e934",
+          "type": "QueryField",
+          "name": "Dim_HCP.Region",
+          "fieldRef": "dsd.Dim_HCP.Region",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "89e56c9a-7334-4ae3-bd11-e8ea25da6fb2",
+          "type": "QueryField",
+          "name": "Tier",
+          "fieldRef": "dsd.Dim_HCP.Tier",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "e04c16d5-f36f-4a86-9e4e-7c6653f43c17",
+          "type": "QueryField",
+          "name": "Segment",
+          "fieldRef": "dsd.Dim_HCP.Segment",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "8d75dfc2-ae2c-437b-a9a6-87f2fa61301d",
+          "type": "QueryField",
+          "name": "Prescriber_Decile",
+          "fieldRef": "dsd.Dim_HCP.Prescriber_Decile",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "8fe580c2-3430-45bf-87c0-6da48efe02ab",
+          "type": "QueryField",
+          "name": "NPI_Number",
+          "fieldRef": "dsd.Dim_HCP.NPI_Number",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "55add475-7d0b-4002-a86f-4cbd2573c404",
+          "type": "QueryField",
+          "name": "Account_Type",
+          "fieldRef": "dsd.Dim_HCP.Account_Type",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "888fcabf-7976-4c8a-b1f3-ac6aeca1e749",
+          "type": "QueryTransformField",
+          "name": "Dim_HCP.City_GeoInfo",
+          "transformations": [
+            {
+              "op": "lookupGeoInfo",
+              "appliedTo": "ab15a578-4eb5-498b-89a5-6d989641e7ec",
+              "arguments": {
+                "geoType": "cityAlias",
+                "matchRatio": 1
+              }
+            }
+          ],
+          "classifications": [
+            "geoPoint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a384d2d5-c0dc-48b0-861c-ac01c0ae8632",
+      "type": "Query",
+      "name": "Dim_Product",
+      "tableRef": "dsd.Dim_Product",
+      "status": "",
+      "fields": [
+        {
+          "id": "4ba31243-a5a6-4cd7-a9c5-5ada742a290e",
+          "type": "QueryField",
+          "name": "Dim_Product.Product_ID",
+          "fieldRef": "dsd.Dim_Product.Product_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "6b8bf168-4fbc-48dd-98fb-eb4487d8322f",
+          "type": "QueryField",
+          "name": "Product_Name",
+          "fieldRef": "dsd.Dim_Product.Product_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "5664a5ca-bf70-487c-b062-3cdab61ef0ff",
+          "type": "QueryField",
+          "name": "Molecule",
+          "fieldRef": "dsd.Dim_Product.Molecule",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "5db8417a-8edb-4d9c-aefa-70d372920081",
+          "type": "QueryField",
+          "name": "Category",
+          "fieldRef": "dsd.Dim_Product.Category",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "34c281cd-6982-4949-82b5-25f72f1a966e",
+          "type": "QueryField",
+          "name": "Therapeutic_Area",
+          "fieldRef": "dsd.Dim_Product.Therapeutic_Area",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "73efc16a-761d-4ff9-baa6-e9aef8bceeca",
+          "type": "QueryField",
+          "name": "Strength",
+          "fieldRef": "dsd.Dim_Product.Strength",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "0095f1df-824d-484a-a1c5-2b5388d692f4",
+          "type": "QueryField",
+          "name": "Unit_Price_USD",
+          "fieldRef": "dsd.Dim_Product.Unit_Price_USD",
+          "classifications": [
+            "monetary"
+          ],
+          "originalClassification": [
+            "monetary"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    },
+    {
+      "id": "d8f0a8a3-86e5-4bd1-b944-94f0f05045cb",
+      "type": "Query",
+      "name": "Dim_Territory",
+      "tableRef": "dsd.Dim_Territory",
+      "status": "",
+      "fields": [
+        {
+          "id": "e70853af-6883-4720-bad2-fe91d4cbb624",
+          "type": "QueryField",
+          "name": "Dim_Territory.Territory_ID",
+          "fieldRef": "dsd.Dim_Territory.Territory_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "e70853af-6883-4720-bad2-fe91d4cbb624",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "e70853af-6883-4720-bad2-fe91d4cbb624",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "a85b6264-7da6-4a6e-88c1-c611fd1c5248",
+          "type": "QueryField",
+          "name": "Territory_Name",
+          "fieldRef": "dsd.Dim_Territory.Territory_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "a85b6264-7da6-4a6e-88c1-c611fd1c5248",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "a85b6264-7da6-4a6e-88c1-c611fd1c5248",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "914577a4-f6df-4463-9f40-dc98ae55e027",
+          "type": "QueryField",
+          "name": "Dim_Territory.Region",
+          "fieldRef": "dsd.Dim_Territory.Region",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "92b066bc-2304-4ae4-9189-2975816f105d",
+          "type": "QueryField",
+          "name": "District",
+          "fieldRef": "dsd.Dim_Territory.District",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "a8d82d88-a6ef-4f67-b61d-9536acb60ccb",
+          "type": "QueryField",
+          "name": "Dim_Territory.Rep_ID",
+          "fieldRef": "dsd.Dim_Territory.Rep_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "256f57eb-32bf-4e38-88ab-7250084f13cb",
+          "type": "QueryField",
+          "name": "Rep_Name",
+          "fieldRef": "dsd.Dim_Territory.Rep_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "5b192bd4-2aac-4268-9a8a-503082cdfe1c",
+          "type": "QueryField",
+          "name": "Rep_Manager",
+          "fieldRef": "dsd.Dim_Territory.Rep_Manager",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "5b192bd4-2aac-4268-9a8a-503082cdfe1c",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "_",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "5b192bd4-2aac-4268-9a8a-503082cdfe1c",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "_",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "8c3b627c-5147-44d5-a751-a74a6b1f466e",
+          "type": "QueryField",
+          "name": "Annual_Goal_USD",
+          "fieldRef": "dsd.Dim_Territory.Annual_Goal_USD",
+          "classifications": [
+            "monetary"
+          ],
+          "originalClassification": [
+            "monetary"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    },
+    {
+      "id": "11ee0574-06a2-4232-b7fc-e6ad0984bee7",
+      "type": "Query",
+      "name": "Fact_CRM",
+      "tableRef": "dsd.Fact_CRM",
+      "status": "",
+      "fields": [
+        {
+          "id": "38e44076-01df-41d5-9633-2874a2cc0617",
+          "type": "QueryField",
+          "name": "Fact_ID",
+          "fieldRef": "dsd.Fact_CRM.Fact_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "eaf49cdf-25f0-4b54-86ab-5fb5eb896b89",
+          "type": "QueryField",
+          "name": "Fact_CRM.DateKey",
+          "fieldRef": "dsd.Fact_CRM.DateKey",
+          "classifications": [
+            "date"
+          ],
+          "originalClassification": [
+            "date"
+          ],
+          "transformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "eaf49cdf-25f0-4b54-86ab-5fb5eb896b89",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "eaf49cdf-25f0-4b54-86ab-5fb5eb896b89",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "7ecb4b10-3fd1-4f9c-80e7-e965a10f5fe0",
+          "type": "QueryField",
+          "name": "Fact_CRM.HCP_ID",
+          "fieldRef": "dsd.Fact_CRM.HCP_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "a4da544f-a781-4368-9a28-27cf2de28abb",
+          "type": "QueryField",
+          "name": "Fact_CRM.Product_ID",
+          "fieldRef": "dsd.Fact_CRM.Product_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "87b87860-f510-4572-8f03-350551415d65",
+          "type": "QueryField",
+          "name": "Fact_CRM.Territory_ID",
+          "fieldRef": "dsd.Fact_CRM.Territory_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "87b87860-f510-4572-8f03-350551415d65",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "87b87860-f510-4572-8f03-350551415d65",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "8ea513cf-eec1-4751-aa81-20bb77d436f7",
+          "type": "QueryField",
+          "name": "Fact_CRM.Rep_ID",
+          "fieldRef": "dsd.Fact_CRM.Rep_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "b2f2668f-d0e0-48fc-a127-f55f2d5087e2",
+          "type": "QueryField",
+          "name": "Visit_Type",
+          "fieldRef": "dsd.Fact_CRM.Visit_Type",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "e71c5359-a514-4f49-8b1f-93863d55d033",
+          "type": "QueryField",
+          "name": "Call_Status",
+          "fieldRef": "dsd.Fact_CRM.Call_Status",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "5cac9bc9-91d3-4e78-99c4-d7c1d28bf68b",
+          "type": "QueryField",
+          "name": "Detail_Position",
+          "fieldRef": "dsd.Fact_CRM.Detail_Position",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "9527f746-b7e0-4143-b0ee-84f081037730",
+          "type": "QueryField",
+          "name": "Samples_Dropped",
+          "fieldRef": "dsd.Fact_CRM.Samples_Dropped",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "6d1c0d79-a69f-4d75-8932-c1f1151565ca",
+          "type": "QueryField",
+          "name": "NRx_Units",
+          "fieldRef": "dsd.Fact_CRM.NRx_Units",
+          "classifications": [
+            "measure"
+          ],
+          "originalClassification": [
+            "measure"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "829e625c-6431-4798-bd10-f78c89ee6cac",
+          "type": "QueryField",
+          "name": "TRx_Units",
+          "fieldRef": "dsd.Fact_CRM.TRx_Units",
+          "classifications": [
+            "measure"
+          ],
+          "originalClassification": [
+            "measure"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "0bfc4997-19ed-430b-a2de-d5e172a37ad1",
+          "type": "QueryField",
+          "name": "Sales_USD",
+          "fieldRef": "dsd.Fact_CRM.Sales_USD",
+          "classifications": [
+            "monetary"
+          ],
+          "originalClassification": [
+            "monetary"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "564b727d-7076-4843-8645-916574314070",
+          "type": "QueryField",
+          "name": "Goal_Flag",
+          "fieldRef": "dsd.Fact_CRM.Goal_Flag",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "01fcb7c5-dd9b-443c-aef3-6c0439ca8b71",
+          "type": "QueryField",
+          "name": "Call_Duration_Min",
+          "fieldRef": "dsd.Fact_CRM.Call_Duration_Min",
+          "classifications": [
+            "measure"
+          ],
+          "originalClassification": [
+            "measure"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "17027e7f-8baf-4422-9667-356203bbcd69",
+          "type": "QueryField",
+          "name": "Follow_Up_Flag",
+          "fieldRef": "dsd.Fact_CRM.Follow_Up_Flag",
+          "classifications": [
+            "boolean"
+          ],
+          "originalClassification": [
+            "boolean"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    }
+  ],
+  "associations": {
+    "HCP_ID": [
+      {
+        "tableId": "6b9b9060-8a4d-4c24-bd18-a8f3eaa9eabb",
+        "fieldId": "8a2d2bc4-94dc-4aa7-9106-75a5dbe73109"
+      },
+      {
+        "tableId": "11ee0574-06a2-4232-b7fc-e6ad0984bee7",
+        "fieldId": "7ecb4b10-3fd1-4f9c-80e7-e965a10f5fe0"
+      }
+    ],
+    "Territory_ID": [
+      {
+        "tableId": "d8f0a8a3-86e5-4bd1-b944-94f0f05045cb",
+        "fieldId": "e70853af-6883-4720-bad2-fe91d4cbb624"
+      },
+      {
+        "tableId": "11ee0574-06a2-4232-b7fc-e6ad0984bee7",
+        "fieldId": "87b87860-f510-4572-8f03-350551415d65"
+      }
+    ],
+    "Product_ID": [
+      {
+        "tableId": "a384d2d5-c0dc-48b0-861c-ac01c0ae8632",
+        "fieldId": "4ba31243-a5a6-4cd7-a9c5-5ada742a290e"
+      },
+      {
+        "tableId": "11ee0574-06a2-4232-b7fc-e6ad0984bee7",
+        "fieldId": "a4da544f-a781-4368-9a28-27cf2de28abb"
+      }
+    ],
+    "DateKey": [
+      {
+        "tableId": "88dc88e3-8996-425f-b23c-c393444d18c9",
+        "fieldId": "fd7c2519-5d39-474e-91b0-780eaa2f40d2"
+      },
+      {
+        "tableId": "11ee0574-06a2-4232-b7fc-e6ad0984bee7",
+        "fieldId": "eaf49cdf-25f0-4b54-86ab-5fb5eb896b89"
+      }
+    ]
+  },
+  "locale": {
+    "0": "e",
+    "1": "n",
+    "2": "-",
+    "3": "U",
+    "4": "S"
+  },
+  "defaultCalendar": {
+    "id": "autoCalendar",
+    "name": "autoCalendar",
+    "appliedToTags": [
+      "$date"
+    ],
+    "derivedFields": [
+      {
+        "id": "Decade",
+        "name": "Decade",
+        "translation": "",
+        "definition": "Dual(Div(Year($1),10)*10, MakeDate(Div(Year($1),10)*10, 1, 1))",
+        "tags": [
+          "$axis",
+          "$decade"
+        ],
+        "selected": false
+      },
+      {
+        "id": "Year",
+        "name": "Year",
+        "translation": "scripteditor.autoCalendarYear",
+        "definition": "Dual(Year($1), YearStart($1))",
+        "tags": [
+          "$axis",
+          "$year"
+        ],
+        "selected": true
+      },
+      {
+        "id": "Quarter",
+        "name": "Quarter",
+        "translation": "scripteditor.autoCalendarQuarter",
+        "definition": "Dual('Q'&Num(Ceil(Num(Month($1))/3)),Num(Ceil(NUM(Month($1))/3),00))",
+        "tags": [
+          "$quarter",
+          "$cyclic"
+        ],
+        "selected": true
+      },
+      {
+        "id": "YearQuarter",
+        "name": "YearQuarter",
+        "translation": "scripteditor.autoCalendarQuarterYear",
+        "definition": "Dual(Year($1)&'-Q'&Num(Ceil(Num(Month($1))/3)),QuarterStart($1))",
+        "tags": [
+          "$yearquarter",
+          "$qualified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "_YearQuarter",
+        "name": "_YearQuarter",
+        "translation": "scripteditor.autoCalendarQuarterYear",
+        "definition": "Dual('Q'&Num(Ceil(Num(Month($1))/3)),QuarterStart($1))",
+        "tags": [
+          "$yearquarter",
+          "$hidden",
+          "$simplified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "Month",
+        "name": "Month",
+        "translation": "scripteditor.autoCalendarMonth",
+        "definition": "Month($1)",
+        "tags": [
+          "$month",
+          "$cyclic"
+        ],
+        "selected": true
+      },
+      {
+        "id": "YearMonth",
+        "name": "YearMonth",
+        "translation": "scripteditor.autoCalendarMonthYear",
+        "definition": "Dual(Year($1)&'-'&Month($1), monthstart($1))",
+        "tags": [
+          "$axis",
+          "$yearmonth",
+          "$qualified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "_YearMonth",
+        "name": "_YearMonth",
+        "translation": "scripteditor.autoCalendarMonthYear",
+        "definition": "Dual(Month($1), monthstart($1))",
+        "tags": [
+          "$axis",
+          "$yearmonth",
+          "$simplified",
+          "$hidden"
+        ],
+        "selected": true
+      },
+      {
+        "id": "Week",
+        "name": "Week",
+        "translation": "scripteditor.autoCalendarWeek",
+        "definition": "Dual('W'&Num(Week($1),00), Num(Week($1),00))",
+        "tags": [
+          "$weeknumber",
+          "$cyclic"
+        ],
+        "selected": true
+      },
+      {
+        "id": "YearWeek",
+        "name": "YearWeek",
+        "translation": "",
+        "definition": "Dual(Year($1)&'-W'&num(Week($1),00), weekstart($1))",
+        "tags": [
+          "$yearweek"
+        ],
+        "selected": false
+      },
+      {
+        "id": "WeekDay",
+        "name": "WeekDay",
+        "translation": "",
+        "definition": "Dual(WeekDay($1),num(WeekDay($1)))",
+        "tags": [
+          "$weekday"
+        ],
+        "selected": false
+      },
+      {
+        "id": "Date",
+        "name": "Date",
+        "translation": "scripteditor.autoCalendarDate",
+        "definition": "Date(Floor($1))",
+        "tags": [
+          "$axis",
+          "$date",
+          "$qualified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "_Date",
+        "name": "_Date",
+        "translation": "scripteditor.autoCalendarDate",
+        "definition": "Date(Floor($1), 'D')",
+        "tags": [
+          "$axis",
+          "$date",
+          "$hidden",
+          "$simplified"
+        ],
+        "selected": true
+      }
+    ],
+    "groups": [
+      {
+        "name": "YearMonthDay",
+        "drillDown": "true",
+        "fieldRefs": [
+          "Year",
+          "Month",
+          "WeekDay"
+        ]
+      },
+      {
+        "name": "YearMonth",
+        "drillDown": "false",
+        "fieldRefs": [
+          "Year",
+          "Month"
+        ]
+      }
+    ],
+    "deriveFieldsType": "fieldExplicit"
+  },
+  "schemaVersion": 2.1
+}

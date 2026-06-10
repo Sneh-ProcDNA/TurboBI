@@ -1,0 +1,439 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "4af7eff5a5b9566714c7",
+  "position": {
+    "x": 0,
+    "y": 400,
+    "z": 8,
+    "height": 320,
+    "width": 1280,
+    "tabOrder": 8
+  },
+  "filterConfig": {
+    "filters": []
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "queryRef": "Dim_HCP.Dim_HCP_Region",
+              "nativeQueryRef": "Dim_HCP_Region",
+              "active": true,
+              "displayName": "Dim_HCP_Region",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Dim_HCP_Region"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_Territory.Territory_Name",
+              "nativeQueryRef": "Territory_Name",
+              "active": true,
+              "displayName": "Territory_Name",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Territory"
+                    }
+                  },
+                  "Property": "Territory_Name"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_HCP.HCP_ID",
+              "nativeQueryRef": "HCP_ID",
+              "active": true,
+              "displayName": "HCP_ID",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "HCP_ID"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_HCP.HCP_Name",
+              "nativeQueryRef": "HCP_Name",
+              "active": true,
+              "displayName": "HCP_Name",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "HCP_Name"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_Product.Product_Name",
+              "nativeQueryRef": "Product_Name",
+              "active": true,
+              "displayName": "Product_Name",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Product"
+                    }
+                  },
+                  "Property": "Product_Name"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_Product.Category",
+              "nativeQueryRef": "Category",
+              "active": true,
+              "displayName": "Category",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Product"
+                    }
+                  },
+                  "Property": "Category"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_HCP.Tier",
+              "nativeQueryRef": "Tier",
+              "active": true,
+              "displayName": "Tier",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Tier"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_HCP.Account_Type",
+              "nativeQueryRef": "Account_Type",
+              "active": true,
+              "displayName": "Account_Type",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Account_Type"
+                }
+              }
+            },
+            {
+              "queryRef": "Dim_HCP.Specialty",
+              "nativeQueryRef": "Specialty",
+              "active": true,
+              "displayName": "Specialty",
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_HCP"
+                    }
+                  },
+                  "Property": "Specialty"
+                }
+              }
+            },
+            {
+              "queryRef": "Fact_CRM.Samples_Dropped",
+              "nativeQueryRef": "Samples_Dropped",
+              "active": true,
+              "displayName": "Sum of Samples_Dropped",
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_CRM"
+                        }
+                      },
+                      "Property": "Samples_Dropped"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            },
+            {
+              "queryRef": "Fact_CRM.NRx_Units",
+              "nativeQueryRef": "NRx_Units",
+              "active": true,
+              "displayName": "Sum of NRx_Units",
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_CRM"
+                        }
+                      },
+                      "Property": "NRx_Units"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            },
+            {
+              "queryRef": "Fact_CRM.TRx_Units",
+              "nativeQueryRef": "TRx_Units",
+              "active": true,
+              "displayName": "Sum of TRx_Units",
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_CRM"
+                        }
+                      },
+                      "Property": "TRx_Units"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "Dim_HCP_Region"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Territory"
+                  }
+                },
+                "Property": "Territory_Name"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "HCP_ID"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "HCP_Name"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Product"
+                  }
+                },
+                "Property": "Product_Name"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "Tier"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "Account_Type"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_HCP"
+                  }
+                },
+                "Property": "Specialty"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact_CRM"
+                      }
+                    },
+                    "Property": "Samples_Dropped"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          },
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact_CRM"
+                      }
+                    },
+                    "Property": "NRx_Units"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Product"
+                  }
+                },
+                "Property": "Category"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact_CRM"
+                      }
+                    },
+                    "Property": "TRx_Units"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detailed View'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,78 @@
+table Dim_Territory
+	lineageTag: e5eddd3f-f5a5-d569-eb74-b2ae9cc0481a
+
+	column Territory_ID
+		dataType: string
+		lineageTag: 0dee5be0-98b4-b8fd-3b8e-51c16fb78566
+		summarizeBy: none
+		sourceColumn: Territory_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory_Name
+		dataType: string
+		lineageTag: d63e5745-78eb-736c-0b72-40ec1dcfa29c
+		summarizeBy: none
+		sourceColumn: Territory_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dim_Territory_Region
+		dataType: string
+		lineageTag: cccace8f-1ff6-20ea-aa32-6c47dae90db2
+		summarizeBy: none
+		sourceColumn: Dim_Territory.Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column District
+		dataType: string
+		lineageTag: 52773096-75ab-bedd-17a2-0128e937938b
+		summarizeBy: none
+		sourceColumn: District
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dim_Territory_Rep_ID
+		dataType: string
+		lineageTag: 34ff61c1-de57-b106-7bad-45e7579edc54
+		summarizeBy: none
+		sourceColumn: Dim_Territory.Rep_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rep_Name
+		dataType: string
+		lineageTag: b41438a1-4b3e-3312-2718-5837897215eb
+		summarizeBy: none
+		sourceColumn: Rep_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rep_Manager
+		dataType: string
+		lineageTag: d1198c33-e42d-8eed-5de5-fa42cee9b10f
+		summarizeBy: none
+		sourceColumn: Rep_Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Annual_Goal_USD
+		dataType: int64
+		lineageTag: 43881c22-324d-1d80-e9fa-64fce6d6095f
+		summarizeBy: sum
+		sourceColumn: Annual_Goal_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Territory = m
+		mode: import
+		source =
+			let
+				Source = Parquet.Document(File.Contents(RepoPath & "/data/Dim_Territory.parquet"))
+			in
+				Source
+
+	annotation PBI_NavigationStepName = Source
+
+	annotation PBI_ResultType = Table

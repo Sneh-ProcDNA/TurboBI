@@ -1,0 +1,2808 @@
+{
+  "qInfo": {
+    "qId": "LoadModel",
+    "qType": "LoadModel"
+  },
+  "qMetaDef": {},
+  "connectionMetaDataModels": {
+    "Databricks": {
+      "name": "Databricks",
+      "displayName": "Databricks",
+      "id": "8cd3c760-21ea-40bc-b378-f79f50812c4d",
+      "type": {
+        "provider": "ODBC",
+        "type": "ODBC",
+        "displayName": "scripteditor.dataconnectors.ODBC",
+        "connectDialog": "scripteditor.views/odbcconnectdialog/odbcconnectdialog",
+        "selectDialog": "scripteditor.views/odbcselectdialog/odbcselectdialog",
+        "connectorMain": "assets/hldm/data-connectors/native-odbc-connector/connector-main",
+        "needsConnect": true,
+        "isStandardConnector": true
+      },
+      "typeName": "ODBC",
+      "sourceConnectorID": "odbc",
+      "dataconnectorPrefix": "",
+      "connectionString": "ODBC CONNECT TO [Databricks;]",
+      "canDelete": true,
+      "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-odbc-logo.png",
+      "connectorDisplayName": "ODBC",
+      "dbInfo": {
+        "dbusage": true,
+        "ownerusage": true,
+        "dbfirst": true,
+        "specialchars": "½§!\"@#£¤`$%&/{}[]()=?\\´/+-*><|;,:.-_^~¨*' \t",
+        "dbseparator": ".",
+        "defaultdatabase": "workspace",
+        "ownerseparator": ".",
+        "quotesuffix": "`",
+        "quoteprefix": "`",
+        "dbmsname": "Spark SQL",
+        "keywords": [
+          "CACHE",
+          "CONF",
+          "CUBE",
+          "DATABASE",
+          "DAYOFWEEK",
+          "EXCHANGE",
+          "EXTENDED",
+          "FLOOR",
+          "FOLLOWING",
+          "FUNCTION",
+          "GROUPING",
+          "IF",
+          "IMPORT",
+          "LATERAL",
+          "LESS",
+          "MACRO",
+          "MORE",
+          "OUT",
+          "OVER",
+          "PARTIALSCAN",
+          "PARTITION",
+          "PERCENT",
+          "PRECEDING",
+          "RANGE",
+          "READS",
+          "REDUCE",
+          "REGEXP",
+          "RLIKE",
+          "ROLLUP",
+          "ROW",
+          "START",
+          "TABLESAMPLE",
+          "TRANSFORM",
+          "TRIGGER",
+          "TRUNCATE",
+          "UNBOUNDED",
+          "UNIQUEJOIN",
+          "UTC_TMESTAMP",
+          "WINDOW",
+          "ADA",
+          "ALL",
+          "AND",
+          "ANY",
+          "AS",
+          "ASC",
+          "AUTHORIZATION",
+          "AVG",
+          "BEGIN",
+          "BETWEEN",
+          "BY",
+          "C",
+          "CHAR",
+          "CHARACTER",
+          "CHECK",
+          "CLOSE",
+          "COBOL",
+          "COMMIT",
+          "CONTINUE",
+          "COUNT",
+          "CREATE",
+          "CURRENT",
+          "CURSOR",
+          "DEC",
+          "DECIMAL",
+          "DECLARE",
+          "DEFAULT",
+          "DELETE",
+          "DESC",
+          "DISTINCT",
+          "DOUBLE",
+          "END",
+          "ESCAPE",
+          "EXEC",
+          "EXISTS",
+          "FETCH",
+          "FLOAT",
+          "FOR",
+          "FOREIGN",
+          "FORTRAN",
+          "FOUND",
+          "FROM",
+          "GO",
+          "GOTO",
+          "GRANT",
+          "GROUP",
+          "HAVING",
+          "IN",
+          "INDICATOR",
+          "INSERT",
+          "INT",
+          "INTEGER",
+          "INTO",
+          "IS",
+          "KEY",
+          "LANGUAGE",
+          "LIKE",
+          "MAX",
+          "MIN",
+          "MODULE",
+          "NOT",
+          "NULL",
+          "NUMERIC",
+          "OF",
+          "ON",
+          "OPEN",
+          "EQ_OPTION",
+          "OR",
+          "ORDER",
+          "PASCAL",
+          "PLI",
+          "PRECISION",
+          "PRIMARY",
+          "PRIVILEGES",
+          "PROCEDURE",
+          "PUBLIC",
+          "REAL",
+          "REFERENCES",
+          "ROLLBACK",
+          "SCHEMA",
+          "SECTION",
+          "SELECT",
+          "SET",
+          "SMALLINT",
+          "SOME",
+          "SQL",
+          "SQLCODE",
+          "SQLERROR",
+          "SUM",
+          "TABLE",
+          "TO",
+          "UNION",
+          "UNIQUE",
+          "UPDATE",
+          "USER",
+          "VALUES",
+          "VIEW",
+          "WHENEVER",
+          "WHERE",
+          "WITH",
+          "WORK",
+          "CURRENCY"
+        ]
+      }
+    }
+  },
+  "tables": [
+    {
+      "dataconnectorName": "Databricks",
+      "dataconnectorPrefix": "",
+      "boxType": "load-sql",
+      "databaseName": "turbobi",
+      "ownerName": "test",
+      "tableName": "dim_date",
+      "tableAlias": "dim_date",
+      "loadProperties": {},
+      "key": "Databricks:turbobi:test:dim_date",
+      "fields": [
+        {
+          "id": "dsd.dim_date.DateKey",
+          "name": "DateKey",
+          "alias": "dim_date.DateKey",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.Date",
+          "name": "Date",
+          "alias": "Date",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.Day",
+          "name": "Day",
+          "alias": "Day",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.Month",
+          "name": "Month",
+          "alias": "Month",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.MonthName",
+          "name": "MonthName",
+          "alias": "MonthName",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.Quarter",
+          "name": "Quarter",
+          "alias": "Quarter",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.Year",
+          "name": "Year",
+          "alias": "Year",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.WeekNumber",
+          "name": "WeekNumber",
+          "alias": "WeekNumber",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.DayOfWeek",
+          "name": "DayOfWeek",
+          "alias": "DayOfWeek",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.IsWeekend",
+          "name": "IsWeekend",
+          "alias": "IsWeekend",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_date.HalfYear",
+          "name": "HalfYear",
+          "alias": "HalfYear",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Databricks",
+        "displayName": "Databricks",
+        "id": "8cd3c760-21ea-40bc-b378-f79f50812c4d",
+        "type": {
+          "provider": "ODBC",
+          "type": "ODBC",
+          "displayName": "scripteditor.dataconnectors.ODBC",
+          "connectDialog": "scripteditor.views/odbcconnectdialog/odbcconnectdialog",
+          "selectDialog": "scripteditor.views/odbcselectdialog/odbcselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-odbc-connector/connector-main",
+          "needsConnect": true,
+          "isStandardConnector": true
+        },
+        "typeName": "ODBC",
+        "sourceConnectorID": "odbc",
+        "dataconnectorPrefix": "",
+        "connectionString": "ODBC CONNECT TO [Databricks;]",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-odbc-logo.png",
+        "connectorDisplayName": "ODBC",
+        "dbInfo": {
+          "dbusage": true,
+          "ownerusage": true,
+          "dbfirst": true,
+          "specialchars": "½§!\"@#£¤`$%&/{}[]()=?\\´/+-*><|;,:.-_^~¨*' \t",
+          "dbseparator": ".",
+          "defaultdatabase": "workspace",
+          "ownerseparator": ".",
+          "quotesuffix": "`",
+          "quoteprefix": "`",
+          "dbmsname": "Spark SQL",
+          "keywords": [
+            "CACHE",
+            "CONF",
+            "CUBE",
+            "DATABASE",
+            "DAYOFWEEK",
+            "EXCHANGE",
+            "EXTENDED",
+            "FLOOR",
+            "FOLLOWING",
+            "FUNCTION",
+            "GROUPING",
+            "IF",
+            "IMPORT",
+            "LATERAL",
+            "LESS",
+            "MACRO",
+            "MORE",
+            "OUT",
+            "OVER",
+            "PARTIALSCAN",
+            "PARTITION",
+            "PERCENT",
+            "PRECEDING",
+            "RANGE",
+            "READS",
+            "REDUCE",
+            "REGEXP",
+            "RLIKE",
+            "ROLLUP",
+            "ROW",
+            "START",
+            "TABLESAMPLE",
+            "TRANSFORM",
+            "TRIGGER",
+            "TRUNCATE",
+            "UNBOUNDED",
+            "UNIQUEJOIN",
+            "UTC_TMESTAMP",
+            "WINDOW",
+            "ADA",
+            "ALL",
+            "AND",
+            "ANY",
+            "AS",
+            "ASC",
+            "AUTHORIZATION",
+            "AVG",
+            "BEGIN",
+            "BETWEEN",
+            "BY",
+            "C",
+            "CHAR",
+            "CHARACTER",
+            "CHECK",
+            "CLOSE",
+            "COBOL",
+            "COMMIT",
+            "CONTINUE",
+            "COUNT",
+            "CREATE",
+            "CURRENT",
+            "CURSOR",
+            "DEC",
+            "DECIMAL",
+            "DECLARE",
+            "DEFAULT",
+            "DELETE",
+            "DESC",
+            "DISTINCT",
+            "DOUBLE",
+            "END",
+            "ESCAPE",
+            "EXEC",
+            "EXISTS",
+            "FETCH",
+            "FLOAT",
+            "FOR",
+            "FOREIGN",
+            "FORTRAN",
+            "FOUND",
+            "FROM",
+            "GO",
+            "GOTO",
+            "GRANT",
+            "GROUP",
+            "HAVING",
+            "IN",
+            "INDICATOR",
+            "INSERT",
+            "INT",
+            "INTEGER",
+            "INTO",
+            "IS",
+            "KEY",
+            "LANGUAGE",
+            "LIKE",
+            "MAX",
+            "MIN",
+            "MODULE",
+            "NOT",
+            "NULL",
+            "NUMERIC",
+            "OF",
+            "ON",
+            "OPEN",
+            "EQ_OPTION",
+            "OR",
+            "ORDER",
+            "PASCAL",
+            "PLI",
+            "PRECISION",
+            "PRIMARY",
+            "PRIVILEGES",
+            "PROCEDURE",
+            "PUBLIC",
+            "REAL",
+            "REFERENCES",
+            "ROLLBACK",
+            "SCHEMA",
+            "SECTION",
+            "SELECT",
+            "SET",
+            "SMALLINT",
+            "SOME",
+            "SQL",
+            "SQLCODE",
+            "SQLERROR",
+            "SUM",
+            "TABLE",
+            "TO",
+            "UNION",
+            "UNIQUE",
+            "UPDATE",
+            "USER",
+            "VALUES",
+            "VIEW",
+            "WHENEVER",
+            "WHERE",
+            "WITH",
+            "WORK",
+            "CURRENCY"
+          ]
+        }
+      },
+      "id": "dsd.dim_date",
+      "loadSelectStatement": "LIB CONNECT TO [Databricks];\nLOAD [DateKey] AS [DateKey],\n\t[Date] AS [Date],\n\t[Day] AS [Day],\n\t[Month] AS [Month],\n\t[MonthName] AS [MonthName],\n\t[Quarter] AS [Quarter],\n\t[Year] AS [Year],\n\t[WeekNumber] AS [WeekNumber],\n\t[DayOfWeek] AS [DayOfWeek],\n\t[IsWeekend] AS [IsWeekend],\n\t[HalfYear] AS [HalfYear];\nSQL SELECT  `DateKey`,\n\t `Date`,\n\t `Day`,\n\t `Month`,\n\t `MonthName`,\n\t `Quarter`,\n\t `Year`,\n\t `WeekNumber`,\n\t `DayOfWeek`,\n\t `IsWeekend`,\n\t `HalfYear`\nFROM `turbobi`.`test`.`dim_date`;",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Databricks",
+      "dataconnectorPrefix": "",
+      "boxType": "load-sql",
+      "databaseName": "turbobi",
+      "ownerName": "test",
+      "tableName": "fact_crm",
+      "tableAlias": "fact_crm",
+      "loadProperties": {},
+      "key": "Databricks:turbobi:test:fact_crm",
+      "fields": [
+        {
+          "id": "dsd.fact_crm.Fact_ID",
+          "name": "Fact_ID",
+          "alias": "Fact_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.DateKey",
+          "name": "DateKey",
+          "alias": "fact_crm.DateKey",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.HCP_ID",
+          "name": "HCP_ID",
+          "alias": "fact_crm.HCP_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Product_ID",
+          "name": "Product_ID",
+          "alias": "fact_crm.Product_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Territory_ID",
+          "name": "Territory_ID",
+          "alias": "fact_crm.Territory_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Rep_ID",
+          "name": "Rep_ID",
+          "alias": "fact_crm.Rep_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Visit_Type",
+          "name": "Visit_Type",
+          "alias": "Visit_Type",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Call_Status",
+          "name": "Call_Status",
+          "alias": "Call_Status",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Detail_Position",
+          "name": "Detail_Position",
+          "alias": "Detail_Position",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Samples_Dropped",
+          "name": "Samples_Dropped",
+          "alias": "Samples_Dropped",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.NRx_Units",
+          "name": "NRx_Units",
+          "alias": "NRx_Units",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.TRx_Units",
+          "name": "TRx_Units",
+          "alias": "TRx_Units",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Sales_USD",
+          "name": "Sales_USD",
+          "alias": "Sales_USD",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Goal_Flag",
+          "name": "Goal_Flag",
+          "alias": "Goal_Flag",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Call_Duration_Min",
+          "name": "Call_Duration_Min",
+          "alias": "Call_Duration_Min",
+          "selected": true
+        },
+        {
+          "id": "dsd.fact_crm.Follow_Up_Flag",
+          "name": "Follow_Up_Flag",
+          "alias": "Follow_Up_Flag",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Databricks",
+        "displayName": "Databricks",
+        "id": "8cd3c760-21ea-40bc-b378-f79f50812c4d",
+        "type": {
+          "provider": "ODBC",
+          "type": "ODBC",
+          "displayName": "scripteditor.dataconnectors.ODBC",
+          "connectDialog": "scripteditor.views/odbcconnectdialog/odbcconnectdialog",
+          "selectDialog": "scripteditor.views/odbcselectdialog/odbcselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-odbc-connector/connector-main",
+          "needsConnect": true,
+          "isStandardConnector": true
+        },
+        "typeName": "ODBC",
+        "sourceConnectorID": "odbc",
+        "dataconnectorPrefix": "",
+        "connectionString": "ODBC CONNECT TO [Databricks;]",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-odbc-logo.png",
+        "connectorDisplayName": "ODBC",
+        "dbInfo": {
+          "dbusage": true,
+          "ownerusage": true,
+          "dbfirst": true,
+          "specialchars": "½§!\"@#£¤`$%&/{}[]()=?\\´/+-*><|;,:.-_^~¨*' \t",
+          "dbseparator": ".",
+          "defaultdatabase": "workspace",
+          "ownerseparator": ".",
+          "quotesuffix": "`",
+          "quoteprefix": "`",
+          "dbmsname": "Spark SQL",
+          "keywords": [
+            "CACHE",
+            "CONF",
+            "CUBE",
+            "DATABASE",
+            "DAYOFWEEK",
+            "EXCHANGE",
+            "EXTENDED",
+            "FLOOR",
+            "FOLLOWING",
+            "FUNCTION",
+            "GROUPING",
+            "IF",
+            "IMPORT",
+            "LATERAL",
+            "LESS",
+            "MACRO",
+            "MORE",
+            "OUT",
+            "OVER",
+            "PARTIALSCAN",
+            "PARTITION",
+            "PERCENT",
+            "PRECEDING",
+            "RANGE",
+            "READS",
+            "REDUCE",
+            "REGEXP",
+            "RLIKE",
+            "ROLLUP",
+            "ROW",
+            "START",
+            "TABLESAMPLE",
+            "TRANSFORM",
+            "TRIGGER",
+            "TRUNCATE",
+            "UNBOUNDED",
+            "UNIQUEJOIN",
+            "UTC_TMESTAMP",
+            "WINDOW",
+            "ADA",
+            "ALL",
+            "AND",
+            "ANY",
+            "AS",
+            "ASC",
+            "AUTHORIZATION",
+            "AVG",
+            "BEGIN",
+            "BETWEEN",
+            "BY",
+            "C",
+            "CHAR",
+            "CHARACTER",
+            "CHECK",
+            "CLOSE",
+            "COBOL",
+            "COMMIT",
+            "CONTINUE",
+            "COUNT",
+            "CREATE",
+            "CURRENT",
+            "CURSOR",
+            "DEC",
+            "DECIMAL",
+            "DECLARE",
+            "DEFAULT",
+            "DELETE",
+            "DESC",
+            "DISTINCT",
+            "DOUBLE",
+            "END",
+            "ESCAPE",
+            "EXEC",
+            "EXISTS",
+            "FETCH",
+            "FLOAT",
+            "FOR",
+            "FOREIGN",
+            "FORTRAN",
+            "FOUND",
+            "FROM",
+            "GO",
+            "GOTO",
+            "GRANT",
+            "GROUP",
+            "HAVING",
+            "IN",
+            "INDICATOR",
+            "INSERT",
+            "INT",
+            "INTEGER",
+            "INTO",
+            "IS",
+            "KEY",
+            "LANGUAGE",
+            "LIKE",
+            "MAX",
+            "MIN",
+            "MODULE",
+            "NOT",
+            "NULL",
+            "NUMERIC",
+            "OF",
+            "ON",
+            "OPEN",
+            "EQ_OPTION",
+            "OR",
+            "ORDER",
+            "PASCAL",
+            "PLI",
+            "PRECISION",
+            "PRIMARY",
+            "PRIVILEGES",
+            "PROCEDURE",
+            "PUBLIC",
+            "REAL",
+            "REFERENCES",
+            "ROLLBACK",
+            "SCHEMA",
+            "SECTION",
+            "SELECT",
+            "SET",
+            "SMALLINT",
+            "SOME",
+            "SQL",
+            "SQLCODE",
+            "SQLERROR",
+            "SUM",
+            "TABLE",
+            "TO",
+            "UNION",
+            "UNIQUE",
+            "UPDATE",
+            "USER",
+            "VALUES",
+            "VIEW",
+            "WHENEVER",
+            "WHERE",
+            "WITH",
+            "WORK",
+            "CURRENCY"
+          ]
+        }
+      },
+      "id": "dsd.fact_crm",
+      "loadSelectStatement": "LIB CONNECT TO [Databricks];\nLOAD [Fact_ID] AS [Fact_ID],\n\t[DateKey] AS [DateKey],\n\t[HCP_ID] AS [HCP_ID],\n\t[Product_ID] AS [Product_ID],\n\t[Territory_ID] AS [Territory_ID],\n\t[Rep_ID] AS [Rep_ID],\n\t[Visit_Type] AS [Visit_Type],\n\t[Call_Status] AS [Call_Status],\n\t[Detail_Position] AS [Detail_Position],\n\t[Samples_Dropped] AS [Samples_Dropped],\n\t[NRx_Units] AS [NRx_Units],\n\t[TRx_Units] AS [TRx_Units],\n\t[Sales_USD] AS [Sales_USD],\n\t[Goal_Flag] AS [Goal_Flag],\n\t[Call_Duration_Min] AS [Call_Duration_Min],\n\t[Follow_Up_Flag] AS [Follow_Up_Flag];\nSQL SELECT  `Fact_ID`,\n\t `DateKey`,\n\t `HCP_ID`,\n\t `Product_ID`,\n\t `Territory_ID`,\n\t `Rep_ID`,\n\t `Visit_Type`,\n\t `Call_Status`,\n\t `Detail_Position`,\n\t `Samples_Dropped`,\n\t `NRx_Units`,\n\t `TRx_Units`,\n\t `Sales_USD`,\n\t `Goal_Flag`,\n\t `Call_Duration_Min`,\n\t `Follow_Up_Flag`\nFROM `turbobi`.`test`.`fact_crm`;",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Databricks",
+      "dataconnectorPrefix": "",
+      "boxType": "load-sql",
+      "databaseName": "turbobi",
+      "ownerName": "test",
+      "tableName": "dim_product",
+      "tableAlias": "dim_product",
+      "loadProperties": {},
+      "key": "Databricks:turbobi:test:dim_product",
+      "fields": [
+        {
+          "id": "dsd.dim_product.Product_ID",
+          "name": "Product_ID",
+          "alias": "dim_product.Product_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_product.Product_Name",
+          "name": "Product_Name",
+          "alias": "Product_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_product.Molecule",
+          "name": "Molecule",
+          "alias": "Molecule",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_product.Category",
+          "name": "Category",
+          "alias": "Category",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_product.Therapeutic_Area",
+          "name": "Therapeutic_Area",
+          "alias": "Therapeutic_Area",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_product.Strength",
+          "name": "Strength",
+          "alias": "Strength",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_product.Unit_Price_USD",
+          "name": "Unit_Price_USD",
+          "alias": "Unit_Price_USD",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Databricks",
+        "displayName": "Databricks",
+        "id": "8cd3c760-21ea-40bc-b378-f79f50812c4d",
+        "type": {
+          "provider": "ODBC",
+          "type": "ODBC",
+          "displayName": "scripteditor.dataconnectors.ODBC",
+          "connectDialog": "scripteditor.views/odbcconnectdialog/odbcconnectdialog",
+          "selectDialog": "scripteditor.views/odbcselectdialog/odbcselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-odbc-connector/connector-main",
+          "needsConnect": true,
+          "isStandardConnector": true
+        },
+        "typeName": "ODBC",
+        "sourceConnectorID": "odbc",
+        "dataconnectorPrefix": "",
+        "connectionString": "ODBC CONNECT TO [Databricks;]",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-odbc-logo.png",
+        "connectorDisplayName": "ODBC",
+        "dbInfo": {
+          "dbusage": true,
+          "ownerusage": true,
+          "dbfirst": true,
+          "specialchars": "½§!\"@#£¤`$%&/{}[]()=?\\´/+-*><|;,:.-_^~¨*' \t",
+          "dbseparator": ".",
+          "defaultdatabase": "workspace",
+          "ownerseparator": ".",
+          "quotesuffix": "`",
+          "quoteprefix": "`",
+          "dbmsname": "Spark SQL",
+          "keywords": [
+            "CACHE",
+            "CONF",
+            "CUBE",
+            "DATABASE",
+            "DAYOFWEEK",
+            "EXCHANGE",
+            "EXTENDED",
+            "FLOOR",
+            "FOLLOWING",
+            "FUNCTION",
+            "GROUPING",
+            "IF",
+            "IMPORT",
+            "LATERAL",
+            "LESS",
+            "MACRO",
+            "MORE",
+            "OUT",
+            "OVER",
+            "PARTIALSCAN",
+            "PARTITION",
+            "PERCENT",
+            "PRECEDING",
+            "RANGE",
+            "READS",
+            "REDUCE",
+            "REGEXP",
+            "RLIKE",
+            "ROLLUP",
+            "ROW",
+            "START",
+            "TABLESAMPLE",
+            "TRANSFORM",
+            "TRIGGER",
+            "TRUNCATE",
+            "UNBOUNDED",
+            "UNIQUEJOIN",
+            "UTC_TMESTAMP",
+            "WINDOW",
+            "ADA",
+            "ALL",
+            "AND",
+            "ANY",
+            "AS",
+            "ASC",
+            "AUTHORIZATION",
+            "AVG",
+            "BEGIN",
+            "BETWEEN",
+            "BY",
+            "C",
+            "CHAR",
+            "CHARACTER",
+            "CHECK",
+            "CLOSE",
+            "COBOL",
+            "COMMIT",
+            "CONTINUE",
+            "COUNT",
+            "CREATE",
+            "CURRENT",
+            "CURSOR",
+            "DEC",
+            "DECIMAL",
+            "DECLARE",
+            "DEFAULT",
+            "DELETE",
+            "DESC",
+            "DISTINCT",
+            "DOUBLE",
+            "END",
+            "ESCAPE",
+            "EXEC",
+            "EXISTS",
+            "FETCH",
+            "FLOAT",
+            "FOR",
+            "FOREIGN",
+            "FORTRAN",
+            "FOUND",
+            "FROM",
+            "GO",
+            "GOTO",
+            "GRANT",
+            "GROUP",
+            "HAVING",
+            "IN",
+            "INDICATOR",
+            "INSERT",
+            "INT",
+            "INTEGER",
+            "INTO",
+            "IS",
+            "KEY",
+            "LANGUAGE",
+            "LIKE",
+            "MAX",
+            "MIN",
+            "MODULE",
+            "NOT",
+            "NULL",
+            "NUMERIC",
+            "OF",
+            "ON",
+            "OPEN",
+            "EQ_OPTION",
+            "OR",
+            "ORDER",
+            "PASCAL",
+            "PLI",
+            "PRECISION",
+            "PRIMARY",
+            "PRIVILEGES",
+            "PROCEDURE",
+            "PUBLIC",
+            "REAL",
+            "REFERENCES",
+            "ROLLBACK",
+            "SCHEMA",
+            "SECTION",
+            "SELECT",
+            "SET",
+            "SMALLINT",
+            "SOME",
+            "SQL",
+            "SQLCODE",
+            "SQLERROR",
+            "SUM",
+            "TABLE",
+            "TO",
+            "UNION",
+            "UNIQUE",
+            "UPDATE",
+            "USER",
+            "VALUES",
+            "VIEW",
+            "WHENEVER",
+            "WHERE",
+            "WITH",
+            "WORK",
+            "CURRENCY"
+          ]
+        }
+      },
+      "id": "dsd.dim_product",
+      "loadSelectStatement": "LIB CONNECT TO [Databricks];\nLOAD [Product_ID] AS [Product_ID],\n\t[Product_Name] AS [Product_Name],\n\t[Molecule] AS [Molecule],\n\t[Category] AS [Category],\n\t[Therapeutic_Area] AS [Therapeutic_Area],\n\t[Strength] AS [Strength],\n\t[Unit_Price_USD] AS [Unit_Price_USD];\nSQL SELECT  `Product_ID`,\n\t `Product_Name`,\n\t `Molecule`,\n\t `Category`,\n\t `Therapeutic_Area`,\n\t `Strength`,\n\t `Unit_Price_USD`\nFROM `turbobi`.`test`.`dim_product`;",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Databricks",
+      "dataconnectorPrefix": "",
+      "boxType": "load-sql",
+      "databaseName": "turbobi",
+      "ownerName": "test",
+      "tableName": "dim_hcp",
+      "tableAlias": "dim_hcp",
+      "loadProperties": {},
+      "key": "Databricks:turbobi:test:dim_hcp",
+      "fields": [
+        {
+          "id": "dsd.dim_hcp.HCP_ID",
+          "name": "HCP_ID",
+          "alias": "dim_hcp.HCP_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.HCP_Name",
+          "name": "HCP_Name",
+          "alias": "HCP_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.Specialty",
+          "name": "Specialty",
+          "alias": "Specialty",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.City",
+          "name": "City",
+          "alias": "City",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.State",
+          "name": "State",
+          "alias": "State",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.Region",
+          "name": "Region",
+          "alias": "dim_hcp.Region",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.Tier",
+          "name": "Tier",
+          "alias": "Tier",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.Segment",
+          "name": "Segment",
+          "alias": "Segment",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.Prescriber_Decile",
+          "name": "Prescriber_Decile",
+          "alias": "Prescriber_Decile",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.NPI_Number",
+          "name": "NPI_Number",
+          "alias": "NPI_Number",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_hcp.Account_Type",
+          "name": "Account_Type",
+          "alias": "Account_Type",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Databricks",
+        "displayName": "Databricks",
+        "id": "8cd3c760-21ea-40bc-b378-f79f50812c4d",
+        "type": {
+          "provider": "ODBC",
+          "type": "ODBC",
+          "displayName": "scripteditor.dataconnectors.ODBC",
+          "connectDialog": "scripteditor.views/odbcconnectdialog/odbcconnectdialog",
+          "selectDialog": "scripteditor.views/odbcselectdialog/odbcselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-odbc-connector/connector-main",
+          "needsConnect": true,
+          "isStandardConnector": true
+        },
+        "typeName": "ODBC",
+        "sourceConnectorID": "odbc",
+        "dataconnectorPrefix": "",
+        "connectionString": "ODBC CONNECT TO [Databricks;]",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-odbc-logo.png",
+        "connectorDisplayName": "ODBC",
+        "dbInfo": {
+          "dbusage": true,
+          "ownerusage": true,
+          "dbfirst": true,
+          "specialchars": "½§!\"@#£¤`$%&/{}[]()=?\\´/+-*><|;,:.-_^~¨*' \t",
+          "dbseparator": ".",
+          "defaultdatabase": "workspace",
+          "ownerseparator": ".",
+          "quotesuffix": "`",
+          "quoteprefix": "`",
+          "dbmsname": "Spark SQL",
+          "keywords": [
+            "CACHE",
+            "CONF",
+            "CUBE",
+            "DATABASE",
+            "DAYOFWEEK",
+            "EXCHANGE",
+            "EXTENDED",
+            "FLOOR",
+            "FOLLOWING",
+            "FUNCTION",
+            "GROUPING",
+            "IF",
+            "IMPORT",
+            "LATERAL",
+            "LESS",
+            "MACRO",
+            "MORE",
+            "OUT",
+            "OVER",
+            "PARTIALSCAN",
+            "PARTITION",
+            "PERCENT",
+            "PRECEDING",
+            "RANGE",
+            "READS",
+            "REDUCE",
+            "REGEXP",
+            "RLIKE",
+            "ROLLUP",
+            "ROW",
+            "START",
+            "TABLESAMPLE",
+            "TRANSFORM",
+            "TRIGGER",
+            "TRUNCATE",
+            "UNBOUNDED",
+            "UNIQUEJOIN",
+            "UTC_TMESTAMP",
+            "WINDOW",
+            "ADA",
+            "ALL",
+            "AND",
+            "ANY",
+            "AS",
+            "ASC",
+            "AUTHORIZATION",
+            "AVG",
+            "BEGIN",
+            "BETWEEN",
+            "BY",
+            "C",
+            "CHAR",
+            "CHARACTER",
+            "CHECK",
+            "CLOSE",
+            "COBOL",
+            "COMMIT",
+            "CONTINUE",
+            "COUNT",
+            "CREATE",
+            "CURRENT",
+            "CURSOR",
+            "DEC",
+            "DECIMAL",
+            "DECLARE",
+            "DEFAULT",
+            "DELETE",
+            "DESC",
+            "DISTINCT",
+            "DOUBLE",
+            "END",
+            "ESCAPE",
+            "EXEC",
+            "EXISTS",
+            "FETCH",
+            "FLOAT",
+            "FOR",
+            "FOREIGN",
+            "FORTRAN",
+            "FOUND",
+            "FROM",
+            "GO",
+            "GOTO",
+            "GRANT",
+            "GROUP",
+            "HAVING",
+            "IN",
+            "INDICATOR",
+            "INSERT",
+            "INT",
+            "INTEGER",
+            "INTO",
+            "IS",
+            "KEY",
+            "LANGUAGE",
+            "LIKE",
+            "MAX",
+            "MIN",
+            "MODULE",
+            "NOT",
+            "NULL",
+            "NUMERIC",
+            "OF",
+            "ON",
+            "OPEN",
+            "EQ_OPTION",
+            "OR",
+            "ORDER",
+            "PASCAL",
+            "PLI",
+            "PRECISION",
+            "PRIMARY",
+            "PRIVILEGES",
+            "PROCEDURE",
+            "PUBLIC",
+            "REAL",
+            "REFERENCES",
+            "ROLLBACK",
+            "SCHEMA",
+            "SECTION",
+            "SELECT",
+            "SET",
+            "SMALLINT",
+            "SOME",
+            "SQL",
+            "SQLCODE",
+            "SQLERROR",
+            "SUM",
+            "TABLE",
+            "TO",
+            "UNION",
+            "UNIQUE",
+            "UPDATE",
+            "USER",
+            "VALUES",
+            "VIEW",
+            "WHENEVER",
+            "WHERE",
+            "WITH",
+            "WORK",
+            "CURRENCY"
+          ]
+        }
+      },
+      "id": "dsd.dim_hcp",
+      "loadSelectStatement": "LIB CONNECT TO [Databricks];\nLOAD [HCP_ID] AS [HCP_ID],\n\t[HCP_Name] AS [HCP_Name],\n\t[Specialty] AS [Specialty],\n\t[City] AS [City],\n\t[State] AS [State],\n\t[Region] AS [Region],\n\t[Tier] AS [Tier],\n\t[Segment] AS [Segment],\n\t[Prescriber_Decile] AS [Prescriber_Decile],\n\t[NPI_Number] AS [NPI_Number],\n\t[Account_Type] AS [Account_Type];\nSQL SELECT  `HCP_ID`,\n\t `HCP_Name`,\n\t `Specialty`,\n\t `City`,\n\t `State`,\n\t `Region`,\n\t `Tier`,\n\t `Segment`,\n\t `Prescriber_Decile`,\n\t `NPI_Number`,\n\t `Account_Type`\nFROM `turbobi`.`test`.`dim_hcp`;",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    },
+    {
+      "dataconnectorName": "Databricks",
+      "dataconnectorPrefix": "",
+      "boxType": "load-sql",
+      "databaseName": "turbobi",
+      "ownerName": "test",
+      "tableName": "dim_territory",
+      "tableAlias": "dim_territory",
+      "loadProperties": {},
+      "key": "Databricks:turbobi:test:dim_territory",
+      "fields": [
+        {
+          "id": "dsd.dim_territory.Territory_ID",
+          "name": "Territory_ID",
+          "alias": "dim_territory.Territory_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.Territory_Name",
+          "name": "Territory_Name",
+          "alias": "Territory_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.Region",
+          "name": "Region",
+          "alias": "dim_territory.Region",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.District",
+          "name": "District",
+          "alias": "District",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.Rep_ID",
+          "name": "Rep_ID",
+          "alias": "dim_territory.Rep_ID",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.Rep_Name",
+          "name": "Rep_Name",
+          "alias": "Rep_Name",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.Rep_Manager",
+          "name": "Rep_Manager",
+          "alias": "Rep_Manager",
+          "selected": true
+        },
+        {
+          "id": "dsd.dim_territory.Annual_Goal_USD",
+          "name": "Annual_Goal_USD",
+          "alias": "Annual_Goal_USD",
+          "selected": true
+        }
+      ],
+      "connectionInfo": {
+        "name": "Databricks",
+        "displayName": "Databricks",
+        "id": "8cd3c760-21ea-40bc-b378-f79f50812c4d",
+        "type": {
+          "provider": "ODBC",
+          "type": "ODBC",
+          "displayName": "scripteditor.dataconnectors.ODBC",
+          "connectDialog": "scripteditor.views/odbcconnectdialog/odbcconnectdialog",
+          "selectDialog": "scripteditor.views/odbcselectdialog/odbcselectdialog",
+          "connectorMain": "assets/hldm/data-connectors/native-odbc-connector/connector-main",
+          "needsConnect": true,
+          "isStandardConnector": true
+        },
+        "typeName": "ODBC",
+        "sourceConnectorID": "odbc",
+        "dataconnectorPrefix": "",
+        "connectionString": "ODBC CONNECT TO [Databricks;]",
+        "canDelete": true,
+        "connectorImagePath": "http://localhost:4848/resources/qmfe/qmfe-data-client-parcels/1.26.12/img/connector-logos/connector-odbc-logo.png",
+        "connectorDisplayName": "ODBC",
+        "dbInfo": {
+          "dbusage": true,
+          "ownerusage": true,
+          "dbfirst": true,
+          "specialchars": "½§!\"@#£¤`$%&/{}[]()=?\\´/+-*><|;,:.-_^~¨*' \t",
+          "dbseparator": ".",
+          "defaultdatabase": "workspace",
+          "ownerseparator": ".",
+          "quotesuffix": "`",
+          "quoteprefix": "`",
+          "dbmsname": "Spark SQL",
+          "keywords": [
+            "CACHE",
+            "CONF",
+            "CUBE",
+            "DATABASE",
+            "DAYOFWEEK",
+            "EXCHANGE",
+            "EXTENDED",
+            "FLOOR",
+            "FOLLOWING",
+            "FUNCTION",
+            "GROUPING",
+            "IF",
+            "IMPORT",
+            "LATERAL",
+            "LESS",
+            "MACRO",
+            "MORE",
+            "OUT",
+            "OVER",
+            "PARTIALSCAN",
+            "PARTITION",
+            "PERCENT",
+            "PRECEDING",
+            "RANGE",
+            "READS",
+            "REDUCE",
+            "REGEXP",
+            "RLIKE",
+            "ROLLUP",
+            "ROW",
+            "START",
+            "TABLESAMPLE",
+            "TRANSFORM",
+            "TRIGGER",
+            "TRUNCATE",
+            "UNBOUNDED",
+            "UNIQUEJOIN",
+            "UTC_TMESTAMP",
+            "WINDOW",
+            "ADA",
+            "ALL",
+            "AND",
+            "ANY",
+            "AS",
+            "ASC",
+            "AUTHORIZATION",
+            "AVG",
+            "BEGIN",
+            "BETWEEN",
+            "BY",
+            "C",
+            "CHAR",
+            "CHARACTER",
+            "CHECK",
+            "CLOSE",
+            "COBOL",
+            "COMMIT",
+            "CONTINUE",
+            "COUNT",
+            "CREATE",
+            "CURRENT",
+            "CURSOR",
+            "DEC",
+            "DECIMAL",
+            "DECLARE",
+            "DEFAULT",
+            "DELETE",
+            "DESC",
+            "DISTINCT",
+            "DOUBLE",
+            "END",
+            "ESCAPE",
+            "EXEC",
+            "EXISTS",
+            "FETCH",
+            "FLOAT",
+            "FOR",
+            "FOREIGN",
+            "FORTRAN",
+            "FOUND",
+            "FROM",
+            "GO",
+            "GOTO",
+            "GRANT",
+            "GROUP",
+            "HAVING",
+            "IN",
+            "INDICATOR",
+            "INSERT",
+            "INT",
+            "INTEGER",
+            "INTO",
+            "IS",
+            "KEY",
+            "LANGUAGE",
+            "LIKE",
+            "MAX",
+            "MIN",
+            "MODULE",
+            "NOT",
+            "NULL",
+            "NUMERIC",
+            "OF",
+            "ON",
+            "OPEN",
+            "EQ_OPTION",
+            "OR",
+            "ORDER",
+            "PASCAL",
+            "PLI",
+            "PRECISION",
+            "PRIMARY",
+            "PRIVILEGES",
+            "PROCEDURE",
+            "PUBLIC",
+            "REAL",
+            "REFERENCES",
+            "ROLLBACK",
+            "SCHEMA",
+            "SECTION",
+            "SELECT",
+            "SET",
+            "SMALLINT",
+            "SOME",
+            "SQL",
+            "SQLCODE",
+            "SQLERROR",
+            "SUM",
+            "TABLE",
+            "TO",
+            "UNION",
+            "UNIQUE",
+            "UPDATE",
+            "USER",
+            "VALUES",
+            "VIEW",
+            "WHENEVER",
+            "WHERE",
+            "WITH",
+            "WORK",
+            "CURRENCY"
+          ]
+        }
+      },
+      "id": "dsd.dim_territory",
+      "loadSelectStatement": "LIB CONNECT TO [Databricks];\nLOAD [Territory_ID] AS [Territory_ID],\n\t[Territory_Name] AS [Territory_Name],\n\t[Region] AS [Region],\n\t[District] AS [District],\n\t[Rep_ID] AS [Rep_ID],\n\t[Rep_Name] AS [Rep_Name],\n\t[Rep_Manager] AS [Rep_Manager],\n\t[Annual_Goal_USD] AS [Annual_Goal_USD];\nSQL SELECT  `Territory_ID`,\n\t `Territory_Name`,\n\t `Region`,\n\t `District`,\n\t `Rep_ID`,\n\t `Rep_Name`,\n\t `Rep_Manager`,\n\t `Annual_Goal_USD`\nFROM `turbobi`.`test`.`dim_territory`;",
+      "caching": {
+        "enabled": true,
+        "type": "qvd"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "4d54e91e-f1cd-4c2e-88e0-45eb41ddd83a",
+      "type": "Query",
+      "name": "dim_date",
+      "tableRef": "dsd.dim_date",
+      "status": "",
+      "fields": [
+        {
+          "id": "61dbde3b-5f45-4170-b942-4623b84731d8",
+          "type": "QueryField",
+          "name": "dim_date.DateKey",
+          "fieldRef": "dsd.dim_date.DateKey",
+          "classifications": [
+            "date"
+          ],
+          "originalClassification": [
+            "date"
+          ],
+          "transformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "61dbde3b-5f45-4170-b942-4623b84731d8",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "61dbde3b-5f45-4170-b942-4623b84731d8",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "2966e997-5fd3-4692-8c66-dbb3cdf4883b",
+          "type": "QueryField",
+          "name": "Date",
+          "fieldRef": "dsd.dim_date.Date",
+          "classifications": [
+            "date"
+          ],
+          "originalClassification": [
+            "date"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "dc817738-2bae-45cd-a8aa-e42f9b807ced",
+          "type": "QueryField",
+          "name": "Day",
+          "fieldRef": "dsd.dim_date.Day",
+          "classifications": [
+            "monthDay"
+          ],
+          "originalClassification": [
+            "monthDay"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "dc5da613-daa4-4e8b-8043-a6f158bd32a5",
+          "type": "QueryField",
+          "name": "Month",
+          "fieldRef": "dsd.dim_date.Month",
+          "classifications": [
+            "month"
+          ],
+          "originalClassification": [
+            "month"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "f0100b03-1dfa-41b6-9943-f247b361b52b",
+          "type": "QueryField",
+          "name": "MonthName",
+          "fieldRef": "dsd.dim_date.MonthName",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "ecbbfeb0-7a21-4a7e-a2bf-90a367ed6efe",
+          "type": "QueryField",
+          "name": "Quarter",
+          "fieldRef": "dsd.dim_date.Quarter",
+          "classifications": [
+            "quarter"
+          ],
+          "originalClassification": [
+            "quarter"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "fd9c4b9e-f09d-43c4-9849-85ae1eca64e6",
+          "type": "QueryField",
+          "name": "Year",
+          "fieldRef": "dsd.dim_date.Year",
+          "classifications": [
+            "year"
+          ],
+          "originalClassification": [
+            "year"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "e7baed0d-e8a5-47b2-baa0-07ff3f79c752",
+          "type": "QueryField",
+          "name": "WeekNumber",
+          "fieldRef": "dsd.dim_date.WeekNumber",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "d073eccd-ec80-435b-bf03-aff9f67e581b",
+          "type": "QueryField",
+          "name": "DayOfWeek",
+          "fieldRef": "dsd.dim_date.DayOfWeek",
+          "classifications": [
+            "weekDay"
+          ],
+          "originalClassification": [
+            "weekDay"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "2291cd7b-95a0-4e1e-9d5a-21681fbf84ef",
+          "type": "QueryField",
+          "name": "IsWeekend",
+          "fieldRef": "dsd.dim_date.IsWeekend",
+          "classifications": [
+            "boolean"
+          ],
+          "originalClassification": [
+            "boolean"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "f241dffc-a899-4c07-9c83-6d0046c4bfc9",
+          "type": "QueryField",
+          "name": "HalfYear",
+          "fieldRef": "dsd.dim_date.HalfYear",
+          "classifications": [
+            "year"
+          ],
+          "originalClassification": [
+            "year"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    },
+    {
+      "id": "01c10a5e-73d2-40aa-a9e5-2cd939df4c79",
+      "type": "Query",
+      "name": "fact_crm",
+      "tableRef": "dsd.fact_crm",
+      "status": "",
+      "fields": [
+        {
+          "id": "12ddcbdf-b39b-4b5e-a2af-e295a578ee5e",
+          "type": "QueryField",
+          "name": "Fact_ID",
+          "fieldRef": "dsd.fact_crm.Fact_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "d7469f2e-e505-4c18-b90a-002cc3aa88d9",
+          "type": "QueryField",
+          "name": "fact_crm.DateKey",
+          "fieldRef": "dsd.fact_crm.DateKey",
+          "classifications": [
+            "date"
+          ],
+          "originalClassification": [
+            "date"
+          ],
+          "transformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "d7469f2e-e505-4c18-b90a-002cc3aa88d9",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "interpretValues",
+              "appliedTo": "d7469f2e-e505-4c18-b90a-002cc3aa88d9",
+              "arguments": {
+                "targetType": "date",
+                "patterns": [
+                  "YYYYMMDD"
+                ],
+                "sourceFieldType": "integer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3d9d4e87-7106-492b-a6fd-a6e1c4ede5e5",
+          "type": "QueryField",
+          "name": "fact_crm.HCP_ID",
+          "fieldRef": "dsd.fact_crm.HCP_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "e3e65c3c-494d-4031-b14a-c71de1cd0a73",
+          "type": "QueryField",
+          "name": "fact_crm.Product_ID",
+          "fieldRef": "dsd.fact_crm.Product_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "83b61acf-2bc5-410a-8448-f1e82bbac656",
+          "type": "QueryField",
+          "name": "fact_crm.Territory_ID",
+          "fieldRef": "dsd.fact_crm.Territory_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "83b61acf-2bc5-410a-8448-f1e82bbac656",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "83b61acf-2bc5-410a-8448-f1e82bbac656",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "2f285ec3-5e89-423a-b113-7f6fa30421b8",
+          "type": "QueryField",
+          "name": "fact_crm.Rep_ID",
+          "fieldRef": "dsd.fact_crm.Rep_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "d3a228c5-87a2-42e9-a506-8dbeb51c3279",
+          "type": "QueryField",
+          "name": "Visit_Type",
+          "fieldRef": "dsd.fact_crm.Visit_Type",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "88fb1875-29f5-4ced-bdc6-a513069f1e59",
+          "type": "QueryField",
+          "name": "Call_Status",
+          "fieldRef": "dsd.fact_crm.Call_Status",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "c0432d38-374d-4609-bf99-4e12bf651098",
+          "type": "QueryField",
+          "name": "Detail_Position",
+          "fieldRef": "dsd.fact_crm.Detail_Position",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "73a52d73-1c66-4be3-ad91-4c555cf6f962",
+          "type": "QueryField",
+          "name": "Samples_Dropped",
+          "fieldRef": "dsd.fact_crm.Samples_Dropped",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "9201fdf0-043a-4a77-a75d-4c133931bc46",
+          "type": "QueryField",
+          "name": "NRx_Units",
+          "fieldRef": "dsd.fact_crm.NRx_Units",
+          "classifications": [
+            "measure"
+          ],
+          "originalClassification": [
+            "measure"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "d65c872c-d6f3-4d3e-9519-7a2eb840c69d",
+          "type": "QueryField",
+          "name": "TRx_Units",
+          "fieldRef": "dsd.fact_crm.TRx_Units",
+          "classifications": [
+            "measure"
+          ],
+          "originalClassification": [
+            "measure"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "0fe3c3bf-6c72-49b9-8088-335e852a72a6",
+          "type": "QueryField",
+          "name": "Sales_USD",
+          "fieldRef": "dsd.fact_crm.Sales_USD",
+          "classifications": [
+            "monetary"
+          ],
+          "originalClassification": [
+            "monetary"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "3cad10a3-bc12-4a15-ba41-fb205135ff89",
+          "type": "QueryField",
+          "name": "Goal_Flag",
+          "fieldRef": "dsd.fact_crm.Goal_Flag",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "b09eb0fc-aacf-4bd0-ac9f-783527e0645b",
+          "type": "QueryField",
+          "name": "Call_Duration_Min",
+          "fieldRef": "dsd.fact_crm.Call_Duration_Min",
+          "classifications": [
+            "measure"
+          ],
+          "originalClassification": [
+            "measure"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "00175421-a8f6-4518-a576-1477a55c15c8",
+          "type": "QueryField",
+          "name": "Follow_Up_Flag",
+          "fieldRef": "dsd.fact_crm.Follow_Up_Flag",
+          "classifications": [
+            "boolean"
+          ],
+          "originalClassification": [
+            "boolean"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    },
+    {
+      "id": "f523588c-25e4-4211-8e1b-ee81bc64f964",
+      "type": "Query",
+      "name": "dim_product",
+      "tableRef": "dsd.dim_product",
+      "status": "",
+      "fields": [
+        {
+          "id": "3f37542d-ccbb-408c-bb52-cb14571d85a8",
+          "type": "QueryField",
+          "name": "dim_product.Product_ID",
+          "fieldRef": "dsd.dim_product.Product_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "73cdb80f-9ae3-4b96-ae7f-4f2ae7bd9d13",
+          "type": "QueryField",
+          "name": "Product_Name",
+          "fieldRef": "dsd.dim_product.Product_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "38f96c87-9f52-478e-a3bd-6446e5f5881e",
+          "type": "QueryField",
+          "name": "Molecule",
+          "fieldRef": "dsd.dim_product.Molecule",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "64d2582c-8980-43e4-aba0-3ca364cd4396",
+          "type": "QueryField",
+          "name": "Category",
+          "fieldRef": "dsd.dim_product.Category",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "58ab668d-aa60-4a93-8c0e-76bd941d5787",
+          "type": "QueryField",
+          "name": "Therapeutic_Area",
+          "fieldRef": "dsd.dim_product.Therapeutic_Area",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "63bee937-3b5a-40ad-984b-281dc2a2c11a",
+          "type": "QueryField",
+          "name": "Strength",
+          "fieldRef": "dsd.dim_product.Strength",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "bf6f0fd0-49ee-477c-9c19-c568f487f277",
+          "type": "QueryField",
+          "name": "Unit_Price_USD",
+          "fieldRef": "dsd.dim_product.Unit_Price_USD",
+          "classifications": [
+            "monetary"
+          ],
+          "originalClassification": [
+            "monetary"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    },
+    {
+      "id": "36c28bf6-a1b4-4e3d-9897-ff0e7c46f8a4",
+      "type": "Query",
+      "name": "dim_hcp",
+      "tableRef": "dsd.dim_hcp",
+      "status": "",
+      "fields": [
+        {
+          "id": "57286ddd-e3b5-49b7-8eba-7a3c0cc54a31",
+          "type": "QueryField",
+          "name": "dim_hcp.HCP_ID",
+          "fieldRef": "dsd.dim_hcp.HCP_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "c6e04a9e-3659-458c-afe1-2fedc6ff812f",
+          "type": "QueryField",
+          "name": "HCP_Name",
+          "fieldRef": "dsd.dim_hcp.HCP_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "c6e04a9e-3659-458c-afe1-2fedc6ff812f",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": ".",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "c6e04a9e-3659-458c-afe1-2fedc6ff812f",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": ".",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "22a4c36d-b473-4d2b-a12c-87ad7c900ece",
+          "type": "QueryField",
+          "name": "Specialty",
+          "fieldRef": "dsd.dim_hcp.Specialty",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "bc720dfe-827d-49e5-9432-4109d9c2bf25",
+          "type": "QueryField",
+          "name": "City",
+          "fieldRef": "dsd.dim_hcp.City",
+          "classifications": [
+            "city"
+          ],
+          "originalClassification": [
+            "city"
+          ],
+          "transformations": [
+            {
+              "op": "lookupGeoInfo",
+              "appliedTo": "bc720dfe-827d-49e5-9432-4109d9c2bf25",
+              "arguments": {
+                "geoType": "cityAlias",
+                "matchRatio": 1
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "lookupGeoInfo",
+              "appliedTo": "bc720dfe-827d-49e5-9432-4109d9c2bf25",
+              "arguments": {
+                "geoType": "cityAlias",
+                "matchRatio": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "4c67d720-0cf5-4d2c-a4df-db3bb5f70903",
+          "type": "QueryField",
+          "name": "State",
+          "fieldRef": "dsd.dim_hcp.State",
+          "classifications": [
+            "stateProvince"
+          ],
+          "originalClassification": [
+            "stateProvince"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "8e45c13f-fadd-4798-a591-47a7fc041470",
+          "type": "QueryField",
+          "name": "dim_hcp.Region",
+          "fieldRef": "dsd.dim_hcp.Region",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "8585f76b-1ddb-4363-bb8b-d132fe89f107",
+          "type": "QueryField",
+          "name": "Tier",
+          "fieldRef": "dsd.dim_hcp.Tier",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "c0c965b3-3d95-4634-b4ce-05bccaaf3cd9",
+          "type": "QueryField",
+          "name": "Segment",
+          "fieldRef": "dsd.dim_hcp.Segment",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "185ca6db-f16c-4e64-804e-59b6b7bf9fbd",
+          "type": "QueryField",
+          "name": "Prescriber_Decile",
+          "fieldRef": "dsd.dim_hcp.Prescriber_Decile",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "fb003d25-2e55-469f-a1fb-176dddd44697",
+          "type": "QueryField",
+          "name": "NPI_Number",
+          "fieldRef": "dsd.dim_hcp.NPI_Number",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "b8477f85-f99b-4285-9a70-caa3932a124a",
+          "type": "QueryField",
+          "name": "Account_Type",
+          "fieldRef": "dsd.dim_hcp.Account_Type",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "c2b63d9b-59fd-412d-b6d7-bfaba5d3065f",
+          "type": "QueryTransformField",
+          "name": "dim_hcp.City_GeoInfo",
+          "transformations": [
+            {
+              "op": "lookupGeoInfo",
+              "appliedTo": "bc720dfe-827d-49e5-9432-4109d9c2bf25",
+              "arguments": {
+                "geoType": "cityAlias",
+                "matchRatio": 1
+              }
+            }
+          ],
+          "classifications": [
+            "geoPoint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f6d59614-4e40-4332-ba53-1c01f84a75e7",
+      "type": "Query",
+      "name": "dim_territory",
+      "tableRef": "dsd.dim_territory",
+      "status": "",
+      "fields": [
+        {
+          "id": "9b17b5b3-e61a-4744-b388-2467e996dd6b",
+          "type": "QueryField",
+          "name": "dim_territory.Territory_ID",
+          "fieldRef": "dsd.dim_territory.Territory_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "9b17b5b3-e61a-4744-b388-2467e996dd6b",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "9b17b5b3-e61a-4744-b388-2467e996dd6b",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "09a857be-6c22-4354-9a5c-b5b134c1619f",
+          "type": "QueryField",
+          "name": "Territory_Name",
+          "fieldRef": "dsd.dim_territory.Territory_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "09a857be-6c22-4354-9a5c-b5b134c1619f",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "09a857be-6c22-4354-9a5c-b5b134c1619f",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "-",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "c6f8cdce-0bfc-4495-a3b8-08f821652654",
+          "type": "QueryField",
+          "name": "dim_territory.Region",
+          "fieldRef": "dsd.dim_territory.Region",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "d86b0a88-c998-49d6-a76c-8bd12ea4ca0f",
+          "type": "QueryField",
+          "name": "District",
+          "fieldRef": "dsd.dim_territory.District",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "8d2d79cd-6357-4674-a0a4-70707472bd83",
+          "type": "QueryField",
+          "name": "dim_territory.Rep_ID",
+          "fieldRef": "dsd.dim_territory.Rep_ID",
+          "classifications": [
+            "dimension",
+            "identifier"
+          ],
+          "originalClassification": [
+            "dimension",
+            "identifier"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "328a4ae0-65ee-4f8a-8828-70e50827c5d8",
+          "type": "QueryField",
+          "name": "Rep_Name",
+          "fieldRef": "dsd.dim_territory.Rep_Name",
+          "classifications": [
+            "dimension",
+            "caption"
+          ],
+          "originalClassification": [
+            "dimension",
+            "caption"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        },
+        {
+          "id": "b77c31af-e405-4b23-862a-d02d71a79482",
+          "type": "QueryField",
+          "name": "Rep_Manager",
+          "fieldRef": "dsd.dim_territory.Rep_Manager",
+          "classifications": [
+            "dimension"
+          ],
+          "originalClassification": [
+            "dimension"
+          ],
+          "transformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "b77c31af-e405-4b23-862a-d02d71a79482",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "_",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "originalTransformations": [
+            {
+              "op": "fieldSplit",
+              "appliedTo": "b77c31af-e405-4b23-862a-d02d71a79482",
+              "arguments": {
+                "splitType": "generic",
+                "splitInfo": {
+                  "del": "_",
+                  "subFields": [
+                    {
+                      "idx": 1
+                    },
+                    {
+                      "afterIdx": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "0e2a9b3a-b859-40ec-8cf4-f474d2e09a23",
+          "type": "QueryField",
+          "name": "Annual_Goal_USD",
+          "fieldRef": "dsd.dim_territory.Annual_Goal_USD",
+          "classifications": [
+            "monetary"
+          ],
+          "originalClassification": [
+            "monetary"
+          ],
+          "transformations": [],
+          "originalTransformations": []
+        }
+      ]
+    }
+  ],
+  "associations": {
+    "HCP_ID": [
+      {
+        "tableId": "01c10a5e-73d2-40aa-a9e5-2cd939df4c79",
+        "fieldId": "3d9d4e87-7106-492b-a6fd-a6e1c4ede5e5"
+      },
+      {
+        "tableId": "36c28bf6-a1b4-4e3d-9897-ff0e7c46f8a4",
+        "fieldId": "57286ddd-e3b5-49b7-8eba-7a3c0cc54a31"
+      }
+    ],
+    "Territory_ID": [
+      {
+        "tableId": "01c10a5e-73d2-40aa-a9e5-2cd939df4c79",
+        "fieldId": "83b61acf-2bc5-410a-8448-f1e82bbac656"
+      },
+      {
+        "tableId": "f6d59614-4e40-4332-ba53-1c01f84a75e7",
+        "fieldId": "9b17b5b3-e61a-4744-b388-2467e996dd6b"
+      }
+    ],
+    "Product_ID": [
+      {
+        "tableId": "01c10a5e-73d2-40aa-a9e5-2cd939df4c79",
+        "fieldId": "e3e65c3c-494d-4031-b14a-c71de1cd0a73"
+      },
+      {
+        "tableId": "f523588c-25e4-4211-8e1b-ee81bc64f964",
+        "fieldId": "3f37542d-ccbb-408c-bb52-cb14571d85a8"
+      }
+    ],
+    "DateKey": [
+      {
+        "tableId": "4d54e91e-f1cd-4c2e-88e0-45eb41ddd83a",
+        "fieldId": "61dbde3b-5f45-4170-b942-4623b84731d8"
+      },
+      {
+        "tableId": "01c10a5e-73d2-40aa-a9e5-2cd939df4c79",
+        "fieldId": "d7469f2e-e505-4c18-b90a-002cc3aa88d9"
+      }
+    ]
+  },
+  "locale": {
+    "0": "e",
+    "1": "n",
+    "2": "-",
+    "3": "U",
+    "4": "S"
+  },
+  "defaultCalendar": {
+    "id": "autoCalendar",
+    "name": "autoCalendar",
+    "appliedToTags": [
+      "$date"
+    ],
+    "derivedFields": [
+      {
+        "id": "Decade",
+        "name": "Decade",
+        "translation": "",
+        "definition": "Dual(Div(Year($1),10)*10, MakeDate(Div(Year($1),10)*10, 1, 1))",
+        "tags": [
+          "$axis",
+          "$decade"
+        ],
+        "selected": false
+      },
+      {
+        "id": "Year",
+        "name": "Year",
+        "translation": "scripteditor.autoCalendarYear",
+        "definition": "Dual(Year($1), YearStart($1))",
+        "tags": [
+          "$axis",
+          "$year"
+        ],
+        "selected": true
+      },
+      {
+        "id": "Quarter",
+        "name": "Quarter",
+        "translation": "scripteditor.autoCalendarQuarter",
+        "definition": "Dual('Q'&Num(Ceil(Num(Month($1))/3)),Num(Ceil(NUM(Month($1))/3),00))",
+        "tags": [
+          "$quarter",
+          "$cyclic"
+        ],
+        "selected": true
+      },
+      {
+        "id": "YearQuarter",
+        "name": "YearQuarter",
+        "translation": "scripteditor.autoCalendarQuarterYear",
+        "definition": "Dual(Year($1)&'-Q'&Num(Ceil(Num(Month($1))/3)),QuarterStart($1))",
+        "tags": [
+          "$yearquarter",
+          "$qualified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "_YearQuarter",
+        "name": "_YearQuarter",
+        "translation": "scripteditor.autoCalendarQuarterYear",
+        "definition": "Dual('Q'&Num(Ceil(Num(Month($1))/3)),QuarterStart($1))",
+        "tags": [
+          "$yearquarter",
+          "$hidden",
+          "$simplified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "Month",
+        "name": "Month",
+        "translation": "scripteditor.autoCalendarMonth",
+        "definition": "Month($1)",
+        "tags": [
+          "$month",
+          "$cyclic"
+        ],
+        "selected": true
+      },
+      {
+        "id": "YearMonth",
+        "name": "YearMonth",
+        "translation": "scripteditor.autoCalendarMonthYear",
+        "definition": "Dual(Year($1)&'-'&Month($1), monthstart($1))",
+        "tags": [
+          "$axis",
+          "$yearmonth",
+          "$qualified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "_YearMonth",
+        "name": "_YearMonth",
+        "translation": "scripteditor.autoCalendarMonthYear",
+        "definition": "Dual(Month($1), monthstart($1))",
+        "tags": [
+          "$axis",
+          "$yearmonth",
+          "$simplified",
+          "$hidden"
+        ],
+        "selected": true
+      },
+      {
+        "id": "Week",
+        "name": "Week",
+        "translation": "scripteditor.autoCalendarWeek",
+        "definition": "Dual('W'&Num(Week($1),00), Num(Week($1),00))",
+        "tags": [
+          "$weeknumber",
+          "$cyclic"
+        ],
+        "selected": true
+      },
+      {
+        "id": "YearWeek",
+        "name": "YearWeek",
+        "translation": "",
+        "definition": "Dual(Year($1)&'-W'&num(Week($1),00), weekstart($1))",
+        "tags": [
+          "$yearweek"
+        ],
+        "selected": false
+      },
+      {
+        "id": "WeekDay",
+        "name": "WeekDay",
+        "translation": "",
+        "definition": "Dual(WeekDay($1),num(WeekDay($1)))",
+        "tags": [
+          "$weekday"
+        ],
+        "selected": false
+      },
+      {
+        "id": "Date",
+        "name": "Date",
+        "translation": "scripteditor.autoCalendarDate",
+        "definition": "Date(Floor($1))",
+        "tags": [
+          "$axis",
+          "$date",
+          "$qualified"
+        ],
+        "selected": true
+      },
+      {
+        "id": "_Date",
+        "name": "_Date",
+        "translation": "scripteditor.autoCalendarDate",
+        "definition": "Date(Floor($1), 'D')",
+        "tags": [
+          "$axis",
+          "$date",
+          "$hidden",
+          "$simplified"
+        ],
+        "selected": true
+      }
+    ],
+    "groups": [
+      {
+        "name": "YearMonthDay",
+        "drillDown": "true",
+        "fieldRefs": [
+          "Year",
+          "Month",
+          "WeekDay"
+        ]
+      },
+      {
+        "name": "YearMonth",
+        "drillDown": "false",
+        "fieldRefs": [
+          "Year",
+          "Month"
+        ]
+      }
+    ],
+    "deriveFieldsType": "fieldExplicit"
+  },
+  "schemaVersion": 2.1
+}

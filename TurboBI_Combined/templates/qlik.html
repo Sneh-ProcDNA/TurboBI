@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TurboBI — Qlik to Power BI Converter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pd-ink-950:#0f0a1f;--pd-ink-900:#1c1530;--pd-ink-700:#3b3650;
+  --pd-ink-500:#6e6885;--pd-ink-400:#918ba8;--pd-ink-300:#b8b3c8;
+  --pd-ink-200:#d6d3e0;--pd-ink-100:#ebe9f1;--pd-ink-50:#f7f6fa;
+  --pd-paper:#fbfaff;--pd-white:#ffffff;
+  --pd-success:#16a34a;
+  --radius-sm:6px;--radius:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(26,11,61,.04),0 1px 1px rgba(26,11,61,.03);
+  --shadow:0 4px 14px rgba(26,11,61,.06),0 1px 3px rgba(26,11,61,.04);
+  --font-sans:'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --font-serif:'DM Serif Display',ui-serif,Georgia,serif;
+  --accent-primary:#0a3d91;--accent-soft:#e6efff;--accent-dark:#062c6c;
+  --accent-pop:#3b82f6;--accent-grad:linear-gradient(135deg,#062c6c,#3b82f6);
+  --qlik-green:#009845;--qlik-green-soft:#e6f5ed;
+  --pad:28px;
+}
+[data-theme="dark"] {
+  --pd-paper:#0a0f1d;--pd-white:#131a2c;
+  --pd-ink-950:#f7f8fc;--pd-ink-900:#e8edf7;--pd-ink-700:#c8cee0;
+  --pd-ink-500:#8b94ad;--pd-ink-400:#6d7693;--pd-ink-300:#4b536d;
+  --pd-ink-200:#2c3450;--pd-ink-100:#1d2440;--pd-ink-50:#161c34;
+  --accent-primary:#3b82f6;--accent-soft:rgba(59,130,246,.15);
+  --accent-dark:#1d4ed8;--accent-pop:#60a5fa;
+  --accent-grad:linear-gradient(135deg,#1d4ed8,#60a5fa);
+  --qlik-green:#22c55e;--qlik-green-soft:rgba(34,197,94,.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-sans);color:var(--pd-ink-900);background:var(--pd-paper);
+  background-image:
+    radial-gradient(1200px 600px at 90% -200px,rgba(59,130,246,.12),transparent 60%),
+    radial-gradient(900px 500px at -10% 110%,rgba(10,61,145,.08),transparent 55%);
+  background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;transition:background-color .2s,color .2s;
+}
+[data-theme="dark"] body{
+  background-image:
+    radial-gradient(1200px 600px at 90% -200px,rgba(59,130,246,.16),transparent 60%),
+    radial-gradient(900px 500px at -10% 110%,rgba(10,61,145,.20),transparent 55%);
+}
+button{font-family:inherit;cursor:pointer}
+code,pre{font-family:var(--font-mono)}
+.container{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:var(--font-mono)}
+
+/* Header */
+.tbi-header{border-bottom:1px solid var(--pd-ink-100);background:rgba(255,255,255,.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
+[data-theme="dark"] .tbi-header{background:rgba(19,26,44,.7);border-bottom-color:var(--pd-ink-100)}
+.tbi-header-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.tbi-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.tbi-brandname{font-weight:600;font-size:18px;letter-spacing:-0.01em;color:var(--pd-ink-900)}
+.tbi-brandname-accent{color:var(--accent-pop)}
+.tbi-brandsub{font-size:11.5px;color:var(--pd-ink-500);margin-top:2px;display:flex;align-items:center;gap:4px}
+.tbi-poweredby{font-size:10.5px;color:var(--pd-ink-400);font-weight:500;letter-spacing:.02em}
+.tbi-pdwordmark{font-size:12px;font-weight:700;letter-spacing:-.005em;color:var(--accent-primary)}
+.tbi-pdwordmark-accent{color:var(--accent-pop)}
+.tbi-headright{display:flex;align-items:center;gap:12px}
+.tbi-statpill{font-size:12px;color:var(--pd-ink-500);display:flex;align-items:center;gap:8px;padding:6px 10px 6px 8px;border-radius:99px;background:var(--pd-ink-50);border:1px solid var(--pd-ink-100)}
+.tbi-dot{width:7px;height:7px;border-radius:99px;background:var(--pd-success);box-shadow:0 0 0 3px rgba(22,163,74,.15)}
+.tbi-themetoggle{width:34px;height:34px;border-radius:99px;border:1px solid var(--pd-ink-100);background:white;color:var(--pd-ink-700);display:grid;place-items:center;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .15s}
+[data-theme="dark"] .tbi-themetoggle{background:var(--pd-ink-50);border-color:var(--pd-ink-100);color:var(--pd-ink-500)}
+.tbi-themetoggle:hover{border-color:var(--accent-pop);color:var(--accent-pop);transform:rotate(15deg)}
+.tbi-avatar{width:32px;height:32px;border-radius:99px;background:var(--accent-grad);color:white;font-size:12px;font-weight:600;display:grid;place-items:center}
+
+/* Hero */
+.tbi-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;padding:32px 0 36px}
+.tbi-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:99px;background:var(--accent-soft);color:var(--accent-primary);font-size:12px;font-weight:600;margin-bottom:14px;letter-spacing:.01em}
+[data-theme="dark"] .tbi-eyebrow{background:rgba(59,130,246,.2);color:var(--accent-pop)}
+.tbi-h1{font-size:44px;line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 14px}
+.tbi-h1-accent{background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;font-family:var(--font-serif);font-weight:400;font-size:1.05em}
+.tbi-lede{font-size:16.5px;line-height:1.55;color:var(--pd-ink-500);max-width:56ch}
+.tbi-lede code{font-family:var(--font-mono);font-size:14px;background:var(--pd-ink-100);padding:1px 6px;border-radius:4px;color:var(--pd-ink-900)}
+.tbi-hero-flow{display:flex;align-items:center;gap:10px;padding:20px;background:white;border:1px solid var(--pd-ink-100);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+[data-theme="dark"] .tbi-hero-flow{background:var(--pd-white);border-color:var(--pd-ink-100)}
+.tbi-flowtile{flex:1;display:flex;gap:12px;align-items:center;padding:14px;border-radius:var(--radius);background:var(--pd-ink-50);border:1px solid var(--pd-ink-100)}
+[data-theme="dark"] .tbi-flowtile{background:var(--pd-ink-50);border-color:var(--pd-ink-100)}
+.tbi-flowtile-target{background:var(--accent-soft);border-color:rgba(10,61,145,.18)}
+[data-theme="dark"] .tbi-flowtile-target{background:rgba(59,130,246,.18);border-color:rgba(59,130,246,.35)}
+.tbi-flowlabel{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--pd-ink-500);font-weight:600}
+.tbi-flowname{font-family:var(--font-mono);font-size:13px;font-weight:500;color:var(--pd-ink-900);margin-top:2px}
+.tbi-flowarrow{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:86px}
+.tbi-flowarrow-line{width:100%;height:2px;background:linear-gradient(90deg,var(--pd-ink-200),var(--accent-primary));position:relative}
+.tbi-flowarrow-line::after{content:"";position:absolute;right:-2px;top:-4px;width:0;height:0;border-left:8px solid var(--accent-primary);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.tbi-flowarrow-tag{font-size:11px;color:var(--accent-primary);font-weight:600;display:inline-flex;align-items:center;gap:4px;padding:3px 8px;background:var(--accent-soft);border-radius:99px}
+[data-theme="dark"] .tbi-flowarrow-tag{background:rgba(59,130,246,.2);color:var(--accent-pop)}
+
+/* Card */
+.tbi-single{display:block;max-width:880px;margin:0 auto}
+.tbi-card{background:white;border:1px solid var(--pd-ink-100);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+[data-theme="dark"] .tbi-card{background:var(--pd-white);border-color:var(--pd-ink-100)}
+.tbi-card-head{display:flex;align-items:flex-start;justify-content:space-between;padding:var(--pad) var(--pad) 0;gap:16px}
+.tbi-card-head-left{display:flex;flex-direction:column;gap:6px}
+.tbi-step-tag{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:99px;font-size:11px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.tbi-step-tag.tone-neutral{background:var(--pd-ink-100);color:var(--pd-ink-700)}
+.tbi-step-tag.tone-active{background:var(--accent-soft);color:var(--accent-primary)}
+.tbi-step-tag.tone-running{background:#fef3c7;color:#92400e}
+.tbi-step-tag.tone-success{background:#dcfce7;color:#166534}
+.tbi-step-tag.tone-error{background:#fee2e2;color:#991b1b}
+[data-theme="dark"] .tbi-step-tag.tone-neutral{background:var(--pd-ink-100);color:var(--pd-ink-500)}
+[data-theme="dark"] .tbi-step-tag.tone-active{background:rgba(59,130,246,.2);color:var(--accent-pop)}
+.tbi-card-title{font-size:19px;font-weight:600;letter-spacing:-.015em;color:var(--pd-ink-900)}
+.tbi-card-body{padding:20px var(--pad) var(--pad)}
+
+/* Upload / input stage */
+.tbi-upload{display:flex;flex-direction:column;gap:20px}
+
+/* App ID input block */
+.tbi-appid-block{
+  display:flex;flex-direction:column;gap:10px;
+  padding:24px;border:1.5px solid var(--pd-ink-200);
+  border-radius:var(--radius-lg);background:white;
+  transition:border-color .15s,box-shadow .15s;
+}
+[data-theme="dark"] .tbi-appid-block{background:var(--pd-white);border-color:var(--pd-ink-200)}
+.tbi-appid-block:focus-within{border-color:var(--accent-pop);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.tbi-appid-head{display:flex;align-items:center;gap:12px;margin-bottom:4px;flex-wrap:wrap;row-gap:10px}
+.tbi-appid-icon{width:42px;height:42px;border-radius:9px;background:var(--pd-ink-50);display:grid;place-items:center;border:1px solid var(--pd-ink-100);flex-shrink:0}
+[data-theme="dark"] .tbi-appid-icon{background:var(--pd-ink-50);border-color:var(--pd-ink-100)}
+.tbi-appid-label{font-size:14px;font-weight:600;letter-spacing:-.005em;color:var(--pd-ink-900)}
+.tbi-appid-sub{font-size:12px;color:var(--pd-ink-500);margin-top:2px}
+.tbi-req{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent-primary)}
+[data-theme="dark"] .tbi-req{background:rgba(59,130,246,.2);color:var(--accent-pop)}
+
+.tbi-appid-input-wrap{position:relative}
+.tbi-appid-input{
+  width:100%;font-family:var(--font-mono);font-size:14px;font-weight:500;
+  padding:13px 42px 13px 14px;border-radius:var(--radius);
+  border:1px solid var(--pd-ink-200);background:var(--pd-ink-50);
+  color:var(--pd-ink-900);outline:none;letter-spacing:.02em;
+  transition:border-color .15s,background .15s,box-shadow .15s;
+}
+[data-theme="dark"] .tbi-appid-input{background:var(--pd-ink-50);border-color:var(--pd-ink-200);color:var(--pd-ink-900)}
+.tbi-appid-input:focus{border-color:var(--accent-pop);background:white;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+[data-theme="dark"] .tbi-appid-input:focus{background:var(--pd-white)}
+.tbi-appid-input::placeholder{color:var(--pd-ink-300);font-weight:400;letter-spacing:0}
+.tbi-appid-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:6px;border:0;background:transparent;color:var(--pd-ink-400);display:none;place-items:center;cursor:pointer}
+.tbi-appid-clear:hover{background:var(--pd-ink-100);color:var(--pd-ink-900)}
+.tbi-appid-clear.visible{display:grid}
+.tbi-appid-hint{font-size:12px;color:var(--pd-ink-400);display:flex;align-items:center;gap:6px}
+.tbi-appid-hint code{font-family:var(--font-mono);font-size:11.5px;background:var(--pd-ink-100);padding:1px 6px;border-radius:4px;color:var(--pd-ink-700)}
+[data-theme="dark"] .tbi-appid-hint code{background:var(--pd-ink-100);color:var(--pd-ink-500)}
+
+/* Fetch-data toggle: a compact pill that lives inside the App ID card head,
+   right-aligned on the same row as the title. */
+.tbi-fetch{
+  margin-left:auto;display:flex;align-items:center;gap:9px;white-space:nowrap;
+  padding:7px 13px;border:1.5px solid var(--pd-ink-200);border-radius:99px;
+  background:white;cursor:pointer;user-select:none;
+  transition:border-color .15s,background .2s,box-shadow .15s;
+}
+[data-theme="dark"] .tbi-fetch{background:var(--pd-white);border-color:var(--pd-ink-200)}
+.tbi-fetch.is-on{border-color:rgba(10,61,145,.3);background:var(--accent-soft)}
+[data-theme="dark"] .tbi-fetch.is-on{border-color:rgba(59,130,246,.4);background:rgba(59,130,246,.14)}
+.tbi-fetch-label{font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:var(--pd-ink-900)}
+.tbi-fetch-state{font-size:11.5px;font-weight:600;color:var(--pd-ink-500)}
+.tbi-switch{position:relative;display:inline-block;width:38px;height:22px;flex-shrink:0}
+.tbi-switch input{position:absolute;opacity:0;width:0;height:0}
+.tbi-switch-slider{position:absolute;inset:0;background:var(--pd-ink-200);border-radius:99px;transition:background .2s}
+.tbi-switch-slider::before{content:"";position:absolute;height:16px;width:16px;left:3px;top:3px;background:white;border-radius:99px;transition:transform .2s;box-shadow:0 1px 3px rgba(15,10,31,.25)}
+.tbi-switch input:checked + .tbi-switch-slider{background:var(--accent-primary)}
+.tbi-switch input:checked + .tbi-switch-slider::before{transform:translateX(16px)}
+.tbi-switch input:focus-visible + .tbi-switch-slider{box-shadow:0 0 0 3px rgba(59,130,246,.3)}
+
+/* Toggle group (Fetch data + Prune columns) right-aligned in the card head */
+.tbi-toggles{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tbi-toggles .tbi-fetch{margin-left:0}
+.tbi-fetch.is-disabled{opacity:.5;pointer-events:none}
+
+/* Extract size / time estimate line, just below the App ID box */
+.tbi-extract-est{
+  display:none;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5;
+  color:var(--pd-ink-500);padding:9px 12px;border-radius:var(--radius);
+  background:var(--pd-ink-50);border:1px solid var(--pd-ink-100);
+}
+.tbi-extract-est.is-shown{display:flex}
+.tbi-extract-est b{color:var(--pd-ink-900);font-weight:600}
+.tbi-extract-est.is-warn{
+  background:#fffbeb;border-color:#fde68a;color:#92400e;
+}
+[data-theme="dark"] .tbi-extract-est.is-warn{
+  background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.4);color:#fcd34d;
+}
+.tbi-extract-est.is-warn b{color:inherit}
+.tbi-extract-est svg{flex-shrink:0;margin-top:1px}
+
+/* QVD mapping panel (optional, below the App ID box). Lets the user map +
+   upload the app's source QVDs; mapped tables are transcoded locally and the
+   Engine fetch skips them. Empty = skip = Engine fetch as usual. */
+.tbi-qvd{border:1.5px solid var(--pd-ink-200);border-radius:var(--radius-lg);background:white;overflow:hidden}
+[data-theme="dark"] .tbi-qvd{background:var(--pd-white);border-color:var(--pd-ink-200)}
+.tbi-qvd-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;background:transparent;border:0;text-align:left;transition:background .12s}
+.tbi-qvd-head:hover{background:var(--pd-ink-50)}
+.tbi-qvd-head-main{display:flex;align-items:flex-start;gap:12px}
+.tbi-qvd-head-icon{width:38px;height:38px;border-radius:9px;background:var(--qlik-green-soft);border:1px solid var(--pd-ink-100);display:grid;place-items:center;flex-shrink:0;color:var(--qlik-green)}
+.tbi-qvd-title{font-size:14px;font-weight:600;color:var(--pd-ink-900);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tbi-qvd-opt{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:99px;background:var(--qlik-green-soft);color:var(--qlik-green)}
+.tbi-qvd-count{font-size:10px;font-weight:600;letter-spacing:.02em;padding:2px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent-primary);display:none}
+.tbi-qvd-count.is-shown{display:inline-block}
+.tbi-qvd-sub{font-size:12px;color:var(--pd-ink-500);margin-top:3px;max-width:66ch;line-height:1.5}
+.tbi-qvd-chev{color:var(--pd-ink-400);transition:transform .15s;flex-shrink:0}
+.tbi-qvd-head[aria-expanded="true"] .tbi-qvd-chev{transform:rotate(180deg)}
+.tbi-qvd-body{padding:0 18px 16px;border-top:1px solid var(--pd-ink-100)}
+.tbi-qvd-notice{font-size:12.5px;color:var(--pd-ink-500);padding:14px 2px;line-height:1.5}
+.tbi-qvd-list{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto;padding:14px 2px 2px}
+.tbi-qvd-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 13px;border:1px solid var(--pd-ink-100);border-radius:var(--radius);background:var(--pd-ink-50);transition:border-color .12s,background .12s}
+[data-theme="dark"] .tbi-qvd-row{background:var(--pd-ink-50);border-color:var(--pd-ink-100)}
+.tbi-qvd-row.is-mapped{border-color:rgba(0,152,69,.45);background:var(--qlik-green-soft)}
+.tbi-qvd-row-meta{min-width:0}
+.tbi-qvd-row-name{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--pd-ink-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbi-qvd-row-sub{font-size:11.5px;color:var(--pd-ink-500);margin-top:2px}
+.tbi-qvd-row-sub .big{color:var(--accent-primary);font-weight:600}
+.tbi-qvd-file{flex-shrink:0;display:flex;align-items:center;gap:8px}
+.tbi-qvd-file-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:8px;border:1px solid var(--pd-ink-200);background:white;color:var(--pd-ink-900);font-size:12.5px;font-weight:550;cursor:pointer;transition:border-color .12s,color .12s}
+[data-theme="dark"] .tbi-qvd-file-btn{background:var(--pd-white);border-color:var(--pd-ink-200)}
+.tbi-qvd-file-btn:hover{border-color:var(--accent-pop);color:var(--accent-pop)}
+.tbi-qvd-fname{font-family:var(--font-mono);font-size:12px;color:var(--qlik-green);max-width:190px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.tbi-qvd-fsize{color:var(--pd-ink-400);font-weight:400}
+.tbi-qvd-fname.is-over{color:#b91c1c}
+[data-theme="dark"] .tbi-qvd-fname.is-over{color:#fca5a5}
+.tbi-qvd-listnote{font-size:11.5px;color:var(--pd-ink-400);padding:2px 2px 0;line-height:1.5}
+.tbi-qvd-clear{width:22px;height:22px;border-radius:6px;border:0;background:transparent;color:var(--pd-ink-400);display:grid;place-items:center;cursor:pointer;flex-shrink:0}
+.tbi-qvd-clear:hover{background:var(--pd-ink-100);color:var(--pd-ink-900)}
+.tbi-db-conn{border:1px solid var(--pd-ink-100);border-radius:var(--radius);background:var(--pd-ink-50);padding:14px;margin:12px 2px 0}
+.tbi-db-conn-name{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--pd-ink-900);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tbi-db-conn-cls{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent-primary)}
+.tbi-db-conn-tables{font-size:11.5px;color:var(--pd-ink-500);margin-top:4px;line-height:1.5}
+.tbi-db-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.tbi-db-field{display:flex;flex-direction:column;gap:4px}
+.tbi-db-field.full{grid-column:1 / -1}
+.tbi-db-field label{font-size:11.5px;font-weight:600;color:var(--pd-ink-700)}
+.tbi-db-field label .req{color:#b91c1c}
+.tbi-db-field input{padding:8px 10px;border:1px solid var(--pd-ink-200);border-radius:8px;background:white;color:var(--pd-ink-900);font-size:13px;font-family:var(--font-mono)}
+[data-theme="dark"] .tbi-db-field input{background:var(--pd-white);border-color:var(--pd-ink-200)}
+.tbi-db-field input:focus{outline:none;border-color:var(--accent-pop)}
+
+/* Actions */
+.tbi-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;border-top:1px solid var(--pd-ink-100)}
+[data-theme="dark"] .tbi-actions{border-top-color:var(--pd-ink-100)}
+.tbi-actions-note{display:inline-flex;align-items:center;gap:8px;color:var(--pd-ink-500);font-size:12.5px;max-width:60%;line-height:1.45}
+
+/* Buttons */
+.tbi-primary{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;border:0;background:var(--accent-primary);color:white;font-weight:600;font-size:14px;letter-spacing:-.005em;box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 8px 22px -10px var(--accent-primary);transition:transform .12s,box-shadow .12s,background .12s}
+.tbi-primary:hover:not(:disabled){background:color-mix(in srgb,var(--accent-primary) 90%,black);transform:translateY(-1px)}
+.tbi-primary:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.tbi-primary-lg{padding:14px 22px;font-size:15px}
+.tbi-secondary{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;border:1px solid var(--pd-ink-200);background:white;color:var(--pd-ink-900);font-weight:550;font-size:13.5px;transition:border-color .12s,background .12s}
+[data-theme="dark"] .tbi-secondary{background:var(--pd-ink-50);border-color:var(--pd-ink-200);color:var(--pd-ink-900)}
+.tbi-secondary:hover{border-color:var(--pd-ink-300);background:var(--pd-ink-50)}
+
+/* Converting */
+.tbi-converting{display:flex;flex-direction:column;gap:20px}
+.tbi-conv-header{display:flex;align-items:center;gap:14px}
+.tbi-filerow-icon{width:40px;height:40px;border-radius:8px;background:var(--pd-ink-50);display:grid;place-items:center;border:1px solid var(--pd-ink-100);flex-shrink:0}
+[data-theme="dark"] .tbi-filerow-icon{background:var(--pd-ink-50);border-color:var(--pd-ink-100)}
+.tbi-filerow-meta{flex:1;min-width:0}
+.tbi-filerow-name{font-weight:600;font-size:14.5px;letter-spacing:-.005em;font-family:var(--font-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbi-filerow-sub{font-size:12.5px;color:var(--pd-ink-500);margin-top:2px}
+.tbi-conv-pct{font-family:var(--font-mono);font-size:28px;font-weight:500;color:var(--accent-primary);letter-spacing:-.02em}
+.tbi-progress{height:6px;border-radius:99px;background:var(--pd-ink-100);overflow:hidden}
+.tbi-progress-fill{height:100%;background:var(--accent-grad);transition:width .3s ease;border-radius:99px}
+.tbi-steplist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}
+.tbi-step{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;padding:11px 12px;border-radius:var(--radius);transition:background .15s}
+.tbi-step.state-active{background:var(--accent-soft)}
+[data-theme="dark"] .tbi-step.state-active{background:rgba(59,130,246,.15)}
+.tbi-step-marker{width:24px;height:24px;border-radius:99px;display:grid;place-items:center;background:var(--pd-ink-100);color:var(--pd-ink-500);font-size:11px;font-weight:600}
+.tbi-step.state-active .tbi-step-marker{background:white;border:1.5px solid var(--accent-primary);color:var(--accent-primary)}
+[data-theme="dark"] .tbi-step.state-active .tbi-step-marker{background:var(--pd-white)}
+.tbi-step.state-done .tbi-step-marker{background:var(--accent-primary);color:white}
+.tbi-step-body{display:flex;flex-direction:column;gap:2px}
+.tbi-step-label{font-size:13.5px;font-weight:550;color:var(--pd-ink-900)}
+.tbi-step.state-active .tbi-step-label{color:var(--accent-primary)}
+.tbi-step.state-pending .tbi-step-label{color:var(--pd-ink-400)}
+.tbi-step-detail{font-size:12px;color:var(--pd-ink-500)}
+.tbi-step.state-pending .tbi-step-detail{color:var(--pd-ink-300)}
+.tbi-spinner{width:12px;height:12px;border-radius:99px;border:2px solid var(--accent-primary);border-top-color:transparent;animation:tbi-spin .8s linear infinite}
+@keyframes tbi-spin{to{transform:rotate(360deg)}}
+.tbi-log-toggle{display:flex;align-items:center;gap:6px;background:transparent;border:0;padding:6px 0;font-size:12.5px;color:var(--pd-ink-400);cursor:pointer;font-family:inherit}
+.tbi-log-toggle:hover{color:var(--pd-ink-900)}
+.tbi-log-toggle svg{transition:transform .15s}
+.tbi-log-toggle.open svg{transform:rotate(180deg)}
+.tbi-log-wrap{display:none}
+.tbi-log-wrap.open{display:block;margin-top:8px}
+.tbi-terminal{background:#062c6c;border-radius:var(--radius);padding:14px 16px;max-height:200px;overflow-y:auto;font-family:var(--font-mono);font-size:11.5px;line-height:1.7;color:#dbeafe}
+.tbi-terminal::-webkit-scrollbar{width:4px}
+.tbi-terminal::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.log-line{display:block}
+.log-line.warn{color:#fde68a}
+.log-line.error{color:#fca5a5}
+.log-line.pass{color:#86efac}
+.log-line.muted{color:rgba(219,234,254,.4)}
+
+/* Done */
+.tbi-done{display:flex;flex-direction:column;gap:20px}
+.tbi-success-banner{display:flex;align-items:center;gap:14px;padding:14px 16px;background:linear-gradient(135deg,var(--accent-soft),rgba(230,239,255,.6));border:1px solid rgba(10,61,145,.28);border-radius:var(--radius)}
+[data-theme="dark"] .tbi-success-banner{background:linear-gradient(135deg,rgba(59,130,246,.2),var(--pd-white));border-color:rgba(59,130,246,.38)}
+.tbi-success-icon{width:36px;height:36px;border-radius:99px;background:var(--accent-primary);color:white;display:grid;place-items:center;flex-shrink:0}
+.tbi-success-title{font-weight:600;font-size:14.5px;color:var(--accent-dark)}
+[data-theme="dark"] .tbi-success-title{color:var(--pd-ink-900)}
+.tbi-success-sub{font-size:12.5px;color:var(--accent-primary);opacity:.85;margin-top:2px}
+[data-theme="dark"] .tbi-success-sub{color:var(--pd-ink-500);opacity:1}
+.tbi-summary{display:flex;flex-direction:column}
+.tbi-summary-row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:12px 4px;border-bottom:1px solid var(--pd-ink-100);align-items:center}
+.tbi-summary-row:last-child{border-bottom:0}
+.tbi-summary-key{font-size:13px;color:var(--pd-ink-500)}
+.tbi-summary-val{font-size:13.5px;font-weight:500;color:var(--pd-ink-900)}
+.tbi-pbipcard{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 20px;border:1px solid rgba(10,61,145,.22);border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--accent-soft),rgba(230,239,255,.45));box-shadow:var(--shadow)}
+[data-theme="dark"] .tbi-pbipcard{background:linear-gradient(135deg,rgba(59,130,246,.22),var(--pd-white));border-color:rgba(59,130,246,.35)}
+.tbi-pbipcard-icon{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:white;box-shadow:var(--shadow-sm);border:1px solid var(--pd-ink-100)}
+[data-theme="dark"] .tbi-pbipcard-icon{background:var(--pd-white);border-color:var(--pd-ink-100)}
+.tbi-pbipcard-meta{min-width:0}
+.tbi-pbipcard-name{font-size:15px;font-weight:600;color:var(--pd-ink-900);letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbi-pbipcard-sub{font-size:12.5px;color:var(--pd-ink-500);margin-top:4px}
+.tbi-downloads{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--pd-ink-100)}
+
+/* Error */
+.tbi-error{display:flex;flex-direction:column;gap:18px}
+.tbi-error-banner{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:#fff1f2;border:1px solid #fecaca;border-radius:var(--radius);color:#991b1b}
+[data-theme="dark"] .tbi-error-banner{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.35);color:#fca5a5}
+.tbi-error-icon{width:36px;height:36px;border-radius:99px;background:#fee2e2;color:#dc2626;display:grid;place-items:center;flex-shrink:0}
+[data-theme="dark"] .tbi-error-icon{background:rgba(239,68,68,.2);color:#fca5a5}
+.tbi-error-title{font-weight:600;font-size:15px;letter-spacing:-.01em}
+.tbi-error-msg{font-size:13px;line-height:1.55;margin-top:5px;color:#9f1239}
+[data-theme="dark"] .tbi-error-msg{color:#fda4af}
+.tbi-error-cat{display:inline-block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:99px;background:#fee2e2;color:#b91c1c;margin-bottom:6px}
+[data-theme="dark"] .tbi-error-cat{background:rgba(239,68,68,.22);color:#fca5a5}
+
+/* Footer */
+.tbi-footer{border-top:1px solid var(--pd-ink-100);margin-top:56px;padding:22px 0;background:rgba(255,255,255,.6)}
+[data-theme="dark"] .tbi-footer{background:rgba(19,26,44,.4);border-top-color:var(--pd-ink-100)}
+.tbi-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.tbi-footer-brand{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--pd-ink-500)}
+.tbi-footer-links span{font-size:12.5px;color:var(--pd-ink-500)}
+
+@media(max-width:980px){.tbi-hero{grid-template-columns:1fr;gap:24px}.tbi-h1{font-size:34px}}
+@media(max-width:720px){.container{padding:0 16px}}
+@media(max-width:640px){.tbi-pbipcard{grid-template-columns:auto 1fr}.tbi-pbipcard>a{grid-column:1/-1;justify-content:center}}
+</style>
+{% if embedded %}<style>
+/* Embedded in the TurboBI combined shell: drop the per-app global chrome so
+   only the converter surface shows inside the iframe. */
+.tbi-header{display:none!important}
+.tbi-footer{display:none!important}
+main.container{padding-top:14px!important}
+</style>{% endif %}
+</head>
+<body>
+
+<header class="tbi-header">
+  <div class="container tbi-header-inner">
+    <a class="tbi-brand" href="#" aria-label="TurboBI">
+      <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="qbiGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#062c6c"/><stop offset="55%" stop-color="#1e6fdb"/><stop offset="100%" stop-color="#3b82f6"/>
+          </linearGradient>
+          <linearGradient id="qbiShine" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="white" stop-opacity="0.22"/><stop offset="55%" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#qbiGrad)"/>
+        <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#qbiShine)"/>
+        <circle cx="14" cy="14" r="7" stroke="white" stroke-width="2.4" fill="none" opacity="0.9"/>
+        <path d="M19 19 L25 25" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="tbi-brandname">Turbo<span class="tbi-brandname-accent">BI</span></div>
+        <div class="tbi-brandsub">
+          <span class="tbi-poweredby">Powered by</span>
+          <span class="tbi-pdwordmark">Proc<span class="tbi-pdwordmark-accent">DNA</span></span>
+        </div>
+      </div>
+    </a>
+    <div class="tbi-headright">
+      <div class="tbi-statpill"><span class="tbi-dot"></span>Engine v1.0 · healthy</div>
+      <button class="tbi-themetoggle" id="theme-btn" aria-label="Toggle theme">
+        <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <div class="tbi-avatar">PD</div>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="flex:1;padding-top:28px;padding-bottom:60px">
+
+  <div class="tbi-hero">
+    <div>
+      <div class="tbi-eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h7l-1 7 9-11h-7z"/></svg>
+        Internal ProcDNA tool
+      </div>
+      <h1 class="tbi-h1">Migrate Qlik apps to <span class="tbi-h1-accent">Power BI</span>, in minutes.</h1>
+      <p class="tbi-lede">Paste your Qlik Cloud <code>App ID</code> and TurboBI returns a ready-to-open <code>.pbip</code> project — data model, measures, visuals, and connections fully wired up.</p>
+    </div>
+    <div class="tbi-hero-flow" aria-hidden="true">
+      <div class="tbi-flowtile">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect x="0" y="0" width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.6"/>
+          <circle cx="14" cy="14" r="7" fill="#009845"/>
+          <circle cx="14" cy="14" r="4" fill="white"/>
+          <path d="M19 19 L25 25" stroke="#009845" stroke-width="2.8" stroke-linecap="round"/>
+        </svg>
+        <div><div class="tbi-flowlabel">Source</div><div class="tbi-flowname">App ID</div></div>
+      </div>
+      <div class="tbi-flowarrow">
+        <div class="tbi-flowarrow-line"></div>
+        <div class="tbi-flowarrow-tag">
+          <svg width="12" height="12" viewBox="0 0 32 32" fill="none"><rect x="0" y="0" width="32" height="32" rx="8" fill="#0a3d91"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="2.4" fill="none" opacity="0.9"/><path d="M19 19 L25 25" stroke="white" stroke-width="2.4" stroke-linecap="round"/></svg>
+          TurboBI
+        </div>
+      </div>
+      <div class="tbi-flowtile tbi-flowtile-target">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <defs><linearGradient id="pbiG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f7d24b"/><stop offset="100%" stop-color="#e8a90b"/></linearGradient></defs>
+          <rect x="0" y="0" width="32" height="32" rx="6" fill="url(#pbiG)"/>
+          <rect x="7"  y="17" width="4.5" height="9"  rx="1" fill="#a36e00" opacity="0.92"/>
+          <rect x="14" y="11" width="4.5" height="15" rx="1" fill="#a36e00" opacity="0.92"/>
+          <rect x="21" y="5"  width="4.5" height="21" rx="1" fill="#8a5a00"/>
+        </svg>
+        <div><div class="tbi-flowlabel">Output</div><div class="tbi-flowname">.pbip</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="tbi-single">
+    <div class="tbi-card">
+
+      <div class="tbi-card-head">
+        <div class="tbi-card-head-left">
+          <span class="tbi-step-tag tone-neutral" id="card-tag">Ready</span>
+          <div class="tbi-card-title" id="card-title">Enter your Qlik App ID</div>
+        </div>
+      </div>
+
+      <div class="tbi-card-body">
+
+        <!-- UPLOAD STAGE -->
+        <div class="tbi-upload" id="stage-upload">
+
+          <!-- App ID input -->
+          <div class="tbi-appid-block">
+            <div class="tbi-appid-head">
+              <div class="tbi-appid-icon">
+                <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                  <circle cx="14" cy="14" r="7" fill="#009845"/>
+                  <circle cx="14" cy="14" r="4" fill="white"/>
+                  <path d="M19 19 L25 25" stroke="#009845" stroke-width="2.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="tbi-appid-label">Qlik App ID <span class="tbi-req">Required</span></div>
+                <div class="tbi-appid-sub">Found in your Qlik Cloud app URL</div>
+              </div>
+              <!-- Toggles: same row as the title, inside the card -->
+              <div class="tbi-toggles">
+                <label class="tbi-fetch is-on" id="fetch-card" title="Pull table data from the app during conversion">
+                  <span class="tbi-switch">
+                    <input type="checkbox" id="fetch-data-toggle" checked>
+                    <span class="tbi-switch-slider"></span>
+                  </span>
+                  <span class="tbi-fetch-label">Fetch data</span>
+                  <span class="tbi-fetch-state" id="fetch-state">On</span>
+                </label>
+                <label class="tbi-fetch is-on" id="prune-card" title="Keep only the columns the report uses (smaller, faster). Turn off to pull every column and the full row-level detail of every table.">
+                  <span class="tbi-switch">
+                    <input type="checkbox" id="prune-toggle" checked>
+                    <span class="tbi-switch-slider"></span>
+                  </span>
+                  <span class="tbi-fetch-label">Prune Data</span>
+                  <span class="tbi-fetch-state" id="prune-state">On</span>
+                </label>
+              </div>
+            </div>
+            <div class="tbi-appid-input-wrap">
+              <input
+                type="text"
+                id="app-id-input"
+                class="tbi-appid-input"
+                placeholder="e.g. 9e3c3191-9974-41b2-acd8-62920a2ebfe4"
+                spellcheck="false"
+                autocomplete="off"
+              >
+              <button class="tbi-appid-clear" id="appid-clear" aria-label="Clear">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6l-12 12"/></svg>
+              </button>
+            </div>
+            <!-- Extract size / time estimate (cloud-context mode); shown when a
+                 valid App ID is entered and Fetch data is on. -->
+            <div class="tbi-extract-est" id="extract-estimate"></div>
+            <div class="tbi-appid-hint">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.5"/></svg>
+              In Qlik Cloud, open the app →
+              <code><strong>•••</strong> More ▸ App details ▸ App ID</code>
+            </div>
+          </div>
+
+          <!-- QVD mapping panel (optional). Shown once a valid App ID is
+               entered. Maps each app table to an uploaded source .qvd; mapped
+               tables are transcoded locally (fast) and skip the Engine fetch.
+               Leaving a table unmapped = fetch it from Qlik as usual. -->
+          <div class="tbi-qvd" id="qvd-panel" style="display:none">
+            <button type="button" class="tbi-qvd-head" id="qvd-toggle" aria-expanded="false">
+              <span class="tbi-qvd-head-main">
+                <span class="tbi-qvd-head-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c0-1.1 3.6-2 8-2s8 .9 8 2-3.6 2-8 2-8-.9-8-2z"/><path d="M4 7v10c0 1.1 3.6 2 8 2s8-.9 8-2V7"/><path d="M4 12c0 1.1 3.6 2 8 2s8-.9 8-2"/></svg>
+                </span>
+                <span>
+                  <span class="tbi-qvd-title">Map source QVD files
+                    <span class="tbi-qvd-opt">Recommended · fastest</span>
+                    <span class="tbi-qvd-count" id="qvd-count"></span>
+                  </span>
+                  <span class="tbi-qvd-sub">The <b>fastest</b> way to import data: upload the app's source <b>.qvd</b> files and TurboBI transcodes them locally (disk-speed) instead of the slow, latency-bound Engine fetch. Map the big tables especially. Tables you don't map are fetched from Qlik as usual — so map none, some, or all.</span>
+                </span>
+              </span>
+              <svg class="tbi-qvd-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="tbi-qvd-body" id="qvd-body" style="display:none">
+              <div id="qvd-tablelist"></div>
+            </div>
+          </div>
+
+          <div class="tbi-qvd" id="db-panel" style="display:none;margin-top:14px">
+            <button type="button" class="tbi-qvd-head" id="db-toggle" aria-expanded="false">
+              <span class="tbi-qvd-head-main">
+                <span class="tbi-qvd-head-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
+                </span>
+                <span>
+                  <span class="tbi-qvd-title">Database connection
+                    <span class="tbi-qvd-opt" id="db-opt">Detected</span>
+                    <span class="tbi-qvd-count" id="db-count"></span>
+                  </span>
+                  <span class="tbi-qvd-sub">This app loads one or more tables <b>directly from a database</b> (e.g. Databricks). Enter the connection details and those tables will <b>Import live from the source</b> instead of the data loaded in Qlik. Leave blank to use the Qlik-loaded data. Secrets aren't stored — you'll sign in once in Power BI Desktop.</span>
+                </span>
+              </span>
+              <svg class="tbi-qvd-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="tbi-qvd-body" id="db-body" style="display:none">
+              <div id="db-connlist"></div>
+            </div>
+          </div>
+
+          <div class="tbi-actions">
+            <div class="tbi-actions-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.5"/></svg>
+              <span id="actions-note">Paste your Qlik App ID to begin.</span>
+            </div>
+            <button class="tbi-primary" id="btn-start" disabled>
+              Start conversion
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- CONVERTING STAGE -->
+        <div class="tbi-converting" id="stage-converting" style="display:none">
+          <div class="tbi-conv-header">
+            <div class="tbi-filerow-icon">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                <circle cx="14" cy="14" r="7" fill="#009845"/>
+                <circle cx="14" cy="14" r="4" fill="white"/>
+                <path d="M19 19 L25 25" stroke="#009845" stroke-width="2.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="tbi-filerow-meta">
+              <div class="tbi-filerow-name" id="conv-appid">—</div>
+              <div class="tbi-filerow-sub">in progress…</div>
+            </div>
+            <div class="tbi-conv-pct" id="conv-pct">0%</div>
+          </div>
+          <div class="tbi-progress"><div class="tbi-progress-fill" id="progress-fill" style="width:0%"></div></div>
+          <ul class="tbi-steplist" id="steplist"></ul>
+          <div>
+            <button class="tbi-log-toggle" id="log-toggle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              View raw log
+            </button>
+            <div class="tbi-log-wrap" id="log-wrap">
+              <div class="tbi-terminal" id="terminal"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DONE STAGE -->
+        <div class="tbi-done" id="stage-done" style="display:none">
+          <div class="tbi-success-banner">
+            <div class="tbi-success-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg>
+            </div>
+            <div>
+              <div class="tbi-success-title">Power BI project is ready</div>
+              <div class="tbi-success-sub" id="done-sub">Conversion complete</div>
+            </div>
+          </div>
+          <div class="tbi-summary" id="summary-table"></div>
+          <div class="tbi-pbipcard">
+            <div class="tbi-pbipcard-icon">
+              <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                <defs><linearGradient id="pbiG2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f7d24b"/><stop offset="100%" stop-color="#e8a90b"/></linearGradient></defs>
+                <rect x="0" y="0" width="32" height="32" rx="6" fill="url(#pbiG2)"/>
+                <rect x="7"  y="17" width="4.5" height="9"  rx="1" fill="#a36e00" opacity="0.92"/>
+                <rect x="14" y="11" width="4.5" height="15" rx="1" fill="#a36e00" opacity="0.92"/>
+                <rect x="21" y="5"  width="4.5" height="21" rx="1" fill="#8a5a00"/>
+              </svg>
+            </div>
+            <div class="tbi-pbipcard-meta">
+              <div class="tbi-pbipcard-name mono" id="pbip-filename">output.pbip.zip</div>
+              <div class="tbi-pbipcard-sub">Power BI project · ready to open in Power BI Desktop</div>
+            </div>
+            <a class="tbi-primary tbi-primary-lg" id="btn-download" style="display:none;text-decoration:none">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+              Download .pbip
+            </a>
+          </div>
+          <div class="tbi-downloads">
+            <button class="tbi-secondary" id="btn-reset">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16"/><path d="M3 21v-5h5"/></svg>
+              Convert another app
+            </button>
+          </div>
+        </div>
+
+        <!-- ERROR STAGE -->
+        <div class="tbi-error" id="stage-error" style="display:none">
+          <div class="tbi-error-banner">
+            <div class="tbi-error-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+            </div>
+            <div>
+              <span class="tbi-error-cat" id="error-cat" style="display:none"></span>
+              <div class="tbi-error-title" id="error-title">Conversion failed</div>
+              <div class="tbi-error-msg" id="error-msg">—</div>
+            </div>
+          </div>
+          <div>
+            <button class="tbi-log-toggle" id="error-log-toggle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              View raw output
+            </button>
+            <div class="tbi-log-wrap" id="error-log-wrap">
+              <div class="tbi-terminal" id="error-terminal"></div>
+            </div>
+          </div>
+          <div>
+            <button class="tbi-secondary" id="btn-error-reset">Try again</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="tbi-footer">
+  <div class="container tbi-footer-inner">
+    <div class="tbi-footer-brand">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+        <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#qbiGrad)"/>
+        <circle cx="14" cy="14" r="7" stroke="white" stroke-width="2.4" fill="none" opacity="0.9"/>
+        <path d="M19 19 L25 25" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span>TurboBI · Powered by <strong>ProcDNA</strong></span>
+    </div>
+    <span class="tbi-footer-links"><span>© 2026 ProcDNA Pvt. Ltd. All rights reserved.</span></span>
+    <span class="tbi-footer-links"><span>v1.0</span></span>
+  </div>
+</footer>
+
+<script>
+// Theme
+const html=document.documentElement,themeBtn=document.getElementById('theme-btn');
+const iconMoon=document.getElementById('icon-moon'),iconSun=document.getElementById('icon-sun');
+function applyTheme(t){
+  html.setAttribute('data-theme',t);
+  iconMoon.style.display=t==='light'?'':'none';
+  iconSun.style.display=t==='dark'?'':'none';
+  try{localStorage.setItem('turbobi-theme',t)}catch{}
+}
+applyTheme(localStorage.getItem('turbobi-theme')||'light');
+themeBtn.addEventListener('click',()=>applyTheme(html.getAttribute('data-theme')==='light'?'dark':'light'));
+
+// Steps
+const STEPS=[
+  {label:'Unbuild Qlik app',   detail:'Fetching JSON IR from Qlik Cloud via CLI',            kw:/unbuild|extract|fetch.*app|open|load|qlik.*app/i},
+  {label:'Fetching data',      detail:'Exporting table CSVs via qlik app object export',     kw:/fetch.*data|export|csv|object.*data/i},
+  {label:'Mapping data model', detail:'Translating Qlik data model to Power BI semantic model', kw:/model|measure|field|relat|calcul|dax|tmdl/i},
+  {label:'Converting visuals', detail:'Rebuilding sheets and charts as Power BI report pages', kw:/visual|sheet|chart|report|page/i},
+  {label:'Packaging .pbip',    detail:'Assembling dataset, report, and project folders',     kw:/packag|zip|writ|sav|output|done|complet|pbip/i},
+];
+
+function buildStepList(activeIdx){
+  const ul=document.getElementById('steplist');ul.innerHTML='';
+  STEPS.forEach((s,i)=>{
+    const state=i<activeIdx?'done':i===activeIdx?'active':'pending';
+    const li=document.createElement('li');li.className=`tbi-step state-${state}`;
+    let m=state==='done'
+      ?`<span class="tbi-step-marker"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg></span>`
+      :state==='active'
+      ?`<span class="tbi-step-marker"><span class="tbi-spinner"></span></span>`
+      :`<span class="tbi-step-marker">${i+1}</span>`;
+    li.innerHTML=`${m}<span class="tbi-step-body"><span class="tbi-step-label">${s.label}</span><span class="tbi-step-detail">${s.detail}</span></span>`;
+    ul.appendChild(li);
+  });
+}
+
+// State
+let currentJob=null,currentStep=0;
+
+// DOM
+const appIdInput  = document.getElementById('app-id-input');
+const appIdClear  = document.getElementById('appid-clear');
+const btnStart    = document.getElementById('btn-start');
+const actionsNote = document.getElementById('actions-note');
+const btnReset    = document.getElementById('btn-reset');
+const btnErrReset = document.getElementById('btn-error-reset');
+const btnDownload = document.getElementById('btn-download');
+const logToggle   = document.getElementById('log-toggle');
+const logWrap     = document.getElementById('log-wrap');
+const terminal    = document.getElementById('terminal');
+const errLogToggle= document.getElementById('error-log-toggle');
+const errLogWrap  = document.getElementById('error-log-wrap');
+const errTerminal = document.getElementById('error-terminal');
+
+// Every streamed log line, retained so the error stage can show the full
+// raw output even after the converting stage (which hosts the live
+// terminal) is hidden.
+let rawLines=[];
+let jobFinished=false;
+
+// UUID validation (loose)
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+appIdInput.addEventListener('input', () => {
+  const val = appIdInput.value.trim();
+  const valid = UUID_RE.test(val);
+  appIdClear.classList.toggle('visible', val.length > 0);
+  btnStart.disabled = !valid;
+  if (!val) {
+    actionsNote.textContent = 'Paste your Qlik App ID to begin.';
+    document.getElementById('card-tag').className = 'tbi-step-tag tone-neutral';
+    document.getElementById('card-tag').textContent = 'Ready';
+  } else if (!valid) {
+    actionsNote.textContent = 'App ID must be a valid UUID (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).';
+    document.getElementById('card-tag').className = 'tbi-step-tag tone-error';
+    document.getElementById('card-tag').textContent = 'Invalid ID';
+  } else {
+    actionsNote.textContent = 'App ID looks good — ready to convert.';
+    document.getElementById('card-tag').className = 'tbi-step-tag tone-active';
+    document.getElementById('card-tag').textContent = 'Ready';
+  }
+  // Refresh the extract estimate (debounced) as the App ID changes.
+  if (typeof renderEstimate === 'function') {
+    clearTimeout(estTimer);
+    estTimer = setTimeout(renderEstimate, 500);
+  }
+  // Show/reset the optional QVD-mapping panel (per-app).
+  if (typeof syncQvdPanel === 'function') syncQvdPanel(valid, val);
+  // Show/reset the database-connection panel (per-app).
+  if (typeof syncDbPanel === 'function') syncDbPanel(valid, val);
+});
+
+appIdClear.addEventListener('click', () => {
+  appIdInput.value = '';
+  appIdInput.dispatchEvent(new Event('input'));
+  appIdInput.focus();
+});
+
+// Stage transitions
+function setStage(s){
+  ['upload','converting','done','error'].forEach(n=>{
+    document.getElementById(`stage-${n}`).style.display=s===n?'':'none';
+  });
+  const tag=document.getElementById('card-tag'),title=document.getElementById('card-title');
+  if(s==='converting'){tag.className='tbi-step-tag tone-running';tag.textContent='Converting…';title.textContent='Building Power BI project'}
+  else if(s==='done'){tag.className='tbi-step-tag tone-success';tag.textContent='Complete';title.textContent='Download your project'}
+  else if(s==='error'){tag.className='tbi-step-tag tone-error';tag.textContent='Failed';title.textContent='Conversion error'}
+}
+
+// Log toggle
+logToggle.addEventListener('click',()=>{
+  const open=logWrap.classList.toggle('open');
+  logToggle.classList.toggle('open',open);
+});
+errLogToggle.addEventListener('click',()=>{
+  const open=errLogWrap.classList.toggle('open');
+  errLogToggle.classList.toggle('open',open);
+});
+
+// Fetch-data + Prune-columns toggles (beside the App ID box). Fetched data
+// is emitted as typed Parquet by default (converter-side); there is no
+// format choice. Pruning keeps only the columns the report references
+// (smaller/faster); turning it OFF pulls every column and the full
+// row-level grain of every table.
+const fetchToggle = document.getElementById('fetch-data-toggle');
+const fetchState  = document.getElementById('fetch-state');
+const fetchCard   = document.getElementById('fetch-card');
+const pruneToggle = document.getElementById('prune-toggle');
+const pruneState  = document.getElementById('prune-state');
+const pruneCard   = document.getElementById('prune-card');
+const estBox      = document.getElementById('extract-estimate');
+let   estTimer=null, estCacheId=null, estCache=null;
+
+function syncFetch(){
+  const on=fetchToggle.checked;
+  fetchState.textContent=on?'On':'Off';
+  fetchCard.classList.toggle('is-on',on);
+}
+function syncPrune(){
+  const on=pruneToggle.checked;
+  pruneState.textContent=on?'On':'Off';
+  pruneCard.classList.toggle('is-on',on);
+}
+function syncToggles(){
+  syncFetch(); syncPrune();
+  // Pruning is irrelevant with no data fetch -> visually disable it.
+  pruneCard.classList.toggle('is-disabled', !fetchToggle.checked);
+}
+
+function fmtNum(n){ return (n||0).toLocaleString('en-US'); }
+function fmtBytes(b){
+  b=b||0;
+  if(b>=1e9) return (b/1e9).toFixed(b>=1e10?0:1)+' GB';
+  if(b>=1e6) return (b/1e6).toFixed(b>=1e8?0:1)+' MB';
+  if(b>=1e3) return Math.round(b/1e3)+' KB';
+  return b+' B';
+}
+function fmtDur(s){
+  s=Math.max(1,Math.round(s||0));
+  if(s<90) return '~'+s+' sec';
+  const m=Math.round(s/60);
+  if(m<60) return '~'+m+' min';
+  const h=Math.floor(m/60), mm=m%60;
+  return '~'+h+' hr'+(mm?' '+mm+' min':'');
+}
+// Range formatter for the low–high extract estimate (parallel fetch makes a
+// single point misleading; the real time sits between best/worst engine
+// throughput).
+function fmtDur2(lo,hi){
+  lo=Math.max(1,Math.round(lo||0)); hi=Math.max(lo,Math.round(hi||0));
+  if(hi<90) return lo+'–'+hi+' sec';
+  const lm=Math.max(1,Math.round(lo/60)), hm=Math.max(1,Math.round(hi/60));
+  if(hm<60) return (lm===hm? hm+' min' : lm+'–'+hm+' min');
+  const f=x=>{x=x/3600;return x.toFixed(x<10?1:0);};
+  return f(lo)+'–'+f(hi)+' hr';
+}
+async function loadEstimate(appId, prune){
+  const key=appId+'|'+(prune?1:0);
+  if(estCacheId===key && estCache) return estCache;
+  try{
+    const r=await fetch('/qlik/estimate?app_id='+encodeURIComponent(appId)+'&prune='+(prune?1:0));
+    const j=await r.json(); estCacheId=key; estCache=j; return j;
+  }catch{ return {ok:false}; }
+}
+const EST_INFO_SVG='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.5"/></svg>';
+async function renderEstimate(){
+  const appId=appIdInput.value.trim();
+  if(!UUID_RE.test(appId) || !fetchToggle.checked){ estBox.className='tbi-extract-est'; return; }
+  const prune=pruneToggle.checked;
+  estBox.className='tbi-extract-est is-shown';
+  estBox.textContent='Estimating data size…';
+  const j=await loadEstimate(appId, prune);
+  // Bail if the input or prune state changed while awaiting.
+  if(appIdInput.value.trim()!==appId || pruneToggle.checked!==prune) return;
+  if(!j || !j.ok){ estBox.className='tbi-extract-est'; return; }   // e.g. CLI mode (no context)
+  const sz=fmtBytes(j.bytes), rows=fmtNum(j.rows);
+  const dur=fmtDur2(j.est_low_seconds, j.est_high_seconds);
+  if(prune){
+    estBox.className='tbi-extract-est is-shown';
+    estBox.innerHTML=EST_INFO_SVG+'<span>App data ≈ <b>'+sz+'</b> · '+rows+' rows across '+j.tables+
+      ' tables. Estimated extract <b>'+dur+'</b> (pruned, parallel) — rough; real time depends on '+
+      'network latency &amp; Qlik engine load. Have the source QVDs? Map them below to skip the wait.</span>';
+  }else{
+    estBox.className='tbi-extract-est is-shown is-warn';
+    estBox.innerHTML=EST_INFO_SVG+'<span><b>Full extract (no pruning).</b> ≈ <b>'+sz+'</b> · '+rows+
+      ' rows. Estimated <b>'+dur+'</b> — rough; depends on network &amp; engine. Tables stream to disk, '+
+      'so memory stays bounded. Mapping source QVDs below skips the engine for those tables.</span>';
+  }
+}
+fetchToggle.addEventListener('change',()=>{syncToggles();renderEstimate();});
+pruneToggle.addEventListener('change',()=>{syncPrune();renderEstimate();});
+syncToggles();
+
+// ---- QVD mapping panel (optional fast-path) -----------------------------
+const qvdPanel  = document.getElementById('qvd-panel');
+const qvdToggle = document.getElementById('qvd-toggle');
+const qvdBody   = document.getElementById('qvd-body');
+const qvdList   = document.getElementById('qvd-tablelist');
+const qvdCount  = document.getElementById('qvd-count');
+const qvdFiles  = new Map();      // table name -> File
+let   qvdAppId=null, qvdLoaded=false, qvdSupported=true, qvdTimer=null, qvdMaxMb=8192;
+const QVD_SPLIT_CELLS = 1200000;  // mirrors the server split threshold
+
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function collapseQvd(){ qvdBody.style.display='none'; qvdToggle.setAttribute('aria-expanded','false'); }
+function expandQvd(){ qvdBody.style.display=''; qvdToggle.setAttribute('aria-expanded','true'); }
+function updateQvdCount(){
+  const n=qvdFiles.size;
+  qvdCount.textContent=n+' mapped';
+  qvdCount.classList.toggle('is-shown', n>0);
+}
+function syncQvdPanel(valid, appId){
+  if(!valid){ qvdPanel.style.display='none'; collapseQvd(); clearTimeout(qvdTimer); return; }
+  if(appId!==qvdAppId){            // new app -> reset (tables differ per app)
+    qvdAppId=appId; qvdLoaded=false; qvdFiles.clear();
+    qvdList.innerHTML=''; updateQvdCount();
+    qvdPanel.style.display='';
+    // DEFAULT: open the fast-path up front and auto-load the table list
+    // (debounced), so it's the prominent path rather than hidden behind a click.
+    expandQvd();
+    clearTimeout(qvdTimer);
+    qvdTimer=setTimeout(()=>{ if(appIdInput.value.trim()===appId) loadQvdTables(); }, 550);
+  } else {
+    qvdPanel.style.display='';
+  }
+}
+qvdToggle.addEventListener('click', async ()=>{
+  const open = qvdBody.style.display==='none';
+  qvdBody.style.display = open ? '' : 'none';
+  qvdToggle.setAttribute('aria-expanded', open?'true':'false');
+  if(open && !qvdLoaded) await loadQvdTables();
+});
+async function loadQvdTables(){
+  qvdLoaded=true;
+  const appId=appIdInput.value.trim();
+  qvdList.innerHTML='<div class="tbi-qvd-notice">Loading tables…</div>';
+  let j;
+  try{ const r=await fetch('/qlik/tables?app_id='+encodeURIComponent(appId)); j=await r.json(); }
+  catch{ j={ok:false}; }
+  if(appIdInput.value.trim()!==appId) return;   // changed while loading
+  if(j && j.max_upload_mb) qvdMaxMb=j.max_upload_mb;
+  qvdSupported = !!(j && j.qvd_supported!==false);
+  if(!qvdSupported){
+    qvdList.innerHTML='<div class="tbi-qvd-notice">QVD upload needs <b>pyqvd</b> on the server '+
+      '(<code>pip install pyqvd pyarrow</code>). Without it, data is fetched from the Qlik Engine as usual.</div>';
+    return;
+  }
+  if(!j || !j.ok || !Array.isArray(j.tables) || !j.tables.length){
+    qvdList.innerHTML='<div class="tbi-qvd-notice">Couldn\'t load this app\'s tables'+
+      (j&&j.reason?(' ('+escapeHtml(j.reason)+')'):'')+'. You can still convert — data is fetched from Qlik.</div>';
+    return;
+  }
+  renderQvdRows(j.tables);
+}
+function bindQvdCell(cell, table, row){
+  cell.innerHTML='<label class="tbi-qvd-file-btn"><input type="file" accept=".qvd" hidden>'+
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M5 20h14"/></svg> Choose .qvd</label>';
+  cell.querySelector('input[type=file]').addEventListener('change', function(){
+    const f=this.files&&this.files[0]; if(!f) return;
+    const over = qvdMaxMb>0 && f.size > qvdMaxMb*1024*1024;
+    qvdFiles.set(table, f); row.classList.add('is-mapped');
+    cell.innerHTML='<span class="tbi-qvd-fname'+(over?' is-over':'')+'" title="'+escapeHtml(f.name)+
+      (over?(' — exceeds the '+qvdMaxMb+' MB limit'):'')+'">'+escapeHtml(f.name)+
+      ' <span class="tbi-qvd-fsize">('+fmtBytes(f.size)+')</span></span>'+
+      '<button type="button" class="tbi-qvd-clear" aria-label="Remove">'+
+      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6l-12 12"/></svg></button>';
+    cell.querySelector('.tbi-qvd-clear').addEventListener('click', ()=>{
+      qvdFiles.delete(table); row.classList.remove('is-mapped');
+      bindQvdCell(cell, table, row); updateQvdCount();
+    });
+    updateQvdCount();
+  });
+}
+function renderQvdRows(tables){
+  qvdList.innerHTML='';
+  const note=document.createElement('div'); note.className='tbi-qvd-listnote';
+  note.innerHTML='Upload up to <b>'+qvdMaxMb+' MB</b> per file. Files stream to disk, '+
+    'so the upload won\'t exhaust server memory; very large QVDs just need enough RAM '+
+    'on the server to transcode (≈ a few × the file size).';
+  qvdList.appendChild(note);
+  const list=document.createElement('div'); list.className='tbi-qvd-list';
+  tables.forEach(t=>{
+    const big=((t.rows||0)*(t.cols||1))>QVD_SPLIT_CELLS;
+    const row=document.createElement('div');
+    row.className='tbi-qvd-row';
+    const meta=document.createElement('div'); meta.className='tbi-qvd-row-meta';
+    meta.innerHTML='<div class="tbi-qvd-row-name">'+escapeHtml(t.name)+'</div>'+
+      '<div class="tbi-qvd-row-sub">'+(big?'<span class="big">':'')+fmtNum(t.rows)+' rows'+(big?'</span>':'')+
+      ' · '+fmtNum(t.cols)+' cols'+(big?' · slow via engine — map this one':'')+'</div>';
+    const cell=document.createElement('div'); cell.className='tbi-qvd-file';
+    bindQvdCell(cell, t.name, row);
+    row.appendChild(meta); row.appendChild(cell);
+    list.appendChild(row);
+  });
+  qvdList.appendChild(list);
+}
+
+/* ---- Database-connection panel ------------------------------------------ */
+const dbPanel  = document.getElementById('db-panel');
+const dbToggle = document.getElementById('db-toggle');
+const dbBody   = document.getElementById('db-body');
+const dbList   = document.getElementById('db-connlist');
+const dbCount  = document.getElementById('db-count');
+let dbAppId=null, dbLoaded=false, dbConns=[], dbTimer=null;
+// connection name -> { fieldKey -> value } entered by the user.
+const dbValues = new Map();
+
+function dbExpand(){ dbBody.style.display=''; dbToggle.setAttribute('aria-expanded','true'); }
+function dbCollapse(){ dbBody.style.display='none'; dbToggle.setAttribute('aria-expanded','false'); }
+function updateDbCount(){
+  let filled=0;
+  dbValues.forEach(v=>{ if(v && (v.server||v.host)) filled++; });
+  if(filled>0){ dbCount.textContent=filled+' configured'; dbCount.classList.add('is-shown'); }
+  else { dbCount.classList.remove('is-shown'); }
+}
+function syncDbPanel(valid, appId){
+  if(!valid){ dbPanel.style.display='none'; dbCollapse(); clearTimeout(dbTimer); return; }
+  if(appId!==dbAppId){
+    dbAppId=appId; dbLoaded=false; dbConns=[]; dbValues.clear();
+    dbList.innerHTML=''; updateDbCount(); dbPanel.style.display='none';
+    clearTimeout(dbTimer);
+    // Detect (debounced) whether this app loads from a DB connection; only
+    // SHOW the panel when at least one is detected.
+    dbTimer=setTimeout(()=>{ if(appIdInput.value.trim()===appId) detectDbConns(); }, 600);
+  }
+}
+dbToggle.addEventListener('click', ()=>{
+  const open = dbBody.style.display==='none';
+  if(open) dbExpand(); else dbCollapse();
+});
+async function detectDbConns(){
+  const appId=appIdInput.value.trim();
+  let j;
+  try{ const r=await fetch('/qlik/db-connections?app_id='+encodeURIComponent(appId)); j=await r.json(); }
+  catch{ j={ok:false}; }
+  if(appIdInput.value.trim()!==appId) return;
+  if(!j || !j.ok || !Array.isArray(j.connections) || j.connections.length===0){
+    dbPanel.style.display='none'; return;   // no DB source -> hide entirely
+  }
+  dbConns=j.connections; dbLoaded=true;
+  dbPanel.style.display=''; dbExpand();      // detected -> show + open
+  renderDbConns(dbConns);
+  updateDbCount();
+}
+function renderDbConns(conns){
+  dbList.innerHTML='';
+  conns.forEach(c=>{
+    if(!dbValues.has(c.name)) dbValues.set(c.name, {});
+    const store=dbValues.get(c.name);
+    if(c.catalog && store.catalog===undefined) store.catalog=c.catalog;
+    if(c.schema && store.schema===undefined) store.schema=c.schema;
+    const box=document.createElement('div'); box.className='tbi-db-conn';
+    const tlist=(c.tables||[]);
+    const tshow=tlist.slice(0,8).join(', ')+(tlist.length>8?(' +'+(tlist.length-8)+' more'):'');
+    box.innerHTML='<div class="tbi-db-conn-name">'+escapeHtml(c.name)+
+      '<span class="tbi-db-conn-cls">'+escapeHtml(c.class||'database')+'</span></div>'+
+      '<div class="tbi-db-conn-tables">'+tlist.length+' table(s): '+escapeHtml(tshow)+'</div>';
+    const grid=document.createElement('div'); grid.className='tbi-db-grid';
+    (c.fields||[]).forEach(f=>{
+      const wrap=document.createElement('div');
+      wrap.className='tbi-db-field'+((f.key==='server'||f.key==='http_path')?' full':'');
+      const id='db-'+c.name.replace(/[^a-z0-9]/gi,'_')+'-'+f.key;
+      wrap.innerHTML='<label for="'+id+'">'+escapeHtml(f.label||f.key)+
+        (f.required?' <span class="req">*</span>':'')+'</label>'+
+        '<input id="'+id+'" type="text" autocomplete="off" spellcheck="false" '+
+        'placeholder="'+escapeHtml(f.placeholder||'')+'" value="'+escapeHtml(store[f.key]||'')+'">';
+      const inp=wrap.querySelector('input');
+      inp.addEventListener('input', ()=>{ store[f.key]=inp.value.trim(); updateDbCount(); });
+      grid.appendChild(wrap);
+    });
+    box.appendChild(grid);
+    dbList.appendChild(box);
+  });
+}
+// Build the {name:{class,...fields}} payload from what the user filled in.
+// Only connections with a server (host) are included -- empty = use loaded data.
+function collectDbConnections(){
+  const out={};
+  dbConns.forEach(c=>{
+    const v=dbValues.get(c.name)||{};
+    const server=(v.server||v.host||'').trim();
+    if(!server) return;
+    const entry={class:c.class||'', server:server};
+    ['http_path','catalog','schema','database','warehouse'].forEach(k=>{
+      if(v[k] && String(v[k]).trim()) entry[k]=String(v[k]).trim();
+    });
+    out[c.name]=entry;
+  });
+  return out;
+}
+function dbMissingRequired(){
+  const missing=[];
+  dbConns.forEach(c=>{
+    const v=dbValues.get(c.name)||{};
+    if(!(v.server||v.host)) return;   // this connection left blank -> skipped, ok
+    (c.fields||[]).forEach(f=>{
+      if(f.required && !(v[f.key]||'').trim()) missing.push(c.name+' · '+(f.label||f.key));
+    });
+  });
+  return missing;
+}
+
+// Convert
+btnStart.addEventListener('click', startConversion);
+
+async function startConversion(){
+  const appId   = appIdInput.value.trim();
+  const fetchData = fetchToggle.checked;
+  const pruneColumns = pruneToggle.checked;
+  if(!appId) return;
+
+  // Pre-flight the mapped QVDs against the server upload cap so the user gets an
+  // instant, specific message instead of a failed multi-GB upload + 413.
+  if(qvdMaxMb>0 && qvdFiles.size>0){
+    const cap=qvdMaxMb*1024*1024;
+    const over=[...qvdFiles.entries()].filter(([,f])=>f.size>cap).map(([t])=>t);
+    if(over.length){
+      alert('These mapped QVD file(s) exceed the '+qvdMaxMb+' MB upload limit:\n  '+
+        over.join(', ')+'\n\nRemove them (those tables will fetch from Qlik instead), '+
+        'map smaller files, or raise QLIK_MAX_UPLOAD_MB on the server.');
+      return;
+    }
+  }
+
+  // Database connections: if the user started filling one in, require its
+  // mandatory fields (host / HTTP path) so we don't emit a half-wired partition.
+  const dbConnections = (typeof collectDbConnections==='function') ? collectDbConnections() : {};
+  if(typeof dbMissingRequired==='function'){
+    const miss=dbMissingRequired();
+    if(miss.length){
+      alert('Complete these required database fields (or clear the host to use '+
+        'the Qlik-loaded data instead):\n  '+miss.join('\n  '));
+      return;
+    }
+  }
+  const hasDb = Object.keys(dbConnections).length>0;
+
+  btnStart.disabled=true; currentStep=0; terminal.innerHTML=''; rawLines=[]; jobFinished=false;
+  document.getElementById('conv-appid').textContent=appId;
+  buildStepList(0); setStage('converting');
+
+  let res;
+  try{
+    let opts;
+    if(qvdFiles.size>0){
+      // Multipart: scalars + one file per mapped table (key 'qvdfile:<Table>').
+      const fd=new FormData();
+      fd.append('app_id',appId);
+      fd.append('fetch_data',fetchData?'1':'0');
+      fd.append('prune_columns',pruneColumns?'1':'0');
+      if(hasDb) fd.append('db_connections', JSON.stringify(dbConnections));
+      qvdFiles.forEach((file,table)=>fd.append('qvdfile:'+table, file, file.name));
+      opts={method:'POST', body:fd};   // browser sets the multipart boundary
+    }else{
+      const payload={app_id:appId,fetch_data:fetchData,prune_columns:pruneColumns};
+      if(hasDb) payload.db_connections=dbConnections;
+      opts={method:'POST', headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(payload)};
+    }
+    res=await fetch('/qlik/convert',opts);
+    const data=await res.json();
+    if(!res.ok){showError('Request failed: '+(data.error||res.status));return}
+    currentJob=data.job_id;
+  }catch(err){showError('Network error: '+err.message);return}
+
+  const evtSource=new EventSource(`/qlik/stream/${currentJob}`);
+  evtSource.onmessage=e=>{appendLog(e.data);advanceStep(e.data)};
+  evtSource.addEventListener('done',async e=>{
+    evtSource.close();
+    jobFinished=true;
+    if(e.data==='done'){
+      buildStepList(STEPS.length);setProgress(1);
+      try{const sr=await fetch(`/qlik/status/${currentJob}`);showDone(await sr.json())}
+      catch{showDone({})}
+    }else{
+      await failWithServerError('Conversion failed — expand the raw output below for details.');
+    }
+  });
+  evtSource.onerror=()=>{
+    evtSource.close();
+    if(jobFinished) return;          // already resolved via the 'done' event
+    jobFinished=true;
+    failWithServerError('Stream disconnected unexpectedly. Expand the raw output below for any captured detail.');
+  };
+}
+
+// Pull the structured (categorised) error + the full captured raw log from
+// the server, then render the error stage. Falls back to whatever we have
+// locally if the server is unreachable.
+async function failWithServerError(fallbackMsg){
+  let info=null;
+  try{const sr=await fetch(`/qlik/status/${currentJob}`);if(sr.ok)info=await sr.json()}catch{}
+  try{
+    const lr=await fetch(`/qlik/log/${currentJob}`);
+    if(lr.ok){const lj=await lr.json();if(Array.isArray(lj.lines)&&lj.lines.length)rawLines=lj.lines}
+  }catch{}
+  // The stream may have dropped right after a SUCCESSFUL finish — recover
+  // it as a success rather than showing a false error.
+  if(info&&info.status==='done'){buildStepList(STEPS.length);setProgress(1);showDone(info);return}
+  if(info&&(info.error_title||info.error_detail||info.error_category)){showError(info)}
+  else{showError(fallbackMsg)}
+}
+
+function advanceStep(text){
+  for(let i=currentStep;i<STEPS.length;i++){
+    if(STEPS[i].kw.test(text)){currentStep=i;buildStepList(i);setProgress(i/STEPS.length);break}
+  }
+}
+function setProgress(p){
+  const pct=Math.round(p*100);
+  document.getElementById('progress-fill').style.width=pct+'%';
+  document.getElementById('conv-pct').textContent=pct+'%';
+}
+
+function showDone(sd){
+  jobFinished=true;
+  const appId=appIdInput.value.trim();
+  const zipName=sd.zip_name||`qlik_${appId.slice(0,8)}_pbip.zip`;
+  const rows=[
+    ['App ID', appId],
+    ['Output format','Power BI Project (.pbip)'],
+    ['Status','Conversion complete'],
+  ];
+  document.getElementById('summary-table').innerHTML=rows.map(([k,v])=>
+    `<div class="tbi-summary-row"><div class="tbi-summary-key">${k}</div><div class="tbi-summary-val">${v}</div></div>`
+  ).join('');
+  document.getElementById('done-sub').textContent='Conversion complete · ready to download';
+  document.getElementById('pbip-filename').textContent=zipName;
+  if(sd.zip_name){const dl=document.getElementById('btn-download');dl.href=`/qlik/download/${currentJob}`;dl.style.display=''}
+  setStage('done');
+}
+// info may be a structured object {error_category,error_title,error_detail}
+// (from /status) or a plain string (network / pre-job errors).
+function showError(info){
+  let title='Conversion failed',message='',category='technical';
+  if(typeof info==='string'){message=info}
+  else if(info){
+    category=info.error_category||'technical';
+    title=info.error_title||title;
+    message=info.error_detail||info.error||'';
+  }
+  const cat=document.getElementById('error-cat');
+  const CAT_LABELS={api:'API / connection',semantic_model:'Semantic model',data_source:'Data source',visual:'Visual conversion',technical:'Technical failure'};
+  if(CAT_LABELS[category]){cat.textContent=CAT_LABELS[category];cat.style.display=''}
+  else{cat.style.display='none'}
+  document.getElementById('error-title').textContent=title;
+  document.getElementById('error-msg').textContent=message||'See the raw output below for details.';
+  renderErrorLog();
+  // Unexpected / technical failures: open the raw output automatically so
+  // the user sees the real error. Known categories stay collapsed (the
+  // headline already explains it) but the toggle is always available.
+  const expand=(category==='technical');
+  errLogWrap.classList.toggle('open',expand);
+  errLogToggle.classList.toggle('open',expand);
+  setStage('error');
+}
+function renderErrorLog(){
+  errTerminal.innerHTML='';
+  if(!rawLines.length){
+    const s=document.createElement('span');s.className='log-line muted';
+    s.textContent='(no output was captured)';errTerminal.appendChild(s);return;
+  }
+  rawLines.forEach(line=>{
+    const span=document.createElement('span');
+    span.className='log-line '+classifyLine(line);
+    span.textContent=line;errTerminal.appendChild(span);
+    errTerminal.appendChild(document.createTextNode('\n'));
+  });
+  errTerminal.scrollTop=errTerminal.scrollHeight;
+}
+function appendLog(text){
+  rawLines.push(text);
+  const span=document.createElement('span');
+  span.className='log-line '+classifyLine(text);
+  span.textContent=text;terminal.appendChild(span);
+  terminal.appendChild(document.createTextNode('\n'));
+  terminal.scrollTop=terminal.scrollHeight;
+}
+function classifyLine(t){
+  if(/\[ERROR\]|error/i.test(t))return 'error';
+  if(/warning|warn/i.test(t))return 'warn';
+  if(/✓|done|complete|ready/i.test(t))return 'pass';
+  if(t.startsWith(':')||!t.trim())return 'muted';
+  return '';
+}
+function fullReset(){
+  currentJob=null;currentStep=0;terminal.innerHTML='';rawLines=[];jobFinished=false;
+  document.getElementById('btn-download').style.display='none';
+  logWrap.classList.remove('open');logToggle.classList.remove('open');
+  errLogWrap.classList.remove('open');errLogToggle.classList.remove('open');
+  qvdFiles.clear();qvdAppId=null;qvdLoaded=false;qvdList.innerHTML='';updateQvdCount();
+  dbValues.clear();dbAppId=null;dbLoaded=false;dbConns=[];dbList.innerHTML='';dbPanel.style.display='none';updateDbCount();
+  appIdInput.value='';appIdInput.dispatchEvent(new Event('input'));
+  setStage('upload');
+  document.getElementById('card-tag').className='tbi-step-tag tone-neutral';
+  document.getElementById('card-tag').textContent='Ready';
+  document.getElementById('card-title').textContent='Enter your Qlik App ID';
+}
+btnReset.addEventListener('click',fullReset);
+btnErrReset.addEventListener('click',fullReset);
+</script>
+</body>
+</html>

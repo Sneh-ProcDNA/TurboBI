@@ -1,0 +1,70 @@
+table Dim_Product
+	lineageTag: fbcead96-b25b-58da-06b4-8d9b9671e54d
+
+	column Product_ID
+		dataType: string
+		lineageTag: 234e3ef0-e208-df0b-7a37-6ef4a6d56e3a
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Name
+		dataType: string
+		lineageTag: cceea3e3-647f-689d-1fb7-0ee998fc3ce5
+		summarizeBy: none
+		sourceColumn: Product_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Molecule
+		dataType: string
+		lineageTag: 5b908bbf-39d3-ecf5-5fa2-b31c464b56d9
+		summarizeBy: none
+		sourceColumn: Molecule
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 55bb6ca7-65cd-a75c-bde4-803dcd569775
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Therapeutic_Area
+		dataType: string
+		lineageTag: 210d1298-9d4f-3802-2484-fd2f3b98ff96
+		summarizeBy: none
+		sourceColumn: Therapeutic_Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Strength
+		dataType: string
+		lineageTag: 830a11d1-ffff-52f8-2ef6-fe1abc59a823
+		summarizeBy: none
+		sourceColumn: Strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit_Price_USD
+		dataType: double
+		lineageTag: a348e765-4b62-f22d-7bc9-788daf92f0cb
+		summarizeBy: sum
+		sourceColumn: Unit_Price_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Product = m
+		mode: import
+		source =
+			let
+				Source = Parquet.Document(File.Contents(RepoPath & "/data/Dim_Product.parquet"))
+			in
+				Source
+
+	annotation PBI_NavigationStepName = Source
+
+	annotation PBI_ResultType = Table

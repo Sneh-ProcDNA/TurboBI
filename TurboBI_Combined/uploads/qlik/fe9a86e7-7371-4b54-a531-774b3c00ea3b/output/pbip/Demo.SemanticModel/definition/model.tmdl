@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Schema _ Guide'
+ref table Dim_Date
+ref table Dim_HCP
+ref table Dim_Product
+ref table Dim_Territory
+ref table Fact_CRM
+
+expression RepoPath = "C:\Users\ShrikantPansare\Downloads\TurboBI_Combined\uploads\qlik\fe9a86e7-7371-4b54-a531-774b3c00ea3b\output\pbip\Demo.SemanticModel" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+ref cultureInfo en-US
